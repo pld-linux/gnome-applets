@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.7.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -29,9 +29,9 @@ BuildRequires:	libgnome-devel >= 2.7.91
 BuildRequires:	libgnomecanvas-devel >= 2.7.91
 BuildRequires:	libgnomeui-devel >= 2.7.91
 BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgtop-devel >= 2.7.91
+BuildRequires:	libgtop-devel >= 1:2.7.92
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.7.91
+BuildRequires:	libwnck-devel >= 2.7.92
 BuildRequires:	libxml2-devel >= 2.6.11
 BuildRequires:	libxklavier-devel >= 1.03
 BuildRequires:	scrollkeeper >= 0.3.11-4
