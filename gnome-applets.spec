@@ -15,22 +15,13 @@ Patch2:		%{name}-gkbomf.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 0.17
-BuildRequires:	gdbm-devel
+BuildRequires:	gail-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-panel-devel >= 2.0.9
-BuildRequires:	gnome-vfs2-devel >= 2.0.4
-BuildRequires:	gtk+2-devel >= 2.0.6
+BuildRequires:	gnome-panel-devel
 BuildRequires:	intltool >= 0.23
-BuildRequires:	libgnome-devel >= 2.0.5
-BuildRequires:	libgnomecanvas-devel >= 2.0.4
-BuildRequires:	libgnomeui-devel >= 2.0.5
-BuildRequires:	libglade2-devel >= 2.0.1
-BuildRequires:	libgtop-devel >= 2.0.0
-BuildRequires:	libwnck-devel >= 0.17
+BuildRequires:	libgtop-devel
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 2.4.24
-BuildRequires:	scrollkeeper >= 0.3.11-4
+BuildRequires:	scrollkeeper
 Requires(post):	GConf2
 Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
