@@ -4,7 +4,7 @@ Summary(ru):	íÁÌÅÎØËÉÅ ĞÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀİÉÅÓÑ × ĞÁÎÅÌØ GNOME
 Summary(uk):	íÁÌÅÎØË¦ ĞÒÏÇÒÁÍÉ, İÏ ×ÂÕÄÏ×ÕÀÔØÓÑ × ĞÁÎÅÌØ GNOME
 Name:		gnome-applets
 Version:	2.10.0
-Release:	6
+Release:	7
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -80,7 +80,7 @@ Pliki nag³ówkowe gnome-applets.
 Summary:	Keyboard Accessibility Status applet
 Summary(pl):	Aplet stanu dostepno¶ci klawiatury
 Group:		X11/Applications
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -94,8 +94,8 @@ Aplet stanu dostepno¶ci klawiatury.
 Summary:	Battery Charge Monitor applet
 Summary(pl):	Aplet monitora stanu na³adowania akumulatora
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -109,8 +109,8 @@ Aplet monitora stanu na³adowania akumulatora.
 Summary:	Character Palette applet
 Summary(pl):	Aplet palety znaków
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -124,10 +124,11 @@ Aplet palety znaków.
 Summary:	CPU Frequency Scaling Monitor applet
 Summary(pl):	Aplet monitora czêstotliwo¶ci procesora
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
+Obsoletes:	gnome-applet-cpufreq
 
 %description cpufreq
 CPU Frequency Scaling Monitor applet.
@@ -139,8 +140,8 @@ Aplet monitora czêstotliwo¶ci procesora.
 Summary:	Disk Mounter applet
 Summary(pl):	Aplet do montowania dysków
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -154,8 +155,8 @@ Aplet do monotwania dysków.
 Summary:	Geyes applet
 Summary(pl):	Aplet geyes
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -169,8 +170,8 @@ Aplet geyes.
 Summary:	Stock Ticker applet
 Summary(pl):	Aplet wska¼nika gie³dowego
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -184,8 +185,8 @@ Aplet wska¼nika gie³dowego.
 Summary:	Weather Report applet
 Summary(pl):	Aplet raportu pogodowego
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -199,8 +200,8 @@ Aplet raportu pogodowego.
 Summary:	Keyboard Indicator applet
 Summary(pl):	Aplet wska¼nika klawiatury
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -214,8 +215,8 @@ Aplet wska¼nika klawiatury.
 Summary:	Command Line applet
 Summary(pl):	Aplet wiersza poleceñ
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -229,8 +230,8 @@ Aplet wiersza poleceñ.
 Summary:	Volume Control applet
 Summary(pl):	Aplet regulacji g³o¶no¶ci
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gstreamer-audiosink
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -259,8 +260,8 @@ Aplet kontrolek modemu.
 Summary:	System Monitor applet
 Summary(pl):	Aplet monitora systemu
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -274,8 +275,8 @@ Aplet monitora systemu.
 Summary:	Sticky Notes applet
 Summary(pl):	Aplet notatek
 Group:		X11/Applications
-Requires(post):	GConf2
-Requires(post):	scrollkeeper
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 Obsoletes:	gnotes_applet
@@ -290,7 +291,7 @@ Aplet notatek.
 Summary:	Trash applet
 Summary(pl):	Aplet ¶mietnika
 Group:		X11/Applications
-Requires(post):	scrollkeeper
+Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -344,154 +345,208 @@ awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst);
 rm -rf $RPM_BUILD_ROOT
 
 %post accessx-status
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %banner %{name} -e << EOF
 For full functionality, you need to install control-center.
 EOF
 
 %postun accessx-status
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post battstat
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/battstat.schemas
 
 %preun battstat
-%gconf_schema_uninstall /etc/gconf/schemas/battstat.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/battstat.schemas
+fi
 
 %postun battstat
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post charpicker
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/charpick.schemas
 
 %preun charpicker
-%gconf_schema_uninstall /etc/gconf/schemas/charpick.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/charpick.schemas
+fi
 
 %postun charpicker
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post cpufreq
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/cpufreq-applet.schemas
 
 %preun cpufreq
-%gconf_schema_uninstall /etc/gconf/schemas/cpufreq-applet.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/cpufreq-applet.schemas
+fi
 
 %postun cpufreq
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post drivemount
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/drivemount.schemas
 
 %preun drivemount
-%gconf_schema_uninstall /etc/gconf/schemas/drivemount.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/drivemount.schemas
+fi
 
 %postun drivemount 
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post geyes
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/geyes.schemas
 
 %preun geyes
-%gconf_schema_uninstall /etc/gconf/schemas/geyes.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/geyes.schemas
+fi
 
 %postun geyes 
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gtik
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gtik.schemas
 
 %preun gtik
-%gconf_schema_uninstall /etc/gconf/schemas/gtik.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/gtik.schemas
+fi
 
 %postun gtik
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post gweather
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gweather.schemas
 
 %preun gweather
-%gconf_schema_uninstall /etc/gconf/schemas/gweather.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/gweather.schemas
+fi
 
 %postun gweather
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post keyboard
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/gswitchit.schemas
 
 %preun keyboard
-%gconf_schema_uninstall /etc/gconf/schemas/gswitchit.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/gswitchit.schemas
+fi
 
 %postun keyboard
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post minicommander
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/mini-commander-global.schemas
 %gconf_schema_install /etc/gconf/schemas/mini-commander.schemas
 GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%{name}/mc-install-default-macros
 
 %preun minicommander
-%gconf_schema_uninstall /etc/gconf/schemas/mini-commander-global.schemas
-%gconf_schema_uninstall /etc/gconf/schemas/mini-commander.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/mini-commander-global.schemas
+	%gconf_schema_uninstall /etc/gconf/schemas/mini-commander.schemas
+fi
 
 %postun minicommander
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post mixer
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/mixer.schemas
 %banner %{name} -e << EOF
 For full functionality, you need to install gnome-media-volume-control.
 EOF
 
 %preun mixer
-%gconf_schema_uninstall /etc/gconf/schemas/mixer.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/mixer.schemas
+fi
 
 %postun mixer
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post modemlights
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 
 %postun modemlights
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post multiload
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/multiload.schemas
 %banner %{name} -e << EOF
 For full functionality, you need to install gnome-system-monitor.
 EOF
 
 %preun multiload
-%gconf_schema_uninstall /etc/gconf/schemas/multiload.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/multiload.schemas
+fi
 
 %postun multiload
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post stickynotes
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 %gconf_schema_install /etc/gconf/schemas/stickynotes.schemas
 
 %preun stickynotes
-%gconf_schema_uninstall /etc/gconf/schemas/stickynotes.schemas
+if [ $1 = 0 ]; then
+	%gconf_schema_uninstall /etc/gconf/schemas/stickynotes.schemas
+fi
 
 %postun stickynotes
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %post trash
-/usr/bin/scrollkeeper-update
+/usr/bin/scrollkeeper-update -q
 
 %postun trash
-/usr/bin/scrollkeeper-update
+if [ $1 = 0 ]; then
+	/usr/bin/scrollkeeper-update -q
+fi
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
