@@ -34,8 +34,8 @@ BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires:	gnome-vfs2 >= 2.2.0
 Requires(post):	GConf2 >= 2.3.0
 Requires(post):	scrollkeeper
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_localstatedir	/var
 
@@ -131,10 +131,10 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/geyes
 %{_datadir}/gnome/gkb/presets.xml
 %{_datadir}/gnome-2.0/ui/*
-%{_datadir}/gen_util/*.glade
+%{_datadir}/gen_util
 %{_datadir}/gweather
 %{_datadir}/stickynotes
-%{_datadir}/wireless-applet/*.glade
+%{_datadir}/wireless-applet
 %{_pixmapsdir}/accessx-status-applet
 %{_pixmapsdir}/gweather
 %{_pixmapsdir}/mailcheck
