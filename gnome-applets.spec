@@ -14,6 +14,7 @@ BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	libghttp-devel
 BuildRequires:	xmms-devel
+BuildRequires:	gdbm-devel
 URL:		http://www.gnome.org/
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnotes_applet
