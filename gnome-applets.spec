@@ -228,7 +228,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_datadir}/xmodmap/xmodmap.es*
 %lang(fi) %{_datadir}/xmodmap/xmodmap.fi*
 %lang(fr) %{_datadir}/xmodmap/xmodmap.fr*
-%lang(hu) %{_datadir}/xmodmap/xmodmap.hu*
 %lang(gb) %{_datadir}/xmodmap/xmodmap.gb*
 %lang(gr) %{_datadir}/xmodmap/xmodmap.gr*
 %lang(hu) %{_datadir}/xmodmap/xmodmap.hu*
