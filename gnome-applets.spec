@@ -16,7 +16,7 @@ BuildRequires:	libghttp-devel
 BuildRequires:	xmms-devel
 BuildRequires:	gdbm-devel
 URL:		http://www.gnome.org/
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
 Obsoletes:	gnome-applets-gumma-gqmpeg
 Obsoletes:	gnome-applets-gumma-xmms
