@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.1.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -39,8 +39,6 @@ Obsoletes:	gnotes_applet
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME2
 %define		_localstatedir	/var
-%define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
-%define		_bonobo_server_dir	/usr/lib/bonobo/servers
 
 %description
 The gnome-applets package provides Panel applets which enhance your
@@ -80,8 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	omf_dest_dir=%{_omf_dest_dir}/%{name} \
-	serverdir=%{_bonobo_server_dir}
+	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -125,7 +122,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/multiload-applet-2
 %attr(755,root,root) %{_libdir}/wireless-applet
 %attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
-%{_bonobo_server_dir}/*
+%{_libdir}/bonobo/servers/*
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
 %{_datadir}/gweather
