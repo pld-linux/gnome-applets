@@ -30,6 +30,7 @@ BuildRequires:	libgtop-devel >= 2.5.0
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.5.1
 BuildRequires:	libxml2-devel >= 2.5.1
+BuildRequires:	libxklavier-devel
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.5.0
 Requires(post):	scrollkeeper
