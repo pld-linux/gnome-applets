@@ -51,14 +51,3 @@
          cd $(srcdir);   \
          cp $(sgml_ents) $$ourdir
  
---- gnome-applets-1.4.0.5/cpumemusage/docs/ru/Makefile.am~	Sun May 19 00:23:26 2002
-+++ gnome-applets-1.4.0.5/cpumemusage/docs/ru/Makefile.am	Sun May 19 00:23:26 2002
-@@ -1,5 +1,8 @@
-+figs = \
-+	figures/cpumemusage-applet.png
- applet = cpumemusage
- lang = ru
-+omffile = cpumemusage_applet-ru.omf
- sgml_ents = $(applet).sgml
- include $(top_srcdir)/applet-docs.make
- dist-hook: applet-dist-hook
