@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.9.6
+Version:	2.9.7
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.9/%{name}-%{version}.tar.bz2
-# Source0-md5:	43dcb1c3b5f9c86fac373f186a0936b8
+# Source0-md5:	3d2a03a4c30f6fe8673291c6d33773b7
 Patch0:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.9.90
@@ -19,27 +19,27 @@ BuildRequires:	gail-devel >= 1.8.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
-BuildRequires:	gnome-panel-devel >= 2.9.90
-BuildRequires:	gnome-vfs2-devel >= 2.9.90
+BuildRequires:	gnome-panel-devel >= 2.9.91
+BuildRequires:	gnome-vfs2-devel >= 2.9.92
 BuildRequires:	gstreamer-plugins-devel >= 0.8.7
-BuildRequires:	gtk+2-devel >= 2:2.6.2
+BuildRequires:	gtk+2-devel >= 2:2.6.3
 BuildRequires:	gucharmap-devel >= 1.4.0
 BuildRequires:	intltool >= 0.31.3
 BuildRequires:	libgnomeui-devel >= 2.9.1
 BuildRequires:	libglade2-devel >= 1:2.5.0
-BuildRequires:	libgtop-devel >= 1:2.9.90
+BuildRequires:	libgtop-devel >= 1:2.9.92
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.9.90
+BuildRequires:	libwnck-devel >= 2.9.92
 BuildRequires:	libxml2-devel >= 2.6.11
-BuildRequires:	libxklavier-devel >= 1.14
+BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.1.90
 Requires(post):	GConf2 >= 2.9.2
 Requires(post):	scrollkeeper
-Requires:	gnome-icon-theme >= 2.9.90
-Requires:	gnome-vfs2 >= 2.9.90
+Requires:	gnome-icon-theme >= 2.9.92
+Requires:	gnome-vfs2 >= 2.9.92
 Requires:	gstreamer-audiosink
 Requires:	system-tools-backends >= 1.1.90
 Obsoletes:	gnotes_applet
@@ -67,7 +67,7 @@ Summary(pl):	Pliki nagЁСwkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.9.2
-Requires:	gtk+2-devel >= 2:2.6.2
+Requires:	gtk+2-devel >= 2:2.6.3
 
 %description devel
 Header files for gnome-applets.
