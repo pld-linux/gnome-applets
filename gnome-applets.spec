@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.5.2
+Version:	2.5.3
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	5b47dc2060420e0baadf86cbe558076f
+# Source0-md5:	a81ff6839a761dbae3d6782483d19fa1
 Patch1:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -20,15 +20,15 @@ BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.3.0
 BuildRequires:	gnome-panel-devel >= 2.5.1
 BuildRequires:	gnome-vfs2-devel >= 2.5.1
-BuildRequires:	gtk+2-devel >= 2.3.0-1.20031110.1
-BuildRequires:	intltool >= 0.23
-BuildRequires:	libgnome-devel >= 2.4.0
-BuildRequires:	libgnomecanvas-devel >= 2.4.0
-BuildRequires:	libgnomeui-devel >= 2.5.0-0.20031112.1
-BuildRequires:	libglade2-devel >= 2.0.1-2
+BuildRequires:	gtk+2-devel >= 2.3.1
+BuildRequires:	intltool >= 0.28
+BuildRequires:	libgnome-devel >= 2.5.1
+BuildRequires:	libgnomecanvas-devel >= 2.5.1
+BuildRequires:	libgnomeui-devel >= 2.5.1
+BuildRequires:	libglade2-devel >= 2.3.1
 BuildRequires:	libgtop-devel >= 2.5.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.4.0
+BuildRequires:	libwnck-devel >= 2.5.1
 BuildRequires:	libxml2-devel >= 2.5.1
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.4.0
