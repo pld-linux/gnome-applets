@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.7.2
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -13,31 +13,31 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.7/%{name}-%{version}.t
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.7.3.1
+BuildRequires:	GConf2-devel >= 2.7.91
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 1.6.6
+BuildRequires:	gail-devel >= 1.7.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.4.0
-BuildRequires:	gnome-panel-devel >= 2.7.4
-BuildRequires:	gnome-vfs2-devel >= 2.7.5
+BuildRequires:	gnome-panel-devel >= 2.7.91
+BuildRequires:	gnome-vfs2-devel >= 2.7.91
 BuildRequires:	gstreamer-plugins-devel >= 0.8.3
 BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	intltool >= 0.29
-BuildRequires:	libgnome-devel >= 2.7.2
-BuildRequires:	libgnomecanvas-devel >= 2.7.1
-BuildRequires:	libgnomeui-devel >= 2.7.2
+BuildRequires:	libgnome-devel >= 2.7.91
+BuildRequires:	libgnomecanvas-devel >= 2.7.91
+BuildRequires:	libgnomeui-devel >= 2.7.91
 BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgtop-devel >= 2.7.4
+BuildRequires:	libgtop-devel >= 2.7.91
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.6.2
+BuildRequires:	libwnck-devel >= 2.7.91
 BuildRequires:	libxml2-devel >= 2.6.11
 BuildRequires:	libxklavier-devel >= 1.03
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Requires(post):	GConf2 >= 2.7.3.1
+Requires(post):	GConf2 >= 2.7.91
 Requires(post):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.7.5
+Requires:	gnome-vfs2 >= 2.7.91
 Requires:	gstreamer-audiosink
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -63,7 +63,7 @@ Summary:	Header files for gnome-applets
 Summary(pl):	Pliki nagЁСwkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.7.3.1
+Requires:	GConf2-devel >= 2.7.91
 Requires:	gtk+2-devel >= 2:2.4.4
 
 %description devel
