@@ -3,7 +3,7 @@ Summary(pl):	GNOME - Applety
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	1.101.0
+Version:	1.102.1
 Release:	1
 Epoch:		1
 License:	GPL
