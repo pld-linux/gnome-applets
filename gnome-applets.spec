@@ -80,7 +80,13 @@ rm -rf $RPM_BUILD_ROOT
 %find_lang %{name} --with-gnome --all-name
 
 find $RPM_BUILD_ROOT/%{_pixmapsdir}/gkb/|grep '/..\.png$'|sed "s=$RPM_BUILD_ROOT\(/%{_pixmapsdir}/gkb/\)\(..\)\(.png\)=%lang(\2) \1\2\3=" >> %{name}.lang
-find . -name ChangeLog -o -name TODO -o -name NEWS -o -name AUTHORS -o -name README|awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); print "cp " src " " dst}'|sh
+find . 	-name ChangeLog -o \
+	-name TODO -o \
+	-name NEWS -o \
+	-name AUTHORS \
+	-o -name README | \
+awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); 
+	print "cp " src " " dst}  END {print "exit 0"}' | sh
 
 
 %clean
