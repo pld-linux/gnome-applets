@@ -11,6 +11,7 @@ Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
 Patch0:		%{name}-applet-docs.make.patch
 Patch1:		%{name}-use_AM_GNU_GETTEXT.patch
+Patch2:		%{name}-ISDN.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.7
@@ -45,9 +46,11 @@ Applety pod GNOME.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm missing
+libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
