@@ -71,7 +71,7 @@ gettextize --copy --force
 LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--disable-static
-make
+%{__make}
 #make -C gumma
 
 %install
