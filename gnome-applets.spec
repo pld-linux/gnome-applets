@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.10.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -20,12 +20,12 @@ BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
 BuildRequires:	gnome-panel-devel >= 2.10.0
-BuildRequires:	gnome-vfs2-devel >= 2.10.0
+BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
 BuildRequires:	gstreamer-plugins-devel >= 0.8.8
 BuildRequires:	gtk+2-devel >= 2:2.6.4
 BuildRequires:	gucharmap-devel >= 1.4.0
 BuildRequires:	intltool >= 0.33
-BuildRequires:	libgnomeui-devel >= 2.10.0
+BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgtop-devel >= 1:2.10.0
 BuildRequires:	libtool
@@ -39,7 +39,7 @@ BuildRequires:	system-tools-backends >= 1.2.0
 Requires(post):	GConf2 >= 2.10.0
 Requires(post):	scrollkeeper
 Requires:	gnome-icon-theme >= 2.10.0
-Requires:	gnome-vfs2 >= 2.10.0
+Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	gstreamer-audiosink
 Requires:	system-tools-backends >= 1.2.0
 Obsoletes:	gnotes_applet
