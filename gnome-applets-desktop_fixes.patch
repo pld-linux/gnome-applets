@@ -1,0 +1,82 @@
+--- gnome-applets-1.4.0.5/asclock/asclock_applet.desktop.in~	Sat Jun 15 23:52:11 2002
++++ gnome-applets-1.4.0.5/asclock/asclock_applet.desktop.in	Sat Jun 15 23:52:11 2002
+@@ -2,6 +2,6 @@
+ _Name=AfterStep Clock
+ _Comment=Just another clock
+ Exec=asclock_applet --activate-goad-server=asclock_applet
+-Icon=
++Icon=asclock-applet.png
+ Terminal=0
+ Type=Application
+--- gnome-applets-1.4.0.5/drivemount/drivemount_applet.desktop.in~	Sat Jun 15 23:48:09 2002
++++ gnome-applets-1.4.0.5/drivemount/drivemount_applet.desktop.in	Sat Jun 15 23:48:09 2002
+@@ -2,6 +2,6 @@
+ _Name=Drive Mount
+ _Comment=Mount and unmount drives
+ Exec=drivemount_applet --activate-goad-server=drivemount_applet
+-Icon=mc/i-floppy.png
++Icon=drivemount-applet.png
+ Terminal=0
+ Type=Application
+--- gnome-applets-1.4.0.5/cdplayer/cdplayer_applet.desktop.in~	Sun Jun 16 00:24:58 2002
++++ gnome-applets-1.4.0.5/cdplayer/cdplayer_applet.desktop.in	Sun Jun 16 00:24:58 2002
+@@ -2,6 +2,6 @@
+ _Name=CD Player
+ _Comment=CD Player
+ Exec=cdplayer_applet --activate-goad-server=cdplayer_applet
+-Icon=mc/i-cdrom.png
++Icon=cdplayer-applet.png
+ Terminal=0
+ Type=Application
+--- gnome-applets-1.4.0.5/multiload/swapload_applet.desktop.in~	Sun Jun 16 00:46:22 2002
++++ gnome-applets-1.4.0.5/multiload/swapload_applet.desktop.in	Sun Jun 16 00:46:22 2002
+@@ -2,6 +2,6 @@
+ _Name=SwapLoad
+ _Comment=Swap Load Meter
+ Exec=multiload_applet --activate-goad-server=multiload_swapload_applet
+-Icon=
++Icon=gnome-swap.png
+ Terminal=0
+ Type=Application
+--- gnome-applets-1.4.0.5/mini-commander/src/mini-commander_applet.desktop.in~	Sun Jun 16 01:29:58 2002
++++ gnome-applets-1.4.0.5/mini-commander/src/mini-commander_applet.desktop.in	Sun Jun 16 01:29:58 2002
+@@ -2,6 +2,6 @@
+ _Name=Mini-Commander
+ _Comment=Mini-Commander
+ Exec=mini_commander_applet  --activate-goad-server=mini-commander_applet
+-Icon=
++Icon=mini-commander-applet.png
+ Terminal=0
+ Type=Application
+--- gnome-applets-1.4.0.5/gweather/Makefile.am~	Sun Jun 16 01:51:29 2002
++++ gnome-applets-1.4.0.5/gweather/Makefile.am	Sun Jun 16 01:51:29 2002
+@@ -32,7 +32,7 @@
+ gweathergnorbadir = $(sysconfdir)/CORBA/servers
+ gweathergnorba_DATA = gweather.gnorba
+ 
+-gweatherappletdir = $(datadir)/applets/Utility
++gweatherappletdir = $(datadir)/applets/Monitors
+ gweatherapplet_predata = gweather.desktop.in
+ gweatherapplet_DATA = $(gweatherapplet_predata:.desktop.in=.desktop)
+ @XML_I18N_MERGE_DESKTOP_RULE@
+--- gnome-applets-1.4.0.5/gtik/Makefile.am~	Sun Jun 16 01:53:22 2002
++++ gnome-applets-1.4.0.5/gtik/Makefile.am	Sun Jun 16 01:53:22 2002
+@@ -12,7 +12,7 @@
+ 			$(GNOME_APPLETS_LIBS) \
+ 			$(VFS_LIBS)
+ 
+-sysdir = $(datadir)/applets/Network
++sysdir = $(datadir)/applets/Monitors
+ sys_predata = gtik2_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+ @XML_I18N_MERGE_DESKTOP_RULE@
+--- gnome-applets-1.4.0.5/gtik/gtik2_applet.desktop.in~	Sun Jun 16 02:58:08 2002
++++ gnome-applets-1.4.0.5/gtik/gtik2_applet.desktop.in	Sun Jun 16 02:58:08 2002
+@@ -2,6 +2,6 @@
+ _Name=GNOME Stock Ticker
+ _Comment=GNOME Stock Ticker Panel Applet
+ Exec=gtik2_applet --activate-goad-server=gtik2_applet
+-Icon=
++Icon=gtik2-applet.png
+ Terminal=0
+ Type=Application
