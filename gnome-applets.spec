@@ -6,7 +6,8 @@ Release:	1
 License:	GPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
-Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.gz
+Patch0:		gnome-applets-applet-docs.make.patch
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
@@ -63,6 +64,7 @@ Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 gettextize --copy --force
