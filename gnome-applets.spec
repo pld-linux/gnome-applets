@@ -1,5 +1,5 @@
 Summary:	Small applications which embed themselves in the GNOME panel
-Summary(pl):	GNOME - Aplety
+Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
@@ -31,7 +31,8 @@ BuildRequires:	libwnck-devel >= 0.17
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.4.24
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Prereq:		scrollkeeper
+Requires(post):	GConf2
+Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
 
@@ -45,7 +46,8 @@ The gnome-applets package provides Panel applets which enhance your
 GNOME experience.
 
 %description -l pl
-Aplety pod GNOME.
+Pakiet gnome-applets udostЙpnia aplety Panelu, ktСre usprawniaj╠ pracЙ
+z GNOME.
 
 %description -l uk
 Пакет gnome-applets м╕стить аплети Панел╕ GNOME, що зб╕льшують
