@@ -1,24 +1,23 @@
+
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.3.5
+Version:	2.3.6
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	48b5b003ebf2cfb7d352bb40f69f140d
-Patch0:		%{name}-xmldocs.patch
-Patch1:		%{name}-docs.patch
-Patch2:		%{name}-gkb_de_fix.patch
+# Source0-md5:	f2b49d4c45c3eba21e008f1618110cd5
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gail-devel >= 1.3.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
+BuildRequires:	gnome-common >= 2.3.0
 BuildRequires:	gnome-panel-devel >= 2.3.0
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
 BuildRequires:	gtk+2-devel >= 2.2.0
@@ -58,18 +57,18 @@ z GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 rm -f missing
-intltoolize --copy --force
+
+%{__aclocal}
 %{__libtoolize}
 glib-gettextize --copy --force
-%{__aclocal}
-%{__autoconf}
+intltoolize --copy --force
+%{__autoheader}
+gnome-doc-common
 %{__automake}
+%{__autoconf}
 %configure \
 	--disable-static \
 	--disable-schemas-install
@@ -133,6 +132,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome/gkb/presets.xml
 %{_datadir}/gnome-2.0/ui/*
 %{_datadir}/gen_util/*.glade
+%{_datadir}/gweather
 %{_datadir}/stickynotes
 %{_datadir}/wireless-applet/*.glade
 %{_pixmapsdir}/accessx-status-applet
