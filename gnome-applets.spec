@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	1.4.0.5
-Release:	11
+Release:	12
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -25,6 +25,7 @@ Patch6:		%{name}-themes-install-fix.patch
 Patch7:		%{name}-desktop_fixes.patch
 Patch8:		%{name}-am_fixes.patch
 Patch9:		%{name}-zh_CN.patch
+Patch10:	%{name}-omf.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.7
@@ -79,6 +80,7 @@ Aplety pod GNOME.
 %patch8 -p1
 %patch9 -p1
 mv -f po/zh_CN.GB2312.po po/zh_CN.po
+%patch10 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
