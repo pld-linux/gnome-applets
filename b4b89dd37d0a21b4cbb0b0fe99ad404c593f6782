@@ -1,0 +1,2 @@
+- addded am_cdplayer_linux_hack patch with hack bug in libtool,
+- use new %%doc packing infrastructure.
