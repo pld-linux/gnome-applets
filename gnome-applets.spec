@@ -1,8 +1,8 @@
-Summary:	GNOME - Applets
+Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.1.2
-Release:	3
+Version:	1.1.3
+Release:	1
 License:	GPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
@@ -17,17 +17,16 @@ BuildRequires:	xmms-devel
 URL:		http://www.gnome.org/
 BuildRoot:	/tmp/%{name}-%{version}-root
 Obsoletes:	gnotes_applet
+Obsoletes:	gnome-applets-gumma-gqmpeg
+Obsoletes:	gnome-applets-gumma-xmms
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
 
 %description
-GNOME Applets.
-
-GNOME is the GNU Network Object Model Environment. That's a fancy name but
-really GNOME is a nice GUI desktop environment. It makes using your computer
-easy, powerful, and easy to configure.
+The gnome-applets package provides Panel applets which
+enhance your GNOME experience.
 
 %description -l pl
 Applety pod GNOME.
@@ -71,15 +70,15 @@ LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--disable-static
 make
-make -C gumma
+#make -C gumma
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT -C gumma
+#make install DESTDIR=$RPM_BUILD_ROOT -C gumma
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/gumma/lib*.so
+#strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/gumma/lib*.so
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -97,14 +96,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_sysconfdir}/CORBA/servers/*
 %attr(755,root,root) %{_bindir}/*
-%dir %{_libdir}/gumma
-%attr(755,root,root) %{_libdir}/gumma/libgumma-cd*
+#%dir %{_libdir}/gumma
+#%attr(755,root,root) %{_libdir}/gumma/libgumma-cd*
 %{_datadir}/applets/*/*
 %{_datadir}/asclock
-%{_datadir}/bug-applet
 %{_datadir}/clockmail
 %{_datadir}/geyes
-%{_datadir}/gnome/help/mini-commander_applet
 %{_datadir}/gweather
 %{_datadir}/odometer
 %{_datadir}/sound-monitor
@@ -113,6 +110,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/mini-commander
 %{_datadir}/pixmaps/*.png
 %{_datadir}/pixmaps/*.xpm
+%{_datadir}/gnome/help/gweather
+%{_datadir}/gnome/help/mini-commander_applet
 
 %dir %{_datadir}/pixmaps/gkb
 %lang(at) %{_datadir}/pixmaps/gkb/at.xpm
@@ -187,8 +186,8 @@ rm -rf $RPM_BUILD_ROOT
 %lang(us) %{_datadir}/xmodmap/xmodmap.us*
 %lang(yu) %{_datadir}/xmodmap/xmodmap.yu
 
-%files gumma-gqmpeg
-%attr(755,root,root) %{_libdir}/gumma/libgumma-gqmpeg*
+#%files gumma-gqmpeg
+#%attr(755,root,root) %{_libdir}/gumma/libgumma-gqmpeg*
 
-%files gumma-xmms
-%attr(755,root,root) %{_libdir}/gumma/libgumma-xmms*
+#%files gumma-xmms
+#%attr(755,root,root) %{_libdir}/gumma/libgumma-xmms*
