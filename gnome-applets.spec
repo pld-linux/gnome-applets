@@ -3,8 +3,8 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.1.1
-Release:	5
+Version:	2.1.2
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -124,6 +124,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
 %{_datadir}/gweather
+%{_datadir}/gnome/gkb/presets.xml
 %{_datadir}/gnome-2.0/ui/*
 %{_datadir}/gen_util/*.glade
 %{_datadir}/wireless-applet/*.glade
@@ -175,6 +176,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(is) %{_datadir}/gnome/gkb/IS_*
 %lang(it) %{_datadir}/gnome/gkb/IT_*
 %lang(jp) %{_datadir}/gnome/gkb/JP_*
+%lang(kr) %{_datadir}/gnome/gkb/KR_Korean.keyprop
 %lang(la) %{_datadir}/gnome/gkb/LA_Lao_x.keyprop
 %lang(lt) %{_datadir}/gnome/gkb/LT_*
 %lang(mk) %{_datadir}/gnome/gkb/M*acedonian.keyprop
@@ -202,7 +204,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(us) %{_datadir}/gnome/gkb/US*
 %lang(vn) %{_datadir}/gnome/gkb/VN_Vietnamese.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/Yugoslav.keyprop
-%lang(yu) %{_datadir}/gnome/gkb/YU_Serbo-Croatian_x.keyprop
+%lang(yu) %{_datadir}/gnome/gkb/YU_Serb_x.keyprop
 
 %dir %{_pixmapsdir}/gkb
 %{_pixmapsdir}/gkb/gkb.png
@@ -231,6 +233,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(is) %{_datadir}/xmodmap/xmodmap.is*
 %lang(it) %{_datadir}/xmodmap/xmodmap.it*
 %lang(jp) %{_datadir}/xmodmap/xmodmap.jp*
+%lang(kr) %{_datadir}/xmodmap/xmodmap.kr*
 %lang(la) %{_datadir}/xmodmap/xmodmap.la*
 %lang(lt) %{_datadir}/xmodmap/xmodmap.lt*
 %lang(mk) %{_datadir}/xmodmap/xmodmap.mk*
