@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.4.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -17,7 +17,6 @@ BuildRequires:	automake
 BuildRequires:	gail-devel >= 1.3.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common >= 2.3.0
 BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
 BuildRequires:	gtk+2-devel >= 2.2.0
