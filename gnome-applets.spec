@@ -101,7 +101,6 @@ done
 %{_sysconfdir}/gconf/schemas/*
 %{_sysconfdir}/sound/events/*
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_libdir}/bonobo/servers/*
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
@@ -196,7 +195,7 @@ done
 %lang(fi) %{_datadir}/pixmaps/gkb/fi.png
 %lang(fr) %{_datadir}/pixmaps/gkb/fr.png
 %lang(gb) %{_datadir}/pixmaps/gkb/gb.png
-%{_datadir}/pixmaps/gkb/gkb-foot.png
+%{_datadir}/pixmaps/gkb/gkb.png
 %lang(gr) %{_datadir}/pixmaps/gkb/gr.png
 %lang(hr) %{_datadir}/pixmaps/gkb/hr.png
 %lang(hu) %{_datadir}/pixmaps/gkb/hu.png
