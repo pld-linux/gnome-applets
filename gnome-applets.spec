@@ -76,10 +76,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/odometer
 %{_datadir}/sound-monitor
 %{_datadir}/tickastat
-%{_datadir}/pixmaps/gweather
-%{_datadir}/pixmaps/mini-commander
-%{_datadir}/pixmaps/*.png
-%{_datadir}/pixmaps/*.xpm
+%{_pixmapsdir}/gweather
+%{_pixmapsdir}/mini-commander
+%{_pixmapsdir}/*.png
+%{_pixmapsdir}/*.xpm
 
 %dir %{_datadir}/pixmaps/gkb
 %lang(at) %{_datadir}/pixmaps/gkb/at.png
