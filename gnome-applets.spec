@@ -12,7 +12,6 @@ Group:		X11/Applications
 #Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
 Source0:	%{name}-%{version}.%{snap}.tar.bz2
 # Source0-md5:	f07d1ba40f814e5cdb9793b0f4edc1ef
-Patch0:		%{name}-omf-it.patch
 Patch1:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -21,7 +20,7 @@ BuildRequires:	gail-devel >= 1.5.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.3.0
-BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
+BuildRequires:	gnome-panel-devel >= 2.5.1
 BuildRequires:	gnome-vfs2-devel >= 2.5.1
 BuildRequires:	gtk+2-devel >= 2.3.0-1.20031110.1
 BuildRequires:	intltool >= 0.23
@@ -60,7 +59,6 @@ z GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
 %patch1 -p1
 
 %build
