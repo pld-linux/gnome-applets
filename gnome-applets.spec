@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	1.4.0.5
-Release:	9
+Release:	10
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -28,20 +28,20 @@ Patch9:		%{name}-am_fixes.patch
 Patch10:	%{name}-zh_CN.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
-BuildRequires:	gettext-devel
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
 BuildRequires:	gdk-pixbuf-gnome-devel >= 0.7.0
-BuildRequires:	gnome-libs-devel >= 1.0.0
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-core-devel >= 1.1.0
+BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	intltool
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	libghttp-devel
+BuildRequires:	libtool
 BuildRequires:	scrollkeeper
-BuildRequires:	xml-i18n-tools
-Prereq:		/sbin/ldconfig
-Prereq:		scrollkeeper
+Requires(post,postun):	/sbin/ldconfig
+Requires(post,postun):	scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
