@@ -77,7 +77,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 #make install DESTDIR=$RPM_BUILD_ROOT -C gumma
 
 #strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/gumma/lib*.so
