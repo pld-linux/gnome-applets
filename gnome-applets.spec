@@ -90,7 +90,7 @@ find . 	-name ChangeLog -o \
 	-name NEWS -o \
 	-name AUTHORS \
 	-o -name README | \
-awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); 
+awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst);
 	print "cp " src " " dst}  END {print "exit 0"}' | sh
 
 
