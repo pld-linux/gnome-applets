@@ -3,15 +3,14 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.5.4
-Release:	2
+Version:	2.5.5
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	93c0dd87e32f4bbaec3d3c4859679db0
+# Source0-md5:	f69b898936da1a18e8cfe8cd749c8724
 Patch1:		%{name}-stickynotes-title-size.patch
-Patch2:		%{name}-libxklavier.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -20,7 +19,7 @@ BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.4.0
 BuildRequires:	gnome-panel-devel >= 2.5.1
-BuildRequires:	gnome-vfs2-devel >= 2.5.1
+BuildRequires:	gnome-vfs2-devel >= 2.5.6
 BuildRequires:	gtk+2-devel >= 2.3.1
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libgnome-devel >= 2.5.1
@@ -35,7 +34,7 @@ BuildRequires:	libxklavier-devel >= 0.97
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.5.0
 Requires(post):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.5.1
+Requires:	gnome-vfs2 >= 2.5.6
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -74,7 +73,6 @@ Pliki nagЁСwkowe gnome-applets.
 %prep
 %setup -q
 %patch1 -p1
-%patch2 -p1
 
 %build
 rm -f missing
