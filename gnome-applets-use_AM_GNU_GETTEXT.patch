@@ -1,0 +1,14 @@
+--- gnome-applets-1.4.0.1/configure.in~	Wed Mar 28 20:00:35 2001
++++ gnome-applets-1.4.0.1/configure.in	Sun Apr 22 06:29:02 2001
+@@ -206,10 +206,7 @@
+ AC_SUBST(CANVAS_PIXBUF_LIBS)
+ 
+ ALL_LINGUAS="az ca cs da de el en_GB es et eu fi fr ga gl hu it ja ko lt nl no pl pt pt_BR ro ru sk sl sv tr uk wa zh_CN.GB2312 zh_TW.Big5"
+-AM_GNOME_GETTEXT
+-# this is the directory where the *.{mo,gmo} files are installed
+-gnomelocaledir='${prefix}/${DATADIRNAME}/locale'
+-AC_SUBST(gnomelocaledir)
++AM_GNU_GETTEXT
+ 
+ AC_SUBST(CFLAGS)
+ AC_SUBST(CPPFLAGS)
