@@ -123,7 +123,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/multiload-applet-2
 %attr(755,root,root) %{_libdir}/stickynotes_applet
 %attr(755,root,root) %{_libdir}/wireless-applet
-%attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
+%attr(755,root,root) %{_libdir}/%{name}
 %{_libdir}/bonobo/servers/*
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
