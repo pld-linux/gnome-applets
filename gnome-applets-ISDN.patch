@@ -1,0 +1,10 @@
+--- gnome-applets-1.4.0.1/modemlights/modemlights.c~	Tue Jan 30 20:29:17 2001
++++ gnome-applets-1.4.0.1/modemlights/modemlights.c	Thu Jun 14 20:05:17 2001
+@@ -44,6 +44,7 @@
+ #include <fcntl.h>
+ 
+ static unsigned long *isdn_stats = NULL;
++#define ISDN_MAX_CHANNELS	64
+ #endif
+ 
+ #define BUTTON_BLINK_INTERVAL 700
