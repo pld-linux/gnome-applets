@@ -22,7 +22,7 @@ BuildRequires:	gnome-common >= 2.4.0
 BuildRequires:	gnome-panel-devel >= 2.5.92
 BuildRequires:	gnome-vfs2-devel >= 2.5.90
 BuildRequires:	gstreamer-plugins-devel >= 0.7.6
-BuildRequires:	gtk+2-devel >= 2.3.6
+BuildRequires:	gtk+2-devel >= 2:2.3.6
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libgnome-devel >= 2.5.91
 BuildRequires:	libgnomecanvas-devel >= 2.5.91
@@ -64,7 +64,7 @@ Summary(pl):	Pliki nag³ówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.5.90
-Requires:	gtk+2-devel >= 2.3.6
+Requires:	gtk+2-devel >= 2:2.3.6
 
 %description devel
 Header files for gnome-applets.
