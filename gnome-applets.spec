@@ -3,16 +3,16 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.9.5
+Version:	2.9.6
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.9/%{name}-%{version}.tar.bz2
-# Source0-md5:	dc8419d673eb2a994a1f87864e39b4a2
+# Source0-md5:	43dcb1c3b5f9c86fac373f186a0936b8
 Patch0:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.9.2
+BuildRequires:	GConf2-devel >= 2.9.90
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gail-devel >= 1.8.0
@@ -20,7 +20,6 @@ BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
 BuildRequires:	gnome-panel-devel >= 2.9.90
-BuildRequires:	gnome-system-tools >= 1.1.90
 BuildRequires:	gnome-vfs2-devel >= 2.9.90
 BuildRequires:	gstreamer-plugins-devel >= 0.8.7
 BuildRequires:	gtk+2-devel >= 2:2.6.2
@@ -36,11 +35,13 @@ BuildRequires:	libxklavier-devel >= 1.14
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper >= 0.3.11-4
+BuildRequires:	system-tools-backends >= 1.1.90
 Requires(post):	GConf2 >= 2.9.2
 Requires(post):	scrollkeeper
 Requires:	gnome-icon-theme >= 2.9.90
 Requires:	gnome-vfs2 >= 2.9.90
 Requires:	gstreamer-audiosink
+Requires:	system-tools-backends >= 1.1.90
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
