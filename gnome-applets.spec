@@ -1,14 +1,14 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.2.4
-Release:	2
+Version:	1.3.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
 Patch0:		%{name}-applet-docs.make.patch
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
@@ -42,15 +42,11 @@ gettextize --copy --force
 %configure \
 	--disable-static
 %{__make}
-#make -C gumma
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-#make install DESTDIR=$RPM_BUILD_ROOT -C gumma
-
-#strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/gumma/lib*.so
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -80,6 +76,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/*.png
 %{_pixmapsdir}/*.xpm
+
+# FIXME lang macros
+%dir %{_datadir}/gnome/gkb
+%{_datadir/gnome/gkb/*
 
 %dir %{_datadir}/pixmaps/gkb
 %lang(at) %{_datadir}/pixmaps/gkb/at.png
