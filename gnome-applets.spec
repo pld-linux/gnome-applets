@@ -3,15 +3,14 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.4.1
-Release:	3
+Version:	2.4.2
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	bf018f1692ab305954123d8123ef45d1
-Patch0:		%{name}-omf-it.patch
-Patch1:		%{name}-stickynotes-title-size.patch
+# Source0-md5:	3a59c7f5b452e4f9675dfce44a2b3433
+Patch0:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -59,11 +58,8 @@ z GNOME.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
-rm -f missing
-
 %{__aclocal}
 %{__libtoolize}
 glib-gettextize --copy --force
