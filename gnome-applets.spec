@@ -1,7 +1,7 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.2.0
+Version:	1.2.1
 Release:	1
 License:	GPL
 Group:		X11/GNOME
