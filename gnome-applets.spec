@@ -3,35 +3,36 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.2.1
-Release:	2
+Version:	2.3.0
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.2/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-am.patch
-Patch1:		%{name}-charpick.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
+#Patch0:		%{name}-am.patch
+Patch0:		%{name}-docs.patch
+#Patch1:		%{name}-charpick.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 1.2.0
+BuildRequires:	gail-devel >= 1.3.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-panel-devel >= 2.2.0
+BuildRequires:	gnome-panel-devel >= 2.3.0
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
 BuildRequires:	gtk+2-devel >= 2.2.0
 BuildRequires:	intltool >= 0.23
-BuildRequires:	libgnome-devel >= 2.2.0.1
-BuildRequires:	libgnomecanvas-devel >= 2.2.0.1
-BuildRequires:	libgnomeui-devel >= 2.2.0.1
+BuildRequires:	libgnome-devel >= 2.3.0
+BuildRequires:	libgnomecanvas-devel >= 2.3.0
+BuildRequires:	libgnomeui-devel >= 2.3.0
 BuildRequires:	libglade2-devel >= 2.0.1-2
 BuildRequires:	libgtop-devel >= 2.0.0
-BuildRequires:	libwnck-devel >= 2.2.0
+BuildRequires:	libwnck-devel >= 2.3.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.5.1
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires:	gnome-vfs2 >= 2.2.0
-Requires(post):	GConf2
+Requires(post):	GConf2 >= 2.3.0
 Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
@@ -57,7 +58,7 @@ z GNOME.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 
 %build
 rm -f missing
@@ -68,15 +69,18 @@ glib-gettextize --copy --force
 %{__autoconf}
 %{__automake}
 %configure \
-	--disable-static
+	--disable-static \
+	--disable-schemas-install
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
+export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
+unset GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -114,23 +118,27 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/gkb-applet-2
 %attr(755,root,root) %{_libdir}/gtik2_applet2
 %attr(755,root,root) %{_libdir}/gweather-applet-2
+%attr(755,root,root) %{_libdir}/mailcheck-applet
 %attr(755,root,root) %{_libdir}/mini_commander_applet
 %attr(755,root,root) %{_libdir}/mixer_applet2
 %attr(755,root,root) %{_libdir}/modemlights_applet2
 %attr(755,root,root) %{_libdir}/multiload-applet-2
+%attr(755,root,root) %{_libdir}/stickynotes_applet
 %attr(755,root,root) %{_libdir}/wireless-applet
 %attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
 %{_libdir}/bonobo/servers/*
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
-%{_datadir}/gweather
 %{_datadir}/gnome/gkb/presets.xml
 %{_datadir}/gnome-2.0/ui/*
 %{_datadir}/gen_util/*.glade
+%{_datadir}/stickynotes
 %{_datadir}/wireless-applet/*.glade
 %{_pixmapsdir}/gweather
+%{_pixmapsdir}/mailcheck
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/mixer
+%{_pixmapsdir}/stickynotes
 %{_pixmapsdir}/wireless-applet
 %{_pixmapsdir}/*.png
 %{_omf_dest_dir}/%{name}
@@ -151,9 +159,9 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(by) %{_datadir}/gnome/gkb/BY_Belarussian.keyprop
 %lang(ca) %{_datadir}/gnome/gkb/CA_English.keyprop
 %lang(ch) %{_datadir}/gnome/gkb/CH_German_x.keyprop
-%lang(cs) %{_datadir}/gnome/gkb/CS_Czech.keyprop
-%lang(cz,sk) %{_datadir}/gnome/gkb/CZ_Czech_Slovak.keyprop
+%lang(cz) %{_datadir}/gnome/gkb/CZ_Czech.keyprop
 %lang(cz) %{_datadir}/gnome/gkb/CZ_Czech_x.keyprop
+%lang(cz,sk) %{_datadir}/gnome/gkb/CZ_Czech_Slovak.keyprop
 %lang(de) %{_datadir}/gnome/gkb/DE_*
 %lang(dk) %{_datadir}/gnome/gkb/DK_*
 %lang(ee) %{_datadir}/gnome/gkb/EE_*
@@ -163,7 +171,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(qc) %{_datadir}/gnome/gkb/FrenchCanadian.keyprop
 %lang(ch) %{_datadir}/gnome/gkb/FrenchSwiss.keyprop
 %lang(fr) %{_datadir}/gnome/gkb/FR_*
-%lang(gb) %{_datadir}/gnome/gkb/GB*
 %lang(ge) %{_datadir}/gnome/gkb/GE_Georgian_x.keyprop
 %lang(ge-la) %{_datadir}/gnome/gkb/GeorgianLatin.keyprop
 %lang(de,at,ch) %{_datadir}/gnome/gkb/German.keyprop
@@ -180,6 +187,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(la) %{_datadir}/gnome/gkb/LA_Lao_x.keyprop
 %lang(lt) %{_datadir}/gnome/gkb/LT_*
 %lang(mk) %{_datadir}/gnome/gkb/M*acedonian.keyprop
+%lang(mn) %{_datadir}/gnome/gkb/MN_Mongolian.keyprop
 %lang(nl) %{_datadir}/gnome/gkb/NL_Dutch_x.keyprop
 %lang(no) %{_datadir}/gnome/gkb/NO_Norwegian.keyprop
 %lang(no) %{_datadir}/gnome/gkb/Norwegian.keyprop
@@ -188,10 +196,11 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(pt) %{_datadir}/gnome/gkb/PT_*
 %lang(ro) %{_datadir}/gnome/gkb/RO_Romanian.keyprop
 %lang(ru) %{_datadir}/gnome/gkb/*Russian*
-%lang(se) %{_datadir}/gnome/gkb/SE_Swedish.keyprop
-%lang(si) %{_datadir}/gnome/gkb/SI_Slovenian.keyprop
+%lang(se) %{_datadir}/gnome/gkb/SE_Swedish*.keyprop
+%lang(si) %{_datadir}/gnome/gkb/SI_Slovenian*.keyprop
 %lang(sk) %{_datadir}/gnome/gkb/Slovak.keyprop
-%lang(si) %{_datadir}/gnome/gkb/Slovenian.keyprop
+%lang(sk) %{_datadir}/gnome/gkb/SK__x.keyprop
+%lang(si) %{_datadir}/gnome/gkb/Sloven*.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
 %lang(sv) %{_datadir}/gnome/gkb/Swedish.keyprop
 %lang(th) %{_datadir}/gnome/gkb/Thai2.keyprop
@@ -204,7 +213,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(us) %{_datadir}/gnome/gkb/US*
 %lang(vn) %{_datadir}/gnome/gkb/VN_Vietnamese.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/Yugoslav.keyprop
-%lang(yu) %{_datadir}/gnome/gkb/YU_Serb_x.keyprop
+%lang(yu) %{_datadir}/gnome/gkb/YU_Serb*.keyprop
 
 %dir %{_pixmapsdir}/gkb
 %{_pixmapsdir}/gkb/gkb.png
@@ -237,6 +246,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(la) %{_datadir}/xmodmap/xmodmap.la*
 %lang(lt) %{_datadir}/xmodmap/xmodmap.lt*
 %lang(mk) %{_datadir}/xmodmap/xmodmap.mk*
+%lang(mn) %{_datadir}/xmodmap/xmodmap.mn*
 %lang(nl) %{_datadir}/xmodmap/xmodmap.nl*
 %lang(no) %{_datadir}/xmodmap/xmodmap.no*
 %lang(pl) %{_datadir}/xmodmap/xmodmap.pl*
