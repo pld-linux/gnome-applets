@@ -3,15 +3,14 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.0.3
-Release:	4
+Version:	2.1.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/2.0/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.1/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-am.patch
 Patch1:		%{name}-charpick.patch
-Patch2:		%{name}-gkbomf.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -19,15 +18,15 @@ BuildRequires:	gail-devel >= 1.1.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-panel-devel >= 2.0.9
-BuildRequires:	gnome-vfs2-devel >= 2.0.4-3
+BuildRequires:	gnome-vfs2-devel >= 2.1.3
 BuildRequires:	gtk+2-devel >= 2.0.6
-BuildRequires:	intltool >= 0.22
-BuildRequires:	libgnome-devel >= 2.1.0-3
+BuildRequires:	intltool >= 0.23
+BuildRequires:	libgnome-devel >= 2.1.1
 BuildRequires:	libgnomecanvas-devel >= 2.0.4
-BuildRequires:	libgnomeui-devel >= 2.1.1-3
+BuildRequires:	libgnomeui-devel >= 2.1.2
 BuildRequires:	libglade2-devel >= 2.0.1-2
 BuildRequires:	libgtop-devel >= 2.0.0
-BuildRequires:	libwnck-devel >= 2.1.1
+BuildRequires:	libwnck-devel >= 2.1.3
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.4.24
 BuildRequires:	scrollkeeper >= 0.3.11-4
@@ -62,7 +61,6 @@ z GNOME.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 rm -f missing
@@ -101,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 /usr/bin/scrollkeeper-update
 GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
+GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%{name}/mc-install-default-macros
 
 %postun	-p /usr/bin/scrollkeeper-update
 
@@ -122,14 +121,19 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" /usr/X11R6/b
 %attr(755,root,root) %{_libdir}/mixer_applet2
 %attr(755,root,root) %{_libdir}/modemlights_applet2
 %attr(755,root,root) %{_libdir}/multiload-applet-2
+%attr(755,root,root) %{_libdir}/wireless-applet
+%attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
 %{_libdir}/bonobo/servers/*
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
 %{_datadir}/gweather
 %{_datadir}/gnome-2.0/ui/*
+%{_datadir}/gen_util/*.glade
+%{_datadir}/wireless-applet/*.glade
 %{_pixmapsdir}/gweather
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/mixer
+%{_pixmapsdir}/wireless-applet
 %{_pixmapsdir}/*.png
 %{_omf_dest_dir}/%{name}
 
@@ -137,7 +141,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" /usr/X11R6/b
 %{_datadir}/gnome/gkb/Dvorak.keyprop
 %{_datadir}/gnome/gkb/Default.keyprop
 %lang(am) %{_datadir}/gnome/gkb/AM_Armenian.keyprop
-%lang(ar) %{_datadir}/gnome/gkb/AR_Arabic.keyprop
+%lang(ar) %{_datadir}/gnome/gkb/AR_*
 %lang(am) %{_datadir}/gnome/gkb/Armenian.keyprop
 %lang(az) %{_datadir}/gnome/gkb/AZ_Azerbaidjani_Turkic.keyprop
 %lang(eu) %{_datadir}/gnome/gkb/Basque.keyprop
@@ -167,6 +171,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" /usr/X11R6/b
 %lang(de,at,ch) %{_datadir}/gnome/gkb/German.keyprop
 %lang(ch) %{_datadir}/gnome/gkb/GermanSwiss.keyprop
 %lang(gr) %{_datadir}/gnome/gkb/GR_*
+%lang(hr) %{_datadir}/gnome/gkb/HR_*
 %lang(hu) %{_datadir}/gnome/gkb/HU_*
 %lang(hu) %{_datadir}/gnome/gkb/Hungarian*
 %lang(il) %{_datadir}/gnome/gkb/IL_*
@@ -196,7 +201,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" /usr/X11R6/b
 %lang(th) %{_datadir}/gnome/gkb/TH_Thai_x.keyprop
 %lang(tr) %{_datadir}/gnome/gkb/TR*
 %lang(ua) %{_datadir}/gnome/gkb/UA_Ukrainian.keyprop
-%lang(uk) %{_datadir}/gnome/gkb/UK.keyprop
+%lang(uk) %{_datadir}/gnome/gkb/UK*
 %lang(us) %{_datadir}/gnome/gkb/US*
 %lang(vn) %{_datadir}/gnome/gkb/VN_Vietnamese.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/Yugoslav.keyprop
@@ -204,9 +209,11 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" /usr/X11R6/b
 
 %dir %{_pixmapsdir}/gkb
 %{_pixmapsdir}/gkb/gkb.png
+%{_pixmapsdir}/gkb/lam.png
 
 %dir %{_datadir}/xmodmap
 %lang(am) %{_datadir}/xmodmap/xmodmap.am*
+%lang(ar) %{_datadir}/xmodmap/xmodmap.ar*
 %lang(be) %{_datadir}/xmodmap/xmodmap.be*
 %lang(bg) %{_datadir}/xmodmap/xmodmap.bg*
 %lang(br) %{_datadir}/xmodmap/xmodmap.br*
