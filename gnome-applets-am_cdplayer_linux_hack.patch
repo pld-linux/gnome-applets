@@ -1,0 +1,11 @@
+--- gnome-applets-1.4.0.5/cdplayer/Makefile.am~	Fri May 24 20:46:43 2002
++++ gnome-applets-1.4.0.5/cdplayer/Makefile.am	Fri May 24 20:46:43 2002
+@@ -13,7 +13,7 @@
+ 	cdrom-interface.h	\
+ 	led.c			\
+ 	led.h			\
+-	cdrom-$(CDROM_HOST).c 
++	cdrom-linux.c 
+ 
+ cdplayer_applet_LDADD = \
+ 		     $(GNOME_LIBDIR) \
