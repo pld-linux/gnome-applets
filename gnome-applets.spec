@@ -37,6 +37,7 @@ BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.6.1
 Requires(post):	scrollkeeper
 Requires:	gnome-vfs2 >= 2.6.1.1
+Requires:	gstreamer-audiosink
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
