@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.3.6
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -26,7 +26,7 @@ BuildRequires:	libgnome-devel >= 2.3.0
 BuildRequires:	libgnomecanvas-devel >= 2.3.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	libglade2-devel >= 2.0.1-2
-BuildRequires:	libgtop-devel >= 2.0.0
+BuildRequires:	libgtop-devel >= 2.0.3
 BuildRequires:	libwnck-devel >= 2.3.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.5.1
