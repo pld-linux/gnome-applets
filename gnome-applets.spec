@@ -11,6 +11,8 @@ Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-applet-docs.make.patch
 Patch1:		%{name}-ISDN.patch
+Patch2:		%{name}-am_conditional.patch
+Patch3:		%{name}-xml-i18n.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -47,6 +49,8 @@ Applety pod GNOME.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
@@ -56,6 +60,7 @@ libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
+#automake
 %configure \
 	--disable-static \
 	--without-included-gettext

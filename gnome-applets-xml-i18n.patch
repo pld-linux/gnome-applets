@@ -1,0 +1,793 @@
+diff -urN gnome-applets-1.4.0.4.orig/another_clock/Makefile.am gnome-applets-1.4.0.4/another_clock/Makefile.am
+--- gnome-applets-1.4.0.4.orig/another_clock/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/another_clock/Makefile.am	Sun Nov 25 03:03:16 2001
+@@ -22,7 +22,8 @@
+ sys_predata = another_clock_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = another_clock_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/another_clock/Makefile.in gnome-applets-1.4.0.4/another_clock/Makefile.in
+--- gnome-applets-1.4.0.4.orig/another_clock/Makefile.in	Mon Sep  3 21:51:09 2001
++++ gnome-applets-1.4.0.4/another_clock/Makefile.in	Sun Nov 25 03:03:16 2001
+@@ -592,7 +592,8 @@
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/asclock/Makefile.am gnome-applets-1.4.0.4/asclock/Makefile.am
+--- gnome-applets-1.4.0.4.orig/asclock/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/asclock/Makefile.am	Sun Nov 25 03:03:16 2001
+@@ -30,7 +30,8 @@
+ sysdir = $(datadir)/applets/Clocks
+ sys_predata = asclock_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = asclock_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/asclock/Makefile.in gnome-applets-1.4.0.4/asclock/Makefile.in
+--- gnome-applets-1.4.0.4.orig/asclock/Makefile.in	Mon Sep  3 21:51:18 2001
++++ gnome-applets-1.4.0.4/asclock/Makefile.in	Sun Nov 25 03:03:16 2001
+@@ -553,7 +553,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/battery/Makefile.am gnome-applets-1.4.0.4/battery/Makefile.am
+--- gnome-applets-1.4.0.4.orig/battery/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/battery/Makefile.am	Sun Nov 25 03:03:16 2001
+@@ -24,7 +24,8 @@
+ sysdir = $(datadir)/applets/Monitors
+ sys_predata = battery_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ pixmapdir = $(datadir)/pixmaps
+ pixmap_DATA = gnome-battery.png
+diff -urN gnome-applets-1.4.0.4.orig/battery/Makefile.in gnome-applets-1.4.0.4/battery/Makefile.in
+--- gnome-applets-1.4.0.4.orig/battery/Makefile.in	Mon Sep  3 21:51:27 2001
++++ gnome-applets-1.4.0.4/battery/Makefile.in	Sun Nov 25 03:03:16 2001
+@@ -570,7 +570,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/cdplayer/Makefile.am gnome-applets-1.4.0.4/cdplayer/Makefile.am
+--- gnome-applets-1.4.0.4.orig/cdplayer/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/cdplayer/Makefile.am	Sun Nov 25 03:03:16 2001
+@@ -29,7 +29,8 @@
+ sysdir = $(datadir)/applets/Multimedia
+ sys_predata = cdplayer_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ EXTRA_DIST = cdrom-linux.c cdrom-solaris.c \
+ 	     $(gnorba_DATA) $(sys_DATA) $(sys_predata)
+diff -urN gnome-applets-1.4.0.4.orig/cdplayer/Makefile.in gnome-applets-1.4.0.4/cdplayer/Makefile.in
+--- gnome-applets-1.4.0.4.orig/cdplayer/Makefile.in	Mon Sep  3 21:59:36 2001
++++ gnome-applets-1.4.0.4/cdplayer/Makefile.in	Sun Nov 25 03:03:16 2001
+@@ -550,7 +550,8 @@
+ dist-hook:
+ 	mkdir $(distdir)/images
+ 	cp $(srcdir)/images/*.xpm $(distdir)/images
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/charpick/Makefile.am gnome-applets-1.4.0.4/charpick/Makefile.am
+--- gnome-applets-1.4.0.4.orig/charpick/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/charpick/Makefile.am	Sun Nov 25 03:03:17 2001
+@@ -21,7 +21,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = charpick_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = charpick_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/charpick/Makefile.in gnome-applets-1.4.0.4/charpick/Makefile.in
+--- gnome-applets-1.4.0.4.orig/charpick/Makefile.in	Mon Sep  3 21:51:38 2001
++++ gnome-applets-1.4.0.4/charpick/Makefile.in	Sun Nov 25 03:03:17 2001
+@@ -565,7 +565,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/clipboard/Makefile.am gnome-applets-1.4.0.4/clipboard/Makefile.am
+--- gnome-applets-1.4.0.4.orig/clipboard/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/clipboard/Makefile.am	Sun Nov 25 03:03:17 2001
+@@ -17,7 +17,8 @@
+ 
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ pixmapsdir = $(datadir)/pixmaps
+ pixmaps_DATA = gnome-clipboard.png
+diff -urN gnome-applets-1.4.0.4.orig/clipboard/Makefile.in gnome-applets-1.4.0.4/clipboard/Makefile.in
+--- gnome-applets-1.4.0.4.orig/clipboard/Makefile.in	Mon Sep  3 21:58:27 2001
++++ gnome-applets-1.4.0.4/clipboard/Makefile.in	Sun Nov 25 03:03:17 2001
+@@ -488,7 +488,8 @@
+ mostlyclean distclean maintainer-clean
+ 
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/clockmail/Makefile.am gnome-applets-1.4.0.4/clockmail/Makefile.am
+--- gnome-applets-1.4.0.4.orig/clockmail/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/clockmail/Makefile.am	Sun Nov 25 03:03:17 2001
+@@ -49,7 +49,8 @@
+ 
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = clockmail_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/clockmail/Makefile.in gnome-applets-1.4.0.4/clockmail/Makefile.in
+--- gnome-applets-1.4.0.4.orig/clockmail/Makefile.in	Mon Sep  3 21:51:48 2001
++++ gnome-applets-1.4.0.4/clockmail/Makefile.in	Sun Nov 25 03:03:17 2001
+@@ -632,7 +632,8 @@
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/configure gnome-applets-1.4.0.4/configure
+--- gnome-applets-1.4.0.4.orig/configure	Mon Sep  3 21:47:17 2001
++++ gnome-applets-1.4.0.4/configure	Sun Nov 25 03:03:17 2001
+@@ -10137,7 +10137,8 @@
+ s%@XML_I18N_MERGE_OAF_RULE@%$XML_I18N_MERGE_OAF_RULE%g
+ s%@XML_I18N_MERGE_SERVER_RULE@%$XML_I18N_MERGE_SERVER_RULE%g
+ s%@XML_I18N_MERGE_KEYS_RULE@%$XML_I18N_MERGE_KEYS_RULE%g
+-s%@XML_I18N_MERGE_DESKTOP_RULE@%$XML_I18N_MERGE_DESKTOP_RULE%g
++s%@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@%$XML_I18N_MERGE_DESKTOP_RULE%g
+ s%@XML_I18N_MERGE_DIRECTORY_RULE@%$XML_I18N_MERGE_DIRECTORY_RULE%g
+ s%@XML_I18N_MERGE_SOUNDLIST_RULE@%$XML_I18N_MERGE_SOUNDLIST_RULE%g
+ s%@XML_I18N_MERGE_PONG_RULE@%$XML_I18N_MERGE_PONG_RULE%g
+diff -urN gnome-applets-1.4.0.4.orig/cpumemusage/Makefile.am gnome-applets-1.4.0.4/cpumemusage/Makefile.am
+--- gnome-applets-1.4.0.4.orig/cpumemusage/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/cpumemusage/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -21,7 +21,8 @@
+ sysdir = $(datadir)/applets/Monitors
+ sys_predata = cpumemusage_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ pixmapdir = $(datadir)/pixmaps
+ pixmap_DATA = gnome-cpu-mem.png
+diff -urN gnome-applets-1.4.0.4.orig/cpumemusage/Makefile.in gnome-applets-1.4.0.4/cpumemusage/Makefile.in
+--- gnome-applets-1.4.0.4.orig/cpumemusage/Makefile.in	Mon Sep  3 21:58:30 2001
++++ gnome-applets-1.4.0.4/cpumemusage/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -567,7 +567,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/diskusage/Makefile.am gnome-applets-1.4.0.4/diskusage/Makefile.am
+--- gnome-applets-1.4.0.4.orig/diskusage/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/diskusage/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -21,7 +21,8 @@
+ sysdir = $(datadir)/applets/Monitors
+ sys_predata = diskusage_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = diskusage_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/diskusage/Makefile.in gnome-applets-1.4.0.4/diskusage/Makefile.in
+--- gnome-applets-1.4.0.4.orig/diskusage/Makefile.in	Mon Sep  3 21:58:40 2001
++++ gnome-applets-1.4.0.4/diskusage/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -541,7 +541,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/drivemount/Makefile.am gnome-applets-1.4.0.4/drivemount/Makefile.am
+--- gnome-applets-1.4.0.4.orig/drivemount/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/drivemount/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -19,7 +19,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = drivemount_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = drivemount_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/drivemount/Makefile.in gnome-applets-1.4.0.4/drivemount/Makefile.in
+--- gnome-applets-1.4.0.4.orig/drivemount/Makefile.in	Mon Sep  3 21:52:00 2001
++++ gnome-applets-1.4.0.4/drivemount/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -561,7 +561,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/fifteen/Makefile.am gnome-applets-1.4.0.4/fifteen/Makefile.am
+--- gnome-applets-1.4.0.4.orig/fifteen/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/fifteen/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -16,7 +16,8 @@
+ sysdir = $(datadir)/applets/Amusements
+ sys_predata = fifteen_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ pixmapdir = $(datadir)/pixmaps
+ pixmap_DATA = gnome-fifteen.png
+diff -urN gnome-applets-1.4.0.4.orig/fifteen/Makefile.in gnome-applets-1.4.0.4/fifteen/Makefile.in
+--- gnome-applets-1.4.0.4.orig/fifteen/Makefile.in	Mon Sep  3 21:52:10 2001
++++ gnome-applets-1.4.0.4/fifteen/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -561,7 +561,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/geyes/Makefile.am gnome-applets-1.4.0.4/geyes/Makefile.am
+--- gnome-applets-1.4.0.4.orig/geyes/Makefile.am	Mon Sep  3 20:37:37 2001
++++ gnome-applets-1.4.0.4/geyes/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -24,7 +24,8 @@
+ sysdir = $(datadir)/applets/Amusements
+ sys_predata = geyes_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = geyes_applet.gnorba 
+diff -urN gnome-applets-1.4.0.4.orig/geyes/Makefile.in gnome-applets-1.4.0.4/geyes/Makefile.in
+--- gnome-applets-1.4.0.4.orig/geyes/Makefile.in	Mon Sep  3 21:52:17 2001
++++ gnome-applets-1.4.0.4/geyes/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -566,7 +566,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/gkb-new/Makefile.am gnome-applets-1.4.0.4/gkb-new/Makefile.am
+--- gnome-applets-1.4.0.4.orig/gkb-new/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/gkb-new/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -37,7 +37,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = gkb_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gkbicondir = $(datadir)/pixmaps
+ gkbicon_DATA = $(GKB_ICON)
+diff -urN gnome-applets-1.4.0.4.orig/gkb-new/Makefile.in gnome-applets-1.4.0.4/gkb-new/Makefile.in
+--- gnome-applets-1.4.0.4.orig/gkb-new/Makefile.in	Mon Sep  3 21:52:26 2001
++++ gnome-applets-1.4.0.4/gkb-new/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -611,7 +611,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gkb_xmmap: gkb_xmmap.in ../config.status
+ 	sed "s,\$${prefix},$(prefix),g" \
+diff -urN gnome-applets-1.4.0.4.orig/gnotes/Makefile.am gnome-applets-1.4.0.4/gnotes/Makefile.am
+--- gnome-applets-1.4.0.4.orig/gnotes/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/gnotes/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -26,7 +26,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = gnotes_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ pixmapsdir = $(datadir)/pixmaps
+ pixmaps_DATA = gnome-gnotes.png
+diff -urN gnome-applets-1.4.0.4.orig/gnotes/Makefile.in gnome-applets-1.4.0.4/gnotes/Makefile.in
+--- gnome-applets-1.4.0.4.orig/gnotes/Makefile.in	Mon Sep  3 22:00:16 2001
++++ gnome-applets-1.4.0.4/gnotes/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -575,7 +575,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/gtik/Makefile.am gnome-applets-1.4.0.4/gtik/Makefile.am
+--- gnome-applets-1.4.0.4.orig/gtik/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/gtik/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -15,7 +15,8 @@
+ sysdir = $(datadir)/applets/Network
+ sys_predata = gtik2_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = gtik2_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/gtik/Makefile.in gnome-applets-1.4.0.4/gtik/Makefile.in
+--- gnome-applets-1.4.0.4.orig/gtik/Makefile.in	Mon Sep  3 21:59:29 2001
++++ gnome-applets-1.4.0.4/gtik/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -460,7 +460,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/gweather/Makefile.am gnome-applets-1.4.0.4/gweather/Makefile.am
+--- gnome-applets-1.4.0.4.orig/gweather/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/gweather/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -35,7 +35,8 @@
+ gweatherappletdir = $(datadir)/applets/Utility
+ gweatherapplet_predata = gweather.desktop.in
+ gweatherapplet_DATA = $(gweatherapplet_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gweatherlocationsdir = $(datadir)/gweather
+ gweatherlocations_DATA = Locations
+diff -urN gnome-applets-1.4.0.4.orig/gweather/Makefile.in gnome-applets-1.4.0.4/gweather/Makefile.in
+--- gnome-applets-1.4.0.4.orig/gweather/Makefile.in	Mon Sep  3 21:59:22 2001
++++ gnome-applets-1.4.0.4/gweather/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -584,7 +584,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/jbc/Makefile.am gnome-applets-1.4.0.4/jbc/Makefile.am
+--- gnome-applets-1.4.0.4.orig/jbc/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/jbc/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -27,7 +27,8 @@
+ sysdir = $(datadir)/applets/Clocks
+ sys_predata = jbc_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ pixmapsdir = $(datadir)/pixmaps
+ pixmaps_DATA = gnome-jbc.png
+diff -urN gnome-applets-1.4.0.4.orig/jbc/Makefile.in gnome-applets-1.4.0.4/jbc/Makefile.in
+--- gnome-applets-1.4.0.4.orig/jbc/Makefile.in	Mon Sep  3 21:57:27 2001
++++ gnome-applets-1.4.0.4/jbc/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -572,7 +572,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # dist-hook:
+ #	mkdir $(distdir)/pixmaps
+diff -urN gnome-applets-1.4.0.4.orig/life/Makefile.am gnome-applets-1.4.0.4/life/Makefile.am
+--- gnome-applets-1.4.0.4.orig/life/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/life/Makefile.am	Sun Nov 25 03:03:18 2001
+@@ -16,7 +16,8 @@
+ sysdir = $(datadir)/applets/Amusements
+ sys_predata = life_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = life_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/life/Makefile.in gnome-applets-1.4.0.4/life/Makefile.in
+--- gnome-applets-1.4.0.4.orig/life/Makefile.in	Mon Sep  3 21:57:35 2001
++++ gnome-applets-1.4.0.4/life/Makefile.in	Sun Nov 25 03:03:18 2001
+@@ -560,7 +560,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/mini-commander/src/Makefile.am gnome-applets-1.4.0.4/mini-commander/src/Makefile.am
+--- gnome-applets-1.4.0.4.orig/mini-commander/src/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/mini-commander/src/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -46,7 +46,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = mini-commander_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = mini-commander_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/mini-commander/src/Makefile.in gnome-applets-1.4.0.4/mini-commander/src/Makefile.in
+--- gnome-applets-1.4.0.4.orig/mini-commander/src/Makefile.in	Mon Sep  3 21:57:43 2001
++++ gnome-applets-1.4.0.4/mini-commander/src/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -512,7 +512,8 @@
+ distclean-generic clean-generic maintainer-clean-generic clean \
+ mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/mixer/Makefile.am gnome-applets-1.4.0.4/mixer/Makefile.am
+--- gnome-applets-1.4.0.4.orig/mixer/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/mixer/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -24,7 +24,8 @@
+ sysdir = $(datadir)/applets/Multimedia
+ sys_predata = mixer_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = mixer_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/mixer/Makefile.in gnome-applets-1.4.0.4/mixer/Makefile.in
+--- gnome-applets-1.4.0.4.orig/mixer/Makefile.in	Mon Sep  3 21:59:45 2001
++++ gnome-applets-1.4.0.4/mixer/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -545,7 +545,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/modemlights/Makefile.am gnome-applets-1.4.0.4/modemlights/Makefile.am
+--- gnome-applets-1.4.0.4.orig/modemlights/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/modemlights/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -20,7 +20,8 @@
+ sysdir = $(datadir)/applets/Network
+ sys_predata = modemlights_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = modemlights_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/modemlights/Makefile.in gnome-applets-1.4.0.4/modemlights/Makefile.in
+--- gnome-applets-1.4.0.4.orig/modemlights/Makefile.in	Mon Sep  3 21:59:53 2001
++++ gnome-applets-1.4.0.4/modemlights/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -543,7 +543,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/multiload/Makefile.am gnome-applets-1.4.0.4/multiload/Makefile.am
+--- gnome-applets-1.4.0.4.orig/multiload/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/multiload/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -38,7 +38,8 @@
+ 		netload_applet.desktop.in loadavg_applet.desktop.in
+ 		
+ Monitors_DATA = $(Monitors_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ pixmaps = gnome-cpu.png gnome-mem.png
+ pixmapdir = $(datadir)/pixmaps
+diff -urN gnome-applets-1.4.0.4.orig/multiload/Makefile.in gnome-applets-1.4.0.4/multiload/Makefile.in
+--- gnome-applets-1.4.0.4.orig/multiload/Makefile.in	Mon Sep  3 21:58:59 2001
++++ gnome-applets-1.4.0.4/multiload/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -590,7 +590,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/odometer/Makefile.am gnome-applets-1.4.0.4/odometer/Makefile.am
+--- gnome-applets-1.4.0.4.orig/odometer/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/odometer/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -17,7 +17,8 @@
+ sysdir = $(datadir)/applets/Amusements
+ sys_predata = odometer_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = odometer_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/odometer/Makefile.in gnome-applets-1.4.0.4/odometer/Makefile.in
+--- gnome-applets-1.4.0.4.orig/odometer/Makefile.in	Mon Sep  3 21:58:19 2001
++++ gnome-applets-1.4.0.4/odometer/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -564,7 +564,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/quicklaunch/Makefile.am gnome-applets-1.4.0.4/quicklaunch/Makefile.am
+--- gnome-applets-1.4.0.4.orig/quicklaunch/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/quicklaunch/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -16,7 +16,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = quicklaunch_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = quicklaunch_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/quicklaunch/Makefile.in gnome-applets-1.4.0.4/quicklaunch/Makefile.in
+--- gnome-applets-1.4.0.4.orig/quicklaunch/Makefile.in	Mon Sep  3 21:57:51 2001
++++ gnome-applets-1.4.0.4/quicklaunch/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -560,7 +560,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/screenshooter/Makefile.am gnome-applets-1.4.0.4/screenshooter/Makefile.am
+--- gnome-applets-1.4.0.4.orig/screenshooter/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/screenshooter/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -24,7 +24,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = screenshooter_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = screenshooter_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/screenshooter/Makefile.in gnome-applets-1.4.0.4/screenshooter/Makefile.in
+--- gnome-applets-1.4.0.4.orig/screenshooter/Makefile.in	Mon Sep  3 22:00:10 2001
++++ gnome-applets-1.4.0.4/screenshooter/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -592,7 +592,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/slashapp/Makefile.am gnome-applets-1.4.0.4/slashapp/Makefile.am
+--- gnome-applets-1.4.0.4.orig/slashapp/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/slashapp/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -17,7 +17,8 @@
+ sysdir = $(datadir)/applets/Network
+ sys_predata = slash_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ pixmapdir = $(datadir)/pixmaps
+ pixmap_DATA = slashapp.png
+diff -urN gnome-applets-1.4.0.4.orig/slashapp/Makefile.in gnome-applets-1.4.0.4/slashapp/Makefile.in
+--- gnome-applets-1.4.0.4.orig/slashapp/Makefile.in	Mon Sep  3 21:59:33 2001
++++ gnome-applets-1.4.0.4/slashapp/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -490,7 +490,8 @@
+ distclean-generic clean-generic maintainer-clean-generic clean \
+ mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/sound-monitor/Makefile.am gnome-applets-1.4.0.4/sound-monitor/Makefile.am
+--- gnome-applets-1.4.0.4.orig/sound-monitor/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/sound-monitor/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -49,7 +49,8 @@
+ sysdir = $(datadir)/applets/Multimedia
+ sys_predata = sound-monitor_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = sound-monitor_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/sound-monitor/Makefile.in gnome-applets-1.4.0.4/sound-monitor/Makefile.in
+--- gnome-applets-1.4.0.4.orig/sound-monitor/Makefile.in	Mon Sep  3 22:00:00 2001
++++ gnome-applets-1.4.0.4/sound-monitor/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -575,7 +575,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/tickastat/Makefile.am gnome-applets-1.4.0.4/tickastat/Makefile.am
+--- gnome-applets-1.4.0.4.orig/tickastat/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/tickastat/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -30,7 +30,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = tickastat_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = tickastat_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/tickastat/Makefile.in gnome-applets-1.4.0.4/tickastat/Makefile.in
+--- gnome-applets-1.4.0.4.orig/tickastat/Makefile.in	Mon Sep  3 21:57:58 2001
++++ gnome-applets-1.4.0.4/tickastat/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -577,7 +577,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/webcontrol/Makefile.am gnome-applets-1.4.0.4/webcontrol/Makefile.am
+--- gnome-applets-1.4.0.4.orig/webcontrol/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/webcontrol/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -22,7 +22,8 @@
+ sysdir = $(datadir)/applets/Network
+ sys_predata = webcontrol_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = webcontrol_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/webcontrol/Makefile.in gnome-applets-1.4.0.4/webcontrol/Makefile.in
+--- gnome-applets-1.4.0.4.orig/webcontrol/Makefile.in	Mon Sep  3 21:58:05 2001
++++ gnome-applets-1.4.0.4/webcontrol/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -545,7 +545,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+diff -urN gnome-applets-1.4.0.4.orig/whereami/Makefile.am gnome-applets-1.4.0.4/whereami/Makefile.am
+--- gnome-applets-1.4.0.4.orig/whereami/Makefile.am	Mon Sep  3 20:37:36 2001
++++ gnome-applets-1.4.0.4/whereami/Makefile.am	Sun Nov 25 03:03:19 2001
+@@ -11,7 +11,8 @@
+ sysdir = $(datadir)/applets/Utility
+ sys_predata = whereami_applet.desktop.in
+ sys_DATA = $(sys_predata:.desktop.in=.desktop)
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ gnorbadir  = $(sysconfdir)/CORBA/servers
+ gnorba_DATA = whereami_applet.gnorba
+diff -urN gnome-applets-1.4.0.4.orig/whereami/Makefile.in gnome-applets-1.4.0.4/whereami/Makefile.in
+--- gnome-applets-1.4.0.4.orig/whereami/Makefile.in	Mon Sep  3 21:58:11 2001
++++ gnome-applets-1.4.0.4/whereami/Makefile.in	Sun Nov 25 03:03:19 2001
+@@ -530,7 +530,8 @@
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+-@XML_I18N_MERGE_DESKTOP_RULE@
++@XML_I18N_MERGE_DESKTOP_RULE1@
++@XML_I18N_MERGE_DESKTOP_RULE2@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
