@@ -3,17 +3,18 @@ Summary(pl):	GNOME - Applety
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	1.99.0
+Version:	1.100.0
 Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-am.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	esound-devel
 BuildRequires:	gnome-panel-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk+2-devel
@@ -54,22 +55,17 @@ Applety pod GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch -p1
 
 %build
-sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
-mv -f configure.in.tmp configure.in
-rm -f missing
+intltoolize --copy --force
 libtoolize --copy --force
 gettextize --copy --force
-aclocal -I macros
+aclocal
 autoconf
-#automake
+automake -a -c -f 
 %configure \
-	--disable-static \
-	--without-included-gettext
+	--disable-static
 %{__make}
 
 %install
@@ -77,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	omf_dest_dir=%{_omf_dest_dir}/omf/%{name}
+	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -89,6 +85,10 @@ rm -rf $RPM_BUILD_ROOT
 %post
 /sbin/ldconfig
 /usr/bin/scrollkeeper-update
+export GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`
+for SCHEMAS in battstat.schemas cdplayer.schemas charpick.schemas drivemount.schemas geyes.schemas gkb.schemas gtik.schemas gweather.schemas minicommander.schemas modemlights.schemas multiload.schemas panel-menu.schemas; do
+        /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/$SCHEMAS > /dev/null 2>&1
+done
 
 %postun
 /sbin/ldconfig
@@ -97,22 +97,19 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
-
-%{_sysconfdir}/CORBA/servers/*
+%{_sysconfdir}/gconf/schemas/*
+%{_sysconfdir}/sound/events/*
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/applets/*/*.desktop
-%{_datadir}/asclock
-%{_datadir}/clockmail
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%{_libdir}/bonobo/servers/*
+%{_datadir}/battstat_applet
 %{_datadir}/geyes
 %{_datadir}/gweather
-%{_datadir}/odometer
-%{_datadir}/sound-monitor
-%{_datadir}/tickastat
-%{_omf_dest_dir}/omf/%{name}
+%{_datadir}/gnome-2.0/ui/*
 %{_pixmapsdir}/gweather
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/*.png
-%{_pixmapsdir}/*.xpm
+%{_omf_dest_dir}/%{name}
 
 %dir %{_datadir}/gnome/gkb
 %lang(am) %{_datadir}/gnome/gkb/AM_Armenian.keyprop
@@ -165,7 +162,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(se) %{_datadir}/gnome/gkb/SE_Swedish.keyprop
 %lang(si) %{_datadir}/gnome/gkb/SI_Slovenian.keyprop
 %lang(sk) %{_datadir}/gnome/gkb/Slovak.keyprop
-%lang(si) %{_datadir}/gnome/gkb/Slovene.keyprop
+#%lang(si) %{_datadir}/gnome/gkb/Slovene.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
 %lang(sv) %{_datadir}/gnome/gkb/Swedish.keyprop
 %lang(th) %{_datadir}/gnome/gkb/Thai2.keyprop
