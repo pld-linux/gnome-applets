@@ -3,31 +3,32 @@ Summary(pl):	GNOME - Applety
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.0.0
+Version:	2.0.1
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-am.patch
+Patch1:		%{name}-charpick.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 0.16
+BuildRequires:	gail-devel >= 0.17
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-panel-devel >= 2.0.0
-BuildRequires:	gnome-vfs2-devel >= 2.0.0
-BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	gnome-panel-devel >= 2.0.5
+BuildRequires:	gnome-vfs2-devel >= 2.0.2
+BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	intltool >= 0.22
-BuildRequires:	libgnome-devel >= 2.0.1
-BuildRequires:	libgnomecanvas-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.0.1
+BuildRequires:	libgnome-devel >= 2.0.2
+BuildRequires:	libgnomecanvas-devel >= 2.0.2
+BuildRequires:	libgnomeui-devel >= 2.0.3
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgtop-devel >= 2.0.0
-BuildRequires:	libwnck-devel >= 0.14
+BuildRequires:	libwnck-devel >= 0.16
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 2.4.22
+BuildRequires:	libxml2-devel >= 2.4.23
 BuildRequires:	scrollkeeper >= 0.3.6
 Prereq:		/sbin/ldconfig
 Prereq:		scrollkeeper
@@ -56,7 +57,8 @@ Applety pod GNOME.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 libtoolize --copy --force
@@ -104,6 +106,18 @@ GCONF_CONFIG_SOURCE="" /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sys
 %{_sysconfdir}/gconf/schemas/*
 %{_sysconfdir}/sound/events/*
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/battstat-applet-2
+%attr(755,root,root) %{_libdir}/cdplayer_applet2
+%attr(755,root,root) %{_libdir}/charpick_applet2
+%attr(755,root,root) %{_libdir}/drivemount_applet2
+%attr(755,root,root) %{_libdir}/geyes_applet2
+%attr(755,root,root) %{_libdir}/gkb-applet-2
+%attr(755,root,root) %{_libdir}/gtik2_applet2
+%attr(755,root,root) %{_libdir}/gweather-applet-2
+%attr(755,root,root) %{_libdir}/mini_commander_applet
+%attr(755,root,root) %{_libdir}/mixer_applet2
+%attr(755,root,root) %{_libdir}/modemlights_applet2
+%attr(755,root,root) %{_libdir}/multiload-applet-2
 %{_libdir}/bonobo/servers/*
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
