@@ -3,14 +3,14 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.3.2
-Release:	3
+Version:	2.3.3
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
+# Source0-md5:	fa87703f1ab1443d5fd1a9c09244af00
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5: 8f4997e909dbc62926f4da3e9de7dc81
-Patch0:		%{name}-am.patch
+Patch0:		%{name}-xmldocs.patch
 Patch1:		%{name}-docs.patch
 Patch2:		%{name}-gkb_de_fix.patch
 URL:		http://www.gnome.org/
@@ -110,6 +110,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_sysconfdir}/gconf/schemas/*
 %{_sysconfdir}/sound/events/*
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/accessx-status-applet
 %attr(755,root,root) %{_libdir}/battstat-applet-2
 %attr(755,root,root) %{_libdir}/cdplayer_applet2
 %attr(755,root,root) %{_libdir}/charpick_applet2
@@ -134,6 +135,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gen_util/*.glade
 %{_datadir}/stickynotes
 %{_datadir}/wireless-applet/*.glade
+%{_pixmapsdir}/accessx-status-applet
 %{_pixmapsdir}/gweather
 %{_pixmapsdir}/mailcheck
 %{_pixmapsdir}/mini-commander
@@ -187,7 +189,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(la) %{_datadir}/gnome/gkb/LA_Lao_x.keyprop
 %lang(lt) %{_datadir}/gnome/gkb/LT_*
 %lang(mk) %{_datadir}/gnome/gkb/M*acedonian.keyprop
-%lang(mn) %{_datadir}/gnome/gkb/MN_Mongolian.keyprop
+%lang(mn) %{_datadir}/gnome/gkb/MN_Mongolian*.keyprop
 %lang(nl) %{_datadir}/gnome/gkb/NL_Dutch_x.keyprop
 %lang(no) %{_datadir}/gnome/gkb/NO_Norwegian.keyprop
 %lang(no) %{_datadir}/gnome/gkb/Norwegian.keyprop
@@ -202,6 +204,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(si) %{_datadir}/gnome/gkb/Sloven*.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
 %lang(sv) %{_datadir}/gnome/gkb/Swedish.keyprop
+# is (sy) really exist?
+%lang(sy) %{_datadir}/gnome/gkb/Syriac*.keyprop
 %lang(th) %{_datadir}/gnome/gkb/Thai2.keyprop
 %lang(th) %{_datadir}/gnome/gkb/Thai.keyprop
 %lang(th) %{_datadir}/gnome/gkb/TH_Thai.keyprop
