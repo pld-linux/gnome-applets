@@ -31,7 +31,6 @@ BuildRequires:	libwnck-devel >= 0.17
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 2.4.24
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Prereq:		/sbin/ldconfig
 Prereq:		scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
