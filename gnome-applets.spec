@@ -11,7 +11,7 @@ License:	GPL v2, FDL
 Group:		X11/Applications
 #Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
 Source0:	%{name}-%{version}.%{snap}.tar.bz2
-# Source0-md5:	bf018f1692ab305954123d8123ef45d1
+# Source0-md5:	f07d1ba40f814e5cdb9793b0f4edc1ef
 Patch0:		%{name}-omf-it.patch
 Patch1:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
