@@ -1,15 +1,3 @@
-diff -aurN gnome-applets-2.10.0.orig/charpick/help/C/char-palette.xml gnome-applets-2.10.0/charpick/help/C/char-palette.xml
---- gnome-applets-2.10.0.orig/charpick/help/C/char-palette.xml	2005-03-07 06:14:33.000000000 +0100
-+++ gnome-applets-2.10.0/charpick/help/C/char-palette.xml	2005-03-28 10:20:16.000000000 +0200
-@@ -295,7 +295,7 @@
- <!-- ============= Preferences ============================= -->
-   <sect1 id="charpick-prefs"> 
- 	 <title>Customizing &applet;</title>
--	<figure id="applet-fig"> 
-+	<figure id="fig-prefs"> 
- 	  <title>&applet; Preferences</title>
- 	  <screenshot> 
- 	  <mediaobject> 
 diff -aurN gnome-applets-2.10.0.orig/stickynotes/docs/C/stickynotes_applet.xml gnome-applets-2.10.0/stickynotes/docs/C/stickynotes_applet.xml
 --- gnome-applets-2.10.0.orig/stickynotes/docs/C/stickynotes_applet.xml	2005-03-07 11:38:39.000000000 +0100
 +++ gnome-applets-2.10.0/stickynotes/docs/C/stickynotes_applet.xml	2005-03-28 10:14:08.000000000 +0200
