@@ -2,7 +2,7 @@ Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
 Version:	1.4.0.5
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_sysconfdir}/CORBA/servers/*
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/applets
+%{_datadir}/applets/*/*.desktop
 %{_datadir}/asclock
 %{_datadir}/clockmail
 %{_datadir}/geyes
