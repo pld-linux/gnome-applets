@@ -27,8 +27,8 @@ BuildRequires:	libgnomecanvas-devel >= 2.3.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	libglade2-devel >= 2.0.1-2
 BuildRequires:	libgtop-devel >= 2.0.3
-BuildRequires:	libwnck-devel >= 2.3.0
 BuildRequires:	libtool
+BuildRequires:	libwnck-devel >= 2.3.0
 BuildRequires:	libxml2-devel >= 2.5.1
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.3.0
@@ -92,7 +92,6 @@ find . 	-name ChangeLog -o \
 	-o -name README | \
 awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst);
 	print "cp " src " " dst}  END {print "exit 0"}' | sh
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
