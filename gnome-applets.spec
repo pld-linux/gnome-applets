@@ -1,4 +1,4 @@
-%define		snap 20031113
+%define		snap 20031112
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
