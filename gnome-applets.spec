@@ -1,7 +1,7 @@
 Summary:	GNOME - Applets
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.1.0
+Version:	1.1.1
 Release:	1
 License:	GPL
 Group:		X11/GNOME
