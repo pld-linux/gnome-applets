@@ -119,8 +119,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/*.xpm
 
 %dir %{_datadir}/gnome/gkb
-%lang(am) %{_datadir}/gnome/gkb/AM_Armenian.keyprop
-%lang(am) %{_datadir}/gnome/gkb/Armenian.keyprop
+%lang(hy) %{_datadir}/gnome/gkb/AM_Armenian.keyprop
+%lang(hy) %{_datadir}/gnome/gkb/Armenian.keyprop
 %lang(az) %{_datadir}/gnome/gkb/AZ_Azerbaidjani_Turkic.keyprop
 %lang(eu) %{_datadir}/gnome/gkb/Basque.keyprop
 %lang(nl) %{_datadir}/gnome/gkb/BE_Dutch.keyprop
@@ -232,7 +232,7 @@ rm -rf $RPM_BUILD_ROOT
 # %lang(sr,sh) %{_datadir}/pixmaps/gkb/yu.png
 
 %dir %{_datadir}/xmodmap
-%lang(am) %{_datadir}/xmodmap/xmodmap.am*
+%lang(hy) %{_datadir}/xmodmap/xmodmap.am*
 %lang(fr,wa,de,nl) %{_datadir}/xmodmap/xmodmap.be*
 %lang(bg) %{_datadir}/xmodmap/xmodmap.bg*
 %lang(pt_BR) %{_datadir}/xmodmap/xmodmap.br*
