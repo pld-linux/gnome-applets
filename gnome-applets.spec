@@ -7,7 +7,6 @@ License:	GPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source:		ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
-Patch:		%{name}-locale.patch
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	gnome-core-devel >= 1.1.0
 BuildRequires:	gtk+-devel >= 1.2.0
@@ -32,7 +31,6 @@ Applety pod GNOME.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 gettextize --copy --force
