@@ -13,6 +13,7 @@ Patch0:		%{name}-am.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gail-devel >= 0.13
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-panel-devel
