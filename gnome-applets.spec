@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/odometer
 %{_datadir}/sound-monitor
 %{_datadir}/tickastat
-%{omf_dest_dir}/omf/%{name}
+%{_omf_dest_dir}/omf/%{name}
 %{_pixmapsdir}/gweather
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/*.png
