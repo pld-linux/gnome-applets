@@ -4,13 +4,14 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.4.0
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	c17dba203ea379af5da056862672026c
 Patch0:		%{name}-omf-it.patch
+Patch1:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -58,6 +59,7 @@ z GNOME.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing
