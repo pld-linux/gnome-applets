@@ -27,8 +27,8 @@ Obsoletes:	gnome-applets-gumma-xmms
 %define		_localstatedir	/var
 
 %description
-The gnome-applets package provides Panel applets which enhance your GNOME
-experience.
+The gnome-applets package provides Panel applets which enhance your
+GNOME experience.
 
 %description -l pl
 Applety pod GNOME.
