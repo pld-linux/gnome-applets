@@ -1,16 +1,14 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.2.1
-Release:	6
+Version:	1.2.2
+Release:	1
 License:	GPL
-Group:		X11/GNOME
-Group(de):	X11/GNOME
-Group(pl):	X11/GNOME
+Group:		X11/Applications
+Group(de):	X11/Applikationen
+Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.gz
-Source1:	http://www.brendy.addr.com/linux/gnomesensors/GnomeSensors-0.2.0.tar.gz
 Patch0:		%{name}-applet-docs.make.patch
-Patch1:		%{name}-sensors.patch
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
@@ -20,12 +18,9 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	libghttp-devel
 BuildRequires:	xmms-devel
-BuildRequires:	lm_sensors-devel
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
-Obsoletes:	gnome-applets-gumma-gqmpeg
-Obsoletes:	gnome-applets-gumma-xmms
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
@@ -38,40 +33,9 @@ GNOME experience.
 %description -l pl
 Applety pod GNOME.
 
-%package gumma-gqmpeg
-Summary:	Gqmpe sound plug-in for gumma GNOME applet
-Summary(pl):	Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem gqmpeg
-Group:		X11/GNOME
-Group(de):	X11/GNOME
-Group(pl):	X11/GNOME
-Requires:	%{name} = %{version}
-Requires:	gqmpeg
-
-%description gumma-gqmpeg
-Gqmpe sound plug-in for gumma GNOME applet.
-
-%description -l pl gumma-gqmpeg
-Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem gqmpeg.
-
-%package gumma-xmms
-Summary:	Xmms sound plug-in for gumma GNOME applet
-Summary(pl):	Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms
-Group:		X11/GNOME
-Group(de):	X11/GNOME
-Group(pl):	X11/GNOME
-Requires:	%{name} = %{version}
-Requires:	xmms
-
-%description gumma-xmms
-Xmms sound plug-in for gumma GNOME applet.
-
-%description -l pl gumma-xmms
-Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms.
-
 %prep
-%setup -q -a1
+%setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 gettextize --copy --force
@@ -80,18 +44,11 @@ gettextize --copy --force
 %{__make}
 #make -C gumma
 
-cd GnomeSensors-0.2.0
-%configure \
-	--disable-static
-%{__make} gnorbadir=%{_sysconfdir}/CORBA/servers
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT \
-	gnorbadir=%{_sysconfdir}/CORBA/servers -C GnomeSensors-0.2.0
-#%{__make} install DESTDIR=$RPM_BUILD_ROOT -C gumma
+#make install DESTDIR=$RPM_BUILD_ROOT -C gumma
 
 #strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/gumma/lib*.so
 
@@ -111,9 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_sysconfdir}/CORBA/servers/*
 %attr(755,root,root) %{_bindir}/*
-#%dir %{_libdir}/gumma
-#%attr(755,root,root) %{_libdir}/gumma/libgumma-cd*
-%{_datadir}/applets/*/*
+%{_datadir}/applets
 %{_datadir}/asclock
 %{_datadir}/clockmail
 %{_datadir}/geyes
@@ -198,9 +153,3 @@ rm -rf $RPM_BUILD_ROOT
 %lang(uk) %{_datadir}/xmodmap/xmodmap.uk
 %lang(us) %{_datadir}/xmodmap/xmodmap.us*
 %lang(yu) %{_datadir}/xmodmap/xmodmap.yu
-
-#%files gumma-gqmpeg
-#%attr(755,root,root) %{_libdir}/gumma/libgumma-gqmpeg*
-
-#%files gumma-xmms
-#%attr(755,root,root) %{_libdir}/gumma/libgumma-xmms*
