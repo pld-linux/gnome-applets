@@ -2,7 +2,7 @@ Summary:	GNOME - Applets
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
 Version:	1.1.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
@@ -78,6 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT -C gumma
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/gumma/lib*.so
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
