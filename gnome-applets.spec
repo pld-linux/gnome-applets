@@ -1,7 +1,7 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.1.7
+Version:	1.1.8
 Release:	1
 License:	GPL
 Group:		X11/GNOME
@@ -81,7 +81,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome --all-name
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -109,70 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/mini-commander
 %{_datadir}/pixmaps/*.png
 %{_datadir}/pixmaps/*.xpm
-
-%dir %{_datadir}/gnome/help/anotherclock_applet
-%lang(en) %{_datadir}/gnome/help/anotherclock_applet/C
-
-%dir %{_datadir}/gnome/help/asclock_applet
-%lang(en) %{_datadir}/gnome/help/asclock_applet/C
-
-%lang(it) %{_datadir}/gnome/help/asclock_applet/it
-%dir %{_datadir}/gnome/help/battery_applet
-
-%lang(en) %{_datadir}/gnome/help/battery_applet/C
-%lang(it) %{_datadir}/gnome/help/battery_applet/it
-
-%dir %{_datadir}/gnome/help/clockmail_applet
-%lang(en) %{_datadir}/gnome/help/clockmail_applet/C
-%lang(it) %{_datadir}/gnome/help/clockmail_applet/it
-
-%dir %{_datadir}/gnome/help/drivemount_applet
-%lang(en) %{_datadir}/gnome/help/drivemount_applet/C
-
-%dir %{_datadir}/gnome/help/fifteen_applet
-%lang(en) %{_datadir}/gnome/help/fifteen_applet/C
-
-%dir %{_datadir}/gnome/help/geyes_applet
-%lang(en) %{_datadir}/gnome/help/geyes_applet/C
-
-%dir %{_datadir}/gnome/help/jbc_applet
-%lang(en) %{_datadir}/gnome/help/jbc_applet/C
-
-%dir %{_datadir}/gnome/help/life_applet
-%lang(en) %{_datadir}/gnome/help/life_applet/C
-
-%dir %{_datadir}/gnome/help/mini-commander_applet
-%lang(en) %{_datadir}/gnome/help/mini-commander_applet/C
-
-%dir %{_datadir}/gnome/help/webcontrol_applet
-%lang(en) %{_datadir}/gnome/help/webcontrol_applet/C
-
-%dir %{_datadir}/gnome/help/whereami_applet
-%lang(en) %{_datadir}/gnome/help/whereami_applet/C
-
-%dir %{_datadir}/gnome/help/odometer_applet
-%lang(en) %{_datadir}/gnome/help/odometer_applet/C
-
-%dir %{_datadir}/gnome/help/cpumemusage_applet
-%lang(en) %{_datadir}/gnome/help/cpumemusage_applet/C
-
-%dir %{_datadir}/gnome/help/diskusage_applet
-%lang(en) %{_datadir}/gnome/help/diskusage_applet/C
-
-%dir %{_datadir}/gnome/help/multiload_applet
-%lang(en) %{_datadir}/gnome/help/multiload_applet/C
-
-%dir %{_datadir}/gnome/help/gweather_applet
-%lang(en) %{_datadir}/gnome/help/gweather_applet/C
-
-%dir %{_datadir}/gnome/help/modemlights_applet
-%lang(en) %{_datadir}/gnome/help/modemlights_applet/C
-
-%dir %{_datadir}/gnome/help/screenshooter_applet
-%lang(en) %{_datadir}/gnome/help/screenshooter_applet/C
-
-%dir %{_datadir}/gnome/help/gnotes_applet
-%lang(en) %{_datadir}/gnome/help/gnotes_applet/C
 
 %dir %{_datadir}/pixmaps/gkb
 %lang(at) %{_datadir}/pixmaps/gkb/at.xpm
