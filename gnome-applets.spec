@@ -4,13 +4,14 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.10.0
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.10/%{name}-%{version}.tar.bz2
 # Source0-md5:	c230df43a21a0d788197b5b0f3e688f1
 Patch0:		%{name}-stickynotes-title-size.patch
+Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.10.0
 BuildRequires:	autoconf
@@ -78,9 +79,9 @@ Pliki nagЁСwkowe gnome-applets.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-cp /usr/share/gnome-common/data/omf.make .
 %{__aclocal} -I m4
 %{__libtoolize}
 glib-gettextize --copy --force
