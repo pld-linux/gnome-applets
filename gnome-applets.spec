@@ -8,7 +8,7 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/2.0.2/sources/%{name}/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/2.0/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-am.patch
 Patch1:		%{name}-charpick.patch
 URL:		http://www.gnome.org/
@@ -61,6 +61,7 @@ Applety pod GNOME.
 %patch1 -p1
 
 %build
+rm -f missing
 intltoolize --copy --force
 %{__libtoolize}
 glib-gettextize --copy --force
