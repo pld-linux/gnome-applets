@@ -1,7 +1,7 @@
 Summary:	GNOME - Applets
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.1.1
+Version:	1.1.2
 Release:	1
 License:	GPL
 Group:		X11/GNOME
@@ -30,6 +30,34 @@ easy, powerful, and easy to configure.
 %description -l pl
 Applety pod GNOME.
 
+%package gumma-gqmpeg
+Summary:	Gqmpe sound plug-in for gumma GNOME applet
+Summary(pl):	Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem gqmpeg
+Group:		X11/GNOME
+Group(pl):	X11/GNOME
+Requires:	%{name} = %{version}
+Requires:	gqmpeg
+
+%description gumma-gqmpeg
+Gqmpe sound plug-in for gumma GNOME applet.
+
+%description -l pl gumma-gqmpeg
+Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem gqmpeg.
+
+%package gumma-xmms
+Summary:	Xmms sound plug-in for gumma GNOME applet
+Summary(pl):	Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms
+Group:		X11/GNOME
+Group(pl):	X11/GNOME
+Requires:	%{name} = %{version}
+Requires:	xmms
+
+%description gumma-xmms
+Xmms sound plug-in for gumma GNOME applet.
+
+%description -l pl gumma-xmms
+Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms.
+
 %prep
 %setup -q
 
@@ -41,11 +69,13 @@ LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--disable-static
 make
+make -C gumma
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT -C gumma
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -63,7 +93,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_sysconfdir}/CORBA/servers/*
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/gumma/*
+%dir %{_libdir}/gumma
+%attr(755,root,root) %{_libdir}/gumma/libgumma-cd*
 %{_datadir}/applets/*/*
 %{_datadir}/asclock
 %{_datadir}/bug-applet
@@ -151,3 +182,9 @@ rm -rf $RPM_BUILD_ROOT
 %lang(uk) %{_datadir}/xmodmap/xmodmap.uk
 %lang(us) %{_datadir}/xmodmap/xmodmap.us*
 %lang(yu) %{_datadir}/xmodmap/xmodmap.yu
+
+%files gumma-gqmpeg
+%attr(755,root,root) %{_libdir}/gumma/libgumma-gqmpeg*
+
+%files gumma-xmms
+%attr(755,root,root) %{_libdir}/gumma/libgumma-xmms*
