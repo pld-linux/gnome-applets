@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	1.102.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
@@ -80,15 +80,14 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome --all-name
 
+find $RPM_BUILD_ROOT/%{_pixmapsdir}/gkb/|grep '/..\.png$'|sed "s=$RPM_BUILD_ROOT\(/%{_pixmapsdir}/gkb/\)\(..\)\(.png\)=%lang(\2) \1\2\3=" >> %{name}.lang
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
 /usr/bin/scrollkeeper-update
-export GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`
-for SCHEMAS in battstat.schemas cdplayer.schemas charpick.schemas drivemount.schemas geyes.schemas gkb.schemas gtik.schemas gweather.schemas minicommander.schemas modemlights.schemas multiload.schemas panel-menu.schemas; do
-        /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/$SCHEMAS > /dev/null 2>&1
-done
+GCONF_CONFIG_SOURCE="" /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
 
 %postun	-p /usr/bin/scrollkeeper-update
 
@@ -109,7 +108,9 @@ done
 %{_omf_dest_dir}/%{name}
 
 %dir %{_datadir}/gnome/gkb
+%{_datadir}/gnome/gkb/Dvorak.keyprop
 %lang(am) %{_datadir}/gnome/gkb/AM_Armenian.keyprop
+%lang(ar) %{_datadir}/gnome/gkb/AR_Arabic.keyprop
 %lang(am) %{_datadir}/gnome/gkb/Armenian.keyprop
 %lang(az) %{_datadir}/gnome/gkb/AZ_Azerbaidjani_Turkic.keyprop
 %lang(eu) %{_datadir}/gnome/gkb/Basque.keyprop
@@ -159,7 +160,7 @@ done
 %lang(se) %{_datadir}/gnome/gkb/SE_Swedish.keyprop
 %lang(si) %{_datadir}/gnome/gkb/SI_Slovenian.keyprop
 %lang(sk) %{_datadir}/gnome/gkb/Slovak.keyprop
-#%lang(si) %{_datadir}/gnome/gkb/Slovene.keyprop
+%lang(si) %{_datadir}/gnome/gkb/Slovenian.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
 %lang(sv) %{_datadir}/gnome/gkb/Swedish.keyprop
 %lang(th) %{_datadir}/gnome/gkb/Thai2.keyprop
@@ -174,51 +175,8 @@ done
 %lang(yu) %{_datadir}/gnome/gkb/Yugoslav.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/YU_Serbo-Croatian_x.keyprop
 
-%dir %{_datadir}/pixmaps/gkb
-%lang(ar) %{_datadir}/pixmaps/gkb/ar.png
-%lang(at) %{_datadir}/pixmaps/gkb/at.png
-%lang(be) %{_datadir}/pixmaps/gkb/be.png
-%lang(bg) %{_datadir}/pixmaps/gkb/bg.png
-%lang(br) %{_datadir}/pixmaps/gkb/br.png
-%lang(ca) %{_datadir}/pixmaps/gkb/ca.png
-%lang(ch) %{_datadir}/pixmaps/gkb/ch.png
-%lang(cu) %{_datadir}/pixmaps/gkb/cu.png
-%lang(cz) %{_datadir}/pixmaps/gkb/cz.png
-%lang(de) %{_datadir}/pixmaps/gkb/de.png
-%lang(dk) %{_datadir}/pixmaps/gkb/dk.png
-%lang(ee) %{_datadir}/pixmaps/gkb/ee.png
-%lang(es) %{_datadir}/pixmaps/gkb/es.png
-%lang(eu) %{_datadir}/pixmaps/gkb/eu.png
-%lang(fi) %{_datadir}/pixmaps/gkb/fi.png
-%lang(fr) %{_datadir}/pixmaps/gkb/fr.png
-%lang(gb) %{_datadir}/pixmaps/gkb/gb.png
-%{_datadir}/pixmaps/gkb/gkb.png
-%lang(gr) %{_datadir}/pixmaps/gkb/gr.png
-%lang(hr) %{_datadir}/pixmaps/gkb/hr.png
-%lang(hu) %{_datadir}/pixmaps/gkb/hu.png
-%lang(il) %{_datadir}/pixmaps/gkb/il.png
-%lang(is) %{_datadir}/pixmaps/gkb/is.png
-%lang(it) %{_datadir}/pixmaps/gkb/it.png
-%lang(jp) %{_datadir}/pixmaps/gkb/jp.png
-%lang(lt) %{_datadir}/pixmaps/gkb/lt.png
-%lang(mk) %{_datadir}/pixmaps/gkb/mk.png
-%lang(mx) %{_datadir}/pixmaps/gkb/mx.png
-%lang(nl) %{_datadir}/pixmaps/gkb/nl.png
-%lang(no) %{_datadir}/pixmaps/gkb/no.png
-%lang(pl) %{_datadir}/pixmaps/gkb/pl.png
-%lang(pt) %{_datadir}/pixmaps/gkb/pt.png
-%lang(qc) %{_datadir}/pixmaps/gkb/qc.png
-%lang(ro) %{_datadir}/pixmaps/gkb/ro.png
-%lang(ru) %{_datadir}/pixmaps/gkb/ru.png
-%lang(se) %{_datadir}/pixmaps/gkb/se.png
-%lang(si) %{_datadir}/pixmaps/gkb/si.png
-%lang(sk) %{_datadir}/pixmaps/gkb/sk.png
-%lang(th) %{_datadir}/pixmaps/gkb/th.png
-%lang(tr) %{_datadir}/pixmaps/gkb/tr.png
-%lang(un) %{_datadir}/pixmaps/gkb/un.png
-%lang(us) %{_datadir}/pixmaps/gkb/us.png
-%lang(uy) %{_datadir}/pixmaps/gkb/uy.png
-%lang(yu) %{_datadir}/pixmaps/gkb/yu.png
+%dir %{_pixmapsdir}/gkb
+%{_pixmapsdir}/gkb/gkb.png
 
 %dir %{_datadir}/xmodmap
 %lang(am) %{_datadir}/xmodmap/xmodmap.am*
@@ -235,11 +193,13 @@ done
 %lang(fi) %{_datadir}/xmodmap/xmodmap.fi*
 %lang(fr) %{_datadir}/xmodmap/xmodmap.fr*
 %lang(gb) %{_datadir}/xmodmap/xmodmap.gb*
+%lang(ge) %{_datadir}/xmodmap/xmodmap.ge*
 %lang(gr) %{_datadir}/xmodmap/xmodmap.gr*
 %lang(hu) %{_datadir}/xmodmap/xmodmap.hu*
 %lang(il) %{_datadir}/xmodmap/xmodmap.il*
 %lang(is) %{_datadir}/xmodmap/xmodmap.is*
 %lang(it) %{_datadir}/xmodmap/xmodmap.it*
+%lang(jp) %{_datadir}/xmodmap/xmodmap.jp*
 %lang(la) %{_datadir}/xmodmap/xmodmap.la*
 %lang(lt) %{_datadir}/xmodmap/xmodmap.lt*
 %lang(mk) %{_datadir}/xmodmap/xmodmap.mk*
@@ -248,6 +208,7 @@ done
 %lang(pl) %{_datadir}/xmodmap/xmodmap.pl*
 %lang(pt) %{_datadir}/xmodmap/xmodmap.pt*
 %lang(qc) %{_datadir}/xmodmap/xmodmap.qc*
+%lang(ro) %{_datadir}/xmodmap/xmodmap.ro*
 %lang(ru) %{_datadir}/xmodmap/xmodmap.ru*
 %lang(se) %{_datadir}/xmodmap/xmodmap.se*
 %lang(sf) %{_datadir}/xmodmap/xmodmap.sf*
