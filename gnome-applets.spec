@@ -3,30 +3,30 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.5.8
-Release:	2
+Version:	2.6.0
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	c1d550a37b5a3588dcf93699541eaa2f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	9c2dcde8fc94dd43f8aa7be52ca9c103
 Patch1:		%{name}-stickynotes-title-size.patch
 Patch2:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 1.5.0
+BuildRequires:	gail-devel >= 1.5.8
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.4.0
-BuildRequires:	gnome-panel-devel >= 2.5.92
-BuildRequires:	gnome-vfs2-devel >= 2.5.90
+BuildRequires:	gnome-panel-devel >= 2.5.93
+BuildRequires:	gnome-vfs2-devel >= 2.5.91
 BuildRequires:	gstreamer-plugins-devel >= 0.8.0
-BuildRequires:	gtk+2-devel >= 2:2.3.6
+BuildRequires:	gtk+2-devel >= 2:2.4.0
 BuildRequires:	intltool >= 0.29
-BuildRequires:	libgnome-devel >= 2.5.91
-BuildRequires:	libgnomecanvas-devel >= 2.5.91
-BuildRequires:	libgnomeui-devel >= 2.5.91
+BuildRequires:	libgnome-devel >= 2.5.92
+BuildRequires:	libgnomecanvas-devel >= 2.5.92
+BuildRequires:	libgnomeui-devel >= 2.5.92
 BuildRequires:	libglade2-devel >= 2.3.6
 BuildRequires:	libgtop-devel >= 2.5.2
 BuildRequires:	libtool
@@ -36,7 +36,7 @@ BuildRequires:	libxklavier-devel >= 0.97
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.5.90
 Requires(post):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.5.90
+Requires:	gnome-vfs2 >= 2.5.91
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -64,7 +64,7 @@ Summary(pl):	Pliki nagЁСwkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.5.90
-Requires:	gtk+2-devel >= 2:2.3.6
+Requires:	gtk+2-devel >= 2:2.4.0
 
 %description devel
 Header files for gnome-applets.
