@@ -32,7 +32,7 @@ BuildRequires:	libtool
 BuildRequires:	gettext-devel
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
-BuildRequires:	gdk-pixbuf-devel >= 0.7.0
+BuildRequires:	gdk-pixbuf-gnome-devel >= 0.7.0
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	gnome-core-devel >= 1.1.0
 BuildRequires:	gtk+-devel >= 1.2.0
