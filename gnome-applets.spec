@@ -1,5 +1,7 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
+Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
+Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	1.4.0.5
 Release:	2
@@ -41,6 +43,14 @@ GNOME experience.
 
 %description -l pl
 Applety pod GNOME.
+
+%description -l uk
+Пакет gnome-applets м╕стить аплети Панел╕ GNOME, що зб╕льшують
+комфортн╕сть роботи в середовищ╕ GNOME.
+
+%description -l ru
+Пакет gnome-applets содержит апплеты Панели GNOME, увеличивающие
+комфортность работы в среде GNOME.
 
 %prep
 %setup -q
