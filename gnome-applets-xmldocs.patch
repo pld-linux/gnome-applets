@@ -1,0 +1,24 @@
+diff -urN gnome-applets-2.3.3.orig/sgmldocs.make gnome-applets-2.3.3/sgmldocs.make
+--- gnome-applets-2.3.3.orig/sgmldocs.make	Mon Jun  2 08:56:49 2003
++++ gnome-applets-2.3.3/sgmldocs.make	Mon Jun  2 08:59:48 2003
+@@ -58,7 +58,7 @@
+ 	-cp $(docname)/index.html .
+ 
+ $(docname).sgml: $(sgml_ents)
+-        -ourdir=`pwd`;  \
++        ourdir=`pwd`;  \
+         cd $(srcdir);   \
+         cp $(sgml_ents) $$ourdir
+ 
+diff -urN gnome-applets-2.3.3.orig/xmldocs.make gnome-applets-2.3.3/xmldocs.make
+--- gnome-applets-2.3.3.orig/xmldocs.make	Mon Jun  2 08:56:49 2003
++++ gnome-applets-2.3.3/xmldocs.make	Mon Jun  2 08:57:29 2003
+@@ -53,7 +53,7 @@
+ 	touch omf_timestamp
+ 
+ $(docname).xml: $(entities)
+-        -ourdir=`pwd`;  \
++        ourdir=`pwd`;  \
+         cd $(srcdir);   \
+         cp $(entities) $$ourdir
+ 
