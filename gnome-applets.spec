@@ -4,13 +4,14 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.5.5
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
 # Source0-md5:	f69b898936da1a18e8cfe8cd749c8724
 Patch1:		%{name}-stickynotes-title-size.patch
+Patch2:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,7 +27,7 @@ BuildRequires:	libgnome-devel >= 2.5.1
 BuildRequires:	libgnomecanvas-devel >= 2.5.1
 BuildRequires:	libgnomeui-devel >= 2.5.1
 BuildRequires:	libglade2-devel >= 2.3.1
-BuildRequires:	libgtop-devel >= 2.5.0
+BuildRequires:	libgtop-devel >= 2.5.1
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.5.1
 BuildRequires:	libxml2-devel >= 2.5.1
@@ -60,7 +61,7 @@ z GNOME.
 Summary:	Header files for gnome-applets
 Summary(pl):	Pliki nagЁСwkowe gnome-applets
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.5.0
 Requires:	gtk+2-devel >= 2.3.1
 
@@ -73,6 +74,9 @@ Pliki nagЁСwkowe gnome-applets.
 %prep
 %setup -q
 %patch1 -p1
+%patch2 -p1
+
+mv po/{no,nb}.po
 
 %build
 rm -f missing
