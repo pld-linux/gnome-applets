@@ -3,7 +3,7 @@ Summary(pl):	GNOME - Applety
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	1.103.0
+Version:	2.0.0
 Release:	1
 Epoch:		1
 License:	GPL
@@ -13,22 +13,22 @@ Patch0:		%{name}-am.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 0.13
+BuildRequires:	gail-devel >= 0.16
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-panel-devel
-BuildRequires:	gnome-vfs2-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	intltool
-BuildRequires:	libgnome-devel
-BuildRequires:	libgnomecanvas-devel
-BuildRequires:	libgnomeui-devel
-BuildRequires:	libglade2-devel
-BuildRequires:	libgtop-devel >= 1.90.2
-BuildRequires:	libwnck-devel
+BuildRequires:	gnome-panel-devel >= 2.0.0
+BuildRequires:	gnome-vfs2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	intltool >= 0.22
+BuildRequires:	libgnome-devel >= 2.0.1
+BuildRequires:	libgnomecanvas-devel >= 2.0.1
+BuildRequires:	libgnomeui-devel >= 2.0.1
+BuildRequires:	libglade2-devel >= 2.0.0
+BuildRequires:	libgtop-devel >= 2.0.0
+BuildRequires:	libwnck-devel >= 0.14
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel
-BuildRequires:	scrollkeeper
+BuildRequires:	libxml2-devel >= 2.4.22
+BuildRequires:	scrollkeeper >= 0.3.6
 Prereq:		/sbin/ldconfig
 Prereq:		scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -80,6 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 %find_lang %{name} --with-gnome --all-name
 
 find $RPM_BUILD_ROOT/%{_pixmapsdir}/gkb/|grep '/..\.png$'|sed "s=$RPM_BUILD_ROOT\(/%{_pixmapsdir}/gkb/\)\(..\)\(.png\)=%lang(\2) \1\2\3=" >> %{name}.lang
+find . -name ChangeLog -o -name TODO -o -name NEWS -o -name AUTHORS -o -name README|awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst); print "cp " src " " dst}'|sh
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -92,7 +94,7 @@ GCONF_CONFIG_SOURCE="" /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sys
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc *AUTHORS *ChangeLog *NEWS *README *TODO
 %{_sysconfdir}/gconf/schemas/*
 %{_sysconfdir}/sound/events/*
 %attr(755,root,root) %{_bindir}/*
@@ -108,6 +110,7 @@ GCONF_CONFIG_SOURCE="" /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sys
 
 %dir %{_datadir}/gnome/gkb
 %{_datadir}/gnome/gkb/Dvorak.keyprop
+%{_datadir}/gnome/gkb/Default.keyprop
 %lang(am) %{_datadir}/gnome/gkb/AM_Armenian.keyprop
 %lang(ar) %{_datadir}/gnome/gkb/AR_Arabic.keyprop
 %lang(am) %{_datadir}/gnome/gkb/Armenian.keyprop
