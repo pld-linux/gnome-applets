@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.5.7
+Version:	2.5.8
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	a1b053ec93d861dbd07052e66895647b
+# Source0-md5:	c1d550a37b5a3588dcf93699541eaa2f
 Patch1:		%{name}-stickynotes-title-size.patch
 Patch2:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
@@ -28,7 +28,7 @@ BuildRequires:	libgnome-devel >= 2.5.91
 BuildRequires:	libgnomecanvas-devel >= 2.5.91
 BuildRequires:	libgnomeui-devel >= 2.5.91
 BuildRequires:	libglade2-devel >= 2.3.6
-BuildRequires:	libgtop-devel >= 2.5.1
+BuildRequires:	libgtop-devel >= 2.5.2
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.5.90
 BuildRequires:	libxml2-devel >= 2.6.7
