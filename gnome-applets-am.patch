@@ -1,0 +1,18 @@
+diff -Nur gnome-applets-1.99.0/xmldocs.make gnome-applets-1.99.0.new/xmldocs.make
+--- gnome-applets-1.99.0/xmldocs.make	Sun Mar  3 02:40:12 2002
++++ gnome-applets-1.99.0.new/xmldocs.make	Sun Apr 28 20:45:28 2002
+@@ -52,10 +52,10 @@
+ 	done
+ 	touch omf_timestamp
+ 
+-$(docname).xml: $(entities)
+-        -ourdir=`pwd`;  \
+-        cd $(srcdir);   \
+-        cp $(entities) $$ourdir
++#$(docname).xml: $(entities)
++#        -ourdir=`pwd`;  \
++#        cd $(srcdir);   \
++#        cp $(entities) $$ourdir
+ 
+ app-dist-hook: 
+ 	-$(mkinstalldirs) $(distdir)/figures
