@@ -130,21 +130,33 @@ diff -Nur gnome-applets-1.100.0/panel-menu/Makefile.am gnome-applets-1.100.0.new
  
 -install-data-local:
 -	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
-diff -Nur gnome-applets-1.100.0/xmldocs.make gnome-applets-1.100.0.new/xmldocs.make
---- gnome-applets-1.100.0/xmldocs.make	Sun Apr 28 19:25:58 2002
-+++ gnome-applets-1.100.0.new/xmldocs.make	Sun Apr 28 23:01:01 2002
+diff -urN gnome-applets-2.0.2.orig/xmldocs.make gnome-applets-2.0.2/xmldocs.make
+--- gnome-applets-2.0.2.orig/xmldocs.make	Tue Aug 27 02:48:33 2002
++++ gnome-applets-2.0.2/xmldocs.make	Tue Aug 27 02:48:47 2002
 @@ -52,10 +52,10 @@
  	done
  	touch omf_timestamp
  
 -$(docname).xml: $(entities)
--        -ourdir=`pwd`;  \
--        cd $(srcdir);   \
--        cp $(entities) $$ourdir
+-	-ourdir=`pwd`;  \
+-	cd $(srcdir);   \
+-	cp $(entities) $$ourdir
 +#$(docname).xml: $(entities)
-+#        -ourdir=`pwd`;  \
-+#        cd $(srcdir);   \
-+#        cp $(entities) $$ourdir
++#	-ourdir=`pwd`;  \
++#	cd $(srcdir);   \
++#	cp $(entities) $$ourdir
  
  app-dist-hook: 
  	-$(mkinstalldirs) $(distdir)/figures
+diff -urN gnome-applets-2.0.2.orig/configure.in gnome-applets-2.0.2/configure.in
+--- gnome-applets-2.0.2.orig/configure.in	Tue Aug 27 02:48:33 2002
++++ gnome-applets-2.0.2/configure.in	Tue Aug 27 09:35:01 2002
+@@ -19,7 +19,7 @@
+ X_LIBS="$X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
+ AC_SUBST(X_LIBS)
+ 
+-GNOME_COMPILE_WARNINGS(yes)
++GNOME_COMPILE_WARNINGS
+ 
+ dnl Stuff we might need, not quite sure yet
+ 
