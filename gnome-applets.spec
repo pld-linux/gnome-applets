@@ -9,13 +9,10 @@ Group(pl):	X11/GNOME
 Source:		ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
 Patch:		%{name}-locale.patch
 BuildRequires:	gnome-libs-devel >= 1.0.0
-BuildRequires:	ORBit >= 0.4.3
-BuildRequires:	audiofile-devel >= 0.1.5
+BuildRequires:	gnome-core-devel >= 1.1.0
 BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	guile-devel >= 1.3
 BuildRequires:	esound-devel >= 0.2.7
-BuildRequires:	readline-devel
-BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	libgtop-devel >= 1.0.0
 URL:		http://www.gnome.org/
 BuildRoot:	/tmp/%{name}-%{version}-root
 
