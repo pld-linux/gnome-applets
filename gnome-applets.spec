@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.1.1
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -36,8 +36,6 @@ Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
 
-%define		_prefix		/usr/X11R6
-%define		_sysconfdir	/etc/X11/GNOME2
 %define		_localstatedir	/var
 
 %description
@@ -97,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /usr/bin/scrollkeeper-update
-GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/*.schemas > /dev/null 
+%gconf_schema_install
 GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%{name}/mc-install-default-macros
 
 %postun	-p /usr/bin/scrollkeeper-update
