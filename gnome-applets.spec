@@ -1,18 +1,19 @@
 Summary:	Small applications which embed themselves in the GNOME panel
-Summary(pl):	GNOME - Applety
+Summary(pl):	GNOME - Aplety
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	1.4.0.5
-Release:	6
+Release:	7
 Epoch:		1
-License:	GPL
+License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-applet-docs.make.patch
 Patch1:		%{name}-ISDN.patch
 Patch2:		%{name}-am_conditional.patch
 Patch3:		%{name}-am15.patch
+Patch4:		%{name}-ru_omf.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -43,7 +44,7 @@ The gnome-applets package provides Panel applets which enhance your
 GNOME experience.
 
 %description -l pl
-Applety pod GNOME.
+Aplety pod GNOME.
 
 %description -l uk
 Пакет gnome-applets м╕стить аплети Панел╕ GNOME, що зб╕льшують
@@ -59,6 +60,7 @@ Applety pod GNOME.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 cp -r cpumemusage/docs/ja/figures cpumemusage/docs/ru
 
 %build
