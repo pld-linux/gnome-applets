@@ -3,7 +3,7 @@ Summary(pl):	GNOME - Applety
 Name:		gnome-applets
 Version:	1.1.0
 Release:	1
-Copyright:	LGPL
+License:	GPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
 Source:		ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
@@ -22,14 +22,13 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 GNOME Applets.
 
-GNOME is the GNU Network Object Model Environment.  That's a fancy
-name but really GNOME is a nice GUI desktop environment.  It makes
-using your computer easy, powerful, and easy to configure.
+GNOME is the GNU Network Object Model Environment. That's a fancy name but
+really GNOME is a nice GUI desktop environment. It makes using your computer
+easy, powerful, and easy to configure.
 
 %description -l pl
 Applety pod GNOME.
@@ -43,7 +42,8 @@ gettextize --copy --force
 automake
 autoconf
 LDFLAGS="-s"; export LDFLAGS
-%configure 
+%configure \
+	--disable-static
 make
 
 %install
@@ -65,41 +65,25 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
 
-%dir %{_libdir}/gumma
-%dir %{_datadir}/asclock
-%dir %{_datadir}/bug-applet
-%dir %{_datadir}/clockmail
-%dir %{_datadir}/geyes
-%dir %{_datadir}/gnome
-%dir %{_datadir}/gweather
-%dir %{_datadir}/odometer
-%dir %{_datadir}/pixmaps/gkb
-%dir %{_datadir}/pixmaps/gweather
-%dir %{_datadir}/pixmaps/mini-commander
-%dir %{_datadir}/sound-monitor
-%dir %{_datadir}/tickastat
-
 %{_sysconfdir}/CORBA/servers/*
-
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/gumma/*.so*
-
-%{_libdir}/gumma/*.a
-%{_libdir}/gumma/*.la
-
-%{_datadir}/applets/*
-%{_datadir}/asclock/*
-%{_datadir}/bug-applet/*
-%{_datadir}/clockmail/*
-%{_datadir}/geyes/*
-%{_datadir}/gnome/*
-%{_datadir}/gweather/*
-%{_datadir}/odometer/*
+%attr(755,root,755) %{_bindir}/*
+%attr(755,root,755) %{_libdir}/gumma/*
+%{_datadir}/applets/*/*
+%{_datadir}/asclock
+%{_datadir}/bug-applet
+%{_datadir}/clockmail
+%{_datadir}/geyes
+%{_datadir}/gnome/help/mini-commander_applet
+%{_datadir}/gweather
+%{_datadir}/odometer
+%{_datadir}/sound-monitor
+%{_datadir}/tickastat
+%{_datadir}/pixmaps/gweather
+%{_datadir}/pixmaps/mini-commander
 %{_datadir}/pixmaps/*.png
 %{_datadir}/pixmaps/*.xpm
-%{_datadir}/pixmaps/gweather/*
-%{_datadir}/pixmaps/mini-commander/*
 
+%dir %{_datadir}/pixmaps/gkb
 %lang(at) %{_datadir}/pixmaps/gkb/at.xpm
 %lang(be) %{_datadir}/pixmaps/gkb/be.xpm
 %lang(bg) %{_datadir}/pixmaps/gkb/bg.xpm
@@ -137,9 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(uy) %{_datadir}/pixmaps/gkb/uy.xpm
 %lang(yu) %{_datadir}/pixmaps/gkb/yu.xpm
 
-%{_datadir}/sound-monitor/*
-%{_datadir}/tickastat/*
-
+%dir %{_datadir}/xmodmap
 %{_datadir}/xmodmap/xmodmap.dvorak
 %lang(be) %{_datadir}/xmodmap/xmodmap.be
 %lang(bg) %{_datadir}/xmodmap/xmodmap.bg
