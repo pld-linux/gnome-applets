@@ -84,16 +84,13 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/sbin/ldconfig
 /usr/bin/scrollkeeper-update
 export GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`
 for SCHEMAS in battstat.schemas cdplayer.schemas charpick.schemas drivemount.schemas geyes.schemas gkb.schemas gtik.schemas gweather.schemas minicommander.schemas modemlights.schemas multiload.schemas panel-menu.schemas; do
         /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/$SCHEMAS > /dev/null 2>&1
 done
 
-%postun
-/sbin/ldconfig
-/usr/bin/scrollkeeper-update
+%postun	-p /usr/bin/scrollkeeper-update
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
