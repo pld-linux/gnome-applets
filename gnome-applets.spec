@@ -4,12 +4,13 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.3.6
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
 # Source0-md5:	f2b49d4c45c3eba21e008f1618110cd5
+Patch0:		%{name}-omf-it.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -56,6 +57,7 @@ z GNOME.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
