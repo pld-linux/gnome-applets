@@ -1,7 +1,7 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.4.0.4
+Version:	1.4.0.5
 Release:	1
 Epoch:		1
 License:	GPL
@@ -15,7 +15,6 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{ve
 Patch0:		%{name}-applet-docs.make.patch
 Patch1:		%{name}-ISDN.patch
 Patch2:		%{name}-am_conditional.patch
-Patch3:		%{name}-xml-i18n.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -53,7 +52,6 @@ Applety pod GNOME.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
