@@ -3,41 +3,46 @@ Summary(pl):	Aplety GNOME - ma³e aplikacje osadzaj±ce siê w panelu
 Summary(ru):	íÁÌÅÎØËÉÅ ÐÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀÝÉÅÓÑ × ÐÁÎÅÌØ GNOME
 Summary(uk):	íÁÌÅÎØË¦ ÐÒÏÇÒÁÍÉ, ÝÏ ×ÂÕÄÏ×ÕÀÔØÓÑ × ÐÁÎÅÌØ GNOME
 Name:		gnome-applets
-Version:	2.8.2
+Version:	2.10.0
 Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	10d83b6e031bad31d7cfefe2c4884bd7
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.10/%{name}-%{version}.tar.bz2
+# Source0-md5:	c230df43a21a0d788197b5b0f3e688f1
 Patch0:		%{name}-stickynotes-title-size.patch
+Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.8.0.1
+BuildRequires:	GConf2-devel >= 2.10.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 1.8.0
+BuildRequires:	gail-devel >= 1.8.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
-BuildRequires:	gnome-panel-devel >= 2.8.0
-BuildRequires:	gnome-vfs2-devel >= 2.8.1
-BuildRequires:	gstreamer-plugins-devel >= 0.8.5
-BuildRequires:	gtk+2-devel >= 2:2.4.11
-BuildRequires:	intltool >= 0.31.3
-BuildRequires:	libgnome-devel >= 2.8.0
-BuildRequires:	libgnomecanvas-devel >= 2.8.0
-BuildRequires:	libgnomeui-devel >= 2.8.0
-BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgtop-devel >= 1:2.8.1
+BuildRequires:	gnome-panel-devel >= 2.10.0-2
+BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
+BuildRequires:	gstreamer-plugins-devel >= 0.8.8
+BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	gucharmap-devel >= 1.4.0
+BuildRequires:	intltool >= 0.33
+BuildRequires:	libgnomeui-devel >= 2.10.0-2
+BuildRequires:	libglade2-devel >= 1:2.5.1
+BuildRequires:	libgtop-devel >= 1:2.10.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.8.0
-BuildRequires:	libxml2-devel >= 2.6.11
-BuildRequires:	libxklavier-devel >= 1.03
+BuildRequires:	libwnck-devel >= 2.10.0
+BuildRequires:	libxml2-devel >= 1:2.6.17
+BuildRequires:	libxklavier-devel >= 2.0
+BuildRequires:	libxslt-progs
+BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Requires(post):	GConf2 >= 2.7.92
+BuildRequires:	system-tools-backends >= 1.2.0
+Requires(post):	GConf2 >= 2.10.0
 Requires(post):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.8.1
+Requires:	gnome-icon-theme >= 2.10.0
+Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	gstreamer-audiosink
+Requires:	system-tools-backends >= 1.2.0
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -62,8 +67,8 @@ Summary:	Header files for gnome-applets
 Summary(pl):	Pliki nag³ówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.8.0.1
-Requires:	gtk+2-devel >= 2:2.4.11
+Requires:	GConf2-devel >= 2.10.0
+Requires:	gtk+2-devel >= 2:2.6.4
 
 %description devel
 Header files for gnome-applets.
@@ -74,10 +79,10 @@ Pliki nag³ówkowe gnome-applets.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-cp /usr/share/gnome-common/data/omf.make .
-%{__aclocal}
+%{__aclocal} -I m4
 %{__libtoolize}
 glib-gettextize --copy --force
 intltoolize --copy --force
@@ -128,120 +133,32 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/accessx-status-applet
 %attr(755,root,root) %{_libdir}/battstat-applet-2
-%attr(755,root,root) %{_libdir}/cdplayer_applet2
 %attr(755,root,root) %{_libdir}/charpick_applet2
+%attr(755,root,root) %{_libdir}/cpufreq-applet
 %attr(755,root,root) %{_libdir}/drivemount_applet2
 %attr(755,root,root) %{_libdir}/geyes_applet2
 %attr(755,root,root) %{_libdir}/gnome-keyboard-applet
 %attr(755,root,root) %{_libdir}/gtik2_applet2
 %attr(755,root,root) %{_libdir}/gweather-applet-2
-%attr(755,root,root) %{_libdir}/mailcheck-applet
 %attr(755,root,root) %{_libdir}/mini_commander_applet
 %attr(755,root,root) %{_libdir}/mixer_applet2
-%attr(755,root,root) %{_libdir}/modemlights_applet2
+%attr(755,root,root) %{_libdir}/modem_applet
 %attr(755,root,root) %{_libdir}/multiload-applet-2
+%attr(755,root,root) %{_libdir}/null_applet
 %attr(755,root,root) %{_libdir}/stickynotes_applet
-%attr(755,root,root) %{_libdir}/wireless-applet
+%attr(755,root,root) %{_libdir}/trashapplet
 %attr(755,root,root) %{_libdir}/%{name}
 %{_libdir}/bonobo/servers/*
-%{_datadir}/battstat_applet
-%{_datadir}/geyes
-%{_datadir}/gnome/gkb/presets.xml
 %{_datadir}/gnome-2.0/ui/*
-%{_datadir}/gen_util
-%{_datadir}/gswitchit
-%{_datadir}/gweather
-%{_datadir}/stickynotes
-%{_datadir}/wireless-applet
+%{_datadir}/%{name}
 %{_pixmapsdir}/accessx-status-applet
-%{_pixmapsdir}/mailcheck
-%{_pixmapsdir}/mini-commander
-%{_pixmapsdir}/mixer
+%{_pixmapsdir}/cpufreq-applet
 %{_pixmapsdir}/stickynotes
-%{_pixmapsdir}/wireless-applet
-%{_pixmapsdir}/*.png
-%{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
+%{_iconsdir}/hicolor/48x48/apps/*.png
 %{_omf_dest_dir}/%{name}
 
-%dir %{_datadir}/gnome/gkb
-%{_datadir}/gnome/gkb/Dvorak.keyprop
-%{_datadir}/gnome/gkb/Default.keyprop
-%lang(hy) %{_datadir}/gnome/gkb/AM_Armenian.keyprop
-%lang(ar) %{_datadir}/gnome/gkb/AR_*
-%lang(hy) %{_datadir}/gnome/gkb/Armenian.keyprop
-%lang(az) %{_datadir}/gnome/gkb/AZ_Azerbaidjani_Turkic.keyprop
-%lang(eu) %{_datadir}/gnome/gkb/Basque.keyprop
-%lang(nl) %{_datadir}/gnome/gkb/BE_Dutch.keyprop
-%lang(fr,nl,wa) %{_datadir}/gnome/gkb/Belgian.keyprop
-%lang(bg) %{_datadir}/gnome/gkb/BG_*
-%lang(pt_BR) %{_datadir}/gnome/gkb/BR_*
-%lang(bg) %{_datadir}/gnome/gkb/BulgarianCyril.keyprop
-%lang(be) %{_datadir}/gnome/gkb/BY_Belarussian.keyprop
-%lang(en_CA) %{_datadir}/gnome/gkb/CA_English.keyprop
-%lang(de) %{_datadir}/gnome/gkb/CH_German_x.keyprop
-%lang(cs) %{_datadir}/gnome/gkb/CZ_Czech.keyprop
-%lang(cs) %{_datadir}/gnome/gkb/CZ_Czech_x.keyprop
-%lang(cs,sk) %{_datadir}/gnome/gkb/CZ_Czech_Slovak.keyprop
-%lang(de) %{_datadir}/gnome/gkb/DE_*
-%lang(da) %{_datadir}/gnome/gkb/DK_*
-%lang(et) %{_datadir}/gnome/gkb/EE_*
-%lang(es) %{_datadir}/gnome/gkb/ES_*
-%lang(fi) %{_datadir}/gnome/gkb/FI_*
-%lang(fr) %{_datadir}/gnome/gkb/FrenchCanadian2.keyprop
-%lang(fr) %{_datadir}/gnome/gkb/FrenchCanadian.keyprop
-%lang(fr) %{_datadir}/gnome/gkb/FrenchSwiss.keyprop
-%lang(fr) %{_datadir}/gnome/gkb/FR_*
-%lang(ka) %{_datadir}/gnome/gkb/GE_Georgian_x.keyprop
-%lang(ka) %{_datadir}/gnome/gkb/GeorgianLatin.keyprop
-%lang(de) %{_datadir}/gnome/gkb/German.keyprop
-%lang(de) %{_datadir}/gnome/gkb/GermanSwiss.keyprop
-%lang(el) %{_datadir}/gnome/gkb/GR_*
-%lang(hr) %{_datadir}/gnome/gkb/HR_*
-%lang(hu) %{_datadir}/gnome/gkb/HU_*
-%lang(hu) %{_datadir}/gnome/gkb/Hungarian*
-%lang(he,yi) %{_datadir}/gnome/gkb/IL_*
-%lang(is) %{_datadir}/gnome/gkb/IS_*
-%lang(it) %{_datadir}/gnome/gkb/IT_*
-%lang(ja) %{_datadir}/gnome/gkb/JP_*
-%lang(ko) %{_datadir}/gnome/gkb/KR_Korean.keyprop
-%lang(lo) %{_datadir}/gnome/gkb/LA_Lao_x.keyprop
-%lang(lt) %{_datadir}/gnome/gkb/LT_*
-%lang(mk) %{_datadir}/gnome/gkb/M*acedonian.keyprop
-%lang(mn) %{_datadir}/gnome/gkb/MN_Mongolian*.keyprop
-%lang(nl) %{_datadir}/gnome/gkb/NL_Dutch_x.keyprop
-%lang(nn,no) %{_datadir}/gnome/gkb/NO_Norwegian.keyprop
-%lang(nn,no) %{_datadir}/gnome/gkb/Norwegian.keyprop
-%lang(pl) %{_datadir}/gnome/gkb/*olish*
-%lang(pt) %{_datadir}/gnome/gkb/Portug*
-%lang(pt) %{_datadir}/gnome/gkb/PT_*
-%lang(ro) %{_datadir}/gnome/gkb/RO_Romanian.keyprop
-%lang(ru) %{_datadir}/gnome/gkb/*Russian*
-%lang(sv) %{_datadir}/gnome/gkb/SE_Swedish*.keyprop
-%lang(sl) %{_datadir}/gnome/gkb/SI_Slovenian*.keyprop
-%lang(sk) %{_datadir}/gnome/gkb/Slovak.keyprop
-%lang(sk) %{_datadir}/gnome/gkb/SK_*
-%lang(sl) %{_datadir}/gnome/gkb/Sloven*.keyprop
-%lang(sr) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
-%lang(sv) %{_datadir}/gnome/gkb/Swedish.keyprop
-# does (sy) really exist?
-%lang(ar) %{_datadir}/gnome/gkb/Syriac*.keyprop
-%lang(th) %{_datadir}/gnome/gkb/Thai2.keyprop
-%lang(th) %{_datadir}/gnome/gkb/Thai.keyprop
-%lang(th) %{_datadir}/gnome/gkb/TH_Thai.keyprop
-%lang(th) %{_datadir}/gnome/gkb/TH_Thai_x.keyprop
-%lang(tr) %{_datadir}/gnome/gkb/TR*
-%lang(uk) %{_datadir}/gnome/gkb/UA_Ukrainian.keyprop
-%{_datadir}/gnome/gkb/UK*
-%{_datadir}/gnome/gkb/US*
-%lang(vi) %{_datadir}/gnome/gkb/VN_Vietnamese.keyprop
-%lang(hr,mk,sl,sr) %{_datadir}/gnome/gkb/Yugoslav.keyprop
-%lang(sr) %{_datadir}/gnome/gkb/YU_Serb*.keyprop
-
-%dir %{_pixmapsdir}/gkb
-%{_pixmapsdir}/gkb/gkb.png
-%{_pixmapsdir}/gkb/lam.png
-
 %dir %{_datadir}/xmodmap
+%{_datadir}/xmodmap/base.xml
 %lang(hy) %{_datadir}/xmodmap/xmodmap.am*
 # ?
 %lang(ar) %{_datadir}/xmodmap/xmodmap.ar*
