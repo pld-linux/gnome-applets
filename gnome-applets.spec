@@ -4,17 +4,28 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	1.4.0.5
-Release:	8
+Release:	9
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.bz2
+Source1:	%{name}-drivemount-applet.png
+Source2:	%{name}-asclock-applet.png
+Source3:	%{name}-cdplayer-applet.png
+Source4:	%{name}-gnome-swap.png
+Source5:	%{name}-mini-commander-applet.png
+Source6:	%{name}-gtik2-applet.png
 Patch0:		%{name}-applet-docs.make.patch
 Patch1:		%{name}-ISDN.patch
 Patch2:		%{name}-am_conditional.patch
 Patch3:		%{name}-am15.patch
 Patch4:		%{name}-ru_omf.patch
 Patch5:		%{name}-am_cdplayer_linux_hack.patch
+Patch6:		%{name}-sound-monitor_themes_install_fix.patch
+Patch7:		%{name}-asclock_themes_install_fix.patch
+Patch8:		%{name}-desktop_fixes.patch
+Patch9:		%{name}-am_fixes.patch
+Patch10:	%{name}-zh_CN.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -36,6 +47,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
 
 %define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
 %define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
@@ -63,13 +75,19 @@ Aplety pod GNOME.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
+%patch7 -p1
+%patch8 -p1
+%patch9 -p1
+%patch10 -p1
+mv -f po/zh_CN.GB2312.po po/zh_CN.po
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
 mv -f configure.in.tmp configure.in
 rm -f missing
-libtoolize --copy --force
-gettextize --copy --force
+%{__libtoolize}
+%{__gettextize}
 aclocal -I macros
 %{__autoconf}
 %{__automake}
@@ -84,6 +102,13 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/drivemount-applet.png
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}/asclock-applet.png
+install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}/cdplayer-applet.png
+install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-swap.png
+install %{SOURCE5} $RPM_BUILD_ROOT%{_pixmapsdir}/mini-commander-applet.png
+install %{SOURCE6} $RPM_BUILD_ROOT%{_pixmapsdir}/gtik2-applet.png
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -104,6 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_sysconfdir}/CORBA/servers/*
 %attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
 %{_datadir}/applets/*/*.desktop
 %{_datadir}/asclock
 %{_datadir}/clockmail
@@ -113,10 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/sound-monitor
 %{_datadir}/tickastat
 %{_omf_dest_dir}/%{name}
-%{_pixmapsdir}/gweather
-%{_pixmapsdir}/mini-commander
-%{_pixmapsdir}/*.png
-%{_pixmapsdir}/*.xpm
+%{_pixmapsdir}/*
 
 %dir %{_datadir}/gnome/gkb
 %lang(hy) %{_datadir}/gnome/gkb/AM_Armenian.keyprop
@@ -183,53 +206,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(vi) %{_datadir}/gnome/gkb/VN_Vietnamese.keyprop
 %lang(sr,sh) %{_datadir}/gnome/gkb/Yugoslav.keyprop
 %lang(sr,sh) %{_datadir}/gnome/gkb/YU_Serbo-Croatian_x.keyprop
-
-%dir %{_datadir}/pixmaps/gkb
-%{_datadir}/pixmaps/gkb/*.png
-# %lang(ar) %{_datadir}/pixmaps/gkb/ar.png
-# %lang(de) %{_datadir}/pixmaps/gkb/at.png
-# %lang(fr,nl,wa,de) %{_datadir}/pixmaps/gkb/be.png
-# %lang(bg) %{_datadir}/pixmaps/gkb/bg.png
-# %lang(pt_BR) %{_datadir}/pixmaps/gkb/br.png
-# %{_datadir}/pixmaps/gkb/ca.png
-# %lang(de,it,fr) %{_datadir}/pixmaps/gkb/ch.png
-# %lang(es) %{_datadir}/pixmaps/gkb/cu.png
-# %lang(cs) %{_datadir}/pixmaps/gkb/cz.png
-# %lang(de) %{_datadir}/pixmaps/gkb/de.png
-# %lang(da) %{_datadir}/pixmaps/gkb/dk.png
-# %lang(et) %{_datadir}/pixmaps/gkb/ee.png
-# %lang(es) %{_datadir}/pixmaps/gkb/es.png
-# %lang(eu) %{_datadir}/pixmaps/gkb/eu.png
-# %lang(fi) %{_datadir}/pixmaps/gkb/fi.png
-# %lang(fr) %{_datadir}/pixmaps/gkb/fr.png
-# %{_datadir}/pixmaps/gkb/gb.png
-# %{_datadir}/pixmaps/gkb/gkb-foot.png
-# %lang(el) %{_datadir}/pixmaps/gkb/gr.png
-# %lang(hr) %{_datadir}/pixmaps/gkb/hr.png
-# %lang(hu) %{_datadir}/pixmaps/gkb/hu.png
-# %lang(he,yi) %{_datadir}/pixmaps/gkb/il.png
-# %lang(is) %{_datadir}/pixmaps/gkb/is.png
-# %lang(it) %{_datadir}/pixmaps/gkb/it.png
-# %lang(ja) %{_datadir}/pixmaps/gkb/jp.png
-# %lang(lt) %{_datadir}/pixmaps/gkb/lt.png
-# %lang(mk) %{_datadir}/pixmaps/gkb/mk.png
-# %lang(es) %{_datadir}/pixmaps/gkb/mx.png
-# %lang(nl) %{_datadir}/pixmaps/gkb/nl.png
-# %lang(no,nn) %{_datadir}/pixmaps/gkb/no.png
-# %lang(pl) %{_datadir}/pixmaps/gkb/pl.png
-# %lang(pt) %{_datadir}/pixmaps/gkb/pt.png
-# %lang(fr) %{_datadir}/pixmaps/gkb/qc.png
-# %lang(ro) %{_datadir}/pixmaps/gkb/ro.png
-# %lang(ru) %{_datadir}/pixmaps/gkb/ru.png
-# %lang(sv) %{_datadir}/pixmaps/gkb/se.png
-# %lang(sl) %{_datadir}/pixmaps/gkb/si.png
-# %lang(sk) %{_datadir}/pixmaps/gkb/sk.png
-# %lang(th) %{_datadir}/pixmaps/gkb/th.png
-# %lang(tr) %{_datadir}/pixmaps/gkb/tr.png
-# %{_datadir}/pixmaps/gkb/un.png
-# %{_datadir}/pixmaps/gkb/us.png
-# %lang(es) %{_datadir}/pixmaps/gkb/uy.png
-# %lang(sr,sh) %{_datadir}/pixmaps/gkb/yu.png
 
 %dir %{_datadir}/xmodmap
 %lang(hy) %{_datadir}/xmodmap/xmodmap.am*
