@@ -3,42 +3,41 @@ Summary(pl):	Aplety GNOME - ma³e aplikacje osadzaj±ce siê w panelu
 Summary(ru):	íÁÌÅÎØËÉÅ ÐÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀÝÉÅÓÑ × ÐÁÎÅÌØ GNOME
 Summary(uk):	íÁÌÅÎØË¦ ÐÒÏÇÒÁÍÉ, ÝÏ ×ÂÕÄÏ×ÕÀÔØÓÑ × ÐÁÎÅÌØ GNOME
 Name:		gnome-applets
-Version:	2.6.0
-Release:	3
+Version:	2.6.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	9c2dcde8fc94dd43f8aa7be52ca9c103
+# Source0-md5:	d189c15d771267077596910d44a7eaf6
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-locale-names.patch
 Patch2:		%{name}-battstat-ppc.patch
-Patch3:		%{name}-gweather-sunny.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 1.5.8
+BuildRequires:	gail-devel >= 1.6.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.4.0
-BuildRequires:	gnome-panel-devel >= 2.5.93
-BuildRequires:	gnome-vfs2-devel >= 2.5.91
-BuildRequires:	gstreamer-plugins-devel >= 0.8.0
-BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	gnome-panel-devel >= 2.6.1
+BuildRequires:	gnome-vfs2-devel >= 2.6.1
+BuildRequires:	gstreamer-plugins-devel >= 0.8.1
+BuildRequires:	gtk+2-devel >= 2:2.4.1
 BuildRequires:	intltool >= 0.29
-BuildRequires:	libgnome-devel >= 2.5.92
-BuildRequires:	libgnomecanvas-devel >= 2.5.92
-BuildRequires:	libgnomeui-devel >= 2.5.92
+BuildRequires:	libgnome-devel >= 2.6.1
+BuildRequires:	libgnomecanvas-devel >= 2.6.1
+BuildRequires:	libgnomeui-devel >= 2.6.1
 BuildRequires:	libglade2-devel >= 1:2.3.6
-BuildRequires:	libgtop-devel >= 2.5.2
+BuildRequires:	libgtop-devel >= 2.6.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.5.90
+BuildRequires:	libwnck-devel >= 2.6.1
 BuildRequires:	libxml2-devel >= 2.6.7
-BuildRequires:	libxklavier-devel >= 0.97
+BuildRequires:	libxklavier-devel >= 1.0.2
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Requires(post):	GConf2 >= 2.5.90
+Requires(post):	GConf2 >= 2.6.1
 Requires(post):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.5.91
+Requires:	gnome-vfs2 >= 2.6.1
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -63,7 +62,7 @@ Summary:	Header files for gnome-applets
 Summary(pl):	Pliki nag³ówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.5.90
+Requires:	GConf2-devel >= 2.6.1
 Requires:	gtk+2-devel >= 2:2.4.0
 
 %description devel
@@ -77,7 +76,6 @@ Pliki nag³ówkowe gnome-applets.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p0
 
 mv po/{no,nb}.po
 
