@@ -14,6 +14,7 @@ BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	libgtop-devel >= 1.0.0
 URL:		http://www.gnome.org/
 BuildRoot:	/tmp/%{name}-%{version}-root
+Obsoletes:	gnotes_applet
 
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
