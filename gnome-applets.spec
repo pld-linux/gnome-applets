@@ -3,12 +3,12 @@ Summary(pl):	GNOME - Applety
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.0.1
+Version:	2.0.2
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/2.0.1/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-am.patch
 Patch1:		%{name}-charpick.patch
 URL:		http://www.gnome.org/
@@ -61,10 +61,10 @@ Applety pod GNOME.
 %patch1 -p1
 
 %build
-libtoolize --copy --force
-glib-gettextize --copy --force
 intltoolize --copy --force
-aclocal
+%{__libtoolize}
+glib-gettextize --copy --force
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
