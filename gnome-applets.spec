@@ -252,7 +252,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(mk) %{_datadir}/xmodmap/xmodmap.mk*
 %lang(mn) %{_datadir}/xmodmap/xmodmap.mn*
 %lang(nl) %{_datadir}/xmodmap/xmodmap.nl*
-%lang(no,nn) %{_datadir}/xmodmap/xmodmap.no*
+%lang(nn,no) %{_datadir}/xmodmap/xmodmap.no*
 %lang(pl) %{_datadir}/xmodmap/xmodmap.pl*
 %lang(pt) %{_datadir}/xmodmap/xmodmap.pt*
 %lang(fr) %{_datadir}/xmodmap/xmodmap.qc*
