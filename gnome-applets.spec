@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.5.3
+Version:	2.5.4
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	a81ff6839a761dbae3d6782483d19fa1
+# Source0-md5:	93c0dd87e32f4bbaec3d3c4859679db0
 Patch1:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -17,11 +17,11 @@ BuildRequires:	automake
 BuildRequires:	gail-devel >= 1.5.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common >= 2.3.0
+BuildRequires:	gnome-common >= 2.4.0
 BuildRequires:	gnome-panel-devel >= 2.5.1
 BuildRequires:	gnome-vfs2-devel >= 2.5.1
 BuildRequires:	gtk+2-devel >= 2.3.1
-BuildRequires:	intltool >= 0.28
+BuildRequires:	intltool >= 0.29
 BuildRequires:	libgnome-devel >= 2.5.1
 BuildRequires:	libgnomecanvas-devel >= 2.5.1
 BuildRequires:	libgnomeui-devel >= 2.5.1
@@ -31,7 +31,7 @@ BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.5.1
 BuildRequires:	libxml2-devel >= 2.5.1
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Requires(post):	GConf2 >= 2.4.0
+Requires(post):	GConf2 >= 2.5.0
 Requires(post):	scrollkeeper
 Requires:	gnome-vfs2 >= 2.5.1
 Obsoletes:	gnotes_applet
@@ -55,13 +55,26 @@ z GNOME.
 Пакет gnome-applets содержит апплеты Панели GNOME, увеличивающие
 комфортность работы в среде GNOME.
 
+%package devel
+Summary:	Header files for gnome-applets
+Summary(pl):	Pliki nagЁСwkowe gnome-applets
+Group:		Development/Libraries
+Requires:	%{name} = %{epoch}:%{version}
+Requires:	GConf2-devel >= 2.5.0
+Requires:	gtk+2-devel >= 2.3.1
+
+%description devel
+Header files for gnome-applets.
+
+%description devel -l pl
+Pliki nagЁСwkowe gnome-applets.
+
 %prep
 %setup -q
 %patch1 -p1
 
 %build
 rm -f missing
-
 %{__aclocal}
 %{__libtoolize}
 glib-gettextize --copy --force
@@ -115,7 +128,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/charpick_applet2
 %attr(755,root,root) %{_libdir}/drivemount_applet2
 %attr(755,root,root) %{_libdir}/geyes_applet2
-%attr(755,root,root) %{_libdir}/gkb-applet-2
+%attr(755,root,root) %{_libdir}/gnome-keyboard-applet
 %attr(755,root,root) %{_libdir}/gtik2_applet2
 %attr(755,root,root) %{_libdir}/gweather-applet-2
 %attr(755,root,root) %{_libdir}/mailcheck-applet
@@ -132,11 +145,11 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome/gkb/presets.xml
 %{_datadir}/gnome-2.0/ui/*
 %{_datadir}/gen_util
+%{_datadir}/gswitchit
 %{_datadir}/gweather
 %{_datadir}/stickynotes
 %{_datadir}/wireless-applet
 %{_pixmapsdir}/accessx-status-applet
-%{_pixmapsdir}/gweather
 %{_pixmapsdir}/mailcheck
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/mixer
@@ -268,3 +281,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(uk) %{_datadir}/xmodmap/xmodmap.uk*
 %{_datadir}/xmodmap/xmodmap.us*
 %lang(hr,mk,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/*
+%{_pkgconfigdir}/*.pc
