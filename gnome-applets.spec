@@ -75,10 +75,9 @@ glib-gettextize --copy --force
 %install
 rm -rf $RPM_BUILD_ROOT
 
-export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT 
-unset GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL
+	DESTDIR=$RPM_BUILD_ROOT \
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 %find_lang %{name} --with-gnome --all-name
 
