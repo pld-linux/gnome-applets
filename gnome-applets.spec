@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	1.4.0.5
-Release:	2
+Release:	6
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
@@ -66,7 +66,7 @@ libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
-#automake
+automake -a -c -f
 %configure \
 	--disable-static \
 	--without-included-gettext
@@ -77,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	omf_dest_dir=%{_omf_dest_dir}/omf/%{name}
+	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
@@ -108,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/odometer
 %{_datadir}/sound-monitor
 %{_datadir}/tickastat
-%{_omf_dest_dir}/omf/%{name}
+%{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/gweather
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/*.png
