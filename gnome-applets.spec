@@ -32,7 +32,7 @@ Obsoletes:	gnotes_applet
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
-%define		_omf_dest_dir	$(scrollkeeper-config --omfdir)
+%define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
 
 %description
 The gnome-applets package provides Panel applets which enhance your
