@@ -202,7 +202,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(sl) %{_datadir}/gnome/gkb/SI_Slovenian*.keyprop
 %lang(sk) %{_datadir}/gnome/gkb/Slovak.keyprop
 %lang(sl) %{_datadir}/gnome/gkb/Sloven*.keyprop
-%lang(sh,sr) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
+%lang(sr) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
 %lang(sv) %{_datadir}/gnome/gkb/Swedish.keyprop
 # does (sy) really exist?
 %lang(ar) %{_datadir}/gnome/gkb/Syriac*.keyprop
@@ -215,8 +215,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome/gkb/UK*
 %{_datadir}/gnome/gkb/US*
 %lang(vi) %{_datadir}/gnome/gkb/VN_Vietnamese.keyprop
-%lang(hr,mk,sh,sl,sr) %{_datadir}/gnome/gkb/Yugoslav.keyprop
-%lang(sh,sr) %{_datadir}/gnome/gkb/YU_Serb*.keyprop
+%lang(hr,mk,sl,sr) %{_datadir}/gnome/gkb/Yugoslav.keyprop
+%lang(sr) %{_datadir}/gnome/gkb/YU_Serb*.keyprop
 
 %dir %{_pixmapsdir}/gkb
 %{_pixmapsdir}/gkb/gkb.png
@@ -267,4 +267,4 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(tr) %{_datadir}/xmodmap/xmodmap.tr*
 %lang(uk) %{_datadir}/xmodmap/xmodmap.uk*
 %{_datadir}/xmodmap/xmodmap.us*
-%lang(hr,mk,sh,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
+%lang(hr,mk,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
