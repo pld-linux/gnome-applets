@@ -3,12 +3,12 @@ Summary(pl):	GNOME - Applety
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	1.102.1
-Release:	2
+Version:	1.103.0
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-am.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
@@ -59,12 +59,12 @@ Applety pod GNOME.
 %patch -p1
 
 %build
-intltoolize --copy --force
 libtoolize --copy --force
-gettextize --copy --force
+glib-gettextize --copy --force
+intltoolize --copy --force
 aclocal
-autoconf
-automake -a -c -f 
+%{__autoconf}
+%{__automake}
 %configure \
 	--disable-static
 %{__make}
@@ -76,7 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
-gzip -9nf AUTHORS ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -93,7 +92,7 @@ GCONF_CONFIG_SOURCE="" /usr/X11R6/bin/gconftool-2 --makefile-install-rule %{_sys
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
+%doc AUTHORS ChangeLog NEWS README
 %{_sysconfdir}/gconf/schemas/*
 %{_sysconfdir}/sound/events/*
 %attr(755,root,root) %{_bindir}/*
