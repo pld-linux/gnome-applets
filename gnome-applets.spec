@@ -3,7 +3,7 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.3.1
+Version:	2.3.2
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
@@ -77,8 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	omf_dest_dir=%{_omf_dest_dir}/%{name}
+	DESTDIR=$RPM_BUILD_ROOT 
 unset GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL
 
 %find_lang %{name} --with-gnome --all-name
@@ -198,7 +197,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(se) %{_datadir}/gnome/gkb/SE_Swedish*.keyprop
 %lang(si) %{_datadir}/gnome/gkb/SI_Slovenian*.keyprop
 %lang(sk) %{_datadir}/gnome/gkb/Slovak.keyprop
-%lang(sk) %{_datadir}/gnome/gkb/SK__x.keyprop
 %lang(si) %{_datadir}/gnome/gkb/Sloven*.keyprop
 %lang(yu) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
 %lang(sv) %{_datadir}/gnome/gkb/Swedish.keyprop
