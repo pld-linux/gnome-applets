@@ -1,40 +1,42 @@
+%define		snap 20031113
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.4.1
-Release:	2
+Version:	2.5.0
+Release:	0.%{snap}.1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
+#Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}.%{snap}.tar.bz2
 # Source0-md5:	bf018f1692ab305954123d8123ef45d1
 Patch0:		%{name}-omf-it.patch
 Patch1:		%{name}-stickynotes-title-size.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 1.3.0
+BuildRequires:	gail-devel >= 1.5.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.3.0
 BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
-BuildRequires:	gnome-vfs2-devel >= 2.2.0
-BuildRequires:	gtk+2-devel >= 2.2.0
+BuildRequires:	gnome-vfs2-devel >= 2.5.1
+BuildRequires:	gtk+2-devel >= 2.3.0-1.20031110.1
 BuildRequires:	intltool >= 0.23
 BuildRequires:	libgnome-devel >= 2.4.0
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
-BuildRequires:	libgnomeui-devel >= 2.4.0
+BuildRequires:	libgnomeui-devel >= 2.5.0-0.20031112.1
 BuildRequires:	libglade2-devel >= 2.0.1-2
-BuildRequires:	libgtop-devel >= 2.0.3
+BuildRequires:	libgtop-devel >= 2.5.0
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.4.0
 BuildRequires:	libxml2-devel >= 2.5.1
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.4.0
 Requires(post):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.2.0
+Requires:	gnome-vfs2 >= 2.5.1
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
