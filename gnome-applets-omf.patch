@@ -1,9 +1,10 @@
 diff -ur gnome-applets-1.4.0.5.orig/another_clock/docs/C/anotherclock_applet-C.omf gnome-applets-1.4.0.5/another_clock/docs/C/anotherclock_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/another_clock/docs/C/anotherclock_applet-C.omf	Fri Oct 26 11:10:17 2001
 +++ gnome-applets-1.4.0.5/another_clock/docs/C/anotherclock_applet-C.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -30,9 +31,10 @@ diff -ur gnome-applets-1.4.0.5.orig/another_clock/docs/C/anotherclock_applet-C.o
 diff -ur gnome-applets-1.4.0.5.orig/another_clock/docs/es/anotherclock_applet-es.omf gnome-applets-1.4.0.5/another_clock/docs/es/anotherclock_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/another_clock/docs/es/anotherclock_applet-es.omf	Fri Oct 26 11:10:19 2001
 +++ gnome-applets-1.4.0.5/another_clock/docs/es/anotherclock_applet-es.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -59,9 +61,10 @@ diff -ur gnome-applets-1.4.0.5.orig/another_clock/docs/es/anotherclock_applet-es
 diff -ur gnome-applets-1.4.0.5.orig/another_clock/docs/it/anotherclock_applet-it.omf gnome-applets-1.4.0.5/another_clock/docs/it/anotherclock_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/another_clock/docs/it/anotherclock_applet-it.omf	Fri Oct 26 11:10:18 2001
 +++ gnome-applets-1.4.0.5/another_clock/docs/it/anotherclock_applet-it.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -88,9 +91,10 @@ diff -ur gnome-applets-1.4.0.5.orig/another_clock/docs/it/anotherclock_applet-it
 diff -ur gnome-applets-1.4.0.5.orig/another_clock/docs/uk/anotherclock_applet-uk.omf gnome-applets-1.4.0.5/another_clock/docs/uk/anotherclock_applet-uk.omf
 --- gnome-applets-1.4.0.5.orig/another_clock/docs/uk/anotherclock_applet-uk.omf	Fri Oct 26 11:10:19 2001
 +++ gnome-applets-1.4.0.5/another_clock/docs/uk/anotherclock_applet-uk.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="KOI8-U"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -117,9 +121,10 @@ diff -ur gnome-applets-1.4.0.5.orig/another_clock/docs/uk/anotherclock_applet-uk
 diff -ur gnome-applets-1.4.0.5.orig/asclock/docs/C/asclock_applet-C.omf gnome-applets-1.4.0.5/asclock/docs/C/asclock_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/asclock/docs/C/asclock_applet-C.omf	Fri Oct 26 11:10:21 2001
 +++ gnome-applets-1.4.0.5/asclock/docs/C/asclock_applet-C.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -146,9 +151,10 @@ diff -ur gnome-applets-1.4.0.5.orig/asclock/docs/C/asclock_applet-C.omf gnome-ap
 diff -ur gnome-applets-1.4.0.5.orig/asclock/docs/it/asclock_applet-it.omf gnome-applets-1.4.0.5/asclock/docs/it/asclock_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/asclock/docs/it/asclock_applet-it.omf	Fri Oct 26 11:10:22 2001
 +++ gnome-applets-1.4.0.5/asclock/docs/it/asclock_applet-it.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -175,9 +181,10 @@ diff -ur gnome-applets-1.4.0.5.orig/asclock/docs/it/asclock_applet-it.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/asclock/docs/ja/asclock_applet-ja.omf gnome-applets-1.4.0.5/asclock/docs/ja/asclock_applet-ja.omf
 --- gnome-applets-1.4.0.5.orig/asclock/docs/ja/asclock_applet-ja.omf	Fri Oct 26 11:10:22 2001
 +++ gnome-applets-1.4.0.5/asclock/docs/ja/asclock_applet-ja.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="EUC-JP"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -204,9 +211,10 @@ diff -ur gnome-applets-1.4.0.5.orig/asclock/docs/ja/asclock_applet-ja.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/battery/docs/C/battery_applet-C.omf gnome-applets-1.4.0.5/battery/docs/C/battery_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/battery/docs/C/battery_applet-C.omf	Fri Oct 26 11:10:28 2001
 +++ gnome-applets-1.4.0.5/battery/docs/C/battery_applet-C.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -233,9 +241,10 @@ diff -ur gnome-applets-1.4.0.5.orig/battery/docs/C/battery_applet-C.omf gnome-ap
 diff -ur gnome-applets-1.4.0.5.orig/battery/docs/es/battery_applet-es.omf gnome-applets-1.4.0.5/battery/docs/es/battery_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/battery/docs/es/battery_applet-es.omf	Fri Oct 26 11:10:30 2001
 +++ gnome-applets-1.4.0.5/battery/docs/es/battery_applet-es.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="ISO-8859-1"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -262,9 +271,10 @@ diff -ur gnome-applets-1.4.0.5.orig/battery/docs/es/battery_applet-es.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/battery/docs/it/battery_applet-it.omf gnome-applets-1.4.0.5/battery/docs/it/battery_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/battery/docs/it/battery_applet-it.omf	Fri Oct 26 11:10:29 2001
 +++ gnome-applets-1.4.0.5/battery/docs/it/battery_applet-it.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -291,9 +301,10 @@ diff -ur gnome-applets-1.4.0.5.orig/battery/docs/it/battery_applet-it.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/battery/docs/ja/battery_applet-ja.omf gnome-applets-1.4.0.5/battery/docs/ja/battery_applet-ja.omf
 --- gnome-applets-1.4.0.5.orig/battery/docs/ja/battery_applet-ja.omf	Fri Oct 26 11:10:29 2001
 +++ gnome-applets-1.4.0.5/battery/docs/ja/battery_applet-ja.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="EUC-JP"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -320,9 +331,10 @@ diff -ur gnome-applets-1.4.0.5.orig/battery/docs/ja/battery_applet-ja.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/cdplayer/docs/C/cdplayer_applet-C.omf gnome-applets-1.4.0.5/cdplayer/docs/C/cdplayer_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/cdplayer/docs/C/cdplayer_applet-C.omf	Fri Oct 26 11:10:31 2001
 +++ gnome-applets-1.4.0.5/cdplayer/docs/C/cdplayer_applet-C.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -349,9 +361,10 @@ diff -ur gnome-applets-1.4.0.5.orig/cdplayer/docs/C/cdplayer_applet-C.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/cdplayer/docs/es/cdplayer_applet-es.omf gnome-applets-1.4.0.5/cdplayer/docs/es/cdplayer_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/cdplayer/docs/es/cdplayer_applet-es.omf	Fri Oct 26 11:10:33 2001
 +++ gnome-applets-1.4.0.5/cdplayer/docs/es/cdplayer_applet-es.omf	Fri Oct  4 02:00:25 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -378,9 +391,10 @@ diff -ur gnome-applets-1.4.0.5.orig/cdplayer/docs/es/cdplayer_applet-es.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/cdplayer/docs/it/cdplayer_applet-it.omf gnome-applets-1.4.0.5/cdplayer/docs/it/cdplayer_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/cdplayer/docs/it/cdplayer_applet-it.omf	Fri Oct 26 11:10:32 2001
 +++ gnome-applets-1.4.0.5/cdplayer/docs/it/cdplayer_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -407,9 +421,10 @@ diff -ur gnome-applets-1.4.0.5.orig/cdplayer/docs/it/cdplayer_applet-it.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/cdplayer/docs/ja/cdplayer_applet-ja.omf gnome-applets-1.4.0.5/cdplayer/docs/ja/cdplayer_applet-ja.omf
 --- gnome-applets-1.4.0.5.orig/cdplayer/docs/ja/cdplayer_applet-ja.omf	Fri Oct 26 11:10:32 2001
 +++ gnome-applets-1.4.0.5/cdplayer/docs/ja/cdplayer_applet-ja.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="EUC-JP"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -436,9 +451,10 @@ diff -ur gnome-applets-1.4.0.5.orig/cdplayer/docs/ja/cdplayer_applet-ja.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/charpick/docs/C/charpick_applet-C.omf gnome-applets-1.4.0.5/charpick/docs/C/charpick_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/charpick/docs/C/charpick_applet-C.omf	Fri Oct 26 11:10:34 2001
 +++ gnome-applets-1.4.0.5/charpick/docs/C/charpick_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -466,9 +482,10 @@ diff -ur gnome-applets-1.4.0.5.orig/charpick/docs/C/charpick_applet-C.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/charpick/docs/es/charpick_applet-es.omf gnome-applets-1.4.0.5/charpick/docs/es/charpick_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/charpick/docs/es/charpick_applet-es.omf	Fri Oct 26 11:10:36 2001
 +++ gnome-applets-1.4.0.5/charpick/docs/es/charpick_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -496,9 +513,10 @@ diff -ur gnome-applets-1.4.0.5.orig/charpick/docs/es/charpick_applet-es.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/charpick/docs/it/charpick_applet-it.omf gnome-applets-1.4.0.5/charpick/docs/it/charpick_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/charpick/docs/it/charpick_applet-it.omf	Fri Oct 26 11:10:35 2001
 +++ gnome-applets-1.4.0.5/charpick/docs/it/charpick_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -523,13 +541,13 @@ diff -ur gnome-applets-1.4.0.5.orig/charpick/docs/it/charpick_applet-it.omf gnom
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/charpick/docs/ja/charpick_applet-ja.omf gnome-applets-1.4.0.5/charpick/docs/ja/charpick_applet-ja.omf
 --- gnome-applets-1.4.0.5.orig/charpick/docs/ja/charpick_applet-ja.omf	Fri Oct 26 11:10:36 2001
 +++ gnome-applets-1.4.0.5/charpick/docs/ja/charpick_applet-ja.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="EUC-JP"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -557,9 +575,10 @@ diff -ur gnome-applets-1.4.0.5.orig/charpick/docs/ja/charpick_applet-ja.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/clockmail/docs/C/clockmail_applet-C.omf gnome-applets-1.4.0.5/clockmail/docs/C/clockmail_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/clockmail/docs/C/clockmail_applet-C.omf	Fri Oct 26 11:10:43 2001
 +++ gnome-applets-1.4.0.5/clockmail/docs/C/clockmail_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -586,9 +605,10 @@ diff -ur gnome-applets-1.4.0.5.orig/clockmail/docs/C/clockmail_applet-C.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/clockmail/docs/it/clockmail_applet-it.omf gnome-applets-1.4.0.5/clockmail/docs/it/clockmail_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/clockmail/docs/it/clockmail_applet-it.omf	Fri Oct 26 11:10:44 2001
 +++ gnome-applets-1.4.0.5/clockmail/docs/it/clockmail_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -615,9 +635,10 @@ diff -ur gnome-applets-1.4.0.5.orig/clockmail/docs/it/clockmail_applet-it.omf gn
 diff -ur gnome-applets-1.4.0.5.orig/clockmail/docs/ja/clockmail_applet-ja.omf gnome-applets-1.4.0.5/clockmail/docs/ja/clockmail_applet-ja.omf
 --- gnome-applets-1.4.0.5.orig/clockmail/docs/ja/clockmail_applet-ja.omf	Fri Oct 26 11:10:44 2001
 +++ gnome-applets-1.4.0.5/clockmail/docs/ja/clockmail_applet-ja.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="EUC-JP"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -644,9 +665,10 @@ diff -ur gnome-applets-1.4.0.5.orig/clockmail/docs/ja/clockmail_applet-ja.omf gn
 diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/C/cpumemusage_applet-C.omf gnome-applets-1.4.0.5/cpumemusage/docs/C/cpumemusage_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/cpumemusage/docs/C/cpumemusage_applet-C.omf	Fri Oct 26 11:10:46 2001
 +++ gnome-applets-1.4.0.5/cpumemusage/docs/C/cpumemusage_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -670,13 +692,13 @@ diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/C/cpumemusage_applet-C.omf 
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/es/cpumemusage_applet-es.omf gnome-applets-1.4.0.5/cpumemusage/docs/es/cpumemusage_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/cpumemusage/docs/es/cpumemusage_applet-es.omf	Fri Oct 26 11:10:48 2001
 +++ gnome-applets-1.4.0.5/cpumemusage/docs/es/cpumemusage_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="ISO-8859-1"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -703,9 +725,10 @@ diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/es/cpumemusage_applet-es.om
 diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/it/cpumemusage_applet-it.omf gnome-applets-1.4.0.5/cpumemusage/docs/it/cpumemusage_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/cpumemusage/docs/it/cpumemusage_applet-it.omf	Fri Jan  4 12:56:32 2002
 +++ gnome-applets-1.4.0.5/cpumemusage/docs/it/cpumemusage_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -729,13 +752,13 @@ diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/it/cpumemusage_applet-it.om
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/ja/cpumemusage_applet-ja.omf gnome-applets-1.4.0.5/cpumemusage/docs/ja/cpumemusage_applet-ja.omf
 --- gnome-applets-1.4.0.5.orig/cpumemusage/docs/ja/cpumemusage_applet-ja.omf	Fri Oct 26 11:10:47 2001
 +++ gnome-applets-1.4.0.5/cpumemusage/docs/ja/cpumemusage_applet-ja.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="EUC-JP"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -762,9 +785,10 @@ diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/ja/cpumemusage_applet-ja.om
 diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/ru/cpumemusage_applet-ru.omf gnome-applets-1.4.0.5/cpumemusage/docs/ru/cpumemusage_applet-ru.omf
 --- gnome-applets-1.4.0.5.orig/cpumemusage/docs/ru/cpumemusage_applet-ru.omf	Thu Oct  3 22:07:40 2002
 +++ gnome-applets-1.4.0.5/cpumemusage/docs/ru/cpumemusage_applet-ru.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="KOI8-R"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -791,9 +815,10 @@ diff -ur gnome-applets-1.4.0.5.orig/cpumemusage/docs/ru/cpumemusage_applet-ru.om
 diff -ur gnome-applets-1.4.0.5.orig/diskusage/docs/C/diskusage_applet-C.omf gnome-applets-1.4.0.5/diskusage/docs/C/diskusage_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/diskusage/docs/C/diskusage_applet-C.omf	Fri Oct 26 11:10:50 2001
 +++ gnome-applets-1.4.0.5/diskusage/docs/C/diskusage_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -820,9 +845,10 @@ diff -ur gnome-applets-1.4.0.5.orig/diskusage/docs/C/diskusage_applet-C.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/diskusage/docs/es/diskusage_applet-es.omf gnome-applets-1.4.0.5/diskusage/docs/es/diskusage_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/diskusage/docs/es/diskusage_applet-es.omf	Fri Oct 26 11:10:51 2001
 +++ gnome-applets-1.4.0.5/diskusage/docs/es/diskusage_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="ISO-8859-1"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -849,9 +875,10 @@ diff -ur gnome-applets-1.4.0.5.orig/diskusage/docs/es/diskusage_applet-es.omf gn
 diff -ur gnome-applets-1.4.0.5.orig/diskusage/docs/it/diskusage_applet-it.omf gnome-applets-1.4.0.5/diskusage/docs/it/diskusage_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/diskusage/docs/it/diskusage_applet-it.omf	Fri Oct 26 11:10:51 2001
 +++ gnome-applets-1.4.0.5/diskusage/docs/it/diskusage_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -878,9 +905,10 @@ diff -ur gnome-applets-1.4.0.5.orig/diskusage/docs/it/diskusage_applet-it.omf gn
 diff -ur gnome-applets-1.4.0.5.orig/diskusage/docs/ja/diskusage_applet-ja.omf gnome-applets-1.4.0.5/diskusage/docs/ja/diskusage_applet-ja.omf
 --- gnome-applets-1.4.0.5.orig/diskusage/docs/ja/diskusage_applet-ja.omf	Fri Oct 26 11:10:51 2001
 +++ gnome-applets-1.4.0.5/diskusage/docs/ja/diskusage_applet-ja.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="EUC-JP"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -907,9 +935,10 @@ diff -ur gnome-applets-1.4.0.5.orig/diskusage/docs/ja/diskusage_applet-ja.omf gn
 diff -ur gnome-applets-1.4.0.5.orig/drivemount/docs/C/drivemount_applet-C.omf gnome-applets-1.4.0.5/drivemount/docs/C/drivemount_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/drivemount/docs/C/drivemount_applet-C.omf	Fri Oct 26 11:10:53 2001
 +++ gnome-applets-1.4.0.5/drivemount/docs/C/drivemount_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -933,13 +962,13 @@ diff -ur gnome-applets-1.4.0.5.orig/drivemount/docs/C/drivemount_applet-C.omf gn
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/drivemount/docs/es/drivemount_applet-es.omf gnome-applets-1.4.0.5/drivemount/docs/es/drivemount_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/drivemount/docs/es/drivemount_applet-es.omf	Fri Oct 26 11:10:56 2001
 +++ gnome-applets-1.4.0.5/drivemount/docs/es/drivemount_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -966,9 +995,10 @@ diff -ur gnome-applets-1.4.0.5.orig/drivemount/docs/es/drivemount_applet-es.omf 
 diff -ur gnome-applets-1.4.0.5.orig/drivemount/docs/it/drivemount_applet-it.omf gnome-applets-1.4.0.5/drivemount/docs/it/drivemount_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/drivemount/docs/it/drivemount_applet-it.omf	Fri Oct 26 11:10:55 2001
 +++ gnome-applets-1.4.0.5/drivemount/docs/it/drivemount_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -992,13 +1022,13 @@ diff -ur gnome-applets-1.4.0.5.orig/drivemount/docs/it/drivemount_applet-it.omf 
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/drivemount/docs/ja/drivemount_applet-ja.omf gnome-applets-1.4.0.5/drivemount/docs/ja/drivemount_applet-ja.omf
 --- gnome-applets-1.4.0.5.orig/drivemount/docs/ja/drivemount_applet-ja.omf	Fri Oct 26 11:10:56 2001
 +++ gnome-applets-1.4.0.5/drivemount/docs/ja/drivemount_applet-ja.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="EUC-JP"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1025,9 +1055,10 @@ diff -ur gnome-applets-1.4.0.5.orig/drivemount/docs/ja/drivemount_applet-ja.omf 
 diff -ur gnome-applets-1.4.0.5.orig/fifteen/docs/C/fifteen_applet-C.omf gnome-applets-1.4.0.5/fifteen/docs/C/fifteen_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/fifteen/docs/C/fifteen_applet-C.omf	Fri Oct 26 11:10:57 2001
 +++ gnome-applets-1.4.0.5/fifteen/docs/C/fifteen_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1054,9 +1085,10 @@ diff -ur gnome-applets-1.4.0.5.orig/fifteen/docs/C/fifteen_applet-C.omf gnome-ap
 diff -ur gnome-applets-1.4.0.5.orig/fifteen/docs/it/fifteen_applet-it.omf gnome-applets-1.4.0.5/fifteen/docs/it/fifteen_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/fifteen/docs/it/fifteen_applet-it.omf	Fri Oct 26 11:10:58 2001
 +++ gnome-applets-1.4.0.5/fifteen/docs/it/fifteen_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1080,13 +1112,13 @@ diff -ur gnome-applets-1.4.0.5.orig/fifteen/docs/it/fifteen_applet-it.omf gnome-
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/geyes/docs/C/geyes_applet-C.omf gnome-applets-1.4.0.5/geyes/docs/C/geyes_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/geyes/docs/C/geyes_applet-C.omf	Fri Oct 26 11:11:03 2001
 +++ gnome-applets-1.4.0.5/geyes/docs/C/geyes_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1113,9 +1145,10 @@ diff -ur gnome-applets-1.4.0.5.orig/geyes/docs/C/geyes_applet-C.omf gnome-applet
 diff -ur gnome-applets-1.4.0.5.orig/geyes/docs/es/geyes_applet-es.omf gnome-applets-1.4.0.5/geyes/docs/es/geyes_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/geyes/docs/es/geyes_applet-es.omf	Fri Oct 26 11:11:06 2001
 +++ gnome-applets-1.4.0.5/geyes/docs/es/geyes_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1142,9 +1175,10 @@ diff -ur gnome-applets-1.4.0.5.orig/geyes/docs/es/geyes_applet-es.omf gnome-appl
 diff -ur gnome-applets-1.4.0.5.orig/geyes/docs/it/geyes_applet-it.omf gnome-applets-1.4.0.5/geyes/docs/it/geyes_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/geyes/docs/it/geyes_applet-it.omf	Fri Oct 26 11:11:04 2001
 +++ gnome-applets-1.4.0.5/geyes/docs/it/geyes_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1171,9 +1205,10 @@ diff -ur gnome-applets-1.4.0.5.orig/geyes/docs/it/geyes_applet-it.omf gnome-appl
 diff -ur gnome-applets-1.4.0.5.orig/gkb-new/docs/C/gkb_applet-C.omf gnome-applets-1.4.0.5/gkb-new/docs/C/gkb_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/gkb-new/docs/C/gkb_applet-C.omf	Fri Oct 26 11:12:13 2001
 +++ gnome-applets-1.4.0.5/gkb-new/docs/C/gkb_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1200,9 +1235,10 @@ diff -ur gnome-applets-1.4.0.5.orig/gkb-new/docs/C/gkb_applet-C.omf gnome-applet
 diff -ur gnome-applets-1.4.0.5.orig/gkb-new/docs/hu/gkb_applet-hu.omf gnome-applets-1.4.0.5/gkb-new/docs/hu/gkb_applet-hu.omf
 --- gnome-applets-1.4.0.5.orig/gkb-new/docs/hu/gkb_applet-hu.omf	Fri Oct 26 11:12:14 2001
 +++ gnome-applets-1.4.0.5/gkb-new/docs/hu/gkb_applet-hu.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="ISO-8859-2"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1229,9 +1265,10 @@ diff -ur gnome-applets-1.4.0.5.orig/gkb-new/docs/hu/gkb_applet-hu.omf gnome-appl
 diff -ur gnome-applets-1.4.0.5.orig/gkb-new/docs/it/gkb_applet-it.omf gnome-applets-1.4.0.5/gkb-new/docs/it/gkb_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/gkb-new/docs/it/gkb_applet-it.omf	Sun Jan 20 18:13:43 2002
 +++ gnome-applets-1.4.0.5/gkb-new/docs/it/gkb_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1259,9 +1296,10 @@ Only in gnome-applets-1.4.0.5.orig/: gnome-applets-1.4.0.5.orig
 diff -ur gnome-applets-1.4.0.5.orig/gnotes/docs/C/gnotes_applet-C.omf gnome-applets-1.4.0.5/gnotes/docs/C/gnotes_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/gnotes/docs/C/gnotes_applet-C.omf	Fri Oct 26 11:11:10 2001
 +++ gnome-applets-1.4.0.5/gnotes/docs/C/gnotes_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1285,13 +1323,13 @@ diff -ur gnome-applets-1.4.0.5.orig/gnotes/docs/C/gnotes_applet-C.omf gnome-appl
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/gnotes/docs/it/gnotes_applet-it.omf gnome-applets-1.4.0.5/gnotes/docs/it/gnotes_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/gnotes/docs/it/gnotes_applet-it.omf	Fri Oct 26 11:11:11 2001
 +++ gnome-applets-1.4.0.5/gnotes/docs/it/gnotes_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1315,13 +1353,13 @@ diff -ur gnome-applets-1.4.0.5.orig/gnotes/docs/it/gnotes_applet-it.omf gnome-ap
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/gweather/docs/C/gweather_applet-C.omf gnome-applets-1.4.0.5/gweather/docs/C/gweather_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/gweather/docs/C/gweather_applet-C.omf	Fri Oct 26 11:11:14 2001
 +++ gnome-applets-1.4.0.5/gweather/docs/C/gweather_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1348,9 +1386,10 @@ diff -ur gnome-applets-1.4.0.5.orig/gweather/docs/C/gweather_applet-C.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/gweather/docs/it/gweather_applet-it.omf gnome-applets-1.4.0.5/gweather/docs/it/gweather_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/gweather/docs/it/gweather_applet-it.omf	Fri Oct 26 11:11:15 2001
 +++ gnome-applets-1.4.0.5/gweather/docs/it/gweather_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1377,9 +1416,10 @@ diff -ur gnome-applets-1.4.0.5.orig/gweather/docs/it/gweather_applet-it.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/jbc/docs/C/jbc_applet-C.omf gnome-applets-1.4.0.5/jbc/docs/C/jbc_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/jbc/docs/C/jbc_applet-C.omf	Fri Oct 26 11:11:17 2001
 +++ gnome-applets-1.4.0.5/jbc/docs/C/jbc_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1406,9 +1446,10 @@ diff -ur gnome-applets-1.4.0.5.orig/jbc/docs/C/jbc_applet-C.omf gnome-applets-1.
 diff -ur gnome-applets-1.4.0.5.orig/jbc/docs/es/jbc_applet-es.omf gnome-applets-1.4.0.5/jbc/docs/es/jbc_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/jbc/docs/es/jbc_applet-es.omf	Fri Oct 26 11:11:19 2001
 +++ gnome-applets-1.4.0.5/jbc/docs/es/jbc_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1435,9 +1476,10 @@ diff -ur gnome-applets-1.4.0.5.orig/jbc/docs/es/jbc_applet-es.omf gnome-applets-
 diff -ur gnome-applets-1.4.0.5.orig/jbc/docs/it/jbc_applet-it.omf gnome-applets-1.4.0.5/jbc/docs/it/jbc_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/jbc/docs/it/jbc_applet-it.omf	Fri Oct 26 11:11:19 2001
 +++ gnome-applets-1.4.0.5/jbc/docs/it/jbc_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1464,9 +1506,10 @@ diff -ur gnome-applets-1.4.0.5.orig/jbc/docs/it/jbc_applet-it.omf gnome-applets-
 diff -ur gnome-applets-1.4.0.5.orig/life/docs/C/life_applet-C.omf gnome-applets-1.4.0.5/life/docs/C/life_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/life/docs/C/life_applet-C.omf	Fri Oct 26 11:11:20 2001
 +++ gnome-applets-1.4.0.5/life/docs/C/life_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1493,9 +1536,10 @@ diff -ur gnome-applets-1.4.0.5.orig/life/docs/C/life_applet-C.omf gnome-applets-
 diff -ur gnome-applets-1.4.0.5.orig/life/docs/es/life_applet-es.omf gnome-applets-1.4.0.5/life/docs/es/life_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/life/docs/es/life_applet-es.omf	Fri Oct 26 11:11:21 2001
 +++ gnome-applets-1.4.0.5/life/docs/es/life_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1522,9 +1566,10 @@ diff -ur gnome-applets-1.4.0.5.orig/life/docs/es/life_applet-es.omf gnome-applet
 diff -ur gnome-applets-1.4.0.5.orig/life/docs/it/life_applet-it.omf gnome-applets-1.4.0.5/life/docs/it/life_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/life/docs/it/life_applet-it.omf	Fri Oct 26 11:11:21 2001
 +++ gnome-applets-1.4.0.5/life/docs/it/life_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1548,13 +1593,13 @@ diff -ur gnome-applets-1.4.0.5.orig/life/docs/it/life_applet-it.omf gnome-applet
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/mini-commander/docs/C/mini-commander_applet-C.omf gnome-applets-1.4.0.5/mini-commander/docs/C/mini-commander_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/mini-commander/docs/C/mini-commander_applet-C.omf	Fri Oct 26 11:11:23 2001
 +++ gnome-applets-1.4.0.5/mini-commander/docs/C/mini-commander_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1581,9 +1626,10 @@ diff -ur gnome-applets-1.4.0.5.orig/mini-commander/docs/C/mini-commander_applet-
 diff -ur gnome-applets-1.4.0.5.orig/mini-commander/docs/es/mini-commander_applet-es.omf gnome-applets-1.4.0.5/mini-commander/docs/es/mini-commander_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/mini-commander/docs/es/mini-commander_applet-es.omf	Fri Oct 26 11:11:24 2001
 +++ gnome-applets-1.4.0.5/mini-commander/docs/es/mini-commander_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1610,9 +1656,10 @@ diff -ur gnome-applets-1.4.0.5.orig/mini-commander/docs/es/mini-commander_applet
 diff -ur gnome-applets-1.4.0.5.orig/mini-commander/docs/it/mini-commander_applet-it.omf gnome-applets-1.4.0.5/mini-commander/docs/it/mini-commander_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/mini-commander/docs/it/mini-commander_applet-it.omf	Fri Oct 26 11:11:24 2001
 +++ gnome-applets-1.4.0.5/mini-commander/docs/it/mini-commander_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1636,13 +1683,13 @@ diff -ur gnome-applets-1.4.0.5.orig/mini-commander/docs/it/mini-commander_applet
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/mixer/docs/C/mixer_applet-C.omf gnome-applets-1.4.0.5/mixer/docs/C/mixer_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/mixer/docs/C/mixer_applet-C.omf	Fri Oct 26 11:11:26 2001
 +++ gnome-applets-1.4.0.5/mixer/docs/C/mixer_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1669,9 +1716,10 @@ diff -ur gnome-applets-1.4.0.5.orig/mixer/docs/C/mixer_applet-C.omf gnome-applet
 diff -ur gnome-applets-1.4.0.5.orig/mixer/docs/es/mixer_applet-es.omf gnome-applets-1.4.0.5/mixer/docs/es/mixer_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/mixer/docs/es/mixer_applet-es.omf	Fri Oct 26 11:11:28 2001
 +++ gnome-applets-1.4.0.5/mixer/docs/es/mixer_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1698,9 +1746,10 @@ diff -ur gnome-applets-1.4.0.5.orig/mixer/docs/es/mixer_applet-es.omf gnome-appl
 diff -ur gnome-applets-1.4.0.5.orig/mixer/docs/it/mixer_applet-it.omf gnome-applets-1.4.0.5/mixer/docs/it/mixer_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/mixer/docs/it/mixer_applet-it.omf	Fri Oct 26 11:11:27 2001
 +++ gnome-applets-1.4.0.5/mixer/docs/it/mixer_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1727,9 +1776,10 @@ diff -ur gnome-applets-1.4.0.5.orig/mixer/docs/it/mixer_applet-it.omf gnome-appl
 diff -ur gnome-applets-1.4.0.5.orig/modemlights/docs/C/modemlights_applet-C.omf gnome-applets-1.4.0.5/modemlights/docs/C/modemlights_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/modemlights/docs/C/modemlights_applet-C.omf	Fri Oct 26 11:11:30 2001
 +++ gnome-applets-1.4.0.5/modemlights/docs/C/modemlights_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1756,9 +1806,10 @@ diff -ur gnome-applets-1.4.0.5.orig/modemlights/docs/C/modemlights_applet-C.omf 
 diff -ur gnome-applets-1.4.0.5.orig/modemlights/docs/es/modemlights_applet-es.omf gnome-applets-1.4.0.5/modemlights/docs/es/modemlights_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/modemlights/docs/es/modemlights_applet-es.omf	Fri Oct 26 11:11:31 2001
 +++ gnome-applets-1.4.0.5/modemlights/docs/es/modemlights_applet-es.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1785,9 +1836,10 @@ diff -ur gnome-applets-1.4.0.5.orig/modemlights/docs/es/modemlights_applet-es.om
 diff -ur gnome-applets-1.4.0.5.orig/modemlights/docs/it/modemlights_applet-it.omf gnome-applets-1.4.0.5/modemlights/docs/it/modemlights_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/modemlights/docs/it/modemlights_applet-it.omf	Fri Oct 26 11:11:31 2001
 +++ gnome-applets-1.4.0.5/modemlights/docs/it/modemlights_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1814,9 +1866,10 @@ diff -ur gnome-applets-1.4.0.5.orig/modemlights/docs/it/modemlights_applet-it.om
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/cpuload/cpuload_applet-C.omf gnome-applets-1.4.0.5/multiload/docs/C/cpuload/cpuload_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/C/cpuload/cpuload_applet-C.omf	Fri Oct 26 11:11:34 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/C/cpuload/cpuload_applet-C.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1840,13 +1893,13 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/cpuload/cpuload_applet-C.om
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/memload/memload_applet-C.omf gnome-applets-1.4.0.5/multiload/docs/C/memload/memload_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/C/memload/memload_applet-C.omf	Fri Oct 26 11:11:35 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/C/memload/memload_applet-C.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1873,9 +1926,10 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/memload/memload_applet-C.om
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/netload/netload_applet-C.omf gnome-applets-1.4.0.5/multiload/docs/C/netload/netload_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/C/netload/netload_applet-C.omf	Fri Oct 26 11:11:36 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/C/netload/netload_applet-C.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1899,13 +1953,13 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/netload/netload_applet-C.om
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/swapload/swapload_applet-C.omf gnome-applets-1.4.0.5/multiload/docs/C/swapload/swapload_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/C/swapload/swapload_applet-C.omf	Fri Oct 26 11:11:36 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/C/swapload/swapload_applet-C.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1929,13 +1983,13 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/swapload/swapload_applet-C.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/cpuload/cpuload_applet-es.omf gnome-applets-1.4.0.5/multiload/docs/es/cpuload/cpuload_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/es/cpuload/cpuload_applet-es.omf	Fri Oct 26 11:11:41 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/es/cpuload/cpuload_applet-es.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1962,9 +2016,10 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/cpuload/cpuload_applet-es.
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/memload/memload_applet-es.omf gnome-applets-1.4.0.5/multiload/docs/es/memload/memload_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/es/memload/memload_applet-es.omf	Fri Oct 26 11:11:41 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/es/memload/memload_applet-es.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -1991,9 +2046,10 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/memload/memload_applet-es.
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/netload/netload_applet-es.omf gnome-applets-1.4.0.5/multiload/docs/es/netload/netload_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/es/netload/netload_applet-es.omf	Fri Oct 26 11:11:42 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/es/netload/netload_applet-es.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2020,9 +2076,10 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/netload/netload_applet-es.
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/swapload/swapload_applet-es.omf gnome-applets-1.4.0.5/multiload/docs/es/swapload/swapload_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/es/swapload/swapload_applet-es.omf	Fri Oct 26 11:11:42 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/es/swapload/swapload_applet-es.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2049,9 +2106,10 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/swapload/swapload_applet-e
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/cpuload/cpuload_applet-it.omf gnome-applets-1.4.0.5/multiload/docs/it/cpuload/cpuload_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/it/cpuload/cpuload_applet-it.omf	Fri Oct 26 11:11:37 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/it/cpuload/cpuload_applet-it.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2075,13 +2133,13 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/cpuload/cpuload_applet-it.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/memload/memload_applet-it.omf gnome-applets-1.4.0.5/multiload/docs/it/memload/memload_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/it/memload/memload_applet-it.omf	Fri Oct 26 11:11:39 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/it/memload/memload_applet-it.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2106,13 +2164,13 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/memload/memload_applet-it.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/netload/netload_applet-it.omf gnome-applets-1.4.0.5/multiload/docs/it/netload/netload_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/it/netload/netload_applet-it.omf	Fri Oct 26 11:11:39 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/it/netload/netload_applet-it.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2136,13 +2194,13 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/netload/netload_applet-it.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/swapload/swapload_applet-it.omf gnome-applets-1.4.0.5/multiload/docs/it/swapload/swapload_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/it/swapload/swapload_applet-it.omf	Fri Oct 26 11:11:40 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/it/swapload/swapload_applet-it.omf	Fri Oct  4 02:00:53 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2169,9 +2227,10 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/swapload/swapload_applet-i
 diff -ur gnome-applets-1.4.0.5.orig/odometer/docs/C/odometer_applet-C.omf gnome-applets-1.4.0.5/odometer/docs/C/odometer_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/odometer/docs/C/odometer_applet-C.omf	Fri Oct 26 11:12:20 2001
 +++ gnome-applets-1.4.0.5/odometer/docs/C/odometer_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2195,13 +2254,13 @@ diff -ur gnome-applets-1.4.0.5.orig/odometer/docs/C/odometer_applet-C.omf gnome-
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/odometer/docs/fr/odometer_applet-fr.omf gnome-applets-1.4.0.5/odometer/docs/fr/odometer_applet-fr.omf
 --- gnome-applets-1.4.0.5.orig/odometer/docs/fr/odometer_applet-fr.omf	Fri Oct 26 11:12:21 2001
 +++ gnome-applets-1.4.0.5/odometer/docs/fr/odometer_applet-fr.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2225,13 +2284,13 @@ diff -ur gnome-applets-1.4.0.5.orig/odometer/docs/fr/odometer_applet-fr.omf gnom
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/odometer/docs/it/odometer_applet-it.omf gnome-applets-1.4.0.5/odometer/docs/it/odometer_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/odometer/docs/it/odometer_applet-it.omf	Fri Oct 26 11:12:22 2001
 +++ gnome-applets-1.4.0.5/odometer/docs/it/odometer_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2255,13 +2314,13 @@ diff -ur gnome-applets-1.4.0.5.orig/odometer/docs/it/odometer_applet-it.omf gnom
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/quicklaunch/docs/C/quicklaunch_applet-C.omf gnome-applets-1.4.0.5/quicklaunch/docs/C/quicklaunch_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/quicklaunch/docs/C/quicklaunch_applet-C.omf	Fri Oct 26 11:12:25 2001
 +++ gnome-applets-1.4.0.5/quicklaunch/docs/C/quicklaunch_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2288,9 +2347,10 @@ diff -ur gnome-applets-1.4.0.5.orig/quicklaunch/docs/C/quicklaunch_applet-C.omf 
 diff -ur gnome-applets-1.4.0.5.orig/quicklaunch/docs/it/quicklaunch_applet-it.omf gnome-applets-1.4.0.5/quicklaunch/docs/it/quicklaunch_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/quicklaunch/docs/it/quicklaunch_applet-it.omf	Fri Oct 26 11:12:25 2001
 +++ gnome-applets-1.4.0.5/quicklaunch/docs/it/quicklaunch_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2317,9 +2377,10 @@ diff -ur gnome-applets-1.4.0.5.orig/quicklaunch/docs/it/quicklaunch_applet-it.om
 diff -ur gnome-applets-1.4.0.5.orig/screenshooter/docs/C/screenshooter_applet-C.omf gnome-applets-1.4.0.5/screenshooter/docs/C/screenshooter_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/screenshooter/docs/C/screenshooter_applet-C.omf	Fri Oct 26 11:12:23 2001
 +++ gnome-applets-1.4.0.5/screenshooter/docs/C/screenshooter_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2343,13 +2404,13 @@ diff -ur gnome-applets-1.4.0.5.orig/screenshooter/docs/C/screenshooter_applet-C.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/screenshooter/docs/it/screenshooter_applet-it.omf gnome-applets-1.4.0.5/screenshooter/docs/it/screenshooter_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/screenshooter/docs/it/screenshooter_applet-it.omf	Fri Oct 26 11:12:24 2001
 +++ gnome-applets-1.4.0.5/screenshooter/docs/it/screenshooter_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2373,13 +2434,13 @@ diff -ur gnome-applets-1.4.0.5.orig/screenshooter/docs/it/screenshooter_applet-i
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/sound-monitor/docs/C/sound-monitor_applet-C.omf gnome-applets-1.4.0.5/sound-monitor/docs/C/sound-monitor_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/sound-monitor/docs/C/sound-monitor_applet-C.omf	Fri Oct 26 11:11:57 2001
 +++ gnome-applets-1.4.0.5/sound-monitor/docs/C/sound-monitor_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2407,9 +2468,10 @@ diff -ur gnome-applets-1.4.0.5.orig/sound-monitor/docs/C/sound-monitor_applet-C.
 diff -ur gnome-applets-1.4.0.5.orig/sound-monitor/docs/it/sound-monitor_applet-it.omf gnome-applets-1.4.0.5/sound-monitor/docs/it/sound-monitor_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/sound-monitor/docs/it/sound-monitor_applet-it.omf	Fri Oct 26 11:11:57 2001
 +++ gnome-applets-1.4.0.5/sound-monitor/docs/it/sound-monitor_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2437,9 +2499,10 @@ diff -ur gnome-applets-1.4.0.5.orig/sound-monitor/docs/it/sound-monitor_applet-i
 diff -ur gnome-applets-1.4.0.5.orig/tickastat/docs/C/tickastat_applet-C.omf gnome-applets-1.4.0.5/tickastat/docs/C/tickastat_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/tickastat/docs/C/tickastat_applet-C.omf	Fri Oct 26 11:12:01 2001
 +++ gnome-applets-1.4.0.5/tickastat/docs/C/tickastat_applet-C.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2466,9 +2529,10 @@ diff -ur gnome-applets-1.4.0.5.orig/tickastat/docs/C/tickastat_applet-C.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/tickastat/docs/it/tickastat_applet-it.omf gnome-applets-1.4.0.5/tickastat/docs/it/tickastat_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/tickastat/docs/it/tickastat_applet-it.omf	Fri Oct 26 11:12:01 2001
 +++ gnome-applets-1.4.0.5/tickastat/docs/it/tickastat_applet-it.omf	Fri Oct  4 02:00:26 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2495,9 +2559,10 @@ diff -ur gnome-applets-1.4.0.5.orig/tickastat/docs/it/tickastat_applet-it.omf gn
 diff -ur gnome-applets-1.4.0.5.orig/webcontrol/docs/C/webcontrol_applet-C.omf gnome-applets-1.4.0.5/webcontrol/docs/C/webcontrol_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/webcontrol/docs/C/webcontrol_applet-C.omf	Fri Oct 26 11:12:02 2001
 +++ gnome-applets-1.4.0.5/webcontrol/docs/C/webcontrol_applet-C.omf	Fri Oct  4 02:00:27 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2524,9 +2589,10 @@ diff -ur gnome-applets-1.4.0.5.orig/webcontrol/docs/C/webcontrol_applet-C.omf gn
 diff -ur gnome-applets-1.4.0.5.orig/webcontrol/docs/it/webcontrol_applet-it.omf gnome-applets-1.4.0.5/webcontrol/docs/it/webcontrol_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/webcontrol/docs/it/webcontrol_applet-it.omf	Fri Oct 26 11:12:04 2001
 +++ gnome-applets-1.4.0.5/webcontrol/docs/it/webcontrol_applet-it.omf	Fri Oct  4 02:00:27 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2553,9 +2619,10 @@ diff -ur gnome-applets-1.4.0.5.orig/webcontrol/docs/it/webcontrol_applet-it.omf 
 diff -ur gnome-applets-1.4.0.5.orig/whereami/docs/C/whereami_applet-C.omf gnome-applets-1.4.0.5/whereami/docs/C/whereami_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/whereami/docs/C/whereami_applet-C.omf	Fri Oct 26 11:12:05 2001
 +++ gnome-applets-1.4.0.5/whereami/docs/C/whereami_applet-C.omf	Fri Oct  4 02:00:27 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2582,9 +2649,10 @@ diff -ur gnome-applets-1.4.0.5.orig/whereami/docs/C/whereami_applet-C.omf gnome-
 diff -ur gnome-applets-1.4.0.5.orig/whereami/docs/es/whereami_applet-es.omf gnome-applets-1.4.0.5/whereami/docs/es/whereami_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/whereami/docs/es/whereami_applet-es.omf	Fri Oct 26 11:12:06 2001
 +++ gnome-applets-1.4.0.5/whereami/docs/es/whereami_applet-es.omf	Fri Oct  4 02:00:27 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="ISO-8859-1"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2611,9 +2679,10 @@ diff -ur gnome-applets-1.4.0.5.orig/whereami/docs/es/whereami_applet-es.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/whereami/docs/it/whereami_applet-it.omf gnome-applets-1.4.0.5/whereami/docs/it/whereami_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/whereami/docs/it/whereami_applet-it.omf	Fri Oct 26 11:12:05 2001
 +++ gnome-applets-1.4.0.5/whereami/docs/it/whereami_applet-it.omf	Fri Oct  4 02:00:27 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2641,9 +2710,10 @@ diff -ur gnome-applets-1.4.0.5.orig/whereami/docs/it/whereami_applet-it.omf gnom
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/loadavg/loadavg_applet-C.omf gnome-applets-1.4.0.5/multiload/docs/C/loadavg/loadavg_applet-C.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/C/loadavg/loadavg_applet-C.omf	Fri Oct 26 11:11:34 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/C/loadavg/loadavg_applet-C.omf	Fri Oct  4 03:27:48 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2667,13 +2737,13 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/C/loadavg/loadavg_applet-C.om
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/loadavg/loadavg_applet-es.omf gnome-applets-1.4.0.5/multiload/docs/es/loadavg/loadavg_applet-es.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/es/loadavg/loadavg_applet-es.omf	Fri Oct 26 11:11:43 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/es/loadavg/loadavg_applet-es.omf	Fri Oct  4 03:27:59 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2700,9 +2770,10 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/es/loadavg/loadavg_applet-es.
 diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/loadavg/loadavg_applet-it.omf gnome-applets-1.4.0.5/multiload/docs/it/loadavg/loadavg_applet-it.omf
 --- gnome-applets-1.4.0.5.orig/multiload/docs/it/loadavg/loadavg_applet-it.omf	Fri Oct 26 11:11:38 2001
 +++ gnome-applets-1.4.0.5/multiload/docs/it/loadavg/loadavg_applet-it.omf	Fri Oct  4 03:28:10 2002
-@@ -1,14 +1,21 @@
+@@ -1,14 +1,22 @@
 -<?xml version="1.0" standalone="no"?>
 +<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
 +    <creator/>
@@ -2726,4 +2797,3 @@ diff -ur gnome-applets-1.4.0.5.orig/multiload/docs/it/loadavg/loadavg_applet-it.
 +    <rights type="GNU GPL" license.version="2" license="http://www.gnu.org/licenses/gpl.html"/>
    </resource>
  </omf>
-\ No newline at end of file
