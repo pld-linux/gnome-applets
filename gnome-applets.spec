@@ -41,6 +41,7 @@ BuildRequires:	system-tools-backends >= 1.2.0
 Requires(post):	GConf2 >= 2.10.0
 Requires(post):	scrollkeeper
 Requires:	gnome-icon-theme >= 2.10.0
+Requires:	gnome-utils >= 2.10.0
 Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	gstreamer-audiosink
 Requires:	system-tools-backends >= 1.2.0
