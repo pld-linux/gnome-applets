@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.1.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -17,11 +17,11 @@ BuildRequires:	automake
 BuildRequires:	gail-devel >= 1.1.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-panel-devel >= 2.0.9
-BuildRequires:	gnome-vfs2-devel >= 2.1.3
+BuildRequires:	gnome-panel-devel >= 2.1.2-2
+BuildRequires:	gnome-vfs2-devel >= 2.1.3-3
 BuildRequires:	gtk+2-devel >= 2.0.6
 BuildRequires:	intltool >= 0.23
-BuildRequires:	libgnome-devel >= 2.1.1
+BuildRequires:	libgnome-devel >= 2.1.1-2
 BuildRequires:	libgnomecanvas-devel >= 2.0.4
 BuildRequires:	libgnomeui-devel >= 2.1.2
 BuildRequires:	libglade2-devel >= 2.0.1-2
@@ -40,6 +40,7 @@ Obsoletes:	gnotes_applet
 %define		_sysconfdir	/etc/X11/GNOME2
 %define		_localstatedir	/var
 %define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
+%define		_serverdir	/usr/lib/bonobo/servers
 
 %description
 The gnome-applets package provides Panel applets which enhance your
@@ -79,7 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	omf_dest_dir=%{_omf_dest_dir}/%{name}
+	omf_dest_dir=%{_omf_dest_dir}/%{name} \
+	serverdir=%{_serverdir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -123,7 +125,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/multiload-applet-2
 %attr(755,root,root) %{_libdir}/wireless-applet
 %attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
-%{_libdir}/bonobo/servers/*
+%{_serverdir}/*
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
 %{_datadir}/gweather
