@@ -1,7 +1,7 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.4.0
+Version:	1.4.0.1
 Release:	1
 Epoch:		1
 License:	GPL
@@ -10,6 +10,7 @@ Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
 Patch0:		%{name}-applet-docs.make.patch
+Patch1:		%{name}-gettext.patch
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
@@ -18,6 +19,9 @@ BuildRequires:	gdk-pixbuf-devel >= 0.7.0
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	libghttp-devel
+BuildRequires:	gettext-devel
+BuildRequires:	automake
+BuildRequires:	autoconf
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
@@ -36,11 +40,16 @@ Applety pod GNOME.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
+rm missing
 gettextize --copy --force
+aclocal -I macros
+autoconf
 %configure \
-	--disable-static
+	--disable-static \
+	--without-included-gettext
 %{__make}
 
 %install
