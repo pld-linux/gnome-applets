@@ -2,13 +2,15 @@ Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
 Version:	1.2.1
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/GNOME
 Group(de):	X11/GNOME
 Group(pl):	X11/GNOME
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.gz
+Source1:	http://www.brendy.addr.com/linux/gnomesensors/GnomeSensors-0.2.0.tar.gz
 Patch0:		%{name}-applet-docs.make.patch
+Patch1:		%{name}-sensors.patch
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
@@ -66,8 +68,9 @@ Xmms sound plug-in for gumma GNOME applet.
 Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms.
 
 %prep
-%setup -q
+%setup -q -a1
 %patch0 -p1
+%patch1 -p1
 
 %build
 gettextize --copy --force
@@ -76,11 +79,18 @@ gettextize --copy --force
 %{__make}
 #make -C gumma
 
+cd GnomeSensors-0.2.0
+%configure \
+	--disable-static
+%{__make} gnorbadir=%{_sysconfdir}/CORBA/servers
+
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-#make install DESTDIR=$RPM_BUILD_ROOT -C gumma
+%{__make} install DESTDIR=$RPM_BUILD_ROOT \
+	gnorbadir=%{_sysconfdir}/CORBA/servers -C GnomeSensors-0.2.0
+#%{__make} install DESTDIR=$RPM_BUILD_ROOT -C gumma
 
 #strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/gumma/lib*.so
 
