@@ -151,10 +151,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(el) %{_datadir}/gnome/gkb/GR_*
 %lang(hu) %{_datadir}/gnome/gkb/HU_*
 %lang(hu) %{_datadir}/gnome/gkb/Hungarian*
-%lang(he,iw) %{_datadir}/gnome/gkb/IL_*
+%lang(he,yi) %{_datadir}/gnome/gkb/IL_*
 %lang(is) %{_datadir}/gnome/gkb/IS_*
 %lang(it) %{_datadir}/gnome/gkb/IT_*
-%lang(jp) %{_datadir}/gnome/gkb/JP_*
+%lang(ja) %{_datadir}/gnome/gkb/JP_*
 %lang(lo) %{_datadir}/gnome/gkb/LA_Lao_x.keyprop
 %lang(lt) %{_datadir}/gnome/gkb/LT_*
 %lang(mk) %{_datadir}/gnome/gkb/M*acedonian.keyprop
@@ -207,10 +207,10 @@ rm -rf $RPM_BUILD_ROOT
 # %lang(el) %{_datadir}/pixmaps/gkb/gr.png
 # %lang(hr) %{_datadir}/pixmaps/gkb/hr.png
 # %lang(hu) %{_datadir}/pixmaps/gkb/hu.png
-# %lang(he,iw) %{_datadir}/pixmaps/gkb/il.png
+# %lang(he,yi) %{_datadir}/pixmaps/gkb/il.png
 # %lang(is) %{_datadir}/pixmaps/gkb/is.png
 # %lang(it) %{_datadir}/pixmaps/gkb/it.png
-# %lang(jp) %{_datadir}/pixmaps/gkb/jp.png
+# %lang(ja) %{_datadir}/pixmaps/gkb/jp.png
 # %lang(lt) %{_datadir}/pixmaps/gkb/lt.png
 # %lang(mk) %{_datadir}/pixmaps/gkb/mk.png
 # %lang(es) %{_datadir}/pixmaps/gkb/mx.png
@@ -233,7 +233,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_datadir}/xmodmap
 %lang(hy) %{_datadir}/xmodmap/xmodmap.am*
-%lang(fr,wa,de,nl) %{_datadir}/xmodmap/xmodmap.be*
+%lang(fr,nl,wa) %{_datadir}/xmodmap/xmodmap.be*
 %lang(bg) %{_datadir}/xmodmap/xmodmap.bg*
 %lang(pt_BR) %{_datadir}/xmodmap/xmodmap.br*
 %lang(de) %{_datadir}/xmodmap/xmodmap.ch*
@@ -248,7 +248,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xmodmap/xmodmap.gb*
 %lang(el) %{_datadir}/xmodmap/xmodmap.gr*
 %lang(hu) %{_datadir}/xmodmap/xmodmap.hu*
-%lang(he,iw) %{_datadir}/xmodmap/xmodmap.il*
+%lang(he,yi) %{_datadir}/xmodmap/xmodmap.il*
 %lang(is) %{_datadir}/xmodmap/xmodmap.is*
 %lang(it) %{_datadir}/xmodmap/xmodmap.it*
 %lang(es,pt_BR) %{_datadir}/xmodmap/xmodmap.la*
