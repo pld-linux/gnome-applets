@@ -3,37 +3,40 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.4.2
+Version:	2.6.0
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	3a59c7f5b452e4f9675dfce44a2b3433
-Patch0:		%{name}-stickynotes-title-size.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	9c2dcde8fc94dd43f8aa7be52ca9c103
+Patch1:		%{name}-stickynotes-title-size.patch
+Patch2:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gail-devel >= 1.3.0
+BuildRequires:	gail-devel >= 1.5.8
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common >= 2.3.0
-BuildRequires:	gnome-panel-devel >= 2.3.4.1-2
-BuildRequires:	gnome-vfs2-devel >= 2.2.0
-BuildRequires:	gtk+2-devel >= 2.2.0
-BuildRequires:	intltool >= 0.23
-BuildRequires:	libgnome-devel >= 2.4.0
-BuildRequires:	libgnomecanvas-devel >= 2.4.0
-BuildRequires:	libgnomeui-devel >= 2.4.0
-BuildRequires:	libglade2-devel >= 2.0.1-2
-BuildRequires:	libgtop-devel >= 2.0.3
+BuildRequires:	gnome-common >= 2.4.0
+BuildRequires:	gnome-panel-devel >= 2.5.93
+BuildRequires:	gnome-vfs2-devel >= 2.5.91
+BuildRequires:	gstreamer-plugins-devel >= 0.8.0
+BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	intltool >= 0.29
+BuildRequires:	libgnome-devel >= 2.5.92
+BuildRequires:	libgnomecanvas-devel >= 2.5.92
+BuildRequires:	libgnomeui-devel >= 2.5.92
+BuildRequires:	libglade2-devel >= 2.3.6
+BuildRequires:	libgtop-devel >= 2.5.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.4.0
-BuildRequires:	libxml2-devel >= 2.5.1
+BuildRequires:	libwnck-devel >= 2.5.90
+BuildRequires:	libxml2-devel >= 2.6.7
+BuildRequires:	libxklavier-devel >= 0.97
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Requires(post):	GConf2 >= 2.4.0
+Requires(post):	GConf2 >= 2.5.90
 Requires(post):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.2.0
+Requires:	gnome-vfs2 >= 2.5.91
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,11 +58,29 @@ z GNOME.
 Пакет gnome-applets содержит апплеты Панели GNOME, увеличивающие
 комфортность работы в среде GNOME.
 
+%package devel
+Summary:	Header files for gnome-applets
+Summary(pl):	Pliki nagЁСwkowe gnome-applets
+Group:		Development/Libraries
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	GConf2-devel >= 2.5.90
+Requires:	gtk+2-devel >= 2:2.4.0
+
+%description devel
+Header files for gnome-applets.
+
+%description devel -l pl
+Pliki nagЁСwkowe gnome-applets.
+
 %prep
 %setup -q
-%patch0 -p1
+%patch1 -p1
+%patch2 -p1
+
+mv po/{no,nb}.po
 
 %build
+rm -f missing
 %{__aclocal}
 %{__libtoolize}
 glib-gettextize --copy --force
@@ -113,7 +134,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/charpick_applet2
 %attr(755,root,root) %{_libdir}/drivemount_applet2
 %attr(755,root,root) %{_libdir}/geyes_applet2
-%attr(755,root,root) %{_libdir}/gkb-applet-2
+%attr(755,root,root) %{_libdir}/gnome-keyboard-applet
 %attr(755,root,root) %{_libdir}/gtik2_applet2
 %attr(755,root,root) %{_libdir}/gweather-applet-2
 %attr(755,root,root) %{_libdir}/mailcheck-applet
@@ -130,11 +151,11 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome/gkb/presets.xml
 %{_datadir}/gnome-2.0/ui/*
 %{_datadir}/gen_util
+%{_datadir}/gswitchit
 %{_datadir}/gweather
 %{_datadir}/stickynotes
 %{_datadir}/wireless-applet
 %{_pixmapsdir}/accessx-status-applet
-%{_pixmapsdir}/gweather
 %{_pixmapsdir}/mailcheck
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/mixer
@@ -266,3 +287,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(uk) %{_datadir}/xmodmap/xmodmap.uk*
 %{_datadir}/xmodmap/xmodmap.us*
 %lang(hr,mk,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/*
+%{_pkgconfigdir}/*.pc
