@@ -3,37 +3,37 @@ Summary(pl):	GNOME - Applety
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	1.4.0.5
-Release:	2
+Version:	1.99.0
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-applet-docs.make.patch
-Patch1:		%{name}-ISDN.patch
-Patch2:		%{name}-am_conditional.patch
+Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/%{name}-%{version}.tar.bz2
+URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	gettext-devel
-BuildRequires:	esound-devel >= 0.2.7
-BuildRequires:	gdbm-devel
-BuildRequires:	gdk-pixbuf-devel >= 0.7.0
-BuildRequires:	gnome-libs-devel >= 1.0.0
-BuildRequires:	gnome-core-devel >= 1.1.0
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	libgtop-devel >= 1.0.0
-BuildRequires:	libghttp-devel
+BuildRequires:	esound-devel
+BuildRequires:	gnome-panel-devel
+BuildRequires:	gnome-vfs2-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	intltool
+BuildRequires:	libgnome-devel
+BuildRequires:	libgnomecanvas-devel
+BuildRequires:	libgnomeui-devel
+BuildRequires:	libglade2-devel
+BuildRequires:	libgtop-devel >= 1.90.2
+BuildRequires:	libwnck-devel
+BuildRequires:	libtool
+BuildRequires:	libxml2-devel
 BuildRequires:	scrollkeeper
-BuildRequires:	xml-i18n-tools
 Prereq:		/sbin/ldconfig
 Prereq:		scrollkeeper
-URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
 
 %define		_prefix		/usr/X11R6
-%define		_sysconfdir	/etc/X11/GNOME
+%define		_sysconfdir	/etc/X11/GNOME2
 %define		_localstatedir	/var
 %define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
 
