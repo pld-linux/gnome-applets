@@ -24,6 +24,7 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	libghttp-devel
 BuildRequires:	scrollkeeper
+BuildRequires:	xml-i18n-tools
 Prereq:		/sbin/ldconfig
 Prereq:		scrollkeeper
 URL:		http://www.gnome.org/
