@@ -1,37 +1,6 @@
-diff -urN gnome-applets-2.1.1.orig/battstat/Makefile.am gnome-applets-2.1.1/battstat/Makefile.am
---- gnome-applets-2.1.1.orig/battstat/Makefile.am	Mon Nov  4 00:58:05 2002
-+++ gnome-applets-2.1.1/battstat/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -51,8 +51,6 @@
- schemadir   = @GCONF_SCHEMA_FILE_DIR@
- schema_DATA = battstat.schemas
- 
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
- 
- serverdir       = $(libdir)/bonobo/servers
- server_in_files = GNOME_BattstatApplet.server.in
-diff -urN gnome-applets-2.1.1.orig/cdplayer/Makefile.am gnome-applets-2.1.1/cdplayer/Makefile.am
---- gnome-applets-2.1.1.orig/cdplayer/Makefile.am	Mon Nov  4 00:58:05 2002
-+++ gnome-applets-2.1.1/cdplayer/Makefile.am	Mon Nov  4 01:06:27 2002
-@@ -95,5 +95,3 @@
- $(ui_DATA) \
- $(IMAGES)
- 
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA);
-diff -urN gnome-applets-2.1.1.orig/charpick/Makefile.am gnome-applets-2.1.1/charpick/Makefile.am
---- gnome-applets-2.1.1.orig/charpick/Makefile.am	Mon Nov  4 00:58:04 2002
-+++ gnome-applets-2.1.1/charpick/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -40,6 +40,4 @@
- 	$(ui_DATA)				\
- 	$(schema_DATA)
- 
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
- 
-diff -urN gnome-applets-2.1.1.orig/configure.in gnome-applets-2.1.1/configure.in
---- gnome-applets-2.1.1.orig/configure.in	Mon Nov  4 00:58:04 2002
-+++ gnome-applets-2.1.1/configure.in	Mon Nov  4 01:00:47 2002
+diff -urN gnome-applets-2.3.0.orig/configure.in gnome-applets-2.3.0/configure.in
+--- gnome-applets-2.3.0.orig/configure.in	Thu Mar 27 20:58:30 2003
++++ gnome-applets-2.3.0/configure.in	Thu Mar 27 21:12:22 2003
 @@ -15,7 +15,7 @@
  X_LIBS="$X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS"
  AC_SUBST(X_LIBS)
@@ -41,121 +10,27 @@ diff -urN gnome-applets-2.1.1.orig/configure.in gnome-applets-2.1.1/configure.in
  
  dnl Stuff we might need, not quite sure yet
  
-diff -urN gnome-applets-2.1.1.orig/drivemount/Makefile.am gnome-applets-2.1.1/drivemount/Makefile.am
---- gnome-applets-2.1.1.orig/drivemount/Makefile.am	Mon Nov  4 00:58:05 2002
-+++ gnome-applets-2.1.1/drivemount/Makefile.am	Mon Nov  4 01:06:59 2002
-@@ -65,5 +65,3 @@
- $(ui_DATA)	\
- drivemount-applet.png
+diff -urN gnome-applets-2.3.0.orig/sgmldocs.make gnome-applets-2.3.0/sgmldocs.make
+--- gnome-applets-2.3.0.orig/sgmldocs.make	Thu Mar 27 20:58:30 2003
++++ gnome-applets-2.3.0/sgmldocs.make	Thu Mar 27 21:02:01 2003
+@@ -58,7 +58,7 @@
+ 	-cp $(docname)/index.html .
  
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
-diff -urN gnome-applets-2.1.1.orig/geyes/Makefile.am gnome-applets-2.1.1/geyes/Makefile.am
---- gnome-applets-2.1.1.orig/geyes/Makefile.am	Mon Nov  4 00:58:04 2002
-+++ gnome-applets-2.1.1/geyes/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -48,7 +48,5 @@
- 	     $(schema_DATA) \
- 	     $(ui_DATA)
+ $(docname).sgml: $(sgml_ents)
+-        -ourdir=`pwd`;  \
++        ourdir=`pwd`;  \
+         cd $(srcdir);   \
+         cp $(sgml_ents) $$ourdir
  
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
- 
- 
-diff -urN gnome-applets-2.1.1.orig/gkb-new/Makefile.am gnome-applets-2.1.1/gkb-new/Makefile.am
---- gnome-applets-2.1.1.orig/gkb-new/Makefile.am	Mon Nov  4 00:58:05 2002
-+++ gnome-applets-2.1.1/gkb-new/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -65,6 +65,4 @@
- 	< gkb_xmmap.in >gkb_xmmap.tmp \
- 	&& mv gkb_xmmap.tmp gkb_xmmap
- 
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
- 
-diff -urN gnome-applets-2.1.1.orig/gtik/Makefile.am gnome-applets-2.1.1/gtik/Makefile.am
---- gnome-applets-2.1.1.orig/gtik/Makefile.am	Mon Nov  4 00:58:04 2002
-+++ gnome-applets-2.1.1/gtik/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -42,6 +42,4 @@
- 	$(ui_DATA)		\
- 	$(schema_DATA)
- 	
--install-data-local:
--		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
- 
-diff -urN gnome-applets-2.1.1.orig/gweather/Makefile.am gnome-applets-2.1.1/gweather/Makefile.am
---- gnome-applets-2.1.1.orig/gweather/Makefile.am	Mon Nov  4 00:58:05 2002
-+++ gnome-applets-2.1.1/gweather/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -32,9 +32,6 @@
- uidir = $(datadir)/gnome-2.0/ui
- ui_DATA = GNOME_GWeatherApplet.xml
- 
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
--	
- serverdir       = $(libdir)/bonobo/servers
- server_in_files = GNOME_GWeatherApplet_Factory.server.in
- server_DATA     = $(server_in_files:.server.in=.server)
-diff -urN gnome-applets-2.1.1.orig/mini-commander/src/Makefile.am gnome-applets-2.1.1/mini-commander/src/Makefile.am
---- gnome-applets-2.1.1.orig/mini-commander/src/Makefile.am	Mon Nov  4 00:58:04 2002
-+++ gnome-applets-2.1.1/mini-commander/src/Makefile.am	Mon Nov  4 01:10:49 2002
-@@ -72,9 +72,6 @@
- uidir = $(datadir)/gnome-2.0/ui
- ui_DATA = GNOME_MiniCommanderApplet.xml
- 
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(top_builddir)/mini-commander/src/mc-install-default-macros
- 
- @INTLTOOL_SERVER_RULE@
- 
-diff -urN gnome-applets-2.1.1.orig/modemlights/Makefile.am gnome-applets-2.1.1/modemlights/Makefile.am
---- gnome-applets-2.1.1.orig/modemlights/Makefile.am	Mon Nov  4 00:58:04 2002
-+++ gnome-applets-2.1.1/modemlights/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -38,8 +38,3 @@
- 	$(schema_DATA)				\
- 	$(ui_DATA)
- 
--install-data-local:
--	for p in $(schema_DATA); do \
--		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$$p ; \
--	done
--
-diff -urN gnome-applets-2.1.1.orig/multiload/Makefile.am gnome-applets-2.1.1/multiload/Makefile.am
---- gnome-applets-2.1.1.orig/multiload/Makefile.am	Mon Nov  4 00:58:04 2002
-+++ gnome-applets-2.1.1/multiload/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -37,9 +37,6 @@
- schemadir 	= @GCONF_SCHEMA_FILE_DIR@
- schema_DATA	= multiload.schemas
- 
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
--		
- EXTRA_DIST =	\
- 		GNOME_MultiLoadApplet_Factory.server.in \
- 		GNOME_MultiLoadApplet_Factory.server.in.in \
-diff -urN gnome-applets-2.1.1.orig/panel-menu/Makefile.am gnome-applets-2.1.1/panel-menu/Makefile.am
---- gnome-applets-2.1.1.orig/panel-menu/Makefile.am	Mon Nov  4 00:58:05 2002
-+++ gnome-applets-2.1.1/panel-menu/Makefile.am	Mon Nov  4 01:00:47 2002
-@@ -65,5 +65,3 @@
- 
- @INTLTOOL_SERVER_RULE@
- 
--install-data-local:
--	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) ;
-diff -urN gnome-applets-2.1.1.orig/xmldocs.make gnome-applets-2.1.1/xmldocs.make
---- gnome-applets-2.1.1.orig/xmldocs.make	Mon Nov  4 00:58:05 2002
-+++ gnome-applets-2.1.1/xmldocs.make	Mon Nov  4 01:06:06 2002
-@@ -52,10 +52,10 @@
- 	done
+diff -urN gnome-applets-2.3.0.orig/xmldocs.make gnome-applets-2.3.0/xmldocs.make
+--- gnome-applets-2.3.0.orig/xmldocs.make	Thu Mar 27 20:58:30 2003
++++ gnome-applets-2.3.0/xmldocs.make	Thu Mar 27 21:02:14 2003
+@@ -53,7 +53,7 @@
  	touch omf_timestamp
  
--$(docname).xml: $(entities)
+ $(docname).xml: $(entities)
 -        -ourdir=`pwd`;  \
--        cd $(srcdir);   \
--        cp $(entities) $$ourdir
-+#$(docname).xml: $(entities)
-+#        -ourdir=`pwd`;  \
-+#        cd $(srcdir);   \
-+#        cp $(entities) $$ourdir
++        ourdir=`pwd`;  \
+         cd $(srcdir);   \
+         cp $(entities) $$ourdir
  
- app-dist-hook: 
- 	-$(mkinstalldirs) $(distdir)/figures
