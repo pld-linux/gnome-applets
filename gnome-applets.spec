@@ -12,6 +12,7 @@ BuildRequires:	gnome-core-devel >= 1.1.0
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	libgtop-devel >= 1.0.0
+BuildRequires:	libghttp-devel
 BuildRequires:	xmms-devel
 URL:		http://www.gnome.org/
 BuildRoot:	/tmp/%{name}-%{version}-root
