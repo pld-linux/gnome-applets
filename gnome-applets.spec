@@ -4,13 +4,14 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.5.4
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
 # Source0-md5:	93c0dd87e32f4bbaec3d3c4859679db0
 Patch1:		%{name}-stickynotes-title-size.patch
+Patch2:		%{name}-libxklavier.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -30,7 +31,7 @@ BuildRequires:	libgtop-devel >= 2.5.0
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.5.1
 BuildRequires:	libxml2-devel >= 2.5.1
-BuildRequires:	libxklavier-devel
+BuildRequires:	libxklavier-devel >= 0.97
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.5.0
 Requires(post):	scrollkeeper
@@ -73,6 +74,7 @@ Pliki nagЁСwkowe gnome-applets.
 %prep
 %setup -q
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -f missing
