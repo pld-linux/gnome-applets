@@ -61,8 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
 
 %{_sysconfdir}/CORBA/servers/*
-%attr(755,root,755) %{_bindir}/*
-%attr(755,root,755) %{_libdir}/gumma/*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/gumma/*
 %{_datadir}/applets/*/*
 %{_datadir}/asclock
 %{_datadir}/bug-applet
