@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.7.0
+Version:	2.7.1
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	18c021d22407ed5942091920cff51b7f
+# Source0-md5:	e935de38203a2d21c8a55de34f364ef0
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
@@ -20,24 +20,24 @@ BuildRequires:	gail-devel >= 1.6.6
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.4.0
-BuildRequires:	gnome-panel-devel >= 2.7.3
-BuildRequires:	gnome-vfs2-devel >= 2.7.3
-BuildRequires:	gstreamer-plugins-devel >= 0.8.2
+BuildRequires:	gnome-panel-devel >= 2.7.4
+BuildRequires:	gnome-vfs2-devel >= 2.7.5
+BuildRequires:	gstreamer-plugins-devel >= 0.8.3
 BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	intltool >= 0.29
-BuildRequires:	libgnome-devel >= 2.7.1
+BuildRequires:	libgnome-devel >= 2.7.2
 BuildRequires:	libgnomecanvas-devel >= 2.7.1
-BuildRequires:	libgnomeui-devel >= 2.7.1
+BuildRequires:	libgnomeui-devel >= 2.7.2
 BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgtop-devel >= 2.6.0
+BuildRequires:	libgtop-devel >= 2.7.4
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.6.2
-BuildRequires:	libxml2-devel >= 2.6.7
-BuildRequires:	libxklavier-devel >= 1.02
+BuildRequires:	libxml2-devel >= 2.6.11
+BuildRequires:	libxklavier-devel >= 1.03
 BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires(post):	GConf2 >= 2.7.3.1
 Requires(post):	scrollkeeper
-Requires:	gnome-vfs2 >= 2.7.3
+Requires:	gnome-vfs2 >= 2.7.5
 Requires:	gstreamer-audiosink
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -219,6 +219,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(sv) %{_datadir}/gnome/gkb/SE_Swedish*.keyprop
 %lang(sl) %{_datadir}/gnome/gkb/SI_Slovenian*.keyprop
 %lang(sk) %{_datadir}/gnome/gkb/Slovak.keyprop
+%lang(sk) %{_datadir}/gnome/gkb/SK_*
 %lang(sl) %{_datadir}/gnome/gkb/Sloven*.keyprop
 %lang(sr) %{_datadir}/gnome/gkb/SR_Dutch.keyprop
 %lang(sv) %{_datadir}/gnome/gkb/Swedish.keyprop
