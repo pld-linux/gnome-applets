@@ -20,6 +20,7 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	libghttp-devel
 BuildRequires:	xmms-devel
+BuildRequires:	lm_sensors-devel
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
