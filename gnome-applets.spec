@@ -1,20 +1,21 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.1.8
+Version:	1.1.90
 Release:	1
 License:	GPL
 Group:		X11/GNOME
 Group(pl):	X11/GNOME
-Source:		ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
+BuildRequires:	esound-devel >= 0.2.7
+BuildRequires:	gdbm-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	gnome-core-devel >= 1.1.0
+BuildRequires:	gdk-pixbuf-devel >= 0.7.0
 BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	libghttp-devel
 BuildRequires:	xmms-devel
-BuildRequires:	gdbm-devel
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
@@ -111,42 +112,42 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/*.xpm
 
 %dir %{_datadir}/pixmaps/gkb
-%lang(at) %{_datadir}/pixmaps/gkb/at.xpm
-%lang(be) %{_datadir}/pixmaps/gkb/be.xpm
-%lang(bg) %{_datadir}/pixmaps/gkb/bg.xpm
-%lang(br) %{_datadir}/pixmaps/gkb/br.xpm
-%lang(ca) %{_datadir}/pixmaps/gkb/ca.xpm
-%lang(ch) %{_datadir}/pixmaps/gkb/ch.xpm
-%lang(cz) %{_datadir}/pixmaps/gkb/cz.xpm
-%lang(de) %{_datadir}/pixmaps/gkb/de.xpm
-%lang(dk) %{_datadir}/pixmaps/gkb/dk.xpm
-%lang(ee) %{_datadir}/pixmaps/gkb/ee.xpm
-%lang(es) %{_datadir}/pixmaps/gkb/es.xpm
-%lang(fi) %{_datadir}/pixmaps/gkb/fi.xpm
-%lang(fr) %{_datadir}/pixmaps/gkb/fr.xpm
-%lang(gb) %{_datadir}/pixmaps/gkb/gb.xpm
-%lang(gr) %{_datadir}/pixmaps/gkb/gr.xpm
-%lang(hu) %{_datadir}/pixmaps/gkb/hu.xpm
-%lang(il) %{_datadir}/pixmaps/gkb/il.xpm
-%lang(is) %{_datadir}/pixmaps/gkb/is.xpm
-%lang(it) %{_datadir}/pixmaps/gkb/it.xpm
-%lang(jp) %{_datadir}/pixmaps/gkb/jp.xpm
-%lang(mx) %{_datadir}/pixmaps/gkb/mx.xpm
-%lang(nl) %{_datadir}/pixmaps/gkb/nl.xpm
-%lang(no) %{_datadir}/pixmaps/gkb/no.xpm
-%lang(pl) %{_datadir}/pixmaps/gkb/pl.xpm
-%lang(pt) %{_datadir}/pixmaps/gkb/pt.xpm
-%lang(qc) %{_datadir}/pixmaps/gkb/qc.xpm
-%lang(ru) %{_datadir}/pixmaps/gkb/ru.xpm
-%lang(se) %{_datadir}/pixmaps/gkb/se.xpm
-%lang(si) %{_datadir}/pixmaps/gkb/si.xpm
-%lang(sk) %{_datadir}/pixmaps/gkb/sk.xpm
-%lang(th) %{_datadir}/pixmaps/gkb/th.xpm
-%lang(tr) %{_datadir}/pixmaps/gkb/tr.xpm
-%lang(un) %{_datadir}/pixmaps/gkb/un.xpm
-%lang(us) %{_datadir}/pixmaps/gkb/us.xpm
-%lang(uy) %{_datadir}/pixmaps/gkb/uy.xpm
-%lang(yu) %{_datadir}/pixmaps/gkb/yu.xpm
+%lang(at) %{_datadir}/pixmaps/gkb/at.png
+%lang(be) %{_datadir}/pixmaps/gkb/be.png
+%lang(bg) %{_datadir}/pixmaps/gkb/bg.png
+%lang(br) %{_datadir}/pixmaps/gkb/br.png
+%lang(ca) %{_datadir}/pixmaps/gkb/ca.png
+%lang(ch) %{_datadir}/pixmaps/gkb/ch.png
+%lang(cz) %{_datadir}/pixmaps/gkb/cz.png
+%lang(de) %{_datadir}/pixmaps/gkb/de.png
+%lang(dk) %{_datadir}/pixmaps/gkb/dk.png
+%lang(ee) %{_datadir}/pixmaps/gkb/ee.png
+%lang(es) %{_datadir}/pixmaps/gkb/es.png
+%lang(fi) %{_datadir}/pixmaps/gkb/fi.png
+%lang(fr) %{_datadir}/pixmaps/gkb/fr.png
+%lang(gb) %{_datadir}/pixmaps/gkb/gb.png
+%lang(gr) %{_datadir}/pixmaps/gkb/gr.png
+%lang(hu) %{_datadir}/pixmaps/gkb/hu.png
+%lang(il) %{_datadir}/pixmaps/gkb/il.png
+%lang(is) %{_datadir}/pixmaps/gkb/is.png
+%lang(it) %{_datadir}/pixmaps/gkb/it.png
+%lang(jp) %{_datadir}/pixmaps/gkb/jp.png
+%lang(mx) %{_datadir}/pixmaps/gkb/mx.png
+%lang(nl) %{_datadir}/pixmaps/gkb/nl.png
+%lang(no) %{_datadir}/pixmaps/gkb/no.png
+%lang(pl) %{_datadir}/pixmaps/gkb/pl.png
+%lang(pt) %{_datadir}/pixmaps/gkb/pt.png
+%lang(qc) %{_datadir}/pixmaps/gkb/qc.png
+%lang(ru) %{_datadir}/pixmaps/gkb/ru.png
+%lang(se) %{_datadir}/pixmaps/gkb/se.png
+%lang(si) %{_datadir}/pixmaps/gkb/si.png
+%lang(sk) %{_datadir}/pixmaps/gkb/sk.png
+%lang(th) %{_datadir}/pixmaps/gkb/th.png
+%lang(tr) %{_datadir}/pixmaps/gkb/tr.png
+%lang(un) %{_datadir}/pixmaps/gkb/un.png
+%lang(us) %{_datadir}/pixmaps/gkb/us.png
+%lang(uy) %{_datadir}/pixmaps/gkb/uy.png
+%lang(yu) %{_datadir}/pixmaps/gkb/yu.png
 
 %dir %{_datadir}/xmodmap
 %{_datadir}/xmodmap/xmodmap.dvorak
