@@ -27,7 +27,7 @@ BuildRequires:	intltool >= 0.29
 BuildRequires:	libgnome-devel >= 2.5.92
 BuildRequires:	libgnomecanvas-devel >= 2.5.92
 BuildRequires:	libgnomeui-devel >= 2.5.92
-BuildRequires:	libglade2-devel >= 2.3.6
+BuildRequires:	libglade2-devel >= 1:2.3.6
 BuildRequires:	libgtop-devel >= 2.5.2
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.5.90
@@ -39,8 +39,6 @@ Requires(post):	scrollkeeper
 Requires:	gnome-vfs2 >= 2.5.91
 Obsoletes:	gnotes_applet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_localstatedir	/var
 
 %description
 The gnome-applets package provides Panel applets which enhance your
@@ -80,7 +78,6 @@ Pliki nag³ówkowe gnome-applets.
 mv po/{no,nb}.po
 
 %build
-rm -f missing
 %{__aclocal}
 %{__libtoolize}
 glib-gettextize --copy --force
