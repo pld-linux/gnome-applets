@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.10.0
-Release:	4
+Release:	5
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -41,7 +41,6 @@ BuildRequires:	system-tools-backends >= 1.2.0
 Requires(post):	GConf2 >= 2.10.0
 Requires(post):	scrollkeeper
 Requires:	gnome-icon-theme >= 2.10.0
-Requires:	gnome-utils >= 2.10.0
 Requires:	gnome-vfs2 >= 2.10.0-2
 Requires:	gstreamer-audiosink
 Requires:	system-tools-backends >= 1.2.0
