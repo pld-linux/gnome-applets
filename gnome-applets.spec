@@ -3,8 +3,8 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.0.3
-Release:	3
+Version:	2.0.4
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -21,7 +21,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	gnome-panel-devel >= 2.0.9
 BuildRequires:	gnome-vfs2-devel >= 2.0.4
 BuildRequires:	gtk+2-devel >= 2.0.6
-BuildRequires:	intltool >= 0.22
+BuildRequires:	intltool >= 0.23
 BuildRequires:	libgnome-devel >= 2.0.5
 BuildRequires:	libgnomecanvas-devel >= 2.0.4
 BuildRequires:	libgnomeui-devel >= 2.0.5
