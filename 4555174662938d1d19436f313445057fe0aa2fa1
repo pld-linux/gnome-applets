@@ -1,0 +1,3 @@
+- updated to 1.2.2,
+- removed sensors applet (this will be in separated package),
+- removed commented gumma subpackages.
