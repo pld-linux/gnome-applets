@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.10.0
-Release:	7
+Version:	2.10.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	c230df43a21a0d788197b5b0f3e688f1
+# Source0-md5:	da9cd75f77972c96eec9551d41878a7f
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-doc_typos.patch
@@ -32,7 +32,7 @@ BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgtop-devel >= 1:2.10.0
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.10.0
-BuildRequires:	libxml2-devel >= 1:2.6.17
+BuildRequires:	libxml2-devel >= 1:2.6.19
 BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
@@ -574,9 +574,11 @@ fi
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
 %{_omf_dest_dir}/%{name}/accessx-status-C.omf
 %lang(eu) %{_omf_dest_dir}/%{name}/accessx-status-eu.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/accessx-status-uk.omf
 %dir %{_gnomehelpdir}/accessx-status
 %{_gnomehelpdir}/accessx-status/C
 %lang(eu) %{_gnomehelpdir}/accessx-status/eu
+%lang(uk) %{_gnomehelpdir}/accessx-status/uk
 
 %files battstat
 %defattr(644,root,root,755)
@@ -595,6 +597,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/battstat-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/battstat-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/battstat-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/battstat-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/battstat-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/battstat-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/battstat-zh_TW.omf
@@ -608,6 +611,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/battstat/ja
 %lang(ko) %{_gnomehelpdir}/battstat/ko
 %lang(sv) %{_gnomehelpdir}/battstat/sv
+%lang(uk) %{_gnomehelpdir}/battstat/uk
 %lang(zh_CN) %{_gnomehelpdir}/battstat/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/battstat/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/battstat/zh_TW
@@ -628,6 +632,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/char-palette-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/char-palette-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/char-palette-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/char-palette-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/char-palette-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/char-palette-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/char-palette-zh_TW.omf
@@ -641,6 +646,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/char-palette/ja
 %lang(ko) %{_gnomehelpdir}/char-palette/ko
 %lang(sv) %{_gnomehelpdir}/char-palette/sv
+%lang(uk) %{_gnomehelpdir}/char-palette/uk
 %lang(zh_CN) %{_gnomehelpdir}/char-palette/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/char-palette/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/char-palette/zh_TW
@@ -656,8 +662,10 @@ fi
 %{_pixmapsdir}/cpufreq-applet
 %{_iconsdir}/hicolor/48x48/apps/gnome-cpu.png
 %{_omf_dest_dir}/%{name}/cpufreq-applet-C.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/cpufreq-applet-uk.omf
 %dir %{_gnomehelpdir}/cpufreq-applet
 %{_gnomehelpdir}/cpufreq-applet/C
+%lang(uk) %{_gnomehelpdir}/cpufreq-applet/uk
 
 %files drivemount
 %defattr(644,root,root,755)
@@ -674,6 +682,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/drivemount-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/drivemount-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/drivemount-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/drivemount-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/drivemount-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/drivemount-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/drivemount-zh_TW.omf
@@ -687,6 +696,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/drivemount/ja
 %lang(ko) %{_gnomehelpdir}/drivemount/ko
 %lang(sv) %{_gnomehelpdir}/drivemount/sv
+%lang(uk) %{_gnomehelpdir}/drivemount/uk
 %lang(zh_CN) %{_gnomehelpdir}/drivemount/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/drivemount/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/drivemount/zh_TW
@@ -708,6 +718,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/geyes-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/geyes-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/geyes-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/geyes-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/geyes-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/geyes-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/geyes-zh_TW.omf
@@ -721,6 +732,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/geyes/ja
 %lang(ko) %{_gnomehelpdir}/geyes/ko
 %lang(sv) %{_gnomehelpdir}/geyes/sv
+%lang(uk) %{_gnomehelpdir}/geyes/uk
 %lang(zh_CN) %{_gnomehelpdir}/geyes/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/geyes/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/geyes/zh_TW
@@ -741,6 +753,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/gtik2_applet2-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/gtik2_applet2-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/gtik2_applet2-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/gtik2_applet2-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/gtik2_applet2-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/gtik2_applet2-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/gtik2_applet2-zh_TW.omf
@@ -754,6 +767,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/gtik2_applet2/ja
 %lang(ko) %{_gnomehelpdir}/gtik2_applet2/ko
 %lang(sv) %{_gnomehelpdir}/gtik2_applet2/sv
+%lang(uk) %{_gnomehelpdir}/gtik2_applet2/uk
 %lang(zh_CN) %{_gnomehelpdir}/gtik2_applet2/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/gtik2_applet2/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/gtik2_applet2/zh_TW
@@ -774,6 +788,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/gweather-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/gweather-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/gweather-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/gweather-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/gweather-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/gweather-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/gweather-zh_TW.omf
@@ -787,6 +802,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/gweather/ja
 %lang(ko) %{_gnomehelpdir}/gweather/ko
 %lang(sv) %{_gnomehelpdir}/gweather/sv
+%lang(uk) %{_gnomehelpdir}/gweather/uk
 %lang(zh_CN) %{_gnomehelpdir}/gweather/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/gweather/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/gweather/zh_TW
@@ -841,15 +857,16 @@ fi
 %lang(uk) %{_datadir}/xmodmap/xmodmap.uk*
 %{_datadir}/xmodmap/xmodmap.us*
 %lang(hr,mk,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
-# z gswitchit
 %attr(755,root,root) %{_bindir}/gswitchit-plugins-capplet
 %{_datadir}/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 %{_datadir}/%{name}/glade/gswitchit*.glade
 %{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
 %{_sysconfdir}/gconf/schemas/gswitchit.schemas
 %{_omf_dest_dir}/%{name}/gswitchit-C.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/gswitchit-uk.omf
 %dir %{_gnomehelpdir}/gswitchit
 %{_gnomehelpdir}/gswitchit/C
+%lang(uk) %{_gnomehelpdir}/gswitchit/uk
 
 %files minicommander
 %defattr(644,root,root,755)
@@ -870,6 +887,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/command-line-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/command-line-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/command-line-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/command-line-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/command-line-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/command-line-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/command-line-zh_TW.omf
@@ -883,6 +901,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/command-line/ja
 %lang(ko) %{_gnomehelpdir}/command-line/ko
 %lang(sv) %{_gnomehelpdir}/command-line/sv
+%lang(uk) %{_gnomehelpdir}/command-line/uk
 %lang(zh_CN) %{_gnomehelpdir}/command-line/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/command-line/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/command-line/zh_TW
@@ -902,6 +921,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/mixer_applet2-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/mixer_applet2-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/mixer_applet2-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/mixer_applet2-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/mixer_applet2-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/mixer_applet2-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/mixer_applet2-zh_TW.omf
@@ -915,6 +935,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/mixer_applet2/ja
 %lang(ko) %{_gnomehelpdir}/mixer_applet2/ko
 %lang(sv) %{_gnomehelpdir}/mixer_applet2/sv
+%lang(uk) %{_gnomehelpdir}/mixer_applet2/uk
 %lang(zh_CN) %{_gnomehelpdir}/mixer_applet2/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/mixer_applet2/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/mixer_applet2/zh_TW
@@ -942,6 +963,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/multiload-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/multiload-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/multiload-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/multiload-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/multiload-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/multiload-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/multiload-zh_TW.omf
@@ -955,6 +977,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/multiload/ja
 %lang(ko) %{_gnomehelpdir}/multiload/ko
 %lang(sv) %{_gnomehelpdir}/multiload/sv
+%lang(uk) %{_gnomehelpdir}/multiload/uk
 %lang(zh_CN) %{_gnomehelpdir}/multiload/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/multiload/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/multiload/zh_TW
@@ -976,6 +999,7 @@ fi
 %lang(ja) %{_omf_dest_dir}/%{name}/stickynotes_applet-ja.omf
 %lang(ko) %{_omf_dest_dir}/%{name}/stickynotes_applet-ko.omf
 %lang(sv) %{_omf_dest_dir}/%{name}/stickynotes_applet-sv.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/stickynotes_applet-uk.omf
 %lang(zh_CN) %{_omf_dest_dir}/%{name}/stickynotes_applet-zh_CN.omf
 %lang(zh_HK) %{_omf_dest_dir}/%{name}/stickynotes_applet-zh_HK.omf
 %lang(zh_TW) %{_omf_dest_dir}/%{name}/stickynotes_applet-zh_TW.omf
@@ -989,6 +1013,7 @@ fi
 %lang(ja) %{_gnomehelpdir}/stickynotes_applet/ja
 %lang(ko) %{_gnomehelpdir}/stickynotes_applet/ko
 %lang(sv) %{_gnomehelpdir}/stickynotes_applet/sv
+%lang(uk) %{_gnomehelpdir}/stickynotes_applet/uk
 %lang(zh_CN) %{_gnomehelpdir}/stickynotes_applet/zh_CN
 %lang(zh_HK) %{_gnomehelpdir}/stickynotes_applet/zh_HK
 %lang(zh_TW) %{_gnomehelpdir}/stickynotes_applet/zh_TW
@@ -999,5 +1024,7 @@ fi
 %{_libdir}/bonobo/servers/GNOME_Panel_TrashApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
 %{_omf_dest_dir}/%{name}/trashapplet-C.omf
+%lang(uk) %{_omf_dest_dir}/%{name}/trashapplet-uk.omf
 %dir %{_gnomehelpdir}/trashapplet
 %{_gnomehelpdir}/trashapplet/C
+%lang(uk) %{_gnomehelpdir}/trashapplet/uk
