@@ -1,7 +1,7 @@
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
-Version:	1.1.6
+Version:	1.1.7
 Release:	1
 License:	GPL
 Group:		X11/GNOME
@@ -26,8 +26,8 @@ Obsoletes:	gnome-applets-gumma-xmms
 %define		_localstatedir	/var
 
 %description
-The gnome-applets package provides Panel applets which
-enhance your GNOME experience.
+The gnome-applets package provides Panel applets which enhance your GNOME
+experience.
 
 %description -l pl
 Applety pod GNOME.
@@ -65,8 +65,6 @@ Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms.
 
 %build
 gettextize --copy --force
-automake
-autoconf
 LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--disable-static
