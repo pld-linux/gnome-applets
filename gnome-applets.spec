@@ -13,8 +13,9 @@ Patch0:		%{name}-applet-docs.make.patch
 Patch1:		%{name}-ISDN.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	esound-devel >= 0.2.7
+BuildRequires:	libtool
 BuildRequires:	gettext-devel
+BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
 BuildRequires:	gdk-pixbuf-devel >= 0.7.0
 BuildRequires:	gnome-libs-devel >= 1.0.0
@@ -50,7 +51,7 @@ Applety pod GNOME.
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
 mv -f configure.in.tmp configure.in
-rm missing
+rm -f missing
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
@@ -71,6 +72,9 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome --all-name
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 /sbin/ldconfig
 /usr/bin/scrollkeeper-update
@@ -78,9 +82,6 @@ gzip -9nf AUTHORS ChangeLog NEWS README
 %postun
 /sbin/ldconfig
 /usr/bin/scrollkeeper-update
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
