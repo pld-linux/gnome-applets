@@ -2,12 +2,13 @@ Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
 Version:	1.2.1
-Release:	1
+Release:	5
 License:	GPL
 Group:		X11/GNOME
+Group(de):	X11/GNOME
 Group(pl):	X11/GNOME
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnome-applets/%{name}-%{version}.tar.gz
-Patch0:		gnome-applets-applet-docs.make.patch
+Patch0:		%{name}-applet-docs.make.patch
 BuildRequires:	esound-devel >= 0.2.7
 BuildRequires:	gdbm-devel
 BuildRequires:	gnome-libs-devel >= 1.0.0
@@ -38,6 +39,7 @@ Applety pod GNOME.
 Summary:	Gqmpe sound plug-in for gumma GNOME applet
 Summary(pl):	Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem gqmpeg
 Group:		X11/GNOME
+Group(de):	X11/GNOME
 Group(pl):	X11/GNOME
 Requires:	%{name} = %{version}
 Requires:	gqmpeg
@@ -52,6 +54,7 @@ Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem gqmpeg.
 Summary:	Xmms sound plug-in for gumma GNOME applet
 Summary(pl):	Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms
 Group:		X11/GNOME
+Group(de):	X11/GNOME
 Group(pl):	X11/GNOME
 Requires:	%{name} = %{version}
 Requires:	xmms
@@ -68,7 +71,6 @@ Wtyczka do apletu gumma GNOME do odtwarzania d¼wiêku z u¿yciem xmms.
 
 %build
 gettextize --copy --force
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--disable-static
 %{__make}
