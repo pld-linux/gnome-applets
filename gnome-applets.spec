@@ -2,7 +2,7 @@ Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	GNOME - Applety
 Name:		gnome-applets
 Version:	1.4.0.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
@@ -10,18 +10,21 @@ Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gnome-applets/%{name}-%{version}.tar.gz
 Patch0:		%{name}-applet-docs.make.patch
-Patch1:		%{name}-gettext.patch
+Patch1:		%{name}-use_AM_GNU_GETTEXT.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.7
+BuildRequires:	gettext-devel
 BuildRequires:	gdbm-devel
+BuildRequires:	gdk-pixbuf-devel >= 0.7.0
 BuildRequires:	gnome-libs-devel >= 1.0.0
 BuildRequires:	gnome-core-devel >= 1.1.0
-BuildRequires:	gdk-pixbuf-devel >= 0.7.0
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	libghttp-devel
-BuildRequires:	gettext-devel
-BuildRequires:	automake
-BuildRequires:	autoconf
+BuildRequires:	scrollkeeper
+Prereq:		/sbin/ldconfig
+Prereq:		scrollkeeper
 URL:		http://www.gnome.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	gnotes_applet
@@ -29,6 +32,7 @@ Obsoletes:	gnotes_applet
 %define		_prefix		/usr/X11R6
 %define		_sysconfdir	/etc/X11/GNOME
 %define		_localstatedir	/var
+%define		_omf_dest_dir	$(scrollkeeper-config --omfdir)
 
 %description
 The gnome-applets package provides Panel applets which enhance your
@@ -55,14 +59,21 @@ autoconf
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	omf_dest_dir=%{_omf_dest_dir}
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
 %find_lang %{name} --with-gnome --all-name
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post
+/sbin/ldconfig
+/usr/bin/scrollkeeper-update
+
+%postun
+/sbin/ldconfig
+/usr/bin/scrollkeeper-update
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -81,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/odometer
 %{_datadir}/sound-monitor
 %{_datadir}/tickastat
-%{_datadir}/omf/%{name}
+%{omf_dest_dir}/omf/%{name}
 %{_pixmapsdir}/gweather
 %{_pixmapsdir}/mini-commander
 %{_pixmapsdir}/*.png
