@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	1.4.0.5
-Release:	10
+Release:	11
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -21,11 +21,10 @@ Patch2:		%{name}-am_conditional.patch
 Patch3:		%{name}-am15.patch
 Patch4:		%{name}-ru_omf.patch
 Patch5:		%{name}-am_cdplayer_linux_hack.patch
-Patch6:		%{name}-sound-monitor_themes_install_fix.patch
-Patch7:		%{name}-asclock_themes_install_fix.patch
-Patch8:		%{name}-desktop_fixes.patch
-Patch9:		%{name}-am_fixes.patch
-Patch10:	%{name}-zh_CN.patch
+Patch6:		%{name}-themes-install-fix.patch
+Patch7:		%{name}-desktop_fixes.patch
+Patch8:		%{name}-am_fixes.patch
+Patch9:		%{name}-zh_CN.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	esound-devel >= 0.2.7
@@ -79,7 +78,6 @@ Aplety pod GNOME.
 %patch7 -p1
 %patch8 -p1
 %patch9 -p1
-%patch10 -p1
 mv -f po/zh_CN.GB2312.po po/zh_CN.po
 
 %build
@@ -212,7 +210,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr,nl,wa) %{_datadir}/xmodmap/xmodmap.be*
 %lang(bg) %{_datadir}/xmodmap/xmodmap.bg*
 %lang(pt_BR) %{_datadir}/xmodmap/xmodmap.br*
-%lang(de) %{_datadir}/xmodmap/xmodmap.ch*
+%lang(de,fr) %{_datadir}/xmodmap/xmodmap.ch*
 %lang(cs) %{_datadir}/xmodmap/xmodmap.cz*
 %lang(de) %{_datadir}/xmodmap/xmodmap.de*
 %lang(da) %{_datadir}/xmodmap/xmodmap.dk*
@@ -222,11 +220,13 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fi) %{_datadir}/xmodmap/xmodmap.fi*
 %lang(fr) %{_datadir}/xmodmap/xmodmap.fr*
 %{_datadir}/xmodmap/xmodmap.gb*
+%lang(ge) %{_datadir}/xmodmap/xmodmap.ge*
 %lang(el) %{_datadir}/xmodmap/xmodmap.gr*
 %lang(hu) %{_datadir}/xmodmap/xmodmap.hu*
 %lang(he,yi) %{_datadir}/xmodmap/xmodmap.il*
 %lang(is) %{_datadir}/xmodmap/xmodmap.is*
 %lang(it) %{_datadir}/xmodmap/xmodmap.it*
+%lang(jp) %{_datadir}/xmodmap/xmodmap.jp*
 %lang(es,pt_BR) %{_datadir}/xmodmap/xmodmap.la*
 %lang(lt) %{_datadir}/xmodmap/xmodmap.lt*
 %lang(mk) %{_datadir}/xmodmap/xmodmap.mk*
@@ -235,6 +235,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pl) %{_datadir}/xmodmap/xmodmap.pl*
 %lang(pt) %{_datadir}/xmodmap/xmodmap.pt*
 %lang(fr) %{_datadir}/xmodmap/xmodmap.qc*
+%lang(ro) %{_datadir}/xmodmap/xmodmap.ro*
 %lang(ru) %{_datadir}/xmodmap/xmodmap.ru*
 %lang(sv) %{_datadir}/xmodmap/xmodmap.se*
 %lang(fr) %{_datadir}/xmodmap/xmodmap.sf*
