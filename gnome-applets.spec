@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.8.2
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -160,6 +160,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_pixmapsdir}/stickynotes
 %{_pixmapsdir}/wireless-applet
 %{_pixmapsdir}/*.png
+%{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
 %{_omf_dest_dir}/%{name}
 
 %dir %{_datadir}/gnome/gkb
