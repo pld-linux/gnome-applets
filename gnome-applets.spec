@@ -14,6 +14,7 @@ Patch1:		%{name}-ISDN.patch
 Patch2:		%{name}-am_conditional.patch
 Patch3:		%{name}-am15.patch
 Patch4:		%{name}-ru_omf.patch
+Patch5:		%{name}-am_cdplayer_linux_hack.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -61,7 +62,7 @@ Aplety pod GNOME.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-cp -r cpumemusage/docs/ja/figures cpumemusage/docs/ru
+%patch5 -p1
 
 %build
 sed -e s/AM_GNOME_GETTEXT/AM_GNU_GETTEXT/ configure.in > configure.in.tmp
@@ -84,8 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
-gzip -9nf AUTHORS ChangeLog NEWS README
-
 %find_lang %{name} --with-gnome --all-name
 
 %clean
@@ -101,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS.gz ChangeLog.gz NEWS.gz README.gz
+%doc AUTHORS ChangeLog NEWS README
 
 %{_sysconfdir}/CORBA/servers/*
 %attr(755,root,root) %{_bindir}/*
