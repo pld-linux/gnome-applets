@@ -40,7 +40,7 @@ Obsoletes:	gnotes_applet
 %define		_sysconfdir	/etc/X11/GNOME2
 %define		_localstatedir	/var
 %define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
-%define		_serverdir	/usr/lib/bonobo/servers
+%define		_bonobo_server_dir	/usr/lib/bonobo/servers
 
 %description
 The gnome-applets package provides Panel applets which enhance your
@@ -81,7 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	omf_dest_dir=%{_omf_dest_dir}/%{name} \
-	serverdir=%{_serverdir}
+	serverdir=%{_bonobo_server_dir}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -125,7 +125,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/multiload-applet-2
 %attr(755,root,root) %{_libdir}/wireless-applet
 %attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
-%{_serverdir}/*
+%{_bonobo_server_dir}/*
 %{_datadir}/battstat_applet
 %{_datadir}/geyes
 %{_datadir}/gweather
