@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.10.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -36,7 +36,7 @@ BuildRequires:	libxml2-devel >= 1:2.6.19
 BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.196
+BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.2.0
 Requires:	gnome-icon-theme >= 2.10.0
@@ -310,10 +310,10 @@ Aplet ╤mietnika.
 %build
 %{__aclocal} -I m4
 %{__libtoolize}
-glib-gettextize --copy --force
-intltoolize --copy --force
+%{__glib_gettextize}
+%{__intltoolize}
 %{__autoheader}
-gnome-doc-common
+%{__gnome_doc_common}
 %{__automake}
 %{__autoconf}
 %configure \
@@ -345,208 +345,157 @@ awk '{src=$0; dst=$0;sub("^./","",dst);gsub("/","-",dst);
 rm -rf $RPM_BUILD_ROOT
 
 %post accessx-status
-/usr/bin/scrollkeeper-update -q
+%scrollkeeper_update_post
 %banner %{name} -e << EOF
 For full functionality, you need to install control-center.
 EOF
 
 %postun accessx-status
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post battstat
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/battstat.schemas
+%scrollkeeper_update_post
+%gconf_schema_install battstat.schemas
 
 %preun battstat
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/battstat.schemas
-fi
+%gconf_schema_uninstall battstat.schemas
 
 %postun battstat
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post charpicker
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/charpick.schemas
+%scrollkeeper_update_post
+%gconf_schema_install charpick.schemas
 
 %preun charpicker
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/charpick.schemas
-fi
+%gconf_schema_uninstall charpick.schemas
 
 %postun charpicker
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post cpufreq
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/cpufreq-applet.schemas
+%scrollkeeper_update_post
+%gconf_schema_install cpufreq-applet.schemas
+%banner %{name} -e << EOF
+For full functionality, set SUID /usr/bin/cpufreq-selector binary.
+EOF
 
 %preun cpufreq
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/cpufreq-applet.schemas
-fi
+%gconf_schema_uninstall cpufreq-applet.schemas
 
 %postun cpufreq
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post drivemount
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/drivemount.schemas
+%scrollkeeper_update_post
+%gconf_schema_install drivemount.schemas
 
 %preun drivemount
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/drivemount.schemas
-fi
+%gconf_schema_uninstall drivemount.schemas
 
 %postun drivemount 
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post geyes
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/geyes.schemas
+%scrollkeeper_update_post
+%gconf_schema_install geyes.schemas
 
 %preun geyes
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/geyes.schemas
-fi
+%gconf_schema_uninstall geyes.schemas
 
 %postun geyes 
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post gtik
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/gtik.schemas
+%scrollkeeper_update_post
+%gconf_schema_install gtik.schemas
 
 %preun gtik
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/gtik.schemas
-fi
+%gconf_schema_uninstall gtik.schemas
 
 %postun gtik
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post gweather
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/gweather.schemas
+%scrollkeeper_update_post
+%gconf_schema_install gweather.schemas
 
 %preun gweather
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/gweather.schemas
-fi
+%gconf_schema_uninstall gweather.schemas
 
 %postun gweather
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post keyboard
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/gswitchit.schemas
+%scrollkeeper_update_post
+%gconf_schema_install gswitchit.schemas
 
 %preun keyboard
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/gswitchit.schemas
-fi
+%gconf_schema_uninstall gswitchit.schemas
 
 %postun keyboard
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post minicommander
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/mini-commander-global.schemas
-%gconf_schema_install /etc/gconf/schemas/mini-commander.schemas
+%scrollkeeper_update_post
+%gconf_schema_install mini-commander-global.schemas
+%gconf_schema_install mini-commander.schemas
 GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%{name}/mc-install-default-macros
 
 %preun minicommander
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/mini-commander-global.schemas
-	%gconf_schema_uninstall /etc/gconf/schemas/mini-commander.schemas
-fi
+%gconf_schema_uninstall mini-commander-global.schemas
+%gconf_schema_uninstall mini-commander.schemas
 
 %postun minicommander
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post mixer
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/mixer.schemas
+%scrollkeeper_update_post
+%gconf_schema_install mixer.schemas
 %banner %{name} -e << EOF
 For full functionality, you need to install gnome-media-volume-control.
 EOF
 
 %preun mixer
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/mixer.schemas
-fi
+%gconf_schema_uninstall mixer.schemas
 
 %postun mixer
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post modemlights
-/usr/bin/scrollkeeper-update -q
+%scrollkeeper_update_post
 
 %postun modemlights
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post multiload
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/multiload.schemas
+%scrollkeeper_update_post
+%gconf_schema_install multiload.schemas
 %banner %{name} -e << EOF
 For full functionality, you need to install gnome-system-monitor.
 EOF
 
 %preun multiload
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/multiload.schemas
-fi
+%gconf_schema_uninstall multiload.schemas
 
 %postun multiload
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post stickynotes
-/usr/bin/scrollkeeper-update -q
-%gconf_schema_install /etc/gconf/schemas/stickynotes.schemas
+%scrollkeeper_update_post
+%gconf_schema_install stickynotes.schemas
 
 %preun stickynotes
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/stickynotes.schemas
-fi
+%gconf_schema_uninstall stickynotes.schemas
 
 %postun stickynotes
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %post trash
-/usr/bin/scrollkeeper-update -q
+%scrollkeeper_update_post
 
 %postun trash
-if [ $1 = 0 ]; then
-	/usr/bin/scrollkeeper-update -q
-fi
+%scrollkeeper_update_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
