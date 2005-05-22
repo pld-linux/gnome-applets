@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.10.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -508,6 +508,7 @@ EOF
 %dir %{_datadir}/%{name}/glade
 %dir %{_libdir}/%{name}
 %dir %{_omf_dest_dir}/%{name}
+%dir %{_datadir}/%{name}
 
 %files devel
 %defattr(644,root,root,755)
