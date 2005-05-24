@@ -1,0 +1,69 @@
+diff -urN gnome-applets-2.10.1.orig/mixer/ChangeLog gnome-applets-2.10.1/mixer/ChangeLog
+--- gnome-applets-2.10.1.orig/mixer/ChangeLog	2005-05-24 10:26:01.000000000 +0200
++++ gnome-applets-2.10.1/mixer/ChangeLog	2005-05-24 10:27:48.000000000 +0200
+@@ -1,3 +1,9 @@
++2005-04-15  Kjartan Maraas  <kmaraas@gnome.org>
++
++	* load.c: (create_mixer_collection): Plug a few leaks.
++	* preferences.c: (gnome_volume_applet_preferences_change),
++	(cb_track_select): Same here.
++
+ 2005-04-04  Davyd Madeley  <davyd@madeley.id.au>
+ 
+         * applet.c: (gnome_volume_applet_toggle_mute),
+diff -urN gnome-applets-2.10.1.orig/mixer/load.c gnome-applets-2.10.1/mixer/load.c
+--- gnome-applets-2.10.1.orig/mixer/load.c	2005-05-24 10:26:01.000000000 +0200
++++ gnome-applets-2.10.1/mixer/load.c	2005-05-24 10:28:32.000000000 +0200
+@@ -128,6 +128,7 @@
+       num++;
+ 
+       /* and recreate this object, since we give it to the mixer */
++      g_free (title);
+       title = g_strdup_printf (gettext("Unknown Volume Control %d"), num);
+       element = gst_element_factory_create (factory, title);
+     }
+diff -urN gnome-applets-2.10.1.orig/mixer/preferences.c gnome-applets-2.10.1/mixer/preferences.c
+--- gnome-applets-2.10.1.orig/mixer/preferences.c	2005-05-24 10:26:01.000000000 +0200
++++ gnome-applets-2.10.1/mixer/preferences.c	2005-05-24 10:31:52.000000000 +0200
+@@ -257,7 +257,7 @@
+   GtkListStore *store;
+   GtkTreeModel *model;
+   const GList *item;
+-  const gchar *label;
++  gchar *label;
+   gboolean change = (mixer != prefs->mixer), res;
+ 
+   if (change) {
+@@ -281,6 +281,7 @@
+         gtk_combo_box_set_active_iter (GTK_COMBO_BOX (prefs->optionmenu),
+ 				       &iter);
+       }
++      g_free (label);
+     }
+ 
+     /* now over to the tracks */
+@@ -318,6 +319,7 @@
+       if (!strcmp (label, active_track->label)) {
+         gtk_tree_selection_select_iter (sel, &iter);
+       }
++      g_free (label);
+     }
+   }
+ }
+@@ -359,7 +361,7 @@
+ {
+   GnomeVolumeAppletPreferences *prefs = data;
+   GtkTreeIter iter;
+-  const gchar *label;
++  gchar *label;
+   GConfValue *value;
+ 
+   /* get value */
+@@ -369,6 +371,7 @@
+   /* write to gconf */
+   value = gconf_value_new (GCONF_VALUE_STRING);
+   gconf_value_set_string (value, label);
++  g_free (label);
+   panel_applet_gconf_set_value (PANEL_APPLET (prefs->applet),
+ 		    GNOME_VOLUME_APPLET_KEY_ACTIVE_TRACK,
+ 		    value, NULL);
