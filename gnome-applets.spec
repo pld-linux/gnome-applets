@@ -1,19 +1,21 @@
+# TODO:
+# - libnotify dependency
+#
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.10.1
-Release:	4
+Version:	2.11.1
+Release:	0.1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	da9cd75f77972c96eec9551d41878a7f
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.11/%{name}-%{version}.tar.bz2
+# Source0-md5:	e8ce3499fe74d471c3fdfeff3ed5637a
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-doc_typos.patch
-Patch3:		%{name}-memleaks.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.10.0
 BuildRequires:	autoconf
@@ -307,7 +309,6 @@ Aplet ╤mietnika.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 %{__aclocal} -I m4
@@ -974,6 +975,7 @@ EOF
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/trashapplet
 %{_libdir}/bonobo/servers/GNOME_Panel_TrashApplet.server
+%{_datadir}/%{name}/glade/trashapplet.glade
 %{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
 %{_omf_dest_dir}/%{name}/trashapplet-C.omf
 %lang(uk) %{_omf_dest_dir}/%{name}/trashapplet-uk.omf
