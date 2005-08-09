@@ -34,7 +34,7 @@ BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgtop-devel >= 1:2.10.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.10.0
+BuildRequires:	libwnck-devel >= 2.11.91
 BuildRequires:	libxml2-devel >= 1:2.6.19
 BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
