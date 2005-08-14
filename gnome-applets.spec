@@ -28,7 +28,7 @@ BuildRequires:	gnome-doc-utils >= 0.3.2
 BuildRequires:	gnome-panel-devel >= 2.10.0-2
 BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
 BuildRequires:	gstreamer-plugins-devel >= 0.8.8
-BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	gtk+2-devel >= 2:2.8.0
 BuildRequires:	gucharmap-devel >= 1.4.0
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
@@ -39,7 +39,6 @@ BuildRequires:	libwnck-devel >= 2.11.91
 BuildRequires:	libxml2-devel >= 1:2.6.19
 BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
-BuildRequires:	pango-devel >= 1:1.9.2
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
@@ -47,7 +46,6 @@ BuildRequires:	system-tools-backends >= 1.2.0
 Requires:	gnome-icon-theme >= 2.10.0
 Requires:	gnome-panel >= 2.10.0-2
 Requires:	gnome-vfs2 >= 2.10.0-2
-Requires:	pango >= 1:1.9.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
