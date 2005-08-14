@@ -7,7 +7,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.11.91
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -15,6 +15,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.11/%{name}-%{ver
 # Source0-md5:	011374d970db4018e1237d395ef45241
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
+Patch2:		%{name}-pangoxft_fix.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.10.0
 BuildRequires:	autoconf
@@ -38,6 +39,7 @@ BuildRequires:	libwnck-devel >= 2.11.91
 BuildRequires:	libxml2-devel >= 1:2.6.19
 BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
+BuildRequires:	pango-devel >= 1:1.9.2
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
@@ -45,6 +47,7 @@ BuildRequires:	system-tools-backends >= 1.2.0
 Requires:	gnome-icon-theme >= 2.10.0
 Requires:	gnome-panel >= 2.10.0-2
 Requires:	gnome-vfs2 >= 2.10.0-2
+Requires:	pango >= 1:1.9.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
@@ -308,6 +311,7 @@ Aplet ╤mietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 gnome-doc-prepare --copy --force
