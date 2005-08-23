@@ -6,13 +6,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.11.91
-Release:	3
+Version:	2.11.92
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.11/%{name}-%{version}.tar.bz2
-# Source0-md5:	011374d970db4018e1237d395ef45241
+# Source0-md5:	2b78a6c5d59aa889979dbb54a301bf4e
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-pangoxft_fix.patch
@@ -555,6 +555,7 @@ EOF
 %{_iconsdir}/hicolor/48x48/apps/charpick.png
 %{_sysconfdir}/gconf/schemas/charpick.schemas
 %{_omf_dest_dir}/char-palette/char-palette-C.omf
+%lang(es) %{_omf_dest_dir}/char-palette/char-palette-es.omf
 %lang(nl) %{_omf_dest_dir}/char-palette/char-palette-nl.omf
 
 %files cpufreq -f cpufreq-applet.lang
@@ -569,6 +570,7 @@ EOF
 %{_pixmapsdir}/cpufreq-applet
 %{_iconsdir}/hicolor/48x48/apps/gnome-cpu.png
 %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-C.omf
+%lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
 
 %files drivemount -f drivemount.lang
 %defattr(644,root,root,755)
@@ -578,6 +580,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_DriveMountApplet.xml
 %{_sysconfdir}/gconf/schemas/drivemount.schemas
 %{_omf_dest_dir}/drivemount/drivemount-C.omf
+%lang(es) %{_omf_dest_dir}/drivemount/drivemount-es.omf
 
 %files geyes -f geyes.lang
 %defattr(644,root,root,755)
@@ -589,6 +592,7 @@ EOF
 %{_iconsdir}/hicolor/48x48/apps/gnome-eyes.png
 %{_sysconfdir}/gconf/schemas/geyes.schemas
 %{_omf_dest_dir}/geyes/geyes-C.omf
+%lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
 
 %files gtik -f gtik2_applet2.lang
 %defattr(644,root,root,755)
@@ -599,6 +603,7 @@ EOF
 %{_iconsdir}/hicolor/48x48/apps/gnome-money.png
 %{_sysconfdir}/gconf/schemas/gtik.schemas
 %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-C.omf
+%lang(es) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-es.omf
 
 %files gweather -f gweather.lang
 %defattr(644,root,root,755)
@@ -668,6 +673,7 @@ EOF
 %{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
 %{_sysconfdir}/gconf/schemas/gswitchit.schemas
 %{_omf_dest_dir}/gswitchit/gswitchit-C.omf
+%lang(es) %{_omf_dest_dir}/gswitchit/gswitchit-es.omf
 
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
@@ -681,6 +687,7 @@ EOF
 %{_sysconfdir}/gconf/schemas/mini-commander-global.schemas
 %{_sysconfdir}/gconf/schemas/mini-commander.schemas
 %{_omf_dest_dir}/command-line/command-line-C.omf
+%lang(es) %{_omf_dest_dir}/command-line/command-line-es.omf
 
 %files mixer
 %defattr(644,root,root,755)
@@ -690,6 +697,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_MixerApplet.xml
 %{_sysconfdir}/gconf/schemas/mixer.schemas
 %{_omf_dest_dir}/mixer_applet2/mixer_applet2-C.omf
+%lang(es) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-es.omf
 
 %files modemlights
 %defattr(644,root,root,755)
@@ -708,6 +716,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_MultiloadApplet.xml
 %{_sysconfdir}/gconf/schemas/multiload.schemas
 %{_omf_dest_dir}/multiload/multiload-C.omf
+%lang(es) %{_omf_dest_dir}/multiload/multiload-es.omf
 
 %files stickynotes -f stickynotes_applet.lang
 %defattr(644,root,root,755)
@@ -719,6 +728,7 @@ EOF
 %{_pixmapsdir}/stickynotes
 %{_sysconfdir}/gconf/schemas/stickynotes.schemas
 %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-C.omf
+%lang(es) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-es.omf
 
 %files trash -f trashapplet.lang
 %defattr(644,root,root,755)
@@ -728,3 +738,5 @@ EOF
 %{_datadir}/%{name}/glade/trashapplet.glade
 %{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
 %{_omf_dest_dir}/trashapplet/trashapplet-C.omf
+%lang(es) %{_omf_dest_dir}/trashapplet/trashapplet-es.omf
+%lang(pa) %{_omf_dest_dir}/trashapplet/trashapplet-pa.omf
