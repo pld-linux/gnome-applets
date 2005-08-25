@@ -7,7 +7,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.11.92.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -532,6 +532,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_AccessxApplet.xml
 %{_pixmapsdir}/accessx-status-applet
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
+%dir %{_omf_dest_dir}/accessx-status
 %{_omf_dest_dir}/accessx-status/accessx-status-C.omf
 %lang(es) %{_omf_dest_dir}/accessx-status/accessx-status-es.omf
 
@@ -544,6 +545,7 @@ EOF
 %{_datadir}/%{name}/glade/battstat_applet.glade
 %{_sysconfdir}/gconf/schemas/battstat.schemas
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
+%dir %{_omf_dest_dir}/battstat
 %{_omf_dest_dir}/battstat/battstat-C.omf
 
 %files charpicker -f char-palette.lang
@@ -554,6 +556,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_CharpickerApplet.xml
 %{_iconsdir}/hicolor/48x48/apps/charpick.png
 %{_sysconfdir}/gconf/schemas/charpick.schemas
+%dir %{_omf_dest_dir}/char-palette
 %{_omf_dest_dir}/char-palette/char-palette-C.omf
 %lang(es) %{_omf_dest_dir}/char-palette/char-palette-es.omf
 %lang(nl) %{_omf_dest_dir}/char-palette/char-palette-nl.omf
@@ -569,6 +572,7 @@ EOF
 %{_sysconfdir}/gconf/schemas/cpufreq-applet.schemas
 %{_pixmapsdir}/cpufreq-applet
 %{_iconsdir}/hicolor/48x48/apps/gnome-cpu.png
+%dir %{_omf_dest_dir}/cpufreq-applet
 %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-C.omf
 %lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
 
@@ -579,6 +583,7 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_DriveMountApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_DriveMountApplet.xml
 %{_sysconfdir}/gconf/schemas/drivemount.schemas
+%dir %{_omf_dest_dir}/drivemount
 %{_omf_dest_dir}/drivemount/drivemount-C.omf
 %lang(es) %{_omf_dest_dir}/drivemount/drivemount-es.omf
 
@@ -591,6 +596,7 @@ EOF
 %{_datadir}/%{name}/geyes
 %{_iconsdir}/hicolor/48x48/apps/gnome-eyes.png
 %{_sysconfdir}/gconf/schemas/geyes.schemas
+%dir %{_omf_dest_dir}/geyes
 %{_omf_dest_dir}/geyes/geyes-C.omf
 %lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
 
@@ -602,6 +608,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_GtikApplet.xml
 %{_iconsdir}/hicolor/48x48/apps/gnome-money.png
 %{_sysconfdir}/gconf/schemas/gtik.schemas
+%dir %{_omf_dest_dir}/gtik2_applet2
 %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-C.omf
 %lang(es) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-es.omf
 
@@ -613,6 +620,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 %{_datadir}/%{name}/gweather
 %{_sysconfdir}/gconf/schemas/gweather.schemas
+%dir %{_omf_dest_dir}/gweather
 %{_omf_dest_dir}/gweather/gweather-C.omf
 %lang(es) %{_omf_dest_dir}/gweather/gweather-es.omf
 
@@ -672,6 +680,7 @@ EOF
 %{_datadir}/%{name}/glade/gswitchit*.glade
 %{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
 %{_sysconfdir}/gconf/schemas/gswitchit.schemas
+%dir %{_omf_dest_dir}/gswitchit
 %{_omf_dest_dir}/gswitchit/gswitchit-C.omf
 %lang(es) %{_omf_dest_dir}/gswitchit/gswitchit-es.omf
 
@@ -686,6 +695,7 @@ EOF
 %{_iconsdir}/hicolor/48x48/apps/gnome-mini-commander.png
 %{_sysconfdir}/gconf/schemas/mini-commander-global.schemas
 %{_sysconfdir}/gconf/schemas/mini-commander.schemas
+%dir %{_omf_dest_dir}/command-line
 %{_omf_dest_dir}/command-line/command-line-C.omf
 %lang(es) %{_omf_dest_dir}/command-line/command-line-es.omf
 
@@ -696,6 +706,7 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_MixerApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_MixerApplet.xml
 %{_sysconfdir}/gconf/schemas/mixer.schemas
+%dir %{_omf_dest_dir}/mixer_applet2
 %{_omf_dest_dir}/mixer_applet2/mixer_applet2-C.omf
 %lang(es) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-es.omf
 
@@ -715,6 +726,7 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_MultiloadApplet.xml
 %{_sysconfdir}/gconf/schemas/multiload.schemas
+%dir %{_omf_dest_dir}/multiload
 %{_omf_dest_dir}/multiload/multiload-C.omf
 %lang(es) %{_omf_dest_dir}/multiload/multiload-es.omf
 
@@ -727,6 +739,7 @@ EOF
 %{_datadir}/%{name}/glade/stickynotes.glade
 %{_pixmapsdir}/stickynotes
 %{_sysconfdir}/gconf/schemas/stickynotes.schemas
+%dir %{_omf_dest_dir}/stickynotes_applet
 %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-C.omf
 %lang(es) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-es.omf
 
@@ -737,6 +750,7 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_Panel_TrashApplet.server
 %{_datadir}/%{name}/glade/trashapplet.glade
 %{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
+%dir %{_omf_dest_dir}/trashapplet
 %{_omf_dest_dir}/trashapplet/trashapplet-C.omf
 %lang(es) %{_omf_dest_dir}/trashapplet/trashapplet-es.omf
 %lang(pa) %{_omf_dest_dir}/trashapplet/trashapplet-pa.omf
