@@ -6,16 +6,15 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.11.92.1
-Release:	2
+Version:	2.11.93
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.11/%{name}-%{version}.tar.bz2
-# Source0-md5:	035684af82060eb19af881d70a822478
+# Source0-md5:	e83fe1dd0f36a7d5ec61b6ca966e7aba
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
-Patch2:		%{name}-pangoxft_fix.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.10.0
 BuildRequires:	autoconf
@@ -309,7 +308,6 @@ Aplet ╤mietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 gnome-doc-prepare --copy --force
@@ -535,6 +533,8 @@ EOF
 %dir %{_omf_dest_dir}/accessx-status
 %{_omf_dest_dir}/accessx-status/accessx-status-C.omf
 %lang(es) %{_omf_dest_dir}/accessx-status/accessx-status-es.omf
+%lang(fr) %{_omf_dest_dir}/accessx-status/accessx-status-fr.omf
+%lang(uk) %{_omf_dest_dir}/accessx-status/accessx-status-uk.omf
 
 %files battstat -f battstat.lang
 %defattr(644,root,root,755)
@@ -547,6 +547,8 @@ EOF
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
 %dir %{_omf_dest_dir}/battstat
 %{_omf_dest_dir}/battstat/battstat-C.omf
+%lang(es) %{_omf_dest_dir}/battstat/battstat-es.omf
+%lang(uk) %{_omf_dest_dir}/battstat/battstat-uk.omf
 
 %files charpicker -f char-palette.lang
 %defattr(644,root,root,755)
@@ -560,6 +562,7 @@ EOF
 %{_omf_dest_dir}/char-palette/char-palette-C.omf
 %lang(es) %{_omf_dest_dir}/char-palette/char-palette-es.omf
 %lang(nl) %{_omf_dest_dir}/char-palette/char-palette-nl.omf
+%lang(uk) %{_omf_dest_dir}/char-palette/char-palette-uk.omf
 
 %files cpufreq -f cpufreq-applet.lang
 %defattr(644,root,root,755)
@@ -575,6 +578,7 @@ EOF
 %dir %{_omf_dest_dir}/cpufreq-applet
 %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-C.omf
 %lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
+%lang(uk) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-uk.omf
 
 %files drivemount -f drivemount.lang
 %defattr(644,root,root,755)
@@ -586,6 +590,7 @@ EOF
 %dir %{_omf_dest_dir}/drivemount
 %{_omf_dest_dir}/drivemount/drivemount-C.omf
 %lang(es) %{_omf_dest_dir}/drivemount/drivemount-es.omf
+%lang(uk) %{_omf_dest_dir}/drivemount/drivemount-uk.omf
 
 %files geyes -f geyes.lang
 %defattr(644,root,root,755)
@@ -599,6 +604,7 @@ EOF
 %dir %{_omf_dest_dir}/geyes
 %{_omf_dest_dir}/geyes/geyes-C.omf
 %lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
+%lang(uk) %{_omf_dest_dir}/geyes/geyes-uk.omf
 
 %files gtik -f gtik2_applet2.lang
 %defattr(644,root,root,755)
@@ -611,6 +617,7 @@ EOF
 %dir %{_omf_dest_dir}/gtik2_applet2
 %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-C.omf
 %lang(es) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-es.omf
+%lang(uk) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-uk.omf
 
 %files gweather -f gweather.lang
 %defattr(644,root,root,755)
@@ -623,6 +630,7 @@ EOF
 %dir %{_omf_dest_dir}/gweather
 %{_omf_dest_dir}/gweather/gweather-C.omf
 %lang(es) %{_omf_dest_dir}/gweather/gweather-es.omf
+%lang(uk) %{_omf_dest_dir}/gweather/gweather-uk.omf
 
 %files keyboard -f gswitchit.lang
 %defattr(644,root,root,755)
@@ -683,6 +691,8 @@ EOF
 %dir %{_omf_dest_dir}/gswitchit
 %{_omf_dest_dir}/gswitchit/gswitchit-C.omf
 %lang(es) %{_omf_dest_dir}/gswitchit/gswitchit-es.omf
+%lang(fr) %{_omf_dest_dir}/gswitchit/gswitchit-fr.omf
+%lang(uk) %{_omf_dest_dir}/gswitchit/gswitchit-uk.omf
 
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
@@ -698,6 +708,7 @@ EOF
 %dir %{_omf_dest_dir}/command-line
 %{_omf_dest_dir}/command-line/command-line-C.omf
 %lang(es) %{_omf_dest_dir}/command-line/command-line-es.omf
+%lang(uk) %{_omf_dest_dir}/command-line/command-line-uk.omf
 
 %files mixer
 %defattr(644,root,root,755)
@@ -709,6 +720,7 @@ EOF
 %dir %{_omf_dest_dir}/mixer_applet2
 %{_omf_dest_dir}/mixer_applet2/mixer_applet2-C.omf
 %lang(es) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-es.omf
+%lang(uk) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-uk.omf
 
 %files modemlights
 %defattr(644,root,root,755)
@@ -729,6 +741,7 @@ EOF
 %dir %{_omf_dest_dir}/multiload
 %{_omf_dest_dir}/multiload/multiload-C.omf
 %lang(es) %{_omf_dest_dir}/multiload/multiload-es.omf
+%lang(uk) %{_omf_dest_dir}/multiload/multiload-uk.omf
 
 %files stickynotes -f stickynotes_applet.lang
 %defattr(644,root,root,755)
@@ -742,6 +755,7 @@ EOF
 %dir %{_omf_dest_dir}/stickynotes_applet
 %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-C.omf
 %lang(es) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-es.omf
+%lang(uk) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-uk.omf
 
 %files trash -f trashapplet.lang
 %defattr(644,root,root,755)
@@ -753,4 +767,6 @@ EOF
 %dir %{_omf_dest_dir}/trashapplet
 %{_omf_dest_dir}/trashapplet/trashapplet-C.omf
 %lang(es) %{_omf_dest_dir}/trashapplet/trashapplet-es.omf
+%lang(fr) %{_omf_dest_dir}/trashapplet/trashapplet-fr.omf
 %lang(pa) %{_omf_dest_dir}/trashapplet/trashapplet-pa.omf
+%lang(uk) %{_omf_dest_dir}/trashapplet/trashapplet-uk.omf
