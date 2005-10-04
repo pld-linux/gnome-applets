@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.12.0
+Version:	2.12.1
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	513dc1dc7d213f4ed0d302345c838aff
+# Source0-md5:	06dd0b634d7092fa8af2ce302f68f912
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -21,8 +21,8 @@ BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
 BuildRequires:	gnome-doc-utils >= 0.4.0
-BuildRequires:	gnome-panel-devel >= 2.12.0
-BuildRequires:	gnome-vfs2-devel >= 2.12.0
+BuildRequires:	gnome-panel-devel >= 2.12.1
+BuildRequires:	gnome-vfs2-devel >= 2.12.1
 BuildRequires:	gstreamer-plugins-devel >= 0.8.11
 BuildRequires:	gtk+2-devel >= 2:2.8.3
 BuildRequires:	gucharmap-devel >= 1.4.0
@@ -31,7 +31,7 @@ BuildRequires:	libgnomeui-devel >= 2.12.0
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgtop-devel >= 1:2.12.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.12.0
+BuildRequires:	libwnck-devel >= 2.12.1
 BuildRequires:	libxml2-devel >= 1:2.6.21
 BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
@@ -39,9 +39,9 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
-Requires:	gnome-icon-theme >= 2.12.0
-Requires:	gnome-panel >= 2.12.0
-Requires:	gnome-vfs2 >= 2.12.0
+Requires:	gnome-icon-theme >= 2.12.1
+Requires:	gnome-panel >= 2.12.1
+Requires:	gnome-vfs2 >= 2.12.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
@@ -552,7 +552,9 @@ EOF
 %dir %{_omf_dest_dir}/char-palette
 %{_omf_dest_dir}/char-palette/char-palette-C.omf
 %lang(es) %{_omf_dest_dir}/char-palette/char-palette-es.omf
+%lang(it) %{_omf_dest_dir}/char-palette/char-palette-it.omf
 %lang(nl) %{_omf_dest_dir}/char-palette/char-palette-nl.omf
+%lang(pt_BR) %{_omf_dest_dir}/char-palette/char-palette-pt_BR.omf
 %lang(uk) %{_omf_dest_dir}/char-palette/char-palette-uk.omf
 
 %files cpufreq -f cpufreq-applet.lang
@@ -581,6 +583,7 @@ EOF
 %dir %{_omf_dest_dir}/drivemount
 %{_omf_dest_dir}/drivemount/drivemount-C.omf
 %lang(es) %{_omf_dest_dir}/drivemount/drivemount-es.omf
+%lang(it) %{_omf_dest_dir}/drivemount/drivemount-it.omf
 %lang(pa) %{_omf_dest_dir}/drivemount/drivemount-pa.omf
 %lang(uk) %{_omf_dest_dir}/drivemount/drivemount-uk.omf
 
@@ -596,6 +599,7 @@ EOF
 %dir %{_omf_dest_dir}/geyes
 %{_omf_dest_dir}/geyes/geyes-C.omf
 %lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
+%lang(it) %{_omf_dest_dir}/geyes/geyes-it.omf
 %lang(uk) %{_omf_dest_dir}/geyes/geyes-uk.omf
 
 %files gtik -f gtik2_applet2.lang
@@ -700,6 +704,7 @@ EOF
 %dir %{_omf_dest_dir}/command-line
 %{_omf_dest_dir}/command-line/command-line-C.omf
 %lang(es) %{_omf_dest_dir}/command-line/command-line-es.omf
+%lang(pt_BR) %{_omf_dest_dir}/command-line/command-line-pt_BR.omf
 %lang(uk) %{_omf_dest_dir}/command-line/command-line-uk.omf
 
 %files mixer
@@ -760,5 +765,6 @@ EOF
 %{_omf_dest_dir}/trashapplet/trashapplet-C.omf
 %lang(es) %{_omf_dest_dir}/trashapplet/trashapplet-es.omf
 %lang(fr) %{_omf_dest_dir}/trashapplet/trashapplet-fr.omf
+%lang(it) %{_omf_dest_dir}/trashapplet/trashapplet-it.omf
 %lang(pa) %{_omf_dest_dir}/trashapplet/trashapplet-pa.omf
 %lang(uk) %{_omf_dest_dir}/trashapplet/trashapplet-uk.omf
