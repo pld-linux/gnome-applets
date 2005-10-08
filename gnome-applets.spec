@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.12.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.12/%{name}-%{ver
 # Source0-md5:	06dd0b634d7092fa8af2ce302f68f912
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
+Patch2:		%{name}-mixer.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
@@ -20,6 +21,7 @@ BuildRequires:	gail-devel >= 1.8.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
+BuildRequires:	gnome-desktop-devel >= 2.12.1
 BuildRequires:	gnome-doc-utils >= 0.4.0
 BuildRequires:	gnome-panel-devel >= 2.12.1
 BuildRequires:	gnome-vfs2-devel >= 2.12.1
@@ -305,6 +307,7 @@ Aplet ╤mietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 gnome-doc-prepare --copy --force
