@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.12.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -12,11 +12,11 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.12/%{name}-%{ver
 # Source0-md5:	06dd0b634d7092fa8af2ce302f68f912
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
-Patch2:		%{name}-mixer.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	dbus-glib-devel >= 0.34
 BuildRequires:	gail-devel >= 1.8.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
@@ -28,10 +28,12 @@ BuildRequires:	gnome-vfs2-devel >= 2.12.1
 BuildRequires:	gstreamer-plugins-devel >= 0.8.11
 BuildRequires:	gtk+2-devel >= 2:2.8.3
 BuildRequires:	gucharmap-devel >= 1.4.0
+BuildRequires:	hal-devel >= 0.5.3
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libgnomeui-devel >= 2.12.0
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgtop-devel >= 1:2.12.0
+BuildRequires:	libnotify-devel
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.12.1
 BuildRequires:	libxml2-devel >= 1:2.6.21
@@ -190,6 +192,7 @@ Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	notification-daemon
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description gweather
@@ -307,7 +310,6 @@ Aplet ╤mietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 gnome-doc-prepare --copy --force
