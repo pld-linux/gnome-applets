@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.12/%{name}-%{ver
 # Source0-md5:	06dd0b634d7092fa8af2ce302f68f912
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
+Patch2:		%{name}-mixer.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
@@ -310,6 +311,7 @@ Aplet ¶mietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 gnome-doc-prepare --copy --force
