@@ -3,16 +3,15 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.12.1
-Release:	3
+Version:	2.12.2
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	06dd0b634d7092fa8af2ce302f68f912
+# Source0-md5:	41aa44df2b0477594e59f59245c7d052
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
-Patch2:		%{name}-mixer.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
@@ -311,7 +310,6 @@ Aplet ╤mietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 gnome-doc-prepare --copy --force
@@ -532,6 +530,7 @@ EOF
 %{_omf_dest_dir}/accessx-status/accessx-status-C.omf
 %lang(es) %{_omf_dest_dir}/accessx-status/accessx-status-es.omf
 %lang(fr) %{_omf_dest_dir}/accessx-status/accessx-status-fr.omf
+%lang(it) %{_omf_dest_dir}/accessx-status/accessx-status-it.omf
 %lang(uk) %{_omf_dest_dir}/accessx-status/accessx-status-uk.omf
 
 %files battstat -f battstat.lang
