@@ -238,7 +238,7 @@ Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	gstreamer-audio-effects
+Requires:	gstreamer-audio-effects-base >= 0.10
 Requires:	gstreamer-audiosink
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
