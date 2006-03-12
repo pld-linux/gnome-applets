@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.13.90
+Version:	2.14.0
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.13/%{name}-%{version}.tar.bz2
-# Source0-md5:	9aac02f11ad626b2e92767f083762f8f
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.14/%{name}-%{version}.tar.bz2
+# Source0-md5:	0c7789d642003f38c86d02a3384d3350
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -533,6 +533,7 @@ EOF
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
 %dir %{_omf_dest_dir}/accessx-status
 %{_omf_dest_dir}/accessx-status/accessx-status-C.omf
+%lang(bg) %{_omf_dest_dir}/accessx-status/accessx-status-bg.omf
 %lang(es) %{_omf_dest_dir}/accessx-status/accessx-status-es.omf
 %lang(fr) %{_omf_dest_dir}/accessx-status/accessx-status-fr.omf
 %lang(it) %{_omf_dest_dir}/accessx-status/accessx-status-it.omf
@@ -549,6 +550,7 @@ EOF
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
 %dir %{_omf_dest_dir}/battstat
 %{_omf_dest_dir}/battstat/battstat-C.omf
+%lang(bg) %{_omf_dest_dir}/battstat/battstat-bg.omf
 %lang(es) %{_omf_dest_dir}/battstat/battstat-es.omf
 %lang(fr) %{_omf_dest_dir}/battstat/battstat-fr.omf
 %lang(uk) %{_omf_dest_dir}/battstat/battstat-uk.omf
@@ -563,6 +565,7 @@ EOF
 %{_sysconfdir}/gconf/schemas/charpick.schemas
 %dir %{_omf_dest_dir}/char-palette
 %{_omf_dest_dir}/char-palette/char-palette-C.omf
+%lang(bg) %{_omf_dest_dir}/char-palette/char-palette-bg.omf
 %lang(es) %{_omf_dest_dir}/char-palette/char-palette-es.omf
 %lang(fr) %{_omf_dest_dir}/char-palette/char-palette-fr.omf
 %lang(it) %{_omf_dest_dir}/char-palette/char-palette-it.omf
@@ -613,9 +616,12 @@ EOF
 %{_sysconfdir}/gconf/schemas/geyes.schemas
 %dir %{_omf_dest_dir}/geyes
 %{_omf_dest_dir}/geyes/geyes-C.omf
+%lang(bg) %{_omf_dest_dir}/geyes/geyes-bg.omf
+%lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
 %lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
 %lang(fr) %{_omf_dest_dir}/geyes/geyes-fr.omf
 %lang(it) %{_omf_dest_dir}/geyes/geyes-it.omf
+%lang(ru) %{_omf_dest_dir}/geyes/geyes-ru.omf
 %lang(uk) %{_omf_dest_dir}/geyes/geyes-uk.omf
 
 %files gtik -f gtik2_applet2.lang
@@ -738,6 +744,7 @@ EOF
 %dir %{_omf_dest_dir}/mixer_applet2
 %{_omf_dest_dir}/mixer_applet2/mixer_applet2-C.omf
 %lang(es) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-es.omf
+%lang(it) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-it.omf
 %lang(fr) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-fr.omf
 %lang(uk) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-uk.omf
 
