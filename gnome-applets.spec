@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.14.0
+Version:	2.14.1
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	0c7789d642003f38c86d02a3384d3350
+# Source0-md5:	1b5e834450812a6a3e7ab00652587ef4
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -799,4 +799,5 @@ EOF
 %lang(it) %{_omf_dest_dir}/trashapplet/trashapplet-it.omf
 %lang(nl) %{_omf_dest_dir}/trashapplet/trashapplet-nl.omf
 %lang(pa) %{_omf_dest_dir}/trashapplet/trashapplet-pa.omf
+%lang(ru) %{_omf_dest_dir}/trashapplet/trashapplet-ru.omf
 %lang(uk) %{_omf_dest_dir}/trashapplet/trashapplet-uk.omf
