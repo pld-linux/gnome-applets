@@ -13,7 +13,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.14/%{name}-%{ver
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.12.0
+BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.34
@@ -21,21 +21,21 @@ BuildRequires:	gail-devel >= 1.8.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
-BuildRequires:	gnome-desktop-devel >= 2.12.1
+BuildRequires:	gnome-desktop-devel >= 2.14.0
 BuildRequires:	gnome-doc-utils >= 0.4.0
-BuildRequires:	gnome-panel-devel >= 2.13.4
-BuildRequires:	gnome-vfs2-devel >= 2.12.1
+BuildRequires:	gnome-panel-devel >= 2.14.0
+BuildRequires:	gnome-vfs2-devel >= 2.14.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10
 BuildRequires:	gtk+2-devel >= 2:2.8.3
 BuildRequires:	gucharmap-devel >= 1.4.0
 BuildRequires:	hal-devel >= 0.5.3
 BuildRequires:	intltool >= 0.33
-BuildRequires:	libgnomeui-devel >= 2.12.0
+BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgtop-devel >= 1:2.12.0
+BuildRequires:	libgtop-devel >= 1:2.14.0
 BuildRequires:	libnotify-devel >= 0.3.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.12.1
+BuildRequires:	libwnck-devel >= 2.14.1
 BuildRequires:	libxml2-devel >= 1:2.6.21
 BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
@@ -43,9 +43,9 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
-Requires:	gnome-icon-theme >= 2.12.1
-Requires:	gnome-panel >= 2.12.1
-Requires:	gnome-vfs2 >= 2.12.1
+Requires:	gnome-icon-theme >= 2.14.0
+Requires:	gnome-panel >= 2.14.0
+Requires:	gnome-vfs2 >= 2.14.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
@@ -71,7 +71,7 @@ Summary:	Header files for gnome-applets
 Summary(pl):	Pliki nag³ówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.12.0
+Requires:	GConf2-devel >= 2.14.0
 Requires:	gtk+2-devel >= 2:2.8.3
 
 %description devel
