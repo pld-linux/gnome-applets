@@ -324,8 +324,7 @@ gnome-doc-prepare --copy --force
 %{__autoconf}
 %configure \
 	--disable-static \
-	--disable-schemas-install \
-	--enable-mini-commander
+	--disable-schemas-install
 %{__make}
 
 %install
