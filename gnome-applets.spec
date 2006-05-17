@@ -3,17 +3,17 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.12.3
+Version:	2.14.1
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	39987d3e8726e58a6a72047ada05e25d
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.14/%{name}-%{version}.tar.bz2
+# Source0-md5:	1b5e834450812a6a3e7ab00652587ef4
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.12.0
+BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.34
@@ -21,21 +21,21 @@ BuildRequires:	gail-devel >= 1.8.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
-BuildRequires:	gnome-desktop-devel >= 2.12.1
+BuildRequires:	gnome-desktop-devel >= 2.14.0
 BuildRequires:	gnome-doc-utils >= 0.4.0
-BuildRequires:	gnome-panel-devel >= 2.12.1
-BuildRequires:	gnome-vfs2-devel >= 2.12.1
-BuildRequires:	gstreamer-plugins-devel >= 0.8.11
+BuildRequires:	gnome-panel-devel >= 2.14.0
+BuildRequires:	gnome-vfs2-devel >= 2.14.0
+BuildRequires:	gstreamer-plugins-base-devel >= 0.10
 BuildRequires:	gtk+2-devel >= 2:2.8.3
 BuildRequires:	gucharmap-devel >= 1.4.0
 BuildRequires:	hal-devel >= 0.5.3
 BuildRequires:	intltool >= 0.33
-BuildRequires:	libgnomeui-devel >= 2.12.0
+BuildRequires:	libgnomeui-devel >= 2.14.0
 BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgtop-devel >= 1:2.12.0
-BuildRequires:	libnotify-devel
+BuildRequires:	libgtop-devel >= 1:2.14.0
+BuildRequires:	libnotify-devel >= 0.3.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.12.1
+BuildRequires:	libwnck-devel >= 2.14.1
 BuildRequires:	libxml2-devel >= 1:2.6.21
 BuildRequires:	libxklavier-devel >= 2.0
 BuildRequires:	libxslt-progs
@@ -43,9 +43,9 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
-Requires:	gnome-icon-theme >= 2.12.1
-Requires:	gnome-panel >= 2.12.1
-Requires:	gnome-vfs2 >= 2.12.1
+Requires:	gnome-icon-theme >= 2.14.0
+Requires:	gnome-panel >= 2.14.0
+Requires:	gnome-vfs2 >= 2.14.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
@@ -71,7 +71,7 @@ Summary:	Header files for gnome-applets
 Summary(pl):	Pliki nagЁСwkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.12.0
+Requires:	GConf2-devel >= 2.14.0
 Requires:	gtk+2-devel >= 2:2.8.3
 
 %description devel
@@ -238,7 +238,7 @@ Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	gstreamer-audio-effects
+Requires:	gstreamer-audio-effects-base >= 0.10
 Requires:	gstreamer-audiosink
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
@@ -324,7 +324,8 @@ gnome-doc-prepare --copy --force
 %{__autoconf}
 %configure \
 	--disable-static \
-	--disable-schemas-install
+	--disable-schemas-install \
+	--enable-mini-commander
 %{__make}
 
 %install
@@ -335,6 +336,7 @@ rm -rf $RPM_BUILD_ROOT
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
+rm -r $RPM_BUILD_ROOT%{_libdir}/libgweather.la
 
 %find_lang %{name} --all-name --with-gnome
 %find_lang char-palette --with-gnome
@@ -428,6 +430,7 @@ EOF
 %scrollkeeper_update_postun
 
 %post gweather
+/sbin/ldconfig
 %scrollkeeper_update_post
 %gconf_schema_install gweather.schemas
 
@@ -435,6 +438,7 @@ EOF
 %gconf_schema_uninstall gweather.schemas
 
 %postun gweather
+/sbin/ldconfig
 %scrollkeeper_update_postun
 
 %post keyboard
@@ -529,6 +533,7 @@ EOF
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
 %dir %{_omf_dest_dir}/accessx-status
 %{_omf_dest_dir}/accessx-status/accessx-status-C.omf
+%lang(bg) %{_omf_dest_dir}/accessx-status/accessx-status-bg.omf
 %lang(es) %{_omf_dest_dir}/accessx-status/accessx-status-es.omf
 %lang(fr) %{_omf_dest_dir}/accessx-status/accessx-status-fr.omf
 %lang(it) %{_omf_dest_dir}/accessx-status/accessx-status-it.omf
@@ -545,7 +550,9 @@ EOF
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
 %dir %{_omf_dest_dir}/battstat
 %{_omf_dest_dir}/battstat/battstat-C.omf
+%lang(bg) %{_omf_dest_dir}/battstat/battstat-bg.omf
 %lang(es) %{_omf_dest_dir}/battstat/battstat-es.omf
+%lang(fr) %{_omf_dest_dir}/battstat/battstat-fr.omf
 %lang(uk) %{_omf_dest_dir}/battstat/battstat-uk.omf
 
 %files charpicker -f char-palette.lang
@@ -558,7 +565,9 @@ EOF
 %{_sysconfdir}/gconf/schemas/charpick.schemas
 %dir %{_omf_dest_dir}/char-palette
 %{_omf_dest_dir}/char-palette/char-palette-C.omf
+%lang(bg) %{_omf_dest_dir}/char-palette/char-palette-bg.omf
 %lang(es) %{_omf_dest_dir}/char-palette/char-palette-es.omf
+%lang(fr) %{_omf_dest_dir}/char-palette/char-palette-fr.omf
 %lang(it) %{_omf_dest_dir}/char-palette/char-palette-it.omf
 %lang(nl) %{_omf_dest_dir}/char-palette/char-palette-nl.omf
 %lang(pt_BR) %{_omf_dest_dir}/char-palette/char-palette-pt_BR.omf
@@ -578,6 +587,7 @@ EOF
 %dir %{_omf_dest_dir}/cpufreq-applet
 %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-C.omf
 %lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
+%lang(nl) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-nl.omf
 %lang(uk) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-uk.omf
 
 %files drivemount -f drivemount.lang
@@ -590,6 +600,7 @@ EOF
 %dir %{_omf_dest_dir}/drivemount
 %{_omf_dest_dir}/drivemount/drivemount-C.omf
 %lang(es) %{_omf_dest_dir}/drivemount/drivemount-es.omf
+%lang(fr) %{_omf_dest_dir}/drivemount/drivemount-fr.omf
 %lang(it) %{_omf_dest_dir}/drivemount/drivemount-it.omf
 %lang(pa) %{_omf_dest_dir}/drivemount/drivemount-pa.omf
 %lang(uk) %{_omf_dest_dir}/drivemount/drivemount-uk.omf
@@ -605,8 +616,12 @@ EOF
 %{_sysconfdir}/gconf/schemas/geyes.schemas
 %dir %{_omf_dest_dir}/geyes
 %{_omf_dest_dir}/geyes/geyes-C.omf
+%lang(bg) %{_omf_dest_dir}/geyes/geyes-bg.omf
 %lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
+%lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
+%lang(fr) %{_omf_dest_dir}/geyes/geyes-fr.omf
 %lang(it) %{_omf_dest_dir}/geyes/geyes-it.omf
+%lang(ru) %{_omf_dest_dir}/geyes/geyes-ru.omf
 %lang(uk) %{_omf_dest_dir}/geyes/geyes-uk.omf
 
 %files gtik -f gtik2_applet2.lang
@@ -620,12 +635,14 @@ EOF
 %dir %{_omf_dest_dir}/gtik2_applet2
 %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-C.omf
 %lang(es) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-es.omf
+%lang(fr) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-fr.omf
 %lang(uk) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-uk.omf
 
 %files gweather -f gweather.lang
 %defattr(644,root,root,755)
 %doc gweather/ChangeLog
 %attr(755,root,root) %{_libdir}/gweather-applet-2
+%attr(755,root,root) %{_libdir}/libgweather.so*
 %{_libdir}/bonobo/servers/GNOME_GWeatherApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 %{_datadir}/%{name}/gweather
@@ -633,6 +650,8 @@ EOF
 %dir %{_omf_dest_dir}/gweather
 %{_omf_dest_dir}/gweather/gweather-C.omf
 %lang(es) %{_omf_dest_dir}/gweather/gweather-es.omf
+%lang(fr) %{_omf_dest_dir}/gweather/gweather-fr.omf
+%lang(nl) %{_omf_dest_dir}/gweather/gweather-nl.omf
 %lang(uk) %{_omf_dest_dir}/gweather/gweather-uk.omf
 
 %files keyboard -f gswitchit.lang
@@ -711,6 +730,7 @@ EOF
 %dir %{_omf_dest_dir}/command-line
 %{_omf_dest_dir}/command-line/command-line-C.omf
 %lang(es) %{_omf_dest_dir}/command-line/command-line-es.omf
+%lang(fr) %{_omf_dest_dir}/command-line/command-line-fr.omf
 %lang(pt_BR) %{_omf_dest_dir}/command-line/command-line-pt_BR.omf
 %lang(uk) %{_omf_dest_dir}/command-line/command-line-uk.omf
 
@@ -724,6 +744,8 @@ EOF
 %dir %{_omf_dest_dir}/mixer_applet2
 %{_omf_dest_dir}/mixer_applet2/mixer_applet2-C.omf
 %lang(es) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-es.omf
+%lang(it) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-it.omf
+%lang(fr) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-fr.omf
 %lang(uk) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-uk.omf
 
 %files modemlights
@@ -745,6 +767,7 @@ EOF
 %dir %{_omf_dest_dir}/multiload
 %{_omf_dest_dir}/multiload/multiload-C.omf
 %lang(es) %{_omf_dest_dir}/multiload/multiload-es.omf
+%lang(fr) %{_omf_dest_dir}/multiload/multiload-fr.omf
 %lang(uk) %{_omf_dest_dir}/multiload/multiload-uk.omf
 
 %files stickynotes -f stickynotes_applet.lang
@@ -759,6 +782,7 @@ EOF
 %dir %{_omf_dest_dir}/stickynotes_applet
 %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-C.omf
 %lang(es) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-es.omf
+%lang(fr) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-fr.omf
 %lang(uk) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-uk.omf
 
 %files trash -f trashapplet.lang
@@ -773,5 +797,7 @@ EOF
 %lang(es) %{_omf_dest_dir}/trashapplet/trashapplet-es.omf
 %lang(fr) %{_omf_dest_dir}/trashapplet/trashapplet-fr.omf
 %lang(it) %{_omf_dest_dir}/trashapplet/trashapplet-it.omf
+%lang(nl) %{_omf_dest_dir}/trashapplet/trashapplet-nl.omf
 %lang(pa) %{_omf_dest_dir}/trashapplet/trashapplet-pa.omf
+%lang(ru) %{_omf_dest_dir}/trashapplet/trashapplet-ru.omf
 %lang(uk) %{_omf_dest_dir}/trashapplet/trashapplet-uk.omf
