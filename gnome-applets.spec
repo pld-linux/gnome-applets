@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.14.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -46,6 +46,7 @@ BuildRequires:	system-tools-backends >= 1.4.0
 Requires:	gnome-icon-theme >= 2.14.0
 Requires:	gnome-panel >= 2.14.0
 Requires:	gnome-vfs2 >= 2.14.0
+Requires:	libgnomeui >= 2.14.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
