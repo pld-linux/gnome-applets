@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.14.1
-Release:	3
+Version:	2.14.2
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	1b5e834450812a6a3e7ab00652587ef4
+# Source0-md5:	e6da539e78da1256b9a9bee1301fd44f
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -21,32 +21,32 @@ BuildRequires:	gail-devel >= 1.8.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
-BuildRequires:	gnome-desktop-devel >= 2.14.0
+BuildRequires:	gnome-desktop-devel >= 2.14.2
 BuildRequires:	gnome-doc-utils >= 0.4.0
-BuildRequires:	gnome-panel-devel >= 2.14.0
-BuildRequires:	gnome-vfs2-devel >= 2.14.0
+BuildRequires:	gnome-panel-devel >= 2.14.2
+BuildRequires:	gnome-vfs2-devel >= 2.14.2
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10
-BuildRequires:	gtk+2-devel >= 2:2.8.3
+BuildRequires:	gtk+2-devel >= 2:2.8.18
 BuildRequires:	gucharmap-devel >= 1.4.0
 BuildRequires:	hal-devel >= 0.5.3
-BuildRequires:	intltool >= 0.33
-BuildRequires:	libgnomeui-devel >= 2.14.0
+BuildRequires:	intltool >= 0.35
+BuildRequires:	libgnomeui-devel >= 2.14.1
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgtop-devel >= 1:2.14.0
 BuildRequires:	libnotify-devel >= 0.3.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.14.1
+BuildRequires:	libwnck-devel >= 2.14.2
 BuildRequires:	libxml2-devel >= 1:2.6.21
-BuildRequires:	libxklavier-devel >= 2.0
+BuildRequires:	libxklavier-devel >= 2.2
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
 Requires:	gnome-icon-theme >= 2.14.0
-Requires:	gnome-panel >= 2.14.0
-Requires:	gnome-vfs2 >= 2.14.0
-Requires:	libgnomeui >= 2.14.0
+Requires:	gnome-panel >= 2.14.2
+Requires:	gnome-vfs2 >= 2.14.2
+Requires:	libgnomeui >= 2.14.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
@@ -73,7 +73,7 @@ Summary(pl):	Pliki nagЁСwkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.14.0
-Requires:	gtk+2-devel >= 2:2.8.3
+Requires:	gtk+2-devel >= 2:2.8.18
 
 %description devel
 Header files for gnome-applets.
@@ -336,7 +336,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -r $RPM_BUILD_ROOT%{_libdir}/libgweather.la
 
 %find_lang %{name} --all-name --with-gnome
