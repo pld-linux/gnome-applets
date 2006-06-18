@@ -3,49 +3,51 @@ Summary(pl):	Aplety GNOME - ma³e aplikacje osadzaj±ce siê w panelu
 Summary(ru):	íÁÌÅÎØËÉÅ ÐÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀÝÉÅÓÑ × ÐÁÎÅÌØ GNOME
 Summary(uk):	íÁÌÅÎØË¦ ÐÒÏÇÒÁÍÉ, ÝÏ ×ÂÕÄÏ×ÕÀÔØÓÑ × ÐÁÎÅÌØ GNOME
 Name:		gnome-applets
-Version:	2.14.2
-Release:	2
+Version:	2.15.1.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.14/%{name}-%{version}.tar.bz2
-# Source0-md5:	e6da539e78da1256b9a9bee1301fd44f
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.15/%{name}-%{version}.tar.bz2
+# Source0-md5:	d632538ac5a4ed880302be25dbdc0f69
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
+Patch2:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	dbus-glib-devel >= 0.34
+BuildRequires:	cpufrequtils-devel >= 0.3
+BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gail-devel >= 1.8.11
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0-2
 BuildRequires:	gnome-desktop-devel >= 2.15.2
-BuildRequires:	gnome-doc-utils >= 0.4.0
+BuildRequires:	gnome-doc-utils >= 0.7.1
 BuildRequires:	gnome-panel-devel >= 2.14.2
-BuildRequires:	gnome-vfs2-devel >= 2.15.1
+BuildRequires:	gnome-vfs2-devel >= 2.15.2
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.7
-BuildRequires:	gtk+2-devel >= 2:2.9.2
-BuildRequires:	gucharmap-devel >= 1.4.0
-BuildRequires:	hal-devel >= 0.5.3
+BuildRequires:	gtk+2-devel >= 2:2.9.3
+BuildRequires:	gucharmap-devel >= 1.6.0
+BuildRequires:	hal-devel >= 0.5.7
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libgnomeui-devel >= 2.15.1
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgtop-devel >= 1:2.14.0
-BuildRequires:	libnotify-devel >= 0.3.2
+BuildRequires:	libnotify-devel >= 0.4.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.14.2
+BuildRequires:	libwnck-devel >= 2.15.3
 BuildRequires:	libxml2-devel >= 1:2.6.26
-BuildRequires:	libxklavier-devel >= 2.2
-BuildRequires:	libxslt-progs
+BuildRequires:	libxklavier-devel >= 2.91
+BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
 Requires:	gnome-icon-theme >= 2.15.2
 Requires:	gnome-panel >= 2.14.2
-Requires:	gnome-vfs2 >= 2.15.1
+Requires:	gnome-vfs2 >= 2.15.2
 Requires:	libgnomeui >= 2.15.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -73,7 +75,7 @@ Summary(pl):	Pliki nag³ówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.14.0
-Requires:	gtk+2-devel >= 2:2.9.2
+Requires:	gtk+2-devel >= 2:2.9.3
 
 %description devel
 Header files for gnome-applets.
@@ -171,21 +173,6 @@ Geyes applet.
 %description geyes -l pl
 Aplet geyes.
 
-%package gtik
-Summary:	Stock Ticker applet
-Summary(pl):	Aplet wska¼nika gie³dowego
-Group:		X11/Applications
-Requires(post,preun):	GConf2
-Requires(post,postun):	scrollkeeper
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets <= 0:2.10.0-5
-
-%description gtik
-Stock Ticker applet.
-
-%description gtik -l pl
-Aplet wska¼nika gie³dowego.
-
 %package gweather
 Summary:	Weather Report applet
 Summary(pl):	Aplet raportu pogodowego
@@ -201,6 +188,23 @@ Weather Report applet.
 
 %description gweather -l pl
 Aplet raportu pogodowego.
+
+%package invest
+Summary:	Stock Ticker applet
+Summary(pl):	Aplet wska¼nika gie³dowego
+Group:		X11/Applications
+Requires(post,preun):	GConf2
+Requires(post,postun):	scrollkeeper
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	python-gnome-extras-egg >= 2.14.0
+Conflicts:	gnome-applets <= 0:2.10.0-5
+Obsoletes:	gnome-applets-gtik
+
+%description invest
+Stock Ticker applet.
+
+%description invest -l pl
+Aplet wska¼nika gie³dowego.
 
 %package keyboard
 Summary:	Keyboard Indicator applet
@@ -312,6 +316,7 @@ Aplet ¶mietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 gnome-doc-prepare --copy --force
@@ -334,26 +339,27 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 \
+	pythondir=%{py_sitedir}
 
-rm -r $RPM_BUILD_ROOT%{_libdir}/libgweather.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/libgweather.la
+rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --all-name --with-gnome
+%find_lang accessx-status --with-gnome
+%find_lang battstat --with-gnome
 %find_lang char-palette --with-gnome
+%find_lang command-line --with-gnome
+%find_lang cpufreq-applet --with-gnome
 %find_lang drivemount --with-gnome
 %find_lang geyes --with-gnome
-%find_lang command-line --with-gnome
-%find_lang stickynotes_applet --with-gnome
+%find_lang gswitchit --with-gnome
+%find_lang gweather --with-gnome
 %find_lang mixer_applet2 --with-gnome
 %find_lang multiload --with-gnome
-%find_lang gtik2_applet2 --with-gnome
-%find_lang gweather --with-gnome
+%find_lang stickynotes_applet --with-gnome
 %find_lang trashapplet --with-gnome
-%find_lang battstat --with-gnome
-%find_lang accessx-status --with-gnome
-%find_lang gswitchit --with-gnome
-%find_lang cpufreq-applet --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -420,15 +426,6 @@ EOF
 %postun geyes 
 %scrollkeeper_update_postun
 
-%post gtik
-%scrollkeeper_update_post
-%gconf_schema_install gtik.schemas
-
-%preun gtik
-%gconf_schema_uninstall gtik.schemas
-
-%postun gtik
-%scrollkeeper_update_postun
 
 %post gweather
 /sbin/ldconfig
@@ -440,6 +437,12 @@ EOF
 
 %postun gweather
 /sbin/ldconfig
+%scrollkeeper_update_postun
+
+%post invest
+%scrollkeeper_update_post
+
+%postun invest
 %scrollkeeper_update_postun
 
 %post keyboard
@@ -515,9 +518,10 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_MailcheckApplet_Factory.server
 %{_libdir}/bonobo/servers/GNOME_NullApplet_Factory.server
 %{_libdir}/bonobo/servers/GNOME_Panel_WirelessApplet.server
-%dir %{_datadir}/%{name}/glade
 %dir %{_libdir}/%{name}
 %dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/art
+%dir %{_datadir}/%{name}/glade
 
 %files devel
 %defattr(644,root,root,755)
@@ -590,6 +594,7 @@ EOF
 %lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
 %lang(nl) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-nl.omf
 %lang(uk) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-uk.omf
+%lang(zh_CN) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-zh_CN.omf
 
 %files drivemount -f drivemount.lang
 %defattr(644,root,root,755)
@@ -605,6 +610,7 @@ EOF
 %lang(it) %{_omf_dest_dir}/drivemount/drivemount-it.omf
 %lang(pa) %{_omf_dest_dir}/drivemount/drivemount-pa.omf
 %lang(uk) %{_omf_dest_dir}/drivemount/drivemount-uk.omf
+%lang(zh_CN) %{_omf_dest_dir}/drivemount/drivemount-zh_CN.omf
 
 %files geyes -f geyes.lang
 %defattr(644,root,root,755)
@@ -619,25 +625,10 @@ EOF
 %{_omf_dest_dir}/geyes/geyes-C.omf
 %lang(bg) %{_omf_dest_dir}/geyes/geyes-bg.omf
 %lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
-%lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
 %lang(fr) %{_omf_dest_dir}/geyes/geyes-fr.omf
 %lang(it) %{_omf_dest_dir}/geyes/geyes-it.omf
 %lang(ru) %{_omf_dest_dir}/geyes/geyes-ru.omf
 %lang(uk) %{_omf_dest_dir}/geyes/geyes-uk.omf
-
-%files gtik -f gtik2_applet2.lang
-%defattr(644,root,root,755)
-%doc gtik/ChangeLog
-%attr(755,root,root) %{_libdir}/gtik2_applet2
-%{_libdir}/bonobo/servers/GNOME_GtikApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_GtikApplet.xml
-%{_iconsdir}/hicolor/48x48/apps/gnome-money.png
-%{_sysconfdir}/gconf/schemas/gtik.schemas
-%dir %{_omf_dest_dir}/gtik2_applet2
-%{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-C.omf
-%lang(es) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-es.omf
-%lang(fr) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-fr.omf
-%lang(uk) %{_omf_dest_dir}/gtik2_applet2/gtik2_applet2-uk.omf
 
 %files gweather -f gweather.lang
 %defattr(644,root,root,755)
@@ -654,6 +645,22 @@ EOF
 %lang(fr) %{_omf_dest_dir}/gweather/gweather-fr.omf
 %lang(nl) %{_omf_dest_dir}/gweather/gweather-nl.omf
 %lang(uk) %{_omf_dest_dir}/gweather/gweather-uk.omf
+
+%files invest
+%defattr(644,root,root,755)
+%doc invest-applet/ChangeLog
+%attr(755,root,root) %{_bindir}/invest-chart
+%attr(755,root,root) %{_libdir}/invest-applet
+%{_libdir}/bonobo/servers/GNOME_GtikApplet.server
+%{_libdir}/bonobo/servers/Invest_Applet.server
+%{_datadir}/gnome-2.0/ui/Invest_Applet.xml
+%{_datadir}/%{name}/art/invest*.*
+%{_datadir}/%{name}/glade/financialchart.glade
+%{_datadir}/%{name}/glade/prefs-dialog.glade
+%{_desktopdir}/invest-chart.desktop
+%{_pixmapsdir}/invest-big.png
+%dir %{py_sitedir}/invest
+%{py_sitedir}/invest/*.py[co]
 
 %files keyboard -f gswitchit.lang
 %defattr(644,root,root,755)
