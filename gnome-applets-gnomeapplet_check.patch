@@ -1,0 +1,17 @@
+diff -aurN gnome-applets-2.15.1.1.orig/configure.in gnome-applets-2.15.1.1/configure.in
+--- gnome-applets-2.15.1.1.orig/configure.in	2006-06-18 04:27:20.000000000 +0200
++++ gnome-applets-2.15.1.1/configure.in	2006-06-21 19:26:15.412219576 +0200
+@@ -564,12 +564,7 @@
+ dnl *** invest-applet specific checks                                       ***
+ dnl ***************************************************************************
+ 
+-if test "x$HAVE_PYGTK" = "xyes" -a "x$HAVE_PYHDRS" = "xyes"; then
+-	AM_CHECK_PYMOD(gnomeapplet,,
+-			BUILD_INVEST_APPLET="yes", BUILD_INVEST_APPLET="no")
+-else
+-	BUILD_INVEST_APPLET="no"
+-fi
++BUILD_INVEST_APPLET="yes"
+ 
+ AM_CONDITIONAL(BUILD_INVEST_APPLET, test "x$BUILD_INVEST_APPLET" = "xyes")
+ 
