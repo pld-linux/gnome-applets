@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.15.1.1
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -20,37 +20,37 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.62
-BuildRequires:	gail-devel >= 1.8.11
+BuildRequires:	gail-devel >= 1.9.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common >= 2.8.0-2
-BuildRequires:	gnome-desktop-devel >= 2.15.2
+BuildRequires:	gnome-common >= 2.12.0
+BuildRequires:	gnome-desktop-devel >= 2.15.4
 BuildRequires:	gnome-doc-utils >= 0.7.1
 BuildRequires:	gnome-panel-devel >= 2.14.2
-BuildRequires:	gnome-vfs2-devel >= 2.15.2
+BuildRequires:	gnome-vfs2-devel >= 2.15.3
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.7
-BuildRequires:	gtk+2-devel >= 2:2.9.3
+BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	gucharmap-devel >= 1.6.0
 BuildRequires:	hal-devel >= 0.5.7
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libgnomeui-devel >= 2.15.1
-BuildRequires:	libglade2-devel >= 1:2.5.1
+BuildRequires:	libgnomeui-devel >= 2.15.2
+BuildRequires:	libglade2-devel >= 1:2.6.0
 BuildRequires:	libgtop-devel >= 1:2.14.0
-BuildRequires:	libnotify-devel >= 0.4.0
+BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.15.3
+BuildRequires:	libwnck-devel >= 2.15.4
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	libxklavier-devel >= 2.91
 BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
-BuildRequires:	python-gnome-desktop-devel >= 2.15.3
+BuildRequires:	python-gnome-desktop-devel >= 2.15.4
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
-Requires:	gnome-icon-theme >= 2.15.2
+Requires:	gnome-icon-theme >= 2.15.3
 Requires:	gnome-panel >= 2.14.2
-Requires:	gnome-vfs2 >= 2.15.2
-Requires:	libgnomeui >= 2.15.1
+Requires:	gnome-vfs2 >= 2.15.3
+Requires:	libgnomeui >= 2.15.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
@@ -77,7 +77,7 @@ Summary(pl):	Pliki nagЁСwkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.14.0
-Requires:	gtk+2-devel >= 2:2.9.3
+Requires:	gtk+2-devel >= 2:2.10.0
 
 %description devel
 Header files for gnome-applets.
@@ -331,6 +331,7 @@ gnome-doc-prepare --copy --force
 %{__gnome_doc_common}
 %{__automake}
 %{__autoconf}
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--disable-static \
 	--disable-schemas-install \
