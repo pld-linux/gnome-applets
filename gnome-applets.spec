@@ -40,7 +40,7 @@ BuildRequires:	libxml2-devel >= 1:2.6.21
 BuildRequires:	libxklavier-devel >= 2.2
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
 Requires:	gnome-icon-theme >= 2.14.0
@@ -314,7 +314,7 @@ Aplet ¶mietnika.
 %patch1 -p1
 
 %build
-gnome-doc-prepare --copy --force
+%{__gnome_doc_prepare}
 %{__libtoolize}
 %{__glib_gettextize}
 %{__intltoolize}
@@ -359,12 +359,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %post accessx-status
 %scrollkeeper_update_post
+%update_icon_cache hicolor
 %banner %{name} -e << EOF
 For full functionality, you need to install control-center.
 EOF
 
 %postun accessx-status
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post battstat
 %scrollkeeper_update_post
@@ -379,16 +381,19 @@ EOF
 %post charpicker
 %scrollkeeper_update_post
 %gconf_schema_install charpick.schemas
+%update_icon_cache hicolor
 
 %preun charpicker
 %gconf_schema_uninstall charpick.schemas
 
 %postun charpicker
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post cpufreq
 %scrollkeeper_update_post
 %gconf_schema_install cpufreq-applet.schemas
+%update_icon_cache hicolor
 %banner %{name} -e << EOF
 For full functionality, set SUID /usr/bin/cpufreq-selector binary.
 EOF
@@ -398,6 +403,7 @@ EOF
 
 %postun cpufreq
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post drivemount
 %scrollkeeper_update_post
@@ -412,22 +418,26 @@ EOF
 %post geyes
 %scrollkeeper_update_post
 %gconf_schema_install geyes.schemas
+%update_icon_cache hicolor
 
 %preun geyes
 %gconf_schema_uninstall geyes.schemas
 
 %postun geyes 
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gtik
 %scrollkeeper_update_post
 %gconf_schema_install gtik.schemas
+%update_icon_cache hicolor
 
 %preun gtik
 %gconf_schema_uninstall gtik.schemas
 
 %postun gtik
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post gweather
 /sbin/ldconfig
@@ -444,17 +454,20 @@ EOF
 %post keyboard
 %scrollkeeper_update_post
 %gconf_schema_install gswitchit.schemas
+%update_icon_cache hicolor
 
 %preun keyboard
 %gconf_schema_uninstall gswitchit.schemas
 
 %postun keyboard
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post minicommander
 %scrollkeeper_update_post
 %gconf_schema_install mini-commander-global.schemas
 %gconf_schema_install mini-commander.schemas
+%update_icon_cache hicolor
 GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%{name}/mc-install-default-macros
 
 %preun minicommander
@@ -463,6 +476,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %postun minicommander
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post mixer
 %scrollkeeper_update_post
@@ -476,6 +490,12 @@ EOF
 
 %postun mixer
 %scrollkeeper_update_postun
+
+%post modemlights
+%update_icon_cache hicolor
+
+%postun modemlights
+%update_icon_cache hicolor
 
 %post multiload
 %scrollkeeper_update_post
