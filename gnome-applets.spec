@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.14.3
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -467,8 +467,8 @@ EOF
 %scrollkeeper_update_post
 %gconf_schema_install mini-commander-global.schemas
 %gconf_schema_install mini-commander.schemas
-%update_icon_cache hicolor
 GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%{name}/mc-install-default-macros
+%update_icon_cache hicolor
 
 %preun minicommander
 %gconf_schema_uninstall mini-commander-global.schemas
