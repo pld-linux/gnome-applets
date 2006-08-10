@@ -13,14 +13,13 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.15/%{name}-%{ver
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
-Patch3:		%{name}-dbus.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	control-center-devel >= 2.15.91
 BuildRequires:	cpufrequtils-devel >= 0.3
-BuildRequires:	dbus-glib-devel >= 0.71
+BuildRequires:	dbus-glib-devel >= 0.71-2
 BuildRequires:	gail-devel >= 1.9.1
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
@@ -320,7 +319,6 @@ Aplet ¶mietnika.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 %{__gnome_doc_prepare}
