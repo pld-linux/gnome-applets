@@ -3,13 +3,13 @@ Summary(pl):	Aplety GNOME - ma³e aplikacje osadzaj±ce siê w panelu
 Summary(ru):	íÁÌÅÎØËÉÅ ÐÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀÝÉÅÓÑ × ÐÁÎÅÌØ GNOME
 Summary(uk):	íÁÌÅÎØË¦ ÐÒÏÇÒÁÍÉ, ÝÏ ×ÂÕÄÏ×ÕÀÔØÓÑ × ÐÁÎÅÌØ GNOME
 Name:		gnome-applets
-Version:	2.15.3
-Release:	2
+Version:	2.15.90
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	88814125b056b32d7d34b8ac75cfbf7e
+# Source0-md5:	421eda161541b42d42ea04c59b9ee4f1
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
@@ -17,28 +17,28 @@ URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	control-center-devel >= 2.15.91
+BuildRequires:	control-center-devel >= 2.15.92
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.71-2
-BuildRequires:	gail-devel >= 1.9.1
+BuildRequires:	gail-devel >= 1.9.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-desktop-devel >= 2.15.91
+BuildRequires:	gnome-desktop-devel >= 2.15.92
 BuildRequires:	gnome-doc-utils >= 0.7.2
-BuildRequires:	gnome-panel-devel >= 2.15.91
-BuildRequires:	gnome-vfs2-devel >= 2.15.91
+BuildRequires:	gnome-panel-devel >= 2.15.92
+BuildRequires:	gnome-vfs2-devel >= 2.15.92
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.9
-BuildRequires:	gtk+2-devel >= 2:2.10.1
+BuildRequires:	gtk+2-devel >= 2:2.10.2
 BuildRequires:	gucharmap-devel >= 1.7.0
 BuildRequires:	hal-devel >= 0.5.7.1
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libgnomeui-devel >= 2.15.91
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgtop-devel >= 1:2.14.1
+BuildRequires:	libgtop-devel >= 1:2.14.2
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.15.91
+BuildRequires:	libwnck-devel >= 2.15.92
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	libxklavier-devel >= 2.91
 BuildRequires:	libxslt-progs >= 1.1.17
@@ -47,9 +47,10 @@ BuildRequires:	python-gnome-desktop-devel >= 2.15.90
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
-Requires:	gnome-icon-theme >= 2.15.91
-Requires:	gnome-panel >= 2.15.91
-Requires:	gnome-vfs2 >= 2.15.91
+Requires:	gnome-icon-theme >= 2.15.92
+Requires:	gnome-panel >= 2.15.92
+Requires:	gnome-vfs2 >= 2.15.92
+Requires:	hicolor-icon-theme
 Requires:	libgnomeui >= 2.15.91
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -77,7 +78,7 @@ Summary(pl):	Pliki nag³ówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.14.0
-Requires:	gtk+2-devel >= 2:2.10.1
+Requires:	gtk+2-devel >= 2:2.10.2
 
 %description devel
 Header files for gnome-applets.
@@ -89,6 +90,7 @@ Pliki nag³ówkowe gnome-applets.
 Summary:	Keyboard Accessibility Status applet
 Summary(pl):	Aplet stanu dostepno¶ci klawiatury
 Group:		X11/Applications
+Requires(post,postun):	gtk+2 >= 2.10.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -119,6 +121,7 @@ Summary:	Character Palette applet
 Summary(pl):	Aplet palety znaków
 Group:		X11/Applications
 Requires(post,preun):	GConf2
+Requires(post,postun):	gtk+2 >= 2.10.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -134,6 +137,7 @@ Summary:	CPU Frequency Scaling Monitor applet
 Summary(pl):	Aplet monitora czêstotliwo¶ci procesora
 Group:		X11/Applications
 Requires(post,preun):	GConf2
+Requires(post,postun):	gtk+2 >= 2.10.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -165,6 +169,7 @@ Summary:	Geyes applet
 Summary(pl):	Aplet geyes
 Group:		X11/Applications
 Requires(post,preun):	GConf2
+Requires(post,postun):	gtk+2 >= 2.10.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -198,7 +203,7 @@ Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	python-gnome-extras-egg >= 2.14.0
+Requires:	python-gnome-extras-egg >= 2.14.2
 Conflicts:	gnome-applets <= 0:2.10.0-5
 Obsoletes:	gnome-applets-gtik
 
@@ -213,6 +218,7 @@ Summary:	Keyboard Indicator applet
 Summary(pl):	Aplet wska¼nika klawiatury
 Group:		X11/Applications
 Requires(post,preun):	GConf2
+Requires(post,postun):	gtk+2 >= 2.10.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -243,6 +249,7 @@ Summary:	Volume Control applet
 Summary(pl):	Aplet regulacji g³o¶no¶ci
 Group:		X11/Applications
 Requires(post,preun):	GConf2
+Requires(post,postun):	gtk+2 >= 2.10.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gstreamer-audio-effects-base >= 0.10
@@ -259,6 +266,7 @@ Aplet regulacji g³o¶no¶ci.
 Summary:	Modem Lights applet
 Summary(pl):	Aplet kontrolek modemu
 Group:		X11/Applications
+Requires(post,postun):	gtk+2 >= 2.10.2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	system-tools-backends >= 1.2.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -289,6 +297,7 @@ Summary:	Sticky Notes applet
 Summary(pl):	Aplet notatek
 Group:		X11/Applications
 Requires(post,preun):	GConf2
+Requires(post,postun):	gtk+2 >= 2.10.2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -333,7 +342,8 @@ Aplet ¶mietnika.
 %configure \
 	--disable-static \
 	--disable-schemas-install \
-	--enable-mini-commander
+	--enable-mini-commander \
+	--enable-stickynotes
 %{__make}
 
 %install
@@ -346,7 +356,7 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/libgweather.la
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_*,no}
 
 %find_lang %{name} --all-name --with-gnome
 %find_lang accessx-status --with-gnome
@@ -371,9 +381,11 @@ rm -rf $RPM_BUILD_ROOT
 %banner %{name} -e << EOF
 For full functionality, you need to install control-center.
 EOF
+%update_icon_cache hicolor
 
 %postun accessx-status
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post battstat
 %scrollkeeper_update_post
@@ -388,12 +400,14 @@ EOF
 %post charpicker
 %scrollkeeper_update_post
 %gconf_schema_install charpick.schemas
+%update_icon_cache hicolor
 
 %preun charpicker
 %gconf_schema_uninstall charpick.schemas
 
 %postun charpicker
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post cpufreq
 %scrollkeeper_update_post
@@ -401,12 +415,14 @@ EOF
 %banner %{name} -e << EOF
 For full functionality, set SUID /usr/bin/cpufreq-selector binary.
 EOF
+%update_icon_cache hicolor
 
 %preun cpufreq
 %gconf_schema_uninstall cpufreq-applet.schemas
 
 %postun cpufreq
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post drivemount
 %scrollkeeper_update_post
@@ -421,13 +437,14 @@ EOF
 %post geyes
 %scrollkeeper_update_post
 %gconf_schema_install geyes.schemas
+%update_icon_cache hicolor
 
 %preun geyes
 %gconf_schema_uninstall geyes.schemas
 
 %postun geyes 
 %scrollkeeper_update_postun
-
+%update_icon_cache hicolor
 
 %post gweather
 /sbin/ldconfig
@@ -450,18 +467,21 @@ EOF
 %post keyboard
 %scrollkeeper_update_post
 %gconf_schema_install gswitchit.schemas
+%update_icon_cache hicolor
 
 %preun keyboard
 %gconf_schema_uninstall gswitchit.schemas
 
 %postun keyboard
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post minicommander
 %scrollkeeper_update_post
 %gconf_schema_install mini-commander-global.schemas
 %gconf_schema_install mini-commander.schemas
 GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%{name}/mc-install-default-macros
+%update_icon_cache hicolor
 
 %preun minicommander
 %gconf_schema_uninstall mini-commander-global.schemas
@@ -469,6 +489,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %postun minicommander
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post mixer
 %scrollkeeper_update_post
@@ -482,6 +503,12 @@ EOF
 
 %postun mixer
 %scrollkeeper_update_postun
+
+%post modemlights
+%update_icon_cache hicolor
+
+%postun modemlights
+%update_icon_cache hicolor
 
 %post multiload
 %scrollkeeper_update_post
@@ -499,12 +526,14 @@ EOF
 %post stickynotes
 %scrollkeeper_update_post
 %gconf_schema_install stickynotes.schemas
+%update_icon_cache hicolor
 
 %preun stickynotes
 %gconf_schema_uninstall stickynotes.schemas
 
 %postun stickynotes
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post trash
 %scrollkeeper_update_post
@@ -522,7 +551,6 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_Panel_WirelessApplet.server
 %dir %{_libdir}/%{name}
 %dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/art
 %dir %{_datadir}/%{name}/glade
 
 %files devel
@@ -544,6 +572,7 @@ EOF
 %lang(es) %{_omf_dest_dir}/accessx-status/accessx-status-es.omf
 %lang(fr) %{_omf_dest_dir}/accessx-status/accessx-status-fr.omf
 %lang(it) %{_omf_dest_dir}/accessx-status/accessx-status-it.omf
+%lang(nl) %{_omf_dest_dir}/accessx-status/accessx-status-nl.omf
 %lang(sv) %{_omf_dest_dir}/accessx-status/accessx-status-sv.omf
 %lang(uk) %{_omf_dest_dir}/accessx-status/accessx-status-uk.omf
 
@@ -593,7 +622,7 @@ EOF
 %{_datadir}/%{name}/glade/cpufreq-preferences.glade
 %{_sysconfdir}/gconf/schemas/cpufreq-applet.schemas
 %{_pixmapsdir}/cpufreq-applet
-%{_iconsdir}/hicolor/48x48/apps/gnome-cpu.png
+%{_iconsdir}/hicolor/*/apps/gnome-cpu-frequency-applet.*
 %dir %{_omf_dest_dir}/cpufreq-applet
 %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-C.omf
 %lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
@@ -627,7 +656,7 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_GeyesApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_GeyesApplet.xml
 %{_datadir}/%{name}/geyes
-%{_iconsdir}/hicolor/48x48/apps/gnome-eyes.png
+%{_iconsdir}/hicolor/*/apps/gnome-eyes-applet.*
 %{_sysconfdir}/gconf/schemas/geyes.schemas
 %dir %{_omf_dest_dir}/geyes
 %{_omf_dest_dir}/geyes/geyes-C.omf
@@ -664,7 +693,7 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_GtikApplet.server
 %{_libdir}/bonobo/servers/Invest_Applet.server
 %{_datadir}/gnome-2.0/ui/Invest_Applet.xml
-%{_datadir}/%{name}/art/invest*.*
+%{_datadir}/%{name}/invest-applet
 %{_datadir}/%{name}/glade/financialchart.glade
 %{_datadir}/%{name}/glade/prefs-dialog.glade
 %{_desktopdir}/invest-chart.desktop
@@ -777,7 +806,7 @@ EOF
 %{_libdir}/bonobo/servers/GNOME_ModemLights.server
 %{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
 %{_datadir}/%{name}/glade/modemlights.glade
-%{_iconsdir}/hicolor/48x48/apps/gnome-modem.png
+%{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
@@ -801,6 +830,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
 %{_datadir}/%{name}/glade/stickynotes.glade
 %{_pixmapsdir}/stickynotes
+%{_iconsdir}/hicolor/*/apps/gnome-sticky-notes-applet.*
 %{_sysconfdir}/gconf/schemas/stickynotes.schemas
 %dir %{_omf_dest_dir}/stickynotes_applet
 %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-C.omf
