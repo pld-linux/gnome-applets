@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	modemlights	# don't build modemlights applet
+#
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
@@ -514,13 +515,11 @@ EOF
 %postun mixer
 %scrollkeeper_update_postun
 
-%if %{with modemlights}
 %post modemlights
 %update_icon_cache hicolor
 
 %postun modemlights
 %update_icon_cache hicolor
-%endif
 
 %post multiload
 %scrollkeeper_update_post
