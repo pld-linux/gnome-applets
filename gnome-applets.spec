@@ -1,3 +1,6 @@
+#
+# Conditional build:
+%bcond_without	modemlights	# don't build modemlights applet
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl):	Aplety GNOME - ma³e aplikacje osadzaj±ce siê w panelu
 Summary(ru):	íÁÌÅÎØËÉÅ ÐÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀÝÉÅÓÑ × ÐÁÎÅÌØ GNOME
@@ -13,6 +16,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.15/%{name}-%{ver
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
+Patch3:		%{name}-modemlights-conditional.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
@@ -46,7 +50,10 @@ BuildRequires:	pkgconfig
 BuildRequires:	python-gnome-desktop-devel >= 2.15.90
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
+%if %{with modemlights}
 BuildRequires:	system-tools-backends >= 1.4.0
+BuildRequires:	system-tools-backends < 1.9.0
+%endif
 Requires:	gnome-icon-theme >= 2.15.92
 Requires:	gnome-panel >= 2.15.92
 Requires:	gnome-vfs2 >= 2.15.92
@@ -268,7 +275,8 @@ Summary(pl):	Aplet kontrolek modemu
 Group:		X11/Applications
 Requires(post,postun):	gtk+2 >= 2.10.2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	system-tools-backends >= 1.2.0
+Requires:	system-tools-backends >= 1.4.0
+Requires:	susyem-tools-backends < 1.9.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description modemlights
@@ -328,6 +336,7 @@ Aplet ¶mietnika.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__gnome_doc_prepare}
@@ -343,7 +352,8 @@ Aplet ¶mietnika.
 	--disable-static \
 	--disable-schemas-install \
 	--enable-mini-commander \
-	--enable-stickynotes
+	--enable-stickynotes \
+	%{!?with_modemlights:--disable-modemlights}
 %{__make}
 
 %install
@@ -504,11 +514,13 @@ EOF
 %postun mixer
 %scrollkeeper_update_postun
 
+%if %{with modemlights}
 %post modemlights
 %update_icon_cache hicolor
 
 %postun modemlights
 %update_icon_cache hicolor
+%endif
 
 %post multiload
 %scrollkeeper_update_post
@@ -799,6 +811,7 @@ EOF
 %lang(sv) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-sv.omf
 %lang(uk) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-uk.omf
 
+%if %{with modemlights}
 %files modemlights
 %defattr(644,root,root,755)
 %doc modemlights/ChangeLog
@@ -807,6 +820,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
 %{_datadir}/%{name}/glade/modemlights.glade
 %{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
+%endif
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
