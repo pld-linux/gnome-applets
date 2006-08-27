@@ -8,7 +8,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.15.90
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -277,7 +277,7 @@ Group:		X11/Applications
 Requires(post,postun):	gtk+2 >= 2.10.2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	system-tools-backends >= 1.4.0
-Requires:	susyem-tools-backends < 1.9.0
+Requires:	system-tools-backends < 1.9.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description modemlights
