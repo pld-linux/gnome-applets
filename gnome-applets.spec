@@ -7,13 +7,13 @@ Summary(pl):	Aplety GNOME - maЁe aplikacje osadzaj╠ce siЙ w panelu
 Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.15.90
-Release:	3
+Version:	2.16.0
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.15/%{name}-%{version}.tar.bz2
-# Source0-md5:	421eda161541b42d42ea04c59b9ee4f1
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.16/%{name}-%{version}.tar.bz2
+# Source0-md5:	af7ed5ad25e355ba422936f1395ce01b
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
@@ -22,30 +22,30 @@ URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	control-center-devel >= 2.15.92
+BuildRequires:	control-center-devel >= 2.16.0
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.71-2
 BuildRequires:	gail-devel >= 1.9.2
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-desktop-devel >= 2.15.92
+BuildRequires:	gnome-desktop-devel >= 2.16.0
 BuildRequires:	gnome-doc-utils >= 0.7.2
-BuildRequires:	gnome-panel-devel >= 2.15.92
-BuildRequires:	gnome-vfs2-devel >= 2.15.92
+BuildRequires:	gnome-panel-devel >= 2.16.0
+BuildRequires:	gnome-vfs2-devel >= 2.16.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.9
 BuildRequires:	gtk+2-devel >= 2:2.10.2
 BuildRequires:	gucharmap-devel >= 1.7.0
 BuildRequires:	hal-devel >= 0.5.7.1
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libgnomeui-devel >= 2.15.91
+BuildRequires:	libgnomeui-devel >= 2.16.0
 BuildRequires:	libglade2-devel >= 1:2.6.0
 BuildRequires:	libgtop-devel >= 1:2.14.2
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.15.92
+BuildRequires:	libwnck-devel >= 2.16.0
 BuildRequires:	libxml2-devel >= 1:2.6.26
-BuildRequires:	libxklavier-devel >= 2.91
+BuildRequires:	libxklavier-devel >= 3.0
 BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
 BuildRequires:	python-gnome-desktop-devel >= 2.15.90
@@ -55,11 +55,11 @@ BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
 BuildRequires:	system-tools-backends < 1.9.0
 %endif
-Requires:	gnome-icon-theme >= 2.15.92
-Requires:	gnome-panel >= 2.15.92
-Requires:	gnome-vfs2 >= 2.15.92
+Requires:	gnome-icon-theme >= 2.16.0
+Requires:	gnome-panel >= 2.16.0
+Requires:	gnome-vfs2 >= 2.16.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.15.91
+Requires:	libgnomeui >= 2.16.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
