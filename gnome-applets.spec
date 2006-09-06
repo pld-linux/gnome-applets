@@ -7,13 +7,13 @@ Summary(pl):	Aplety GNOME - ma³e aplikacje osadzaj±ce siê w panelu
 Summary(ru):	íÁÌÅÎØËÉÅ ÐÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀÝÉÅÓÑ × ÐÁÎÅÌØ GNOME
 Summary(uk):	íÁÌÅÎØË¦ ÐÒÏÇÒÁÍÉ, ÝÏ ×ÂÕÄÏ×ÕÀÔØÓÑ × ÐÁÎÅÌØ GNOME
 Name:		gnome-applets
-Version:	2.16.0
+Version:	2.16.0.1
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	af7ed5ad25e355ba422936f1395ce01b
+# Source0-md5:	ff31b5b0a4bf5d0a9f8d0039133f2333
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
@@ -34,13 +34,13 @@ BuildRequires:	gnome-doc-utils >= 0.7.2
 BuildRequires:	gnome-panel-devel >= 2.16.0
 BuildRequires:	gnome-vfs2-devel >= 2.16.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.9
-BuildRequires:	gtk+2-devel >= 2:2.10.2
-BuildRequires:	gucharmap-devel >= 1.7.0
+BuildRequires:	gtk+2-devel >= 2:2.10.3
+BuildRequires:	gucharmap-devel >= 1.8.0
 BuildRequires:	hal-devel >= 0.5.7.1
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libgnomeui-devel >= 2.16.0
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgtop-devel >= 1:2.14.2
+BuildRequires:	libgtop-devel >= 1:2.14.3
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.16.0
@@ -48,14 +48,14 @@ BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	libxklavier-devel >= 3.0
 BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
-BuildRequires:	python-gnome-desktop-devel >= 2.15.90
+BuildRequires:	python-gnome-desktop-devel >= 2.16.0
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.11-4
 %if %{with modemlights}
 BuildRequires:	system-tools-backends >= 1.4.0
 BuildRequires:	system-tools-backends < 1.9.0
 %endif
-Requires:	gnome-icon-theme >= 2.16.0
+Requires:	gnome-icon-theme >= 2.16.0.1
 Requires:	gnome-panel >= 2.16.0
 Requires:	gnome-vfs2 >= 2.16.0
 Requires:	hicolor-icon-theme
@@ -86,7 +86,7 @@ Summary(pl):	Pliki nag³ówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.14.0
-Requires:	gtk+2-devel >= 2:2.10.2
+Requires:	gtk+2-devel >= 2:2.10.3
 
 %description devel
 Header files for gnome-applets.
@@ -98,7 +98,7 @@ Pliki nag³ówkowe gnome-applets.
 Summary:	Keyboard Accessibility Status applet
 Summary(pl):	Aplet stanu dostepno¶ci klawiatury
 Group:		X11/Applications
-Requires(post,postun):	gtk+2 >= 2.10.2
+Requires(post,postun):	gtk+2 >= 2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -129,7 +129,7 @@ Summary:	Character Palette applet
 Summary(pl):	Aplet palety znaków
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.2
+Requires(post,postun):	gtk+2 >= 2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -145,7 +145,7 @@ Summary:	CPU Frequency Scaling Monitor applet
 Summary(pl):	Aplet monitora czêstotliwo¶ci procesora
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.2
+Requires(post,postun):	gtk+2 >= 2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -177,7 +177,7 @@ Summary:	Geyes applet
 Summary(pl):	Aplet geyes
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.2
+Requires(post,postun):	gtk+2 >= 2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -226,7 +226,7 @@ Summary:	Keyboard Indicator applet
 Summary(pl):	Aplet wska¼nika klawiatury
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.2
+Requires(post,postun):	gtk+2 >= 2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -257,7 +257,7 @@ Summary:	Volume Control applet
 Summary(pl):	Aplet regulacji g³o¶no¶ci
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.2
+Requires(post,postun):	gtk+2 >= 2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gstreamer-audio-effects-base >= 0.10
@@ -274,7 +274,7 @@ Aplet regulacji g³o¶no¶ci.
 Summary:	Modem Lights applet
 Summary(pl):	Aplet kontrolek modemu
 Group:		X11/Applications
-Requires(post,postun):	gtk+2 >= 2.10.2
+Requires(post,postun):	gtk+2 >= 2.10.3
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	system-tools-backends >= 1.4.0
 Requires:	system-tools-backends < 1.9.0
@@ -306,7 +306,7 @@ Summary:	Sticky Notes applet
 Summary(pl):	Aplet notatek
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.2
+Requires(post,postun):	gtk+2 >= 2.10.3
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
