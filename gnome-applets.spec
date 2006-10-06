@@ -367,7 +367,7 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/libgweather.la
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{es_*,no}
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/es_{CL,CO,CR,DO,EC,ES,GT,HN,PA,PE,PR,SV,UY,VE}
 
 %find_lang %{name} --all-name --with-gnome
 %find_lang accessx-status --with-gnome
