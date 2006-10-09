@@ -367,7 +367,8 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/libgweather.la
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/es_{CL,CO,CR,DO,EC,ES,GT,HN,PA,PE,PR,SV,UY,VE}
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/*.mo
+rm -f $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 
 %find_lang %{name} --all-name --with-gnome
 %find_lang accessx-status --with-gnome
@@ -563,6 +564,8 @@ EOF
 %dir %{_libdir}/%{name}
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/glade
+# nobody else uses those
+%lang(es) %dir %{_datadir}/locale/es_{CL,CO,CR,DO,EC,GT,HN,PA,PE,PR,SV,UY,VE}
 
 %files devel
 %defattr(644,root,root,755)
