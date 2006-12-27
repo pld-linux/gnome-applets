@@ -7,44 +7,44 @@ Summary(pl):	Aplety GNOME - ma³e aplikacje osadzaj±ce siê w panelu
 Summary(ru):	íÁÌÅÎØËÉÅ ÐÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀÝÉÅÓÑ × ÐÁÎÅÌØ GNOME
 Summary(uk):	íÁÌÅÎØË¦ ÐÒÏÇÒÁÍÉ, ÝÏ ×ÂÕÄÏ×ÕÀÔØÓÑ × ÐÁÎÅÌØ GNOME
 Name:		gnome-applets
-Version:	2.16.1
+Version:	2.16.2
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	0ceb0411c86304be2661bd4072662ecb
+# Source0-md5:	1a46b8557ff05ca75e7db6adb4dd6707
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
 Patch3:		%{name}-modemlights-conditional.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.14.0
+BuildRequires:	GConf2-devel >= 2.16.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	control-center-devel >= 2.16.1
+BuildRequires:	control-center-devel >= 2.16.2
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.71-2
 BuildRequires:	gail-devel >= 1.9.3
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-desktop-devel >= 2.16.1
+BuildRequires:	gnome-desktop-devel >= 2.16.2
 BuildRequires:	gnome-doc-utils >= 0.8.0
-BuildRequires:	gnome-panel-devel >= 2.16.1
-BuildRequires:	gnome-vfs2-devel >= 2.16.1
+BuildRequires:	gnome-panel-devel >= 2.16.2
+BuildRequires:	gnome-vfs2-devel >= 2.16.3
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
-BuildRequires:	gtk+2-devel >= 2:2.10.5
+BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	gucharmap-devel >= 1.8.0
 BuildRequires:	hal-devel >= 0.5.7.1
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libgnomeui-devel >= 2.16.0
+BuildRequires:	libgnomeui-devel >= 2.16.1
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgtop-devel >= 1:2.14.3
+BuildRequires:	libgtop-devel >= 1:2.14.4
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.16.0
-BuildRequires:	libxml2-devel >= 1:2.6.26
+BuildRequires:	libwnck-devel >= 2.16.2
+BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	libxklavier-devel >= 3.0
 BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
@@ -55,11 +55,11 @@ BuildRequires:	scrollkeeper >= 0.3.11-4
 BuildRequires:	system-tools-backends >= 1.4.0
 BuildRequires:	system-tools-backends < 1.9.0
 %endif
-Requires:	gnome-icon-theme >= 2.16.0.1
-Requires:	gnome-panel >= 2.16.1
-Requires:	gnome-vfs2 >= 2.16.1
+Requires:	gnome-icon-theme >= 2.16.1
+Requires:	gnome-panel >= 2.16.2
+Requires:	gnome-vfs2 >= 2.16.3
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.16.0
+Requires:	libgnomeui >= 2.16.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
@@ -85,8 +85,8 @@ Summary:	Header files for gnome-applets
 Summary(pl):	Pliki nag³ówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.14.0
-Requires:	gtk+2-devel >= 2:2.10.5
+Requires:	GConf2-devel >= 2.16.0
+Requires:	gtk+2-devel >= 2:2.10.6
 
 %description devel
 Header files for gnome-applets.
@@ -98,7 +98,7 @@ Pliki nag³ówkowe gnome-applets.
 Summary:	Keyboard Accessibility Status applet
 Summary(pl):	Aplet stanu dostepno¶ci klawiatury
 Group:		X11/Applications
-Requires(post,postun):	gtk+2 >= 2.10.5
+Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -129,7 +129,7 @@ Summary:	Character Palette applet
 Summary(pl):	Aplet palety znaków
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.5
+Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -145,7 +145,7 @@ Summary:	CPU Frequency Scaling Monitor applet
 Summary(pl):	Aplet monitora czêstotliwo¶ci procesora
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.5
+Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -177,7 +177,7 @@ Summary:	Geyes applet
 Summary(pl):	Aplet geyes
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.5
+Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -226,7 +226,7 @@ Summary:	Keyboard Indicator applet
 Summary(pl):	Aplet wska¼nika klawiatury
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.5
+Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -257,7 +257,7 @@ Summary:	Volume Control applet
 Summary(pl):	Aplet regulacji g³o¶no¶ci
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.5
+Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gstreamer-audio-effects-base >= 0.10.10
@@ -274,7 +274,7 @@ Aplet regulacji g³o¶no¶ci.
 Summary:	Modem Lights applet
 Summary(pl):	Aplet kontrolek modemu
 Group:		X11/Applications
-Requires(post,postun):	gtk+2 >= 2.10.5
+Requires(post,postun):	gtk+2 >= 2.10.6
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	system-tools-backends >= 1.4.0
 Requires:	system-tools-backends < 1.9.0
@@ -306,7 +306,7 @@ Summary:	Sticky Notes applet
 Summary(pl):	Aplet notatek
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.5
+Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -367,8 +367,8 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/libgweather.la
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/*.mo
-rm -f $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/LC_MESSAGES/*.mo
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 
 %find_lang %{name} --all-name --with-gnome
 %find_lang accessx-status --with-gnome
@@ -565,7 +565,19 @@ EOF
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/glade
 # nobody else uses those
-%lang(es) %dir %{_datadir}/locale/es_{CL,CO,CR,DO,EC,GT,HN,PA,PE,PR,SV,UY,VE}
+%lang(es) %{_datadir}/locale/es_CL
+%lang(es) %{_datadir}/locale/es_CO
+%lang(es) %{_datadir}/locale/es_CR
+%lang(es) %{_datadir}/locale/es_DO
+%lang(es) %{_datadir}/locale/es_EC
+%lang(es) %{_datadir}/locale/es_GT
+%lang(es) %{_datadir}/locale/es_HN
+%lang(es) %{_datadir}/locale/es_PA
+%lang(es) %{_datadir}/locale/es_PE
+%lang(es) %{_datadir}/locale/es_PR
+%lang(es) %{_datadir}/locale/es_SV
+%lang(es) %{_datadir}/locale/es_UY
+%lang(es) %{_datadir}/locale/es_VE
 
 %files devel
 %defattr(644,root,root,755)
