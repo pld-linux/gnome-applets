@@ -49,7 +49,8 @@ BuildRequires:	libxklavier-devel >= 3.0
 BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
 BuildRequires:	python-gnome-desktop-devel >= 2.16.0
-BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
 %if %{with modemlights}
 BuildRequires:	system-tools-backends >= 1.4.0
