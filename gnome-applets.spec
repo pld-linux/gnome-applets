@@ -4,7 +4,7 @@ Summary(ru):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk):	Маленьк╕ програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.14.3
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -337,6 +337,8 @@ rm -rf $RPM_BUILD_ROOT
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 rm -r $RPM_BUILD_ROOT%{_libdir}/libgweather.la
+
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --all-name --with-gnome
 %find_lang char-palette --with-gnome
