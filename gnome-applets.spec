@@ -3,9 +3,9 @@
 %bcond_without	modemlights	# don't build modemlights applet
 #
 Summary:	Small applications which embed themselves in the GNOME panel
-Summary(pl):	Aplety GNOME - ma³e aplikacje osadzaj±ce siê w panelu
-Summary(ru):	íÁÌÅÎØËÉÅ ÐÒÏÇÒÁÍÍÙ, ×ÓÔÒÁÉ×ÁÀÝÉÅÓÑ × ÐÁÎÅÌØ GNOME
-Summary(uk):	íÁÌÅÎØË¦ ÐÒÏÇÒÁÍÉ, ÝÏ ×ÂÕÄÏ×ÕÀÔØÓÑ × ÐÁÎÅÌØ GNOME
+Summary(pl.UTF-8):   Aplety GNOME - maÅ‚e aplikacje osadzajÄ…ce siÄ™ w panelu
+Summary(ru.UTF-8):   ÐœÐ°Ð»ÐµÐ½ÑŒÐºÐ¸Ðµ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹, Ð²ÑÑ‚Ñ€Ð°Ð¸Ð²Ð°ÑŽÑ‰Ð¸ÐµÑÑ Ð² Ð¿Ð°Ð½ÐµÐ»ÑŒ GNOME
+Summary(uk.UTF-8):   ÐœÐ°Ð»ÐµÐ½ÑŒÐºÑ– Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¸, Ñ‰Ð¾ Ð²Ð±ÑƒÐ´Ð¾Ð²ÑƒÑŽÑ‚ÑŒÑÑ Ð² Ð¿Ð°Ð½ÐµÐ»ÑŒ GNOME
 Name:		gnome-applets
 Version:	2.16.2
 Release:	1
@@ -69,21 +69,21 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The gnome-applets package provides Panel applets which enhance your
 GNOME experience.
 
-%description -l pl
-Pakiet gnome-applets udostêpnia aplety Panelu, które usprawniaj± pracê
+%description -l pl.UTF-8
+Pakiet gnome-applets udostÄ™pnia aplety Panelu, ktÃ³re usprawniajÄ… pracÄ™
 z GNOME.
 
-%description -l uk
-ðÁËÅÔ gnome-applets Í¦ÓÔÉÔØ ÁÐÌÅÔÉ ðÁÎÅÌ¦ GNOME, ÝÏ ÚÂ¦ÌØÛÕÀÔØ
-ËÏÍÆÏÒÔÎ¦ÓÔØ ÒÏÂÏÔÉ × ÓÅÒÅÄÏ×ÉÝ¦ GNOME.
+%description -l uk.UTF-8
+ÐŸÐ°ÐºÐµÑ‚ gnome-applets Ð¼Ñ–ÑÑ‚Ð¸Ñ‚ÑŒ Ð°Ð¿Ð»ÐµÑ‚Ð¸ ÐŸÐ°Ð½ÐµÐ»Ñ– GNOME, Ñ‰Ð¾ Ð·Ð±Ñ–Ð»ÑŒÑˆÑƒÑŽÑ‚ÑŒ
+ÐºÐ¾Ð¼Ñ„Ð¾Ñ€Ñ‚Ð½Ñ–ÑÑ‚ÑŒ Ñ€Ð¾Ð±Ð¾Ñ‚Ð¸ Ð² ÑÐµÑ€ÐµÐ´Ð¾Ð²Ð¸Ñ‰Ñ– GNOME.
 
-%description -l ru
-ðÁËÅÔ gnome-applets ÓÏÄÅÒÖÉÔ ÁÐÐÌÅÔÙ ðÁÎÅÌÉ GNOME, Õ×ÅÌÉÞÉ×ÁÀÝÉÅ
-ËÏÍÆÏÒÔÎÏÓÔØ ÒÁÂÏÔÙ × ÓÒÅÄÅ GNOME.
+%description -l ru.UTF-8
+ÐŸÐ°ÐºÐµÑ‚ gnome-applets ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ð°Ð¿Ð¿Ð»ÐµÑ‚Ñ‹ ÐŸÐ°Ð½ÐµÐ»Ð¸ GNOME, ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð²Ð°ÑŽÑ‰Ð¸Ðµ
+ÐºÐ¾Ð¼Ñ„Ð¾Ñ€Ñ‚Ð½Ð¾ÑÑ‚ÑŒ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹ Ð² ÑÑ€ÐµÐ´Ðµ GNOME.
 
 %package devel
 Summary:	Header files for gnome-applets
-Summary(pl):	Pliki nag³ówkowe gnome-applets
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.16.0
@@ -92,12 +92,12 @@ Requires:	gtk+2-devel >= 2:2.10.6
 %description devel
 Header files for gnome-applets.
 
-%description devel -l pl
-Pliki nag³ówkowe gnome-applets.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe gnome-applets.
 
 %package accessx-status
 Summary:	Keyboard Accessibility Status applet
-Summary(pl):	Aplet stanu dostepno¶ci klawiatury
+Summary(pl.UTF-8):   Aplet stanu dostepnoÅ›ci klawiatury
 Group:		X11/Applications
 Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
@@ -107,12 +107,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description accessx-status
 Keyboard Accessibility Status applet.
 
-%description accessx-status -l pl
-Aplet stanu dostepno¶ci klawiatury.
+%description accessx-status -l pl.UTF-8
+Aplet stanu dostepnoÅ›ci klawiatury.
 
 %package battstat
 Summary:	Battery Charge Monitor applet
-Summary(pl):	Aplet monitora stanu na³adowania akumulatora
+Summary(pl.UTF-8):   Aplet monitora stanu naÅ‚adowania akumulatora
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -122,12 +122,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description battstat
 Battery Charge Monitor applet.
 
-%description battstat -l pl
-Aplet monitora stanu na³adowania akumulatora.
+%description battstat -l pl.UTF-8
+Aplet monitora stanu naÅ‚adowania akumulatora.
 
 %package charpicker
 Summary:	Character Palette applet
-Summary(pl):	Aplet palety znaków
+Summary(pl.UTF-8):   Aplet palety znakÃ³w
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -138,12 +138,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description charpicker
 Character Palette applet.
 
-%description charpicker -l pl
-Aplet palety znaków.
+%description charpicker -l pl.UTF-8
+Aplet palety znakÃ³w.
 
 %package cpufreq
 Summary:	CPU Frequency Scaling Monitor applet
-Summary(pl):	Aplet monitora czêstotliwo¶ci procesora
+Summary(pl.UTF-8):   Aplet monitora czÄ™stotliwoÅ›ci procesora
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -155,12 +155,12 @@ Obsoletes:	gnome-applet-cpufreq
 %description cpufreq
 CPU Frequency Scaling Monitor applet.
 
-%description cpufreq -l pl
-Aplet monitora czêstotliwo¶ci procesora.
+%description cpufreq -l pl.UTF-8
+Aplet monitora czÄ™stotliwoÅ›ci procesora.
 
 %package drivemount
 Summary:	Disk Mounter applet
-Summary(pl):	Aplet do montowania dysków
+Summary(pl.UTF-8):   Aplet do montowania dyskÃ³w
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -170,12 +170,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description drivemount
 Disk Mounter applet.
 
-%description drivemount -l pl
-Aplet do monotwania dysków.
+%description drivemount -l pl.UTF-8
+Aplet do monotwania dyskÃ³w.
 
 %package geyes
 Summary:	Geyes applet
-Summary(pl):	Aplet geyes
+Summary(pl.UTF-8):   Aplet geyes
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -186,12 +186,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description geyes
 Geyes applet.
 
-%description geyes -l pl
+%description geyes -l pl.UTF-8
 Aplet geyes.
 
 %package gweather
 Summary:	Weather Report applet
-Summary(pl):	Aplet raportu pogodowego
+Summary(pl.UTF-8):   Aplet raportu pogodowego
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -202,12 +202,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description gweather
 Weather Report applet.
 
-%description gweather -l pl
+%description gweather -l pl.UTF-8
 Aplet raportu pogodowego.
 
 %package invest
 Summary:	Stock Ticker applet
-Summary(pl):	Aplet wska¼nika gie³dowego
+Summary(pl.UTF-8):   Aplet wskaÅºnika gieÅ‚dowego
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -219,12 +219,12 @@ Obsoletes:	gnome-applets-gtik
 %description invest
 Stock Ticker applet.
 
-%description invest -l pl
-Aplet wska¼nika gie³dowego.
+%description invest -l pl.UTF-8
+Aplet wskaÅºnika gieÅ‚dowego.
 
 %package keyboard
 Summary:	Keyboard Indicator applet
-Summary(pl):	Aplet wska¼nika klawiatury
+Summary(pl.UTF-8):   Aplet wskaÅºnika klawiatury
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -235,12 +235,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description keyboard
 Keyboard Indicator applet.
 
-%description keyboard -l pl
-Aplet wska¼nika klawiatury.
+%description keyboard -l pl.UTF-8
+Aplet wskaÅºnika klawiatury.
 
 %package minicommander
 Summary:	Command Line applet
-Summary(pl):	Aplet wiersza poleceñ
+Summary(pl.UTF-8):   Aplet wiersza poleceÅ„
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -250,12 +250,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description minicommander
 Command Line applet.
 
-%description minicommander -l pl
-Aplet wiersza poleceñ.
+%description minicommander -l pl.UTF-8
+Aplet wiersza poleceÅ„.
 
 %package mixer
 Summary:	Volume Control applet
-Summary(pl):	Aplet regulacji g³o¶no¶ci
+Summary(pl.UTF-8):   Aplet regulacji gÅ‚oÅ›noÅ›ci
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -268,12 +268,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description mixer
 Volume Control applet.
 
-%description mixer -l pl
-Aplet regulacji g³o¶no¶ci.
+%description mixer -l pl.UTF-8
+Aplet regulacji gÅ‚oÅ›noÅ›ci.
 
 %package modemlights
 Summary:	Modem Lights applet
-Summary(pl):	Aplet kontrolek modemu
+Summary(pl.UTF-8):   Aplet kontrolek modemu
 Group:		X11/Applications
 Requires(post,postun):	gtk+2 >= 2.10.6
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -284,12 +284,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description modemlights
 Modem Lights applet.
 
-%description modemlights -l pl
+%description modemlights -l pl.UTF-8
 Aplet kontrolek modemu.
 
 %package multiload
 Summary:	System Monitor applet
-Summary(pl):	Aplet monitora systemu
+Summary(pl.UTF-8):   Aplet monitora systemu
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -299,12 +299,12 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description multiload
 System Monitor applet.
 
-%description multiload -l pl
+%description multiload -l pl.UTF-8
 Aplet monitora systemu.
 
 %package stickynotes
 Summary:	Sticky Notes applet
-Summary(pl):	Aplet notatek
+Summary(pl.UTF-8):   Aplet notatek
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -316,12 +316,12 @@ Obsoletes:	gnotes_applet
 %description stickynotes
 Sticky Notes applet.
 
-%description stickynotes -l pl
+%description stickynotes -l pl.UTF-8
 Aplet notatek.
 
 %package trash
 Summary:	Trash applet
-Summary(pl):	Aplet ¶mietnika
+Summary(pl.UTF-8):   Aplet Å›mietnika
 Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -330,8 +330,8 @@ Conflicts:	gnome-applets <= 0:2.10.0-5
 %description trash
 Trash applet.
 
-%description trash -l pl
-Aplet ¶mietnika.
+%description trash -l pl.UTF-8
+Aplet Å›mietnika.
 
 %prep
 %setup -q
