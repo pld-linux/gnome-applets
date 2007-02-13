@@ -3,9 +3,9 @@
 %bcond_without	modemlights	# don't build modemlights applet
 #
 Summary:	Small applications which embed themselves in the GNOME panel
-Summary(pl.UTF-8):   Aplety GNOME - małe aplikacje osadzające się w panelu
-Summary(ru.UTF-8):   Маленькие программы, встраивающиеся в панель GNOME
-Summary(uk.UTF-8):   Маленькі програми, що вбудовуються в панель GNOME
+Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
+Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
+Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.16.2
 Release:	1
@@ -83,7 +83,7 @@ z GNOME.
 
 %package devel
 Summary:	Header files for gnome-applets
-Summary(pl.UTF-8):   Pliki nagłówkowe gnome-applets
+Summary(pl.UTF-8):	Pliki nagłówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	GConf2-devel >= 2.16.0
@@ -97,7 +97,7 @@ Pliki nagłówkowe gnome-applets.
 
 %package accessx-status
 Summary:	Keyboard Accessibility Status applet
-Summary(pl.UTF-8):   Aplet stanu dostepności klawiatury
+Summary(pl.UTF-8):	Aplet stanu dostepności klawiatury
 Group:		X11/Applications
 Requires(post,postun):	gtk+2 >= 2.10.6
 Requires(post,postun):	scrollkeeper
@@ -112,7 +112,7 @@ Aplet stanu dostepności klawiatury.
 
 %package battstat
 Summary:	Battery Charge Monitor applet
-Summary(pl.UTF-8):   Aplet monitora stanu naładowania akumulatora
+Summary(pl.UTF-8):	Aplet monitora stanu naładowania akumulatora
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -127,7 +127,7 @@ Aplet monitora stanu naładowania akumulatora.
 
 %package charpicker
 Summary:	Character Palette applet
-Summary(pl.UTF-8):   Aplet palety znaków
+Summary(pl.UTF-8):	Aplet palety znaków
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -143,7 +143,7 @@ Aplet palety znaków.
 
 %package cpufreq
 Summary:	CPU Frequency Scaling Monitor applet
-Summary(pl.UTF-8):   Aplet monitora częstotliwości procesora
+Summary(pl.UTF-8):	Aplet monitora częstotliwości procesora
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -160,7 +160,7 @@ Aplet monitora częstotliwości procesora.
 
 %package drivemount
 Summary:	Disk Mounter applet
-Summary(pl.UTF-8):   Aplet do montowania dysków
+Summary(pl.UTF-8):	Aplet do montowania dysków
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -175,7 +175,7 @@ Aplet do monotwania dysków.
 
 %package geyes
 Summary:	Geyes applet
-Summary(pl.UTF-8):   Aplet geyes
+Summary(pl.UTF-8):	Aplet geyes
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -191,7 +191,7 @@ Aplet geyes.
 
 %package gweather
 Summary:	Weather Report applet
-Summary(pl.UTF-8):   Aplet raportu pogodowego
+Summary(pl.UTF-8):	Aplet raportu pogodowego
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -207,7 +207,7 @@ Aplet raportu pogodowego.
 
 %package invest
 Summary:	Stock Ticker applet
-Summary(pl.UTF-8):   Aplet wskaźnika giełdowego
+Summary(pl.UTF-8):	Aplet wskaźnika giełdowego
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -224,7 +224,7 @@ Aplet wskaźnika giełdowego.
 
 %package keyboard
 Summary:	Keyboard Indicator applet
-Summary(pl.UTF-8):   Aplet wskaźnika klawiatury
+Summary(pl.UTF-8):	Aplet wskaźnika klawiatury
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -240,7 +240,7 @@ Aplet wskaźnika klawiatury.
 
 %package minicommander
 Summary:	Command Line applet
-Summary(pl.UTF-8):   Aplet wiersza poleceń
+Summary(pl.UTF-8):	Aplet wiersza poleceń
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -255,7 +255,7 @@ Aplet wiersza poleceń.
 
 %package mixer
 Summary:	Volume Control applet
-Summary(pl.UTF-8):   Aplet regulacji głośności
+Summary(pl.UTF-8):	Aplet regulacji głośności
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -273,7 +273,7 @@ Aplet regulacji głośności.
 
 %package modemlights
 Summary:	Modem Lights applet
-Summary(pl.UTF-8):   Aplet kontrolek modemu
+Summary(pl.UTF-8):	Aplet kontrolek modemu
 Group:		X11/Applications
 Requires(post,postun):	gtk+2 >= 2.10.6
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -289,7 +289,7 @@ Aplet kontrolek modemu.
 
 %package multiload
 Summary:	System Monitor applet
-Summary(pl.UTF-8):   Aplet monitora systemu
+Summary(pl.UTF-8):	Aplet monitora systemu
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	scrollkeeper
@@ -304,7 +304,7 @@ Aplet monitora systemu.
 
 %package stickynotes
 Summary:	Sticky Notes applet
-Summary(pl.UTF-8):   Aplet notatek
+Summary(pl.UTF-8):	Aplet notatek
 Group:		X11/Applications
 Requires(post,preun):	GConf2
 Requires(post,postun):	gtk+2 >= 2.10.6
@@ -321,7 +321,7 @@ Aplet notatek.
 
 %package trash
 Summary:	Trash applet
-Summary(pl.UTF-8):   Aplet śmietnika
+Summary(pl.UTF-8):	Aplet śmietnika
 Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
