@@ -7,13 +7,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.16.2
+Version:	2.17.90
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	1a46b8557ff05ca75e7db6adb4dd6707
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.17/%{name}-%{version}.tar.bz2
+# Source0-md5:	350d527d2f5391385402f28ad96a99c5
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
@@ -596,6 +596,7 @@ EOF
 %dir %{_omf_dest_dir}/accessx-status
 %{_omf_dest_dir}/accessx-status/accessx-status-C.omf
 %lang(bg) %{_omf_dest_dir}/accessx-status/accessx-status-bg.omf
+%lang(en_GB) %{_omf_dest_dir}/accessx-status/accessx-status-en_GB.omf
 %lang(es) %{_omf_dest_dir}/accessx-status/accessx-status-es.omf
 %lang(fr) %{_omf_dest_dir}/accessx-status/accessx-status-fr.omf
 %lang(it) %{_omf_dest_dir}/accessx-status/accessx-status-it.omf
@@ -615,8 +616,10 @@ EOF
 %dir %{_omf_dest_dir}/battstat
 %{_omf_dest_dir}/battstat/battstat-C.omf
 %lang(bg) %{_omf_dest_dir}/battstat/battstat-bg.omf
+%lang(en_GB) %{_omf_dest_dir}/battstat/battstat-en_GB.omf
 %lang(es) %{_omf_dest_dir}/battstat/battstat-es.omf
 %lang(fr) %{_omf_dest_dir}/battstat/battstat-fr.omf
+%lang(pa) %{_omf_dest_dir}/battstat/battstat-pa.omf
 %lang(sv) %{_omf_dest_dir}/battstat/battstat-sv.omf
 %lang(uk) %{_omf_dest_dir}/battstat/battstat-uk.omf
 
@@ -631,6 +634,7 @@ EOF
 %dir %{_omf_dest_dir}/char-palette
 %{_omf_dest_dir}/char-palette/char-palette-C.omf
 %lang(bg) %{_omf_dest_dir}/char-palette/char-palette-bg.omf
+%lang(en_GB) %{_omf_dest_dir}/char-palette/char-palette-en_GB.omf
 %lang(es) %{_omf_dest_dir}/char-palette/char-palette-es.omf
 %lang(fr) %{_omf_dest_dir}/char-palette/char-palette-fr.omf
 %lang(it) %{_omf_dest_dir}/char-palette/char-palette-it.omf
@@ -652,6 +656,7 @@ EOF
 %{_iconsdir}/hicolor/*/apps/gnome-cpu-frequency-applet.*
 %dir %{_omf_dest_dir}/cpufreq-applet
 %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-C.omf
+%lang(en_GB) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-en_GB.omf
 %lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
 %lang(fr) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-fr.omf
 %lang(nl) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-nl.omf
@@ -668,6 +673,7 @@ EOF
 %{_sysconfdir}/gconf/schemas/drivemount.schemas
 %dir %{_omf_dest_dir}/drivemount
 %{_omf_dest_dir}/drivemount/drivemount-C.omf
+%lang(en_GB) %{_omf_dest_dir}/drivemount/drivemount-en_GB.omf
 %lang(es) %{_omf_dest_dir}/drivemount/drivemount-es.omf
 %lang(fr) %{_omf_dest_dir}/drivemount/drivemount-fr.omf
 %lang(it) %{_omf_dest_dir}/drivemount/drivemount-it.omf
@@ -688,6 +694,7 @@ EOF
 %dir %{_omf_dest_dir}/geyes
 %{_omf_dest_dir}/geyes/geyes-C.omf
 %lang(bg) %{_omf_dest_dir}/geyes/geyes-bg.omf
+%lang(en_GB) %{_omf_dest_dir}/geyes/geyes-en_GB.omf
 %lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
 %lang(fr) %{_omf_dest_dir}/geyes/geyes-fr.omf
 %lang(it) %{_omf_dest_dir}/geyes/geyes-it.omf
@@ -706,9 +713,11 @@ EOF
 %{_sysconfdir}/gconf/schemas/gweather.schemas
 %dir %{_omf_dest_dir}/gweather
 %{_omf_dest_dir}/gweather/gweather-C.omf
+%lang(en_GB) %{_omf_dest_dir}/gweather/gweather-en_GB.omf
 %lang(es) %{_omf_dest_dir}/gweather/gweather-es.omf
 %lang(fr) %{_omf_dest_dir}/gweather/gweather-fr.omf
 %lang(nl) %{_omf_dest_dir}/gweather/gweather-nl.omf
+%lang(pa) %{_omf_dest_dir}/gweather/gweather-pa.omf
 %lang(sv) %{_omf_dest_dir}/gweather/gweather-sv.omf
 %lang(uk) %{_omf_dest_dir}/gweather/gweather-uk.omf
 
@@ -733,7 +742,6 @@ EOF
 %doc gswitchit/ChangeLog
 %attr(755,root,root) %{_libdir}/gnome-keyboard-applet
 %{_libdir}/bonobo/servers/GNOME_KeyboardApplet.server
-%{_desktopdir}/gswitchit-plugins.desktop
 %dir %{_datadir}/xmodmap
 %{_datadir}/xmodmap/base.xml
 %lang(hy) %{_datadir}/xmodmap/xmodmap.am*
@@ -780,15 +788,16 @@ EOF
 %lang(uk) %{_datadir}/xmodmap/xmodmap.uk*
 %{_datadir}/xmodmap/xmodmap.us*
 %lang(hr,mk,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
-%attr(755,root,root) %{_bindir}/gswitchit-plugins-capplet
 %{_datadir}/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 %{_datadir}/%{name}/glade/gswitchit*.glade
 %{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
 %{_sysconfdir}/gconf/schemas/gswitchit.schemas
 %dir %{_omf_dest_dir}/gswitchit
 %{_omf_dest_dir}/gswitchit/gswitchit-C.omf
+%lang(en_GB) %{_omf_dest_dir}/gswitchit/gswitchit-en_GB.omf
 %lang(es) %{_omf_dest_dir}/gswitchit/gswitchit-es.omf
 %lang(fr) %{_omf_dest_dir}/gswitchit/gswitchit-fr.omf
+%lang(ru) %{_omf_dest_dir}/gswitchit/gswitchit-ru.omf
 %lang(sv) %{_omf_dest_dir}/gswitchit/gswitchit-sv.omf
 %lang(uk) %{_omf_dest_dir}/gswitchit/gswitchit-uk.omf
 
@@ -805,6 +814,7 @@ EOF
 %{_sysconfdir}/gconf/schemas/mini-commander.schemas
 %dir %{_omf_dest_dir}/command-line
 %{_omf_dest_dir}/command-line/command-line-C.omf
+%lang(en_GB) %{_omf_dest_dir}/command-line/command-line-en_GB.omf
 %lang(es) %{_omf_dest_dir}/command-line/command-line-es.omf
 %lang(fr) %{_omf_dest_dir}/command-line/command-line-fr.omf
 %lang(pt_BR) %{_omf_dest_dir}/command-line/command-line-pt_BR.omf
@@ -820,9 +830,12 @@ EOF
 %{_sysconfdir}/gconf/schemas/mixer.schemas
 %dir %{_omf_dest_dir}/mixer_applet2
 %{_omf_dest_dir}/mixer_applet2/mixer_applet2-C.omf
+%lang(en_GB) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-en_GB.omf
 %lang(es) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-es.omf
 %lang(it) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-it.omf
 %lang(fr) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-fr.omf
+%lang(pa) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-pa.omf
+%lang(ru) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-ru.omf
 %lang(sv) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-sv.omf
 %lang(uk) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-uk.omf
 
@@ -846,8 +859,10 @@ EOF
 %{_sysconfdir}/gconf/schemas/multiload.schemas
 %dir %{_omf_dest_dir}/multiload
 %{_omf_dest_dir}/multiload/multiload-C.omf
+%lang(en_GB) %{_omf_dest_dir}/multiload/multiload-en_GB.omf
 %lang(es) %{_omf_dest_dir}/multiload/multiload-es.omf
 %lang(fr) %{_omf_dest_dir}/multiload/multiload-fr.omf
+%lang(pa) %{_omf_dest_dir}/multiload/multiload-pa.omf
 %lang(sv) %{_omf_dest_dir}/multiload/multiload-sv.omf
 %lang(uk) %{_omf_dest_dir}/multiload/multiload-uk.omf
 
@@ -863,8 +878,10 @@ EOF
 %{_sysconfdir}/gconf/schemas/stickynotes.schemas
 %dir %{_omf_dest_dir}/stickynotes_applet
 %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-C.omf
+%lang(en_GB) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-en_GB.omf
 %lang(es) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-es.omf
 %lang(fr) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-fr.omf
+%lang(pa) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-pa.omf
 %lang(sv) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-sv.omf
 %lang(uk) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-uk.omf
 
@@ -877,6 +894,7 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
 %dir %{_omf_dest_dir}/trashapplet
 %{_omf_dest_dir}/trashapplet/trashapplet-C.omf
+%lang(en_GB) %{_omf_dest_dir}/trashapplet/trashapplet-en_GB.omf
 %lang(es) %{_omf_dest_dir}/trashapplet/trashapplet-es.omf
 %lang(fr) %{_omf_dest_dir}/trashapplet/trashapplet-fr.omf
 %lang(it) %{_omf_dest_dir}/trashapplet/trashapplet-it.omf
