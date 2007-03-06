@@ -19,48 +19,52 @@ Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
 Patch3:		%{name}-modemlights-conditional.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.16.0
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	control-center-devel >= 2.16.2
+BuildRequires:	GConf2-devel >= 2.18.0.1
+BuildRequires:	autoconf >= 2.59
+BuildRequires:	automake >= 1:1.8
+BuildRequires:	control-center-devel >= 2.17.92
 BuildRequires:	cpufrequtils-devel >= 0.3
-BuildRequires:	dbus-glib-devel >= 0.71-2
-BuildRequires:	gail-devel >= 1.9.3
+BuildRequires:	dbus-glib-devel >= 0.73
+BuildRequires:	gail-devel >= 1.17.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gnome-desktop-devel >= 2.16.2
-BuildRequires:	gnome-doc-utils >= 0.8.0
-BuildRequires:	gnome-panel-devel >= 2.16.2
-BuildRequires:	gnome-vfs2-devel >= 2.16.3
+BuildRequires:	gnome-desktop-devel >= 2.17.92
+BuildRequires:	gnome-doc-utils >= 0.9.2
+BuildRequires:	gnome-icon-theme >= 2.17.91
+BuildRequires:	gnome-panel-devel >= 2.17.92
+BuildRequires:	gnome-vfs2-devel >= 2.17.91
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
-BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	gtk+2-devel >= 2:2.10.9
 BuildRequires:	gucharmap-devel >= 1.8.0
 BuildRequires:	hal-devel >= 0.5.7.1
-BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libgnomeui-devel >= 2.16.1
+BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgtop-devel >= 1:2.14.4
+BuildRequires:	libgnomekbd-devel >= 2.17.92
+BuildRequires:	libgnomeui-devel >= 2.17.92
+BuildRequires:	libgtop-devel >= 1:2.14.8
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.16.2
-BuildRequires:	libxml2-devel >= 1:2.6.27
+BuildRequires:	libwnck-devel >= 2.17.92
 BuildRequires:	libxklavier-devel >= 3.0
-BuildRequires:	libxslt-progs >= 1.1.17
-BuildRequires:	pkgconfig
-BuildRequires:	python-gnome-desktop-devel >= 2.16.0
+BuildRequires:	libxml2-devel >= 1:2.6.27
+BuildRequires:	libxslt-progs >= 1.1.20
+BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	python-gnome-desktop-devel >= 2.17.93
+BuildRequires:	python-pygtk-devel >= 2:2.10.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
 %if %{with modemlights}
 BuildRequires:	system-tools-backends >= 1.4.0
+# XXX: needs checking
 BuildRequires:	system-tools-backends < 1.9.0
 %endif
-Requires:	gnome-icon-theme >= 2.16.1
-Requires:	gnome-panel >= 2.16.2
-Requires:	gnome-vfs2 >= 2.16.3
+Requires:	gnome-icon-theme >= 2.17.91
+Requires:	gnome-panel >= 2.17.92
+Requires:	gnome-vfs2 >= 2.17.91
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.16.1
+Requires:	libgnomeui >= 2.17.92
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gnomehelpdir	%{_datadir}/gnome/help
@@ -86,8 +90,8 @@ Summary:	Header files for gnome-applets
 Summary(pl.UTF-8):	Pliki nagłówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.16.0
-Requires:	gtk+2-devel >= 2:2.10.6
+Requires:	GConf2-devel >= 2.18.0.1
+Requires:	gtk+2-devel >= 2:2.10.9
 
 %description devel
 Header files for gnome-applets.
@@ -99,7 +103,7 @@ Pliki nagłówkowe gnome-applets.
 Summary:	Keyboard Accessibility Status applet
 Summary(pl.UTF-8):	Aplet stanu dostepności klawiatury
 Group:		X11/Applications
-Requires(post,postun):	gtk+2 >= 2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -130,7 +134,7 @@ Summary:	Character Palette applet
 Summary(pl.UTF-8):	Aplet palety znaków
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -146,7 +150,7 @@ Summary:	CPU Frequency Scaling Monitor applet
 Summary(pl.UTF-8):	Aplet monitora częstotliwości procesora
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -178,7 +182,7 @@ Summary:	Geyes applet
 Summary(pl.UTF-8):	Aplet geyes
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -227,7 +231,7 @@ Summary:	Keyboard Indicator applet
 Summary(pl.UTF-8):	Aplet wskaźnika klawiatury
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
@@ -258,7 +262,7 @@ Summary:	Volume Control applet
 Summary(pl.UTF-8):	Aplet regulacji głośności
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gstreamer-audio-effects-base >= 0.10.10
@@ -275,7 +279,7 @@ Aplet regulacji głośności.
 Summary:	Modem Lights applet
 Summary(pl.UTF-8):	Aplet kontrolek modemu
 Group:		X11/Applications
-Requires(post,postun):	gtk+2 >= 2.10.6
+Requires(post,postun):	gtk+2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	system-tools-backends >= 1.4.0
 Requires:	system-tools-backends < 1.9.0
@@ -307,7 +311,7 @@ Summary:	Sticky Notes applet
 Summary(pl.UTF-8):	Aplet notatek
 Group:		X11/Applications
 Requires(post,preun):	GConf2
-Requires(post,postun):	gtk+2 >= 2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets <= 0:2.10.0-5
