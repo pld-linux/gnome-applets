@@ -1,14 +1,10 @@
-#
-# Conditional build:
-%bcond_without	modemlights	# don't build modemlights applet
-#
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.18.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -17,7 +13,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.18/%{name}-%{ver
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-desktop.patch
-Patch3:		%{name}-modemlights-conditional.patch
+Patch3:		%{name}-use-liboobs.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.59
@@ -44,6 +40,7 @@ BuildRequires:	libgnomekbd-devel >= 2.18.0
 BuildRequires:	libgnomeui-devel >= 2.18.1
 BuildRequires:	libgtop-devel >= 1:2.14.8
 BuildRequires:	libnotify-devel >= 0.4.2
+BuildRequires:	liboobs-devel >= 2.18.1
 BuildRequires:	libtool
 BuildRequires:	libwnck-devel >= 2.18.0
 BuildRequires:	libxklavier-devel >= 3.0
@@ -55,11 +52,6 @@ BuildRequires:	python-pygtk-devel >= 2:2.10.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
-%if %{with modemlights}
-BuildRequires:	system-tools-backends >= 1.4.0
-# XXX: needs fix (it should work with s-t-b 2.1.4)
-BuildRequires:	system-tools-backends < 1.9.0
-%endif
 Requires:	gnome-icon-theme >= 2.18.0
 Requires:	gnome-panel >= 2.18.0
 Requires:	gnome-vfs2 >= 2.18.0.1
@@ -281,8 +273,7 @@ Summary(pl.UTF-8):	Aplet kontrolek modemu
 Group:		X11/Applications
 Requires(post,postun):	gtk+2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	system-tools-backends < 1.9.0
-Requires:	system-tools-backends >= 1.4.0
+Requires:	system-tools-backends
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description modemlights
@@ -358,8 +349,7 @@ Aplet śmietnika.
 	--disable-static \
 	--disable-schemas-install \
 	--enable-mini-commander \
-	--enable-stickynotes \
-	%{!?with_modemlights:--disable-modemlights}
+	--enable-stickynotes
 %{__make}
 
 %install
@@ -844,7 +834,6 @@ EOF
 %lang(sv) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-sv.omf
 %lang(uk) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-uk.omf
 
-%if %{with modemlights}
 %files modemlights
 %defattr(644,root,root,755)
 %doc modemlights/ChangeLog
@@ -853,7 +842,6 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
 %{_datadir}/%{name}/glade/modemlights.glade
 %{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
-%endif
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
