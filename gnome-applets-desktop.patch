@@ -1,9 +1,0 @@
-diff -urN gnome-applets-2.18.0/invest-applet/data/invest-chart.desktop.in gnome-applets-2.18.0.new/invest-applet/data/invest-chart.desktop.in
---- gnome-applets-2.18.0/invest-applet/data/invest-chart.desktop.in	2007-03-12 13:54:52.000000000 +0100
-+++ gnome-applets-2.18.0.new/invest-applet/data/invest-chart.desktop.in	2007-03-14 22:33:02.000000000 +0100
-@@ -7,4 +7,4 @@
- Type=Application
- Icon=invest-big.png
- StartupNotify=true
--Categories=Office;Spreadsheet;
-+Categories=GNOME;GTK;Office;Spreadsheet;
