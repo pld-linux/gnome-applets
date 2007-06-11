@@ -1,3 +1,4 @@
+# TODO: fix locale file duplicates
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
