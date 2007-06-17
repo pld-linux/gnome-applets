@@ -1,4 +1,3 @@
-# TODO: fix locale file duplicates
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
@@ -366,7 +365,7 @@ rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/LC_MESSAGES/*.mo
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 
-%find_lang %{name} --all-name --with-gnome
+%find_lang %{name}-2.0
 %find_lang accessx-status --with-gnome
 %find_lang battstat --with-gnome
 %find_lang char-palette --with-gnome
@@ -549,7 +548,7 @@ EOF
 %postun trash
 %scrollkeeper_update_postun
 
-%files -f %{name}.lang
+%files -f %{name}-2.0.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/null_applet
@@ -560,20 +559,32 @@ EOF
 %dir %{_libdir}/%{name}
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/glade
-# nobody else uses those
-%lang(es) %{_datadir}/locale/es_CL
-%lang(es) %{_datadir}/locale/es_CO
-%lang(es) %{_datadir}/locale/es_CR
-%lang(es) %{_datadir}/locale/es_DO
-%lang(es) %{_datadir}/locale/es_EC
-%lang(es) %{_datadir}/locale/es_GT
-%lang(es) %{_datadir}/locale/es_HN
-%lang(es) %{_datadir}/locale/es_PA
-%lang(es) %{_datadir}/locale/es_PE
-%lang(es) %{_datadir}/locale/es_PR
-%lang(es) %{_datadir}/locale/es_SV
-%lang(es) %{_datadir}/locale/es_UY
-%lang(es) %{_datadir}/locale/es_VE
+%lang(es_CL) %dir %{_datadir}/locale/es_CL
+%lang(es_CL) %dir %{_datadir}/locale/es_CL/LC_MESSAGES
+%lang(es_CO) %dir %{_datadir}/locale/es_CO
+%lang(es_CO) %dir %{_datadir}/locale/es_CO/LC_MESSAGES
+%lang(es_CR) %dir %{_datadir}/locale/es_CR
+%lang(es_CR) %dir %{_datadir}/locale/es_CR/LC_MESSAGES
+%lang(es_DO) %dir %{_datadir}/locale/es_DO
+%lang(es_DO) %dir %{_datadir}/locale/es_DO/LC_MESSAGES
+%lang(es_EC) %dir %{_datadir}/locale/es_EC
+%lang(es_EC) %dir %{_datadir}/locale/es_EC/LC_MESSAGES
+%lang(es_GT) %dir %{_datadir}/locale/es_GT
+%lang(es_GT) %dir %{_datadir}/locale/es_GT/LC_MESSAGES
+%lang(es_HN) %dir %{_datadir}/locale/es_HN
+%lang(es_HN) %dir %{_datadir}/locale/es_HN/LC_MESSAGES
+%lang(es_PA) %dir %{_datadir}/locale/es_PA
+%lang(es_PA) %dir %{_datadir}/locale/es_PA/LC_MESSAGES
+%lang(es_PE) %dir %{_datadir}/locale/es_PE
+%lang(es_PE) %dir %{_datadir}/locale/es_PE/LC_MESSAGES
+%lang(es_PR) %dir %{_datadir}/locale/es_PR
+%lang(es_PR) %dir %{_datadir}/locale/es_PR/LC_MESSAGES
+%lang(es_SV) %dir %{_datadir}/locale/es_SV
+%lang(es_SV) %dir %{_datadir}/locale/es_SV/LC_MESSAGES
+%lang(es_UY) %dir %{_datadir}/locale/es_UY
+%lang(es_UY) %dir %{_datadir}/locale/es_UY/LC_MESSAGES
+%lang(es_VE) %dir %{_datadir}/locale/es_VE
+%lang(es_VE) %dir %{_datadir}/locale/es_VE/LC_MESSAGES
 
 %files devel
 %defattr(644,root,root,755)
@@ -817,7 +828,7 @@ EOF
 %lang(sv) %{_omf_dest_dir}/command-line/command-line-sv.omf
 %lang(uk) %{_omf_dest_dir}/command-line/command-line-uk.omf
 
-%files mixer
+%files mixer -f mixer_applet2.lang
 %defattr(644,root,root,755)
 %doc mixer/ChangeLog
 %attr(755,root,root) %{_libdir}/mixer_applet2
