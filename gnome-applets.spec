@@ -7,22 +7,21 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.17.90
+Version:	2.19.1
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.17/%{name}-%{version}.tar.bz2
-# Source0-md5:	350d527d2f5391385402f28ad96a99c5
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gnome-applets/2.19/%{name}-%{version}.tar.bz2
+# Source0-md5:	9dc982c8df1eaa27fecd4e78675070ba
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
-Patch2:		%{name}-desktop.patch
-Patch3:		%{name}-modemlights-conditional.patch
+Patch3:		%{name}-use-liboobs.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	control-center-devel >= 2.17.92
+BuildRequires:	gnome-control-center-devel >= 2.18.0
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.73
 BuildRequires:	gail-devel >= 1.17.0
@@ -35,8 +34,8 @@ BuildRequires:	gnome-icon-theme >= 2.17.91
 BuildRequires:	gnome-panel-devel >= 2.17.92
 BuildRequires:	gnome-vfs2-devel >= 2.17.91
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
-BuildRequires:	gtk+2-devel >= 2:2.10.9
-BuildRequires:	gucharmap-devel >= 1.8.0
+BuildRequires:	gtk+2-devel >= 2:2.11.0
+BuildRequires:	gucharmap-devel >= 1.10.0
 BuildRequires:	hal-devel >= 0.5.7.1
 BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libglade2-devel >= 1:2.6.0
@@ -341,7 +340,6 @@ Aplet śmietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 %patch3 -p1
 
 %build
@@ -483,11 +481,8 @@ EOF
 
 %post keyboard
 %scrollkeeper_update_post
-%gconf_schema_install gswitchit.schemas
 %update_icon_cache hicolor
 
-%preun keyboard
-%gconf_schema_uninstall gswitchit.schemas
 
 %postun keyboard
 %scrollkeeper_update_postun
@@ -736,7 +731,6 @@ EOF
 %{_datadir}/%{name}/invest-applet
 %{_datadir}/%{name}/glade/financialchart.glade
 %{_datadir}/%{name}/glade/prefs-dialog.glade
-%{_desktopdir}/invest-chart.desktop
 %{_pixmapsdir}/invest-big.png
 %dir %{py_sitedir}/invest
 %{py_sitedir}/invest/*.py[co]
@@ -795,7 +789,6 @@ EOF
 %{_datadir}/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 %{_datadir}/%{name}/glade/gswitchit*.glade
 %{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
-%{_sysconfdir}/gconf/schemas/gswitchit.schemas
 %dir %{_omf_dest_dir}/gswitchit
 %{_omf_dest_dir}/gswitchit/gswitchit-C.omf
 %lang(en_GB) %{_omf_dest_dir}/gswitchit/gswitchit-en_GB.omf
