@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.19.1
+Version:	2.19.91
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.19/%{name}-%{version}.tar.bz2
-# Source0-md5:	9dc982c8df1eaa27fecd4e78675070ba
+# Source0-md5:	76f4e9cafe36de383de6ce7da9586d02
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-use-liboobs.patch
@@ -595,6 +595,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(fr) %{_omf_dest_dir}/accessx-status/accessx-status-fr.omf
 %lang(it) %{_omf_dest_dir}/accessx-status/accessx-status-it.omf
 %lang(nl) %{_omf_dest_dir}/accessx-status/accessx-status-nl.omf
+%lang(oc) %{_omf_dest_dir}/accessx-status/accessx-status-oc.omf
 %lang(sv) %{_omf_dest_dir}/accessx-status/accessx-status-sv.omf
 %lang(uk) %{_omf_dest_dir}/accessx-status/accessx-status-uk.omf
 
@@ -613,6 +614,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(en_GB) %{_omf_dest_dir}/battstat/battstat-en_GB.omf
 %lang(es) %{_omf_dest_dir}/battstat/battstat-es.omf
 %lang(fr) %{_omf_dest_dir}/battstat/battstat-fr.omf
+%lang(oc) %{_omf_dest_dir}/battstat/battstat-oc.omf
 %lang(pa) %{_omf_dest_dir}/battstat/battstat-pa.omf
 %lang(sv) %{_omf_dest_dir}/battstat/battstat-sv.omf
 %lang(uk) %{_omf_dest_dir}/battstat/battstat-uk.omf
@@ -633,6 +635,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(fr) %{_omf_dest_dir}/char-palette/char-palette-fr.omf
 %lang(it) %{_omf_dest_dir}/char-palette/char-palette-it.omf
 %lang(nl) %{_omf_dest_dir}/char-palette/char-palette-nl.omf
+%lang(oc) %{_omf_dest_dir}/char-palette/char-palette-oc.omf
 %lang(pt_BR) %{_omf_dest_dir}/char-palette/char-palette-pt_BR.omf
 %lang(ru) %{_omf_dest_dir}/char-palette/char-palette-ru.omf
 %lang(sv) %{_omf_dest_dir}/char-palette/char-palette-sv.omf
@@ -656,6 +659,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
 %lang(fr) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-fr.omf
 %lang(nl) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-nl.omf
+%lang(oc) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-oc.omf
 %lang(ru) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-ru.omf
 %lang(sv) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-sv.omf
 %lang(uk) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-uk.omf
@@ -674,6 +678,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(es) %{_omf_dest_dir}/drivemount/drivemount-es.omf
 %lang(fr) %{_omf_dest_dir}/drivemount/drivemount-fr.omf
 %lang(it) %{_omf_dest_dir}/drivemount/drivemount-it.omf
+%lang(oc) %{_omf_dest_dir}/drivemount/drivemount-oc.omf
 %lang(pa) %{_omf_dest_dir}/drivemount/drivemount-pa.omf
 %lang(ru) %{_omf_dest_dir}/drivemount/drivemount-ru.omf
 %lang(sv) %{_omf_dest_dir}/drivemount/drivemount-sv.omf
@@ -692,10 +697,12 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %dir %{_omf_dest_dir}/geyes
 %{_omf_dest_dir}/geyes/geyes-C.omf
 %lang(bg) %{_omf_dest_dir}/geyes/geyes-bg.omf
+%lang(ca) %{_omf_dest_dir}/geyes/geyes-ca.omf
 %lang(en_GB) %{_omf_dest_dir}/geyes/geyes-en_GB.omf
 %lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
 %lang(fr) %{_omf_dest_dir}/geyes/geyes-fr.omf
 %lang(it) %{_omf_dest_dir}/geyes/geyes-it.omf
+%lang(oc) %{_omf_dest_dir}/geyes/geyes-oc.omf
 %lang(ru) %{_omf_dest_dir}/geyes/geyes-ru.omf
 %lang(sv) %{_omf_dest_dir}/geyes/geyes-sv.omf
 %lang(uk) %{_omf_dest_dir}/geyes/geyes-uk.omf
@@ -715,6 +722,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(es) %{_omf_dest_dir}/gweather/gweather-es.omf
 %lang(fr) %{_omf_dest_dir}/gweather/gweather-fr.omf
 %lang(nl) %{_omf_dest_dir}/gweather/gweather-nl.omf
+%lang(oc) %{_omf_dest_dir}/gweather/gweather-oc.omf
 %lang(pa) %{_omf_dest_dir}/gweather/gweather-pa.omf
 %lang(sv) %{_omf_dest_dir}/gweather/gweather-sv.omf
 %lang(uk) %{_omf_dest_dir}/gweather/gweather-uk.omf
@@ -790,9 +798,11 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
 %dir %{_omf_dest_dir}/gswitchit
 %{_omf_dest_dir}/gswitchit/gswitchit-C.omf
+%lang(el) %{_omf_dest_dir}/gswitchit/gswitchit-el.omf
 %lang(en_GB) %{_omf_dest_dir}/gswitchit/gswitchit-en_GB.omf
 %lang(es) %{_omf_dest_dir}/gswitchit/gswitchit-es.omf
 %lang(fr) %{_omf_dest_dir}/gswitchit/gswitchit-fr.omf
+%lang(oc) %{_omf_dest_dir}/gswitchit/gswitchit-oc.omf
 %lang(ru) %{_omf_dest_dir}/gswitchit/gswitchit-ru.omf
 %lang(sv) %{_omf_dest_dir}/gswitchit/gswitchit-sv.omf
 %lang(uk) %{_omf_dest_dir}/gswitchit/gswitchit-uk.omf
@@ -813,6 +823,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(en_GB) %{_omf_dest_dir}/command-line/command-line-en_GB.omf
 %lang(es) %{_omf_dest_dir}/command-line/command-line-es.omf
 %lang(fr) %{_omf_dest_dir}/command-line/command-line-fr.omf
+%lang(oc) %{_omf_dest_dir}/command-line/command-line-oc.omf
 %lang(pt_BR) %{_omf_dest_dir}/command-line/command-line-pt_BR.omf
 %lang(sv) %{_omf_dest_dir}/command-line/command-line-sv.omf
 %lang(uk) %{_omf_dest_dir}/command-line/command-line-uk.omf
@@ -831,6 +842,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(es) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-es.omf
 %lang(it) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-it.omf
 %lang(fr) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-fr.omf
+%lang(oc) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-oc.omf
 %lang(pa) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-pa.omf
 %lang(ru) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-ru.omf
 %lang(sv) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-sv.omf
@@ -858,6 +870,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(en_GB) %{_omf_dest_dir}/multiload/multiload-en_GB.omf
 %lang(es) %{_omf_dest_dir}/multiload/multiload-es.omf
 %lang(fr) %{_omf_dest_dir}/multiload/multiload-fr.omf
+%lang(oc) %{_omf_dest_dir}/multiload/multiload-oc.omf
 %lang(pa) %{_omf_dest_dir}/multiload/multiload-pa.omf
 %lang(ru) %{_omf_dest_dir}/multiload/multiload-ru.omf
 %lang(sv) %{_omf_dest_dir}/multiload/multiload-sv.omf
@@ -878,6 +891,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(en_GB) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-en_GB.omf
 %lang(es) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-es.omf
 %lang(fr) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-fr.omf
+%lang(oc) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-oc.omf
 %lang(pa) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-pa.omf
 %lang(sv) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-sv.omf
 %lang(uk) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-uk.omf
@@ -896,6 +910,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(fr) %{_omf_dest_dir}/trashapplet/trashapplet-fr.omf
 %lang(it) %{_omf_dest_dir}/trashapplet/trashapplet-it.omf
 %lang(nl) %{_omf_dest_dir}/trashapplet/trashapplet-nl.omf
+%lang(oc) %{_omf_dest_dir}/trashapplet/trashapplet-oc.omf
 %lang(pa) %{_omf_dest_dir}/trashapplet/trashapplet-pa.omf
 %lang(ru) %{_omf_dest_dir}/trashapplet/trashapplet-ru.omf
 %lang(sv) %{_omf_dest_dir}/trashapplet/trashapplet-sv.omf
