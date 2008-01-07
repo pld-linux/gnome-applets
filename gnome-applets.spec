@@ -3,59 +3,60 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.20.0
-Release:	2
+Version:	2.20.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.20/%{name}-%{version}.tar.bz2
-# Source0-md5:	985cfc3c58a72e1a92201bf4a4873b87
+# Source0-md5:	e49402e7323bdd9595dc5cbfdba6ba5b
 Patch0:		%{name}-stickynotes-title-size.patch
 Patch1:		%{name}-m4_fix.patch
 Patch2:		%{name}-use-liboobs.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.19.1
+BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gnome-control-center-devel >= 2.19.91
+BuildRequires:	gnome-control-center-devel >= 2.20.0
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.73
-BuildRequires:	gail-devel >= 1.19.6
+BuildRequires:	gail-devel >= 1.20.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common >= 2.18.0
-BuildRequires:	gnome-desktop-devel >= 2.19.90
-BuildRequires:	gnome-doc-utils >= 0.11.2
-BuildRequires:	gnome-icon-theme >= 2.19.91
-BuildRequires:	gnome-panel-devel >= 2.19.6
-BuildRequires:	gnome-vfs2-devel >= 2.19.91
+BuildRequires:	gnome-common >= 2.20.0
+BuildRequires:	gnome-desktop-devel >= 2.20.0
+BuildRequires:	gnome-doc-utils >= 0.12.0
+BuildRequires:	gnome-icon-theme >= 2.20.0
+BuildRequires:	gnome-panel-devel >= 2.20.0
+BuildRequires:	gnome-vfs2-devel >= 2.20.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	gucharmap-devel >= 1.10.0
 BuildRequires:	hal-devel >= 0.5.9
 BuildRequires:	intltool >= 0.36.2
 BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomekbd-devel >= 2.19.91
-BuildRequires:	libgnomeui-devel >= 2.19.1
-BuildRequires:	libgtop-devel >= 1:2.19.92
+BuildRequires:	libgnomekbd-devel >= 2.20.0
+BuildRequires:	libgnomeui-devel >= 2.20.0
+BuildRequires:	libgtop-devel >= 1:2.20.0
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	liboobs-devel >= 2.20.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.19.92
+BuildRequires:	libwnck-devel >= 2.20.0
 BuildRequires:	libxklavier-devel >= 3.0
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	python-gnome-desktop-devel >= 2.19.2
+BuildRequires:	python-gnome-desktop-devel >= 2.20.0
 BuildRequires:	python-pygtk-devel >= 2:2.10.4
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Requires:	gnome-icon-theme >= 2.19.91
-Requires:	gnome-panel >= 2.19.6
-Requires:	gnome-vfs2 >= 2.19.91
+Requires:	gnome-icon-theme >= 2.20.0
+Requires:	gnome-panel >= 2.20.0
+Requires:	gnome-vfs2 >= 2.20.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.19.1
+Requires:	libgnomeui >= 2.20.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -83,7 +84,7 @@ Summary:	Header files for gnome-applets
 Summary(pl.UTF-8):	Pliki nagłówkowe gnome-applets
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.19.1
+Requires:	GConf2-devel >= 2.20.0
 Requires:	gtk+2-devel >= 2:2.12.0
 
 %description devel
@@ -99,7 +100,7 @@ Group:		X11/Applications
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Suggests:	gnome-control-center >= 2.19.91
+Suggests:	gnome-control-center >= 2.20.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description accessx-status
@@ -260,7 +261,7 @@ Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gstreamer-audio-effects-base >= 0.10.10
 Requires:	gstreamer-audiosink
-Suggests:	gnome-media-volume-control >= 2.19.91
+Suggests:	gnome-media-volume-control >= 2.20.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description mixer
@@ -291,7 +292,7 @@ Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Suggests:	gnome-system-monitor >= 2.19.91.1
+Suggests:	gnome-system-monitor >= 2.20.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description multiload
@@ -370,19 +371,19 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 [ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
 	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 %find_lang %{name}-2.0
-%find_lang accessx-status --with-gnome
-%find_lang battstat --with-gnome
-%find_lang char-palette --with-gnome
-%find_lang command-line --with-gnome
-%find_lang cpufreq-applet --with-gnome
-%find_lang drivemount --with-gnome
-%find_lang geyes --with-gnome
-%find_lang gswitchit --with-gnome
-%find_lang gweather --with-gnome
-%find_lang mixer_applet2 --with-gnome
-%find_lang multiload --with-gnome
-%find_lang stickynotes_applet --with-gnome
-%find_lang trashapplet --with-gnome
+%find_lang accessx-status --with-gnome --with-omf
+%find_lang battstat --with-gnome --with-omf
+%find_lang char-palette --with-gnome --with-omf
+%find_lang command-line --with-gnome --with-omf
+%find_lang cpufreq-applet --with-gnome --with-omf
+%find_lang drivemount --with-gnome --with-omf
+%find_lang geyes --with-gnome --with-omf
+%find_lang gswitchit --with-gnome --with-omf
+%find_lang gweather --with-gnome --with-omf
+%find_lang mixer_applet2 --with-gnome --with-omf
+%find_lang multiload --with-gnome --with-omf
+%find_lang stickynotes_applet --with-gnome --with-omf
+%find_lang trashapplet --with-gnome --with-omf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -590,18 +591,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome-2.0/ui/GNOME_AccessxApplet.xml
 %{_pixmapsdir}/accessx-status-applet
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
-%dir %{_omf_dest_dir}/accessx-status
-%{_omf_dest_dir}/accessx-status/accessx-status-C.omf
-%lang(bg) %{_omf_dest_dir}/accessx-status/accessx-status-bg.omf
-%lang(ca) %{_omf_dest_dir}/accessx-status/accessx-status-ca.omf
-%lang(en_GB) %{_omf_dest_dir}/accessx-status/accessx-status-en_GB.omf
-%lang(es) %{_omf_dest_dir}/accessx-status/accessx-status-es.omf
-%lang(fr) %{_omf_dest_dir}/accessx-status/accessx-status-fr.omf
-%lang(it) %{_omf_dest_dir}/accessx-status/accessx-status-it.omf
-%lang(nl) %{_omf_dest_dir}/accessx-status/accessx-status-nl.omf
-%lang(oc) %{_omf_dest_dir}/accessx-status/accessx-status-oc.omf
-%lang(sv) %{_omf_dest_dir}/accessx-status/accessx-status-sv.omf
-%lang(uk) %{_omf_dest_dir}/accessx-status/accessx-status-uk.omf
 
 %files battstat -f battstat.lang
 %defattr(644,root,root,755)
@@ -612,16 +601,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/%{name}/glade/battstat_applet.glade
 %{_sysconfdir}/gconf/schemas/battstat.schemas
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
-%dir %{_omf_dest_dir}/battstat
-%{_omf_dest_dir}/battstat/battstat-C.omf
-%lang(bg) %{_omf_dest_dir}/battstat/battstat-bg.omf
-%lang(en_GB) %{_omf_dest_dir}/battstat/battstat-en_GB.omf
-%lang(es) %{_omf_dest_dir}/battstat/battstat-es.omf
-%lang(fr) %{_omf_dest_dir}/battstat/battstat-fr.omf
-%lang(oc) %{_omf_dest_dir}/battstat/battstat-oc.omf
-%lang(pa) %{_omf_dest_dir}/battstat/battstat-pa.omf
-%lang(sv) %{_omf_dest_dir}/battstat/battstat-sv.omf
-%lang(uk) %{_omf_dest_dir}/battstat/battstat-uk.omf
 
 %files charpicker -f char-palette.lang
 %defattr(644,root,root,755)
@@ -631,19 +610,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome-2.0/ui/GNOME_CharpickerApplet.xml
 %{_iconsdir}/hicolor/48x48/apps/charpick.png
 %{_sysconfdir}/gconf/schemas/charpick.schemas
-%dir %{_omf_dest_dir}/char-palette
-%{_omf_dest_dir}/char-palette/char-palette-C.omf
-%lang(bg) %{_omf_dest_dir}/char-palette/char-palette-bg.omf
-%lang(en_GB) %{_omf_dest_dir}/char-palette/char-palette-en_GB.omf
-%lang(es) %{_omf_dest_dir}/char-palette/char-palette-es.omf
-%lang(fr) %{_omf_dest_dir}/char-palette/char-palette-fr.omf
-%lang(it) %{_omf_dest_dir}/char-palette/char-palette-it.omf
-%lang(nl) %{_omf_dest_dir}/char-palette/char-palette-nl.omf
-%lang(oc) %{_omf_dest_dir}/char-palette/char-palette-oc.omf
-%lang(pt_BR) %{_omf_dest_dir}/char-palette/char-palette-pt_BR.omf
-%lang(ru) %{_omf_dest_dir}/char-palette/char-palette-ru.omf
-%lang(sv) %{_omf_dest_dir}/char-palette/char-palette-sv.omf
-%lang(uk) %{_omf_dest_dir}/char-palette/char-palette-uk.omf
 
 %files cpufreq -f cpufreq-applet.lang
 %defattr(644,root,root,755)
@@ -656,18 +622,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_sysconfdir}/gconf/schemas/cpufreq-applet.schemas
 %{_pixmapsdir}/cpufreq-applet
 %{_iconsdir}/hicolor/*/apps/gnome-cpu-frequency-applet.*
-%dir %{_omf_dest_dir}/cpufreq-applet
-%{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-C.omf
-%lang(ca) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-ca.omf
-%lang(en_GB) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-en_GB.omf
-%lang(es) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-es.omf
-%lang(fr) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-fr.omf
-%lang(nl) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-nl.omf
-%lang(oc) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-oc.omf
-%lang(ru) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-ru.omf
-%lang(sv) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-sv.omf
-%lang(uk) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-uk.omf
-%lang(zh_CN) %{_omf_dest_dir}/cpufreq-applet/cpufreq-applet-zh_CN.omf
 
 %files drivemount -f drivemount.lang
 %defattr(644,root,root,755)
@@ -676,18 +630,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_libdir}/bonobo/servers/GNOME_DriveMountApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_DriveMountApplet.xml
 %{_sysconfdir}/gconf/schemas/drivemount.schemas
-%dir %{_omf_dest_dir}/drivemount
-%{_omf_dest_dir}/drivemount/drivemount-C.omf
-%lang(en_GB) %{_omf_dest_dir}/drivemount/drivemount-en_GB.omf
-%lang(es) %{_omf_dest_dir}/drivemount/drivemount-es.omf
-%lang(fr) %{_omf_dest_dir}/drivemount/drivemount-fr.omf
-%lang(it) %{_omf_dest_dir}/drivemount/drivemount-it.omf
-%lang(oc) %{_omf_dest_dir}/drivemount/drivemount-oc.omf
-%lang(pa) %{_omf_dest_dir}/drivemount/drivemount-pa.omf
-%lang(ru) %{_omf_dest_dir}/drivemount/drivemount-ru.omf
-%lang(sv) %{_omf_dest_dir}/drivemount/drivemount-sv.omf
-%lang(uk) %{_omf_dest_dir}/drivemount/drivemount-uk.omf
-%lang(zh_CN) %{_omf_dest_dir}/drivemount/drivemount-zh_CN.omf
 
 %files geyes -f geyes.lang
 %defattr(644,root,root,755)
@@ -698,18 +640,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/%{name}/geyes
 %{_iconsdir}/hicolor/*/apps/gnome-eyes-applet.*
 %{_sysconfdir}/gconf/schemas/geyes.schemas
-%dir %{_omf_dest_dir}/geyes
-%{_omf_dest_dir}/geyes/geyes-C.omf
-%lang(bg) %{_omf_dest_dir}/geyes/geyes-bg.omf
-%lang(ca) %{_omf_dest_dir}/geyes/geyes-ca.omf
-%lang(en_GB) %{_omf_dest_dir}/geyes/geyes-en_GB.omf
-%lang(es) %{_omf_dest_dir}/geyes/geyes-es.omf
-%lang(fr) %{_omf_dest_dir}/geyes/geyes-fr.omf
-%lang(it) %{_omf_dest_dir}/geyes/geyes-it.omf
-%lang(oc) %{_omf_dest_dir}/geyes/geyes-oc.omf
-%lang(ru) %{_omf_dest_dir}/geyes/geyes-ru.omf
-%lang(sv) %{_omf_dest_dir}/geyes/geyes-sv.omf
-%lang(uk) %{_omf_dest_dir}/geyes/geyes-uk.omf
 
 %files gweather -f gweather.lang
 %defattr(644,root,root,755)
@@ -720,16 +650,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 %{_datadir}/%{name}/gweather
 %{_sysconfdir}/gconf/schemas/gweather.schemas
-%dir %{_omf_dest_dir}/gweather
-%{_omf_dest_dir}/gweather/gweather-C.omf
-%lang(en_GB) %{_omf_dest_dir}/gweather/gweather-en_GB.omf
-%lang(es) %{_omf_dest_dir}/gweather/gweather-es.omf
-%lang(fr) %{_omf_dest_dir}/gweather/gweather-fr.omf
-%lang(nl) %{_omf_dest_dir}/gweather/gweather-nl.omf
-%lang(oc) %{_omf_dest_dir}/gweather/gweather-oc.omf
-%lang(pa) %{_omf_dest_dir}/gweather/gweather-pa.omf
-%lang(sv) %{_omf_dest_dir}/gweather/gweather-sv.omf
-%lang(uk) %{_omf_dest_dir}/gweather/gweather-uk.omf
 
 %files invest
 %defattr(644,root,root,755)
@@ -800,16 +720,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 %{_datadir}/%{name}/glade/gswitchit*.glade
 %{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
-%dir %{_omf_dest_dir}/gswitchit
-%{_omf_dest_dir}/gswitchit/gswitchit-C.omf
-%lang(el) %{_omf_dest_dir}/gswitchit/gswitchit-el.omf
-%lang(en_GB) %{_omf_dest_dir}/gswitchit/gswitchit-en_GB.omf
-%lang(es) %{_omf_dest_dir}/gswitchit/gswitchit-es.omf
-%lang(fr) %{_omf_dest_dir}/gswitchit/gswitchit-fr.omf
-%lang(oc) %{_omf_dest_dir}/gswitchit/gswitchit-oc.omf
-%lang(ru) %{_omf_dest_dir}/gswitchit/gswitchit-ru.omf
-%lang(sv) %{_omf_dest_dir}/gswitchit/gswitchit-sv.omf
-%lang(uk) %{_omf_dest_dir}/gswitchit/gswitchit-uk.omf
 
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
@@ -822,15 +732,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_iconsdir}/hicolor/48x48/apps/gnome-mini-commander.png
 %{_sysconfdir}/gconf/schemas/mini-commander-global.schemas
 %{_sysconfdir}/gconf/schemas/mini-commander.schemas
-%dir %{_omf_dest_dir}/command-line
-%{_omf_dest_dir}/command-line/command-line-C.omf
-%lang(en_GB) %{_omf_dest_dir}/command-line/command-line-en_GB.omf
-%lang(es) %{_omf_dest_dir}/command-line/command-line-es.omf
-%lang(fr) %{_omf_dest_dir}/command-line/command-line-fr.omf
-%lang(oc) %{_omf_dest_dir}/command-line/command-line-oc.omf
-%lang(pt_BR) %{_omf_dest_dir}/command-line/command-line-pt_BR.omf
-%lang(sv) %{_omf_dest_dir}/command-line/command-line-sv.omf
-%lang(uk) %{_omf_dest_dir}/command-line/command-line-uk.omf
 
 %files mixer -f mixer_applet2.lang
 %defattr(644,root,root,755)
@@ -839,18 +740,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_libdir}/bonobo/servers/GNOME_MixerApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_MixerApplet.xml
 %{_sysconfdir}/gconf/schemas/mixer.schemas
-%dir %{_omf_dest_dir}/mixer_applet2
-%{_omf_dest_dir}/mixer_applet2/mixer_applet2-C.omf
-%lang(ca) %{_omf_dest_dir}//mixer_applet2/mixer_applet2-ca.omf
-%lang(en_GB) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-en_GB.omf
-%lang(es) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-es.omf
-%lang(it) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-it.omf
-%lang(fr) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-fr.omf
-%lang(oc) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-oc.omf
-%lang(pa) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-pa.omf
-%lang(ru) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-ru.omf
-%lang(sv) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-sv.omf
-%lang(uk) %{_omf_dest_dir}/mixer_applet2/mixer_applet2-uk.omf
 
 %files modemlights
 %defattr(644,root,root,755)
@@ -868,17 +757,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_libdir}/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_MultiloadApplet.xml
 %{_sysconfdir}/gconf/schemas/multiload.schemas
-%dir %{_omf_dest_dir}/multiload
-%{_omf_dest_dir}/multiload/multiload-C.omf
-%lang(ca) %{_omf_dest_dir}//multiload/multiload-ca.omf
-%lang(en_GB) %{_omf_dest_dir}/multiload/multiload-en_GB.omf
-%lang(es) %{_omf_dest_dir}/multiload/multiload-es.omf
-%lang(fr) %{_omf_dest_dir}/multiload/multiload-fr.omf
-%lang(oc) %{_omf_dest_dir}/multiload/multiload-oc.omf
-%lang(pa) %{_omf_dest_dir}/multiload/multiload-pa.omf
-%lang(ru) %{_omf_dest_dir}/multiload/multiload-ru.omf
-%lang(sv) %{_omf_dest_dir}/multiload/multiload-sv.omf
-%lang(uk) %{_omf_dest_dir}/multiload/multiload-uk.omf
 
 %files stickynotes -f stickynotes_applet.lang
 %defattr(644,root,root,755)
@@ -890,15 +768,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_pixmapsdir}/stickynotes
 %{_iconsdir}/hicolor/*/apps/gnome-sticky-notes-applet.*
 %{_sysconfdir}/gconf/schemas/stickynotes.schemas
-%dir %{_omf_dest_dir}/stickynotes_applet
-%{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-C.omf
-%lang(en_GB) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-en_GB.omf
-%lang(es) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-es.omf
-%lang(fr) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-fr.omf
-%lang(oc) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-oc.omf
-%lang(pa) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-pa.omf
-%lang(sv) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-sv.omf
-%lang(uk) %{_omf_dest_dir}/stickynotes_applet/stickynotes_applet-uk.omf
 
 %files trash -f trashapplet.lang
 %defattr(644,root,root,755)
@@ -907,15 +776,3 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_libdir}/bonobo/servers/GNOME_Panel_TrashApplet.server
 %{_datadir}/%{name}/glade/trashapplet.glade
 %{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
-%dir %{_omf_dest_dir}/trashapplet
-%{_omf_dest_dir}/trashapplet/trashapplet-C.omf
-%lang(en_GB) %{_omf_dest_dir}/trashapplet/trashapplet-en_GB.omf
-%lang(es) %{_omf_dest_dir}/trashapplet/trashapplet-es.omf
-%lang(fr) %{_omf_dest_dir}/trashapplet/trashapplet-fr.omf
-%lang(it) %{_omf_dest_dir}/trashapplet/trashapplet-it.omf
-%lang(nl) %{_omf_dest_dir}/trashapplet/trashapplet-nl.omf
-%lang(oc) %{_omf_dest_dir}/trashapplet/trashapplet-oc.omf
-%lang(pa) %{_omf_dest_dir}/trashapplet/trashapplet-pa.omf
-%lang(ru) %{_omf_dest_dir}/trashapplet/trashapplet-ru.omf
-%lang(sv) %{_omf_dest_dir}/trashapplet/trashapplet-sv.omf
-%lang(uk) %{_omf_dest_dir}/trashapplet/trashapplet-uk.omf
