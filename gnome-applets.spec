@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.21/%{name}-%{ver
 # Source0-md5:	dba81fa85a3b238b1a3b600865c2201d
 Patch0:		%{name}-stb.patch
 Patch1:		%{name}-m4_fix.patch
+Patch2:		%{name}-gweather.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.19.1
 BuildRequires:	autoconf >= 2.59
@@ -322,6 +323,7 @@ Aplet śmietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__gnome_doc_prepare}
