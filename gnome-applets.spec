@@ -3,31 +3,30 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.21.2
+Version:	2.21.4
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.21/%{name}-%{version}.tar.bz2
-# Source0-md5:	2a511432e38b222dffc0909f81419503
-Patch0:		%{name}-stickynotes-title-size.patch
+# Source0-md5:	dba81fa85a3b238b1a3b600865c2201d
 Patch1:		%{name}-m4_fix.patch
-Patch2:		%{name}-use-liboobs.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.19.1
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gnome-control-center-devel >= 2.19.91
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.73
 BuildRequires:	gail-devel >= 1.19.6
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
+BuildRequires:	glib2-devel >= 1:2.13.0
 BuildRequires:	gnome-common >= 2.18.0
 BuildRequires:	gnome-desktop-devel >= 2.19.90
 BuildRequires:	gnome-doc-utils >= 0.11.2
 BuildRequires:	gnome-icon-theme >= 2.19.91
 BuildRequires:	gnome-panel-devel >= 2.19.6
+BuildRequires:	gnome-settings-daemon-devel >= 2.21.5
 BuildRequires:	gnome-vfs2-devel >= 2.19.91
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
 BuildRequires:	gtk+2-devel >= 2:2.12.0
@@ -333,9 +332,7 @@ Aplet śmietnika.
 
 %prep
 %setup -q
-%patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__gnome_doc_prepare}
