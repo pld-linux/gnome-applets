@@ -10,6 +10,7 @@ License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.21/%{name}-%{version}.tar.bz2
 # Source0-md5:	dba81fa85a3b238b1a3b600865c2201d
+Patch0:		%{name}-stb.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.19.1
@@ -76,20 +77,6 @@ z GNOME.
 %description -l ru.UTF-8
 Пакет gnome-applets содержит апплеты Панели GNOME, увеличивающие
 комфортность работы в среде GNOME.
-
-%package devel
-Summary:	Header files for gnome-applets
-Summary(pl.UTF-8):	Pliki nagłówkowe gnome-applets
-Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.19.1
-Requires:	gtk+2-devel >= 2:2.12.0
-
-%description devel
-Header files for gnome-applets.
-
-%description devel -l pl.UTF-8
-Pliki nagłówkowe gnome-applets.
 
 %package accessx-status
 Summary:	Keyboard Accessibility Status applet
@@ -332,6 +319,7 @@ Aplet śmietnika.
 
 %prep
 %setup -q
+%patch0 -p1
 %patch1 -p1
 
 %build
@@ -454,10 +442,6 @@ EOF
 %post gweather
 /sbin/ldconfig
 %scrollkeeper_update_post
-%gconf_schema_install gweather.schemas
-
-%preun gweather
-%gconf_schema_uninstall gweather.schemas
 
 %postun gweather
 /sbin/ldconfig
@@ -574,11 +558,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(es_VE) %dir %{_datadir}/locale/es_VE
 %lang(es_VE) %dir %{_datadir}/locale/es_VE/LC_MESSAGES
 
-%files devel
-%defattr(644,root,root,755)
-%{_includedir}/*
-%{_pkgconfigdir}/*.pc
-
 %files accessx-status -f accessx-status.lang
 %defattr(644,root,root,755)
 %doc accessx-status/ChangeLog
@@ -641,11 +620,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %doc gweather/ChangeLog
 %attr(755,root,root) %{_libdir}/gweather-applet-2
-%attr(755,root,root) %{_libdir}/libgweather.so*
 %{_libdir}/bonobo/servers/GNOME_GWeatherApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
-%{_datadir}/%{name}/gweather
-%{_sysconfdir}/gconf/schemas/gweather.schemas
 
 %files invest
 %defattr(644,root,root,755)
