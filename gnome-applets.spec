@@ -51,6 +51,7 @@ BuildRequires:	python-pygtk-devel >= 2:2.10.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
+BuildRequires:	system-tools-backends >= 2.5.6
 Requires:	gnome-icon-theme >= 2.19.91
 Requires:	gnome-panel >= 2.19.6
 Requires:	gnome-vfs2 >= 2.19.91
