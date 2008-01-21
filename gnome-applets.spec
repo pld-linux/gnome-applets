@@ -414,7 +414,7 @@ EOF
 %preun drivemount
 %gconf_schema_uninstall drivemount.schemas
 
-%postun drivemount 
+%postun drivemount
 %scrollkeeper_update_postun
 
 %post geyes
@@ -425,7 +425,7 @@ EOF
 %preun geyes
 %gconf_schema_uninstall geyes.schemas
 
-%postun geyes 
+%postun geyes
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
