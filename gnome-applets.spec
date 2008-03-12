@@ -4,7 +4,7 @@ Summary(ru.UTF-8):	Маленькие программы, встраивающи
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.22.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -748,5 +748,5 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %doc trashapplet/ChangeLog
 %attr(755,root,root) %{_libdir}/trashapplet
 %{_libdir}/bonobo/servers/GNOME_Panel_TrashApplet.server
-%{_datadir}/%{name}/glade/trashapplet.glade
+%{_datadir}/%{name}/glade/trashapplet-empty-progress.ui
 %{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
