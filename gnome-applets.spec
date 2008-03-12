@@ -3,60 +3,61 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.20.1
-Release:	2
+Version:	2.22.0
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.20/%{name}-%{version}.tar.bz2
-# Source0-md5:	e49402e7323bdd9595dc5cbfdba6ba5b
-Patch0:		%{name}-stickynotes-title-size.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.22/%{name}-%{version}.tar.bz2
+# Source0-md5:	cd31cc9171cc350e7d0074b1a8092fbd
+Patch0:		%{name}-stb.patch
 Patch1:		%{name}-m4_fix.patch
-Patch2:		%{name}-use-liboobs.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.20.0
+BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gnome-control-center-devel >= 2.20.0
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.73
 BuildRequires:	gail-devel >= 1.20.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
+BuildRequires:	glib2-devel >= 1:2.16.0
 BuildRequires:	gnome-common >= 2.20.0
-BuildRequires:	gnome-desktop-devel >= 2.20.0
-BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gnome-icon-theme >= 2.20.0
-BuildRequires:	gnome-panel-devel >= 2.20.0
-BuildRequires:	gnome-vfs2-devel >= 2.20.0
+BuildRequires:	gnome-desktop-devel >= 2.22.0
+BuildRequires:	gnome-doc-utils >= 0.11.2
+BuildRequires:	gnome-icon-theme >= 2.22.0
+BuildRequires:	gnome-panel-devel >= 2.22.0
+BuildRequires:	gnome-settings-daemon-devel >= 2.22.5
+BuildRequires:	gnome-vfs2-devel >= 2.22.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	gucharmap-devel >= 1.10.0
 BuildRequires:	hal-devel >= 0.5.9
 BuildRequires:	intltool >= 0.36.2
 BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomekbd-devel >= 2.20.0
-BuildRequires:	libgnomeui-devel >= 2.20.0
-BuildRequires:	libgtop-devel >= 1:2.20.0
+BuildRequires:	libgnomekbd-devel >= 2.21.4.1
+BuildRequires:	libgnomeui-devel >= 2.22.0
+BuildRequires:	libgtop-devel >= 1:2.22.0
 BuildRequires:	libnotify-devel >= 0.4.2
-BuildRequires:	liboobs-devel >= 2.20.0
+BuildRequires:	liboobs-devel >= 2.22.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.20.0
+BuildRequires:	libwnck-devel >= 2.22.0
 BuildRequires:	libxklavier-devel >= 3.0
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	python-gnome-desktop-devel >= 2.20.0
+BuildRequires:	python-gnome-desktop-devel >= 2.22.0
 BuildRequires:	python-pygtk-devel >= 2:2.10.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Requires:	gnome-icon-theme >= 2.20.0
-Requires:	gnome-panel >= 2.20.0
-Requires:	gnome-vfs2 >= 2.20.0
+BuildRequires:	system-tools-backends >= 2.6.0
+Requires:	gnome-icon-theme >= 2.22.0
+Requires:	gnome-panel >= 2.22.0
+Requires:	gnome-vfs2 >= 2.22.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.20.0
+Requires:	libgnomeui >= 2.22.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -79,20 +80,6 @@ z GNOME.
 Пакет gnome-applets содержит апплеты Панели GNOME, увеличивающие
 комфортность работы в среде GNOME.
 
-%package devel
-Summary:	Header files for gnome-applets
-Summary(pl.UTF-8):	Pliki nagłówkowe gnome-applets
-Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	GConf2-devel >= 2.20.0
-Requires:	gtk+2-devel >= 2:2.12.0
-
-%description devel
-Header files for gnome-applets.
-
-%description devel -l pl.UTF-8
-Pliki nagłówkowe gnome-applets.
-
 %package accessx-status
 Summary:	Keyboard Accessibility Status applet
 Summary(pl.UTF-8):	Aplet stanu dostepności klawiatury
@@ -100,7 +87,7 @@ Group:		X11/Applications
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Suggests:	gnome-control-center >= 2.20.0
+Suggests:	gnome-control-center >= 2.22.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description accessx-status
@@ -261,7 +248,7 @@ Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gstreamer-audio-effects-base >= 0.10.10
 Requires:	gstreamer-audiosink
-Suggests:	gnome-media-volume-control >= 2.20.0
+Suggests:	gnome-media-volume-control >= 2.22.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description mixer
@@ -292,7 +279,7 @@ Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Suggests:	gnome-system-monitor >= 2.20.0
+Suggests:	gnome-system-monitor >= 2.22.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description multiload
@@ -336,7 +323,6 @@ Aplet śmietnika.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__gnome_doc_prepare}
@@ -458,10 +444,6 @@ EOF
 %post gweather
 /sbin/ldconfig
 %scrollkeeper_update_post
-%gconf_schema_install gweather.schemas
-
-%preun gweather
-%gconf_schema_uninstall gweather.schemas
 
 %postun gweather
 /sbin/ldconfig
@@ -578,11 +560,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(es_VE) %dir %{_datadir}/locale/es_VE
 %lang(es_VE) %dir %{_datadir}/locale/es_VE/LC_MESSAGES
 
-%files devel
-%defattr(644,root,root,755)
-%{_includedir}/*
-%{_pkgconfigdir}/*.pc
-
 %files accessx-status -f accessx-status.lang
 %defattr(644,root,root,755)
 %doc accessx-status/ChangeLog
@@ -645,11 +622,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %doc gweather/ChangeLog
 %attr(755,root,root) %{_libdir}/gweather-applet-2
-%attr(755,root,root) %{_libdir}/libgweather.so*
 %{_libdir}/bonobo/servers/GNOME_GWeatherApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
-%{_datadir}/%{name}/gweather
-%{_sysconfdir}/gconf/schemas/gweather.schemas
 
 %files invest
 %defattr(644,root,root,755)
