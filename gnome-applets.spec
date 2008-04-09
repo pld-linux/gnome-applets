@@ -4,7 +4,7 @@ Summary(ru.UTF-8):	Маленькие программы, встраивающи
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.22.1
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
