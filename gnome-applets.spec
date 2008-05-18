@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.23.1
-Release:	2
+Version:	2.23.2
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.23/%{name}-%{version}.tar.bz2
-# Source0-md5:	c4499347bec20f92da2cae8e32f8a634
+# Source0-md5:	b2fc9f167abceadd0b1ec576871bfa8b
 Patch0:		%{name}-stb.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -367,6 +367,7 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 %find_lang geyes --with-gnome --with-omf
 %find_lang gswitchit --with-gnome --with-omf
 %find_lang gweather --with-gnome --with-omf
+%find_lang invest-applet --with-gnome --with-omf
 %find_lang mixer_applet2 --with-gnome --with-omf
 %find_lang multiload --with-gnome --with-omf
 %find_lang stickynotes_applet --with-gnome --with-omf
@@ -586,7 +587,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/charpick_applet2
 %{_libdir}/bonobo/servers/GNOME_CharpickerApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_CharpickerApplet.xml
-%{_iconsdir}/hicolor/48x48/apps/charpick.png
 %{_sysconfdir}/gconf/schemas/charpick.schemas
 
 %files cpufreq -f cpufreq-applet.lang
@@ -626,7 +626,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_libdir}/bonobo/servers/GNOME_GWeatherApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 
-%files invest
+%files invest -f invest-applet.lang
 %defattr(644,root,root,755)
 %doc invest-applet/ChangeLog
 %attr(755,root,root) %{_bindir}/invest-chart
@@ -694,7 +694,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %lang(hr,mk,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
 %{_datadir}/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 %{_datadir}/%{name}/builder/gswitchit*.ui
-#%{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
 
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
