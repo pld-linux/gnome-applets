@@ -23,7 +23,7 @@ BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.16.0
 BuildRequires:	gnome-common >= 2.20.0
-BuildRequires:	gnome-desktop-devel >= 2.22.0
+BuildRequires:	gnome-desktop-devel >= 2.23.3
 BuildRequires:	gnome-doc-utils >= 0.11.2
 BuildRequires:	gnome-icon-theme >= 2.22.0
 BuildRequires:	gnome-panel-devel >= 2.22.0
