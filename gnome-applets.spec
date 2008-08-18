@@ -14,6 +14,7 @@ Patch0:		%{name}-stb.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	PolicyKit-devel >= 0.7
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	cpufrequtils-devel >= 0.3
