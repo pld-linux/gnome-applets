@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.23.3
+Version:	2.23.90
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.23/%{name}-%{version}.tar.bz2
-# Source0-md5:	ea5de6ff5400a0e70df78efab902a76e
+# Source0-md5:	c82156f5fd740c5d8601e04eca2ec388
 Patch0:		%{name}-stb.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -595,8 +595,11 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_bindir}/cpufreq-selector
 %attr(755,root,root) %{_libdir}/cpufreq-applet
 %{_libdir}/bonobo/servers/GNOME_CPUFreqApplet.server
+%{_datadir}/PolicyKit/policy/org.gnome.cpufreqselector.policy
+%{_datadir}/dbus-1/system-services/org.gnome.CPUFreqSelector.service
 %{_datadir}/gnome-2.0/ui/GNOME_CPUFreqApplet.xml
 %{_datadir}/%{name}/builder/cpufreq-preferences.ui
+%{_sysconfdir}/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
 %{_sysconfdir}/gconf/schemas/cpufreq-applet.schemas
 %{_pixmapsdir}/cpufreq-applet
 %{_iconsdir}/hicolor/*/apps/gnome-cpu-frequency-applet.*
