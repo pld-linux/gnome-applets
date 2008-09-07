@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.23.90
+Version:	2.23.91
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.23/%{name}-%{version}.tar.bz2
-# Source0-md5:	c82156f5fd740c5d8601e04eca2ec388
+# Source0-md5:	5979757b1e790199f6191c390159b597
 Patch0:		%{name}-stb.patch
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -454,9 +454,11 @@ EOF
 
 %post invest
 %scrollkeeper_update_post
+%update_icon_cache hicolor
 
 %postun invest
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post keyboard
 %scrollkeeper_update_post
@@ -641,7 +643,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/%{name}/builder/financialchart.ui
 %{_datadir}/%{name}/builder/prefs-dialog.ui
 %{_datadir}/%{name}/invest-applet
-%{_pixmapsdir}/invest-48_neutral.png
+%{_iconsdir}/hicolor/*/apps/invest-applet.*
 %dir %{py_sitedir}/invest
 %{py_sitedir}/invest/*.py[co]
 
