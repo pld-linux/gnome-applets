@@ -3,15 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.23.91
+Version:	2.23.92
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.23/%{name}-%{version}.tar.bz2
-# Source0-md5:	5979757b1e790199f6191c390159b597
-Patch0:		%{name}-stb.patch
-Patch1:		%{name}-m4_fix.patch
+# Source0-md5:	b415bc9c44070dfe09ed1d341736d64e
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	PolicyKit-devel >= 0.7
@@ -22,7 +20,7 @@ BuildRequires:	dbus-glib-devel >= 0.73
 BuildRequires:	gail-devel >= 1.20.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.16.0
+BuildRequires:	glib2-devel >= 1:2.18.0
 BuildRequires:	gnome-common >= 2.20.0
 BuildRequires:	gnome-desktop-devel >= 2.23.3
 BuildRequires:	gnome-doc-utils >= 0.11.2
@@ -53,7 +51,6 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
-BuildRequires:	system-tools-backends >= 2.6.0
 Requires:	gnome-icon-theme >= 2.22.0
 Requires:	gnome-panel >= 2.22.0
 Requires:	gnome-vfs2 >= 2.22.0
@@ -322,8 +319,6 @@ Aplet śmietnika.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %{__gnome_doc_prepare}
@@ -339,7 +334,6 @@ Aplet śmietnika.
 	--disable-static \
 	--disable-schemas-install \
 	--enable-mini-commander \
-	--enable-stickynotes \
 	--with-gstreamer=0.10
 %{__make}
 
