@@ -3,17 +3,16 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.24.0
+Version:	2.24.0.1
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	8918f61153093c8032fd672ed6a0abce
-Patch0:		%{name}-stb.patch
-Patch1:		%{name}-m4_fix.patch
+# Source0-md5:	e6dcab2a0ee9519e8cfb62425d2c1b70
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	PolicyKit-devel >= 0.7
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	cpufrequtils-devel >= 0.3
@@ -21,9 +20,9 @@ BuildRequires:	dbus-glib-devel >= 0.73
 BuildRequires:	gail-devel >= 1.20.0
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.16.0
+BuildRequires:	glib2-devel >= 1:2.18.0
 BuildRequires:	gnome-common >= 2.20.0
-BuildRequires:	gnome-desktop-devel >= 2.22.0
+BuildRequires:	gnome-desktop-devel >= 2.23.3
 BuildRequires:	gnome-doc-utils >= 0.11.2
 BuildRequires:	gnome-icon-theme >= 2.22.0
 BuildRequires:	gnome-panel-devel >= 2.22.0
@@ -38,7 +37,6 @@ BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	libgnomekbd-devel >= 2.21.4.1
 BuildRequires:	libgnomeui-devel >= 2.22.0
 BuildRequires:	libgtop-devel >= 1:2.22.0
-BuildRequires:	libgweather-devel >= 2.22.1
 BuildRequires:	libnotify-devel >= 0.4.2
 BuildRequires:	liboobs-devel >= 2.22.0
 BuildRequires:	libtool
@@ -53,7 +51,6 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
-BuildRequires:	system-tools-backends >= 2.6.0
 Requires:	gnome-icon-theme >= 2.22.0
 Requires:	gnome-panel >= 2.22.0
 Requires:	gnome-vfs2 >= 2.22.0
@@ -322,8 +319,6 @@ Aplet śmietnika.
 
 %prep
 %setup -q
-#%patch0 -p1
-%patch1 -p1
 
 %build
 %{__gnome_doc_prepare}
@@ -339,7 +334,7 @@ Aplet śmietnika.
 	--disable-static \
 	--disable-schemas-install \
 	--enable-mini-commander \
-	--enable-stickynotes
+	--with-gstreamer=0.10
 %{__make}
 
 %install
@@ -367,6 +362,7 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 %find_lang geyes --with-gnome --with-omf
 %find_lang gswitchit --with-gnome --with-omf
 %find_lang gweather --with-gnome --with-omf
+%find_lang invest-applet --with-gnome --with-omf
 %find_lang mixer_applet2 --with-gnome --with-omf
 %find_lang multiload --with-gnome --with-omf
 %find_lang stickynotes_applet --with-gnome --with-omf
@@ -452,9 +448,11 @@ EOF
 
 %post invest
 %scrollkeeper_update_post
+%update_icon_cache hicolor
 
 %postun invest
 %scrollkeeper_update_postun
+%update_icon_cache hicolor
 
 %post keyboard
 %scrollkeeper_update_post
@@ -533,7 +531,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_libdir}/bonobo/servers/GNOME_Panel_WirelessApplet.server
 %dir %{_libdir}/%{name}
 %dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/glade
+%dir %{_datadir}/%{name}/builder
 %lang(es_CL) %dir %{_datadir}/locale/es_CL
 %lang(es_CL) %dir %{_datadir}/locale/es_CL/LC_MESSAGES
 %lang(es_CO) %dir %{_datadir}/locale/es_CO
@@ -576,7 +574,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/battstat-applet-2
 %{_libdir}/bonobo/servers/GNOME_BattstatApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_BattstatApplet.xml
-%{_datadir}/%{name}/glade/battstat_applet.glade
+%{_datadir}/%{name}/builder/battstat_applet.ui
 %{_sysconfdir}/gconf/schemas/battstat.schemas
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
 
@@ -586,7 +584,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/charpick_applet2
 %{_libdir}/bonobo/servers/GNOME_CharpickerApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_CharpickerApplet.xml
-%{_iconsdir}/hicolor/48x48/apps/charpick.png
 %{_sysconfdir}/gconf/schemas/charpick.schemas
 
 %files cpufreq -f cpufreq-applet.lang
@@ -595,8 +592,11 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_bindir}/cpufreq-selector
 %attr(755,root,root) %{_libdir}/cpufreq-applet
 %{_libdir}/bonobo/servers/GNOME_CPUFreqApplet.server
+%{_datadir}/PolicyKit/policy/org.gnome.cpufreqselector.policy
+%{_datadir}/dbus-1/system-services/org.gnome.CPUFreqSelector.service
 %{_datadir}/gnome-2.0/ui/GNOME_CPUFreqApplet.xml
-%{_datadir}/%{name}/glade/cpufreq-preferences.glade
+%{_datadir}/%{name}/builder/cpufreq-preferences.ui
+%{_sysconfdir}/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
 %{_sysconfdir}/gconf/schemas/cpufreq-applet.schemas
 %{_pixmapsdir}/cpufreq-applet
 %{_iconsdir}/hicolor/*/apps/gnome-cpu-frequency-applet.*
@@ -626,7 +626,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_libdir}/bonobo/servers/GNOME_GWeatherApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 
-%files invest
+%files invest -f invest-applet.lang
 %defattr(644,root,root,755)
 %doc invest-applet/ChangeLog
 %attr(755,root,root) %{_bindir}/invest-chart
@@ -634,10 +634,10 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_libdir}/bonobo/servers/GNOME_GtikApplet.server
 %{_libdir}/bonobo/servers/Invest_Applet.server
 %{_datadir}/gnome-2.0/ui/Invest_Applet.xml
+%{_datadir}/%{name}/builder/financialchart.ui
+%{_datadir}/%{name}/builder/prefs-dialog.ui
 %{_datadir}/%{name}/invest-applet
-%{_datadir}/%{name}/glade/financialchart.glade
-%{_datadir}/%{name}/glade/prefs-dialog.glade
-%{_pixmapsdir}/invest-big.png
+%{_iconsdir}/hicolor/*/apps/invest-applet.*
 %dir %{py_sitedir}/invest
 %{py_sitedir}/invest/*.py[co]
 
@@ -693,8 +693,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/xmodmap/xmodmap.us*
 %lang(hr,mk,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
 %{_datadir}/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
-%{_datadir}/%{name}/glade/gswitchit*.glade
-%{_iconsdir}/hicolor/48x48/apps/gswitchit*.png
+%{_datadir}/%{name}/builder/gswitchit*.ui
 
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
@@ -703,7 +702,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
 %{_libdir}/bonobo/servers/GNOME_MiniCommanderApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_MiniCommanderApplet.xml
-%{_datadir}/%{name}/glade/mini-commander.glade
+%{_datadir}/%{name}/builder/mini-commander.ui
 %{_iconsdir}/hicolor/48x48/apps/gnome-mini-commander.png
 %{_sysconfdir}/gconf/schemas/mini-commander-global.schemas
 %{_sysconfdir}/gconf/schemas/mini-commander.schemas
@@ -716,14 +715,14 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome-2.0/ui/GNOME_MixerApplet.xml
 %{_sysconfdir}/gconf/schemas/mixer.schemas
 
-%files modemlights
-%defattr(644,root,root,755)
-%doc modemlights/ChangeLog
-%attr(755,root,root) %{_libdir}/modem_applet
-%{_libdir}/bonobo/servers/GNOME_ModemLights.server
-%{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
-%{_datadir}/%{name}/glade/modemlights.glade
-%{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
+#%files modemlights
+#%defattr(644,root,root,755)
+#%doc modemlights/ChangeLog
+#%attr(755,root,root) %{_libdir}/modem_applet
+#%{_libdir}/bonobo/servers/GNOME_ModemLights.server
+#%{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
+#%{_datadir}/%{name}/glade/modemlights.glade
+#%{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
@@ -739,7 +738,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/stickynotes_applet
 %{_libdir}/bonobo/servers/GNOME_StickyNotesApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
-%{_datadir}/%{name}/glade/stickynotes.glade
+%{_datadir}/%{name}/builder/stickynotes.ui
 %{_pixmapsdir}/stickynotes
 %{_iconsdir}/hicolor/*/apps/gnome-sticky-notes-applet.*
 %{_sysconfdir}/gconf/schemas/stickynotes.schemas
@@ -749,5 +748,5 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %doc trashapplet/ChangeLog
 %attr(755,root,root) %{_libdir}/trashapplet
 %{_libdir}/bonobo/servers/GNOME_Panel_TrashApplet.server
-%{_datadir}/%{name}/glade/trashapplet-empty-progress.ui
+%{_datadir}/%{name}/builder/trashapplet-empty-progress.ui
 %{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
