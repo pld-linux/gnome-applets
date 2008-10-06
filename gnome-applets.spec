@@ -4,12 +4,13 @@ Summary(ru.UTF-8):	Маленькие программы, встраивающи
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.24.0.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.24/%{name}-%{version}.tar.bz2
 # Source0-md5:	e6dcab2a0ee9519e8cfb62425d2c1b70
+Patch0:		%{name}-modemlights.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	PolicyKit-devel >= 0.7
@@ -319,6 +320,7 @@ Aplet śmietnika.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gnome_doc_prepare}
@@ -715,14 +717,14 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome-2.0/ui/GNOME_MixerApplet.xml
 %{_sysconfdir}/gconf/schemas/mixer.schemas
 
-#%files modemlights
-#%defattr(644,root,root,755)
-#%doc modemlights/ChangeLog
-#%attr(755,root,root) %{_libdir}/modem_applet
-#%{_libdir}/bonobo/servers/GNOME_ModemLights.server
-#%{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
-#%{_datadir}/%{name}/glade/modemlights.glade
-#%{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
+%files modemlights
+%defattr(644,root,root,755)
+%doc modemlights/ChangeLog
+%attr(755,root,root) %{_libdir}/modem_applet
+%{_libdir}/bonobo/servers/GNOME_ModemLights.server
+%{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
+%{_datadir}/gnome-applets/builder/modemlights.ui
+%{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
