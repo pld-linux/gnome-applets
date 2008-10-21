@@ -3,65 +3,58 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.24.0.1
-Release:	2
+Version:	2.24.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	e6dcab2a0ee9519e8cfb62425d2c1b70
+# Source0-md5:	2a18ecec0da09cc504f8d9b5587ffbb5
 Patch0:		%{name}-modemlights.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.22.0
-BuildRequires:	PolicyKit-devel >= 0.7
+BuildRequires:	GConf2-devel >= 2.24.0
+BuildRequires:	PolicyKit-gnome-devel >= 0.7
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.73
-BuildRequires:	gail-devel >= 1.20.0
-BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.18.0
-BuildRequires:	gnome-common >= 2.20.0
-BuildRequires:	gnome-desktop-devel >= 2.23.3
-BuildRequires:	gnome-doc-utils >= 0.11.2
-BuildRequires:	gnome-icon-theme >= 2.22.0
-BuildRequires:	gnome-panel-devel >= 2.22.0
-BuildRequires:	gnome-settings-daemon-devel >= 2.22.5
-BuildRequires:	gnome-vfs2-devel >= 2.22.0
+BuildRequires:	gnome-common >= 2.24.0
+BuildRequires:	gnome-desktop-devel >= 2.24.0
+BuildRequires:	gnome-doc-utils >= 0.14.0
+BuildRequires:	gnome-icon-theme >= 2.24.0
+BuildRequires:	gnome-panel-devel >= 2.24.0
+BuildRequires:	gnome-settings-daemon-devel >= 2.24.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
-BuildRequires:	gtk+2-devel >= 2:2.12.0
-BuildRequires:	gucharmap-devel >= 1.10.0
-BuildRequires:	hal-devel >= 0.5.9
-BuildRequires:	intltool >= 0.36.2
-BuildRequires:	libglade2-devel >= 1:2.6.2
+BuildRequires:	gtk+2-devel >= 2:2.14.0
+BuildRequires:	gucharmap-devel >= 2.24.0
+BuildRequires:	hal-devel >= 0.5.10
+BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libgnomekbd-devel >= 2.21.4.1
-BuildRequires:	libgnomeui-devel >= 2.22.0
+BuildRequires:	libgnomeui-devel >= 2.24.0
 BuildRequires:	libgtop-devel >= 1:2.22.0
+BuildRequires:	libgweather-devel >= 2.24.0
 BuildRequires:	libnotify-devel >= 0.4.2
-BuildRequires:	liboobs-devel >= 2.22.0
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.22.0
-BuildRequires:	libxklavier-devel >= 3.0
+BuildRequires:	libwnck-devel >= 2.24.0
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	python-gnome-desktop-devel >= 2.22.0
-BuildRequires:	python-pygtk-devel >= 2:2.10.4
+BuildRequires:	python-devel >= 1:2.4
+BuildRequires:	python-gnome-devel >= 2.22.0
+BuildRequires:	python-pygtk-devel >= 2:2.12.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
-Requires:	gnome-icon-theme >= 2.22.0
-Requires:	gnome-panel >= 2.22.0
-Requires:	gnome-vfs2 >= 2.22.0
+Requires:	gnome-icon-theme >= 2.24.0
+Requires:	gnome-panel >= 2.24.0
 Requires:	hicolor-icon-theme
-Requires:	libgnomeui >= 2.22.0
+Requires:	libgnomeui >= 2.24.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_gnomehelpdir	%{_datadir}/gnome/help
 
 %description
 The gnome-applets package provides Panel applets which enhance your
@@ -86,7 +79,7 @@ Group:		X11/Applications
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Suggests:	gnome-control-center >= 2.22.0
+Suggests:	gnome-control-center >= 2.24.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description accessx-status
@@ -278,7 +271,7 @@ Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Suggests:	gnome-system-monitor >= 2.22.0
+Suggests:	gnome-system-monitor >= 2.24.0
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description multiload
@@ -352,8 +345,7 @@ rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/LC_MESSAGES/*.mo
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
-[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
-	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
+
 %find_lang %{name}-2.0
 %find_lang accessx-status --with-gnome --with-omf
 %find_lang battstat --with-gnome --with-omf
