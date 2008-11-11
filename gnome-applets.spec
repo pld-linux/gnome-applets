@@ -44,6 +44,7 @@ BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	python-devel >= 1:2.4
+BuildRequires:	python-gnome-desktop-devel
 BuildRequires:	python-gnome-devel >= 2.22.0
 BuildRequires:	python-pygtk-devel >= 2:2.12.0
 BuildRequires:	rpm-pythonprov
