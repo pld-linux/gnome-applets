@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.24.2
+Version:	2.24.3.1
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	7bdfde8fd9035c41fd6d42490663c7ba
+# Source0-md5:	9d60394e9feedb754838e5087ddaee97
 Patch0:		%{name}-modemlights.patch
 # check paths in Makefile before removing it!
 Patch1:		%{name}-m4_fix.patch
