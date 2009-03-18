@@ -3,14 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.24.3.1
+Version:	2.26.0
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	9d60394e9feedb754838e5087ddaee97
-Patch0:		%{name}-modemlights.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.26/%{name}-%{version}.tar.bz2
+# Source0-md5:	eed64366b0a1f4032506ac7221ce898a
 # check paths in Makefile before removing it!
 Patch1:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -316,7 +315,6 @@ Aplet śmietnika.
 
 %prep
 %setup -q
-%patch0 -p1
 %patch1 -p1
 
 %build
@@ -333,6 +331,7 @@ Aplet śmietnika.
 	--disable-static \
 	--disable-schemas-install \
 	--enable-mini-commander \
+	--enable-mixer-applet \
 	--with-gstreamer=0.10
 %{__make}
 
@@ -713,14 +712,15 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome-2.0/ui/GNOME_MixerApplet.xml
 %{_sysconfdir}/gconf/schemas/mixer.schemas
 
-%files modemlights
-%defattr(644,root,root,755)
-%doc modemlights/ChangeLog
-%attr(755,root,root) %{_libdir}/modem_applet
-%{_libdir}/bonobo/servers/GNOME_ModemLights.server
-%{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
-%{_datadir}/gnome-applets/builder/modemlights.ui
-%{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
+#does not build
+#%%files modemlights
+#%%defattr(644,root,root,755)
+#%%doc modemlights/ChangeLog
+#%attr(755,root,root) %{_libdir}/modem_applet
+#%{_libdir}/bonobo/servers/GNOME_ModemLights.server
+#%{_datadir}/gnome-2.0/ui/GNOME_ModemLights.xml
+#%{_datadir}/gnome-applets/builder/modemlights.ui
+#%{_iconsdir}/hicolor/*/apps/gnome-modem-monitor-applet.*
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
