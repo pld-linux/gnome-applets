@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.26.1
+Version:	2.27.3
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	ef6c44bba892d28b46cf19fcb2e71d61
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.27/%{name}-%{version}.tar.bz2
+# Source0-md5:	04ce905d42f1e1d3c472b28463443dda
 # check paths in Makefile before removing it!
 Patch0:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -536,7 +536,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files accessx-status -f accessx-status.lang
 %defattr(644,root,root,755)
-%doc accessx-status/ChangeLog
 %attr(755,root,root) %{_libdir}/accessx-status-applet
 %{_libdir}/bonobo/servers/GNOME_AccessxStatusApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_AccessxApplet.xml
@@ -545,7 +544,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files battstat -f battstat.lang
 %defattr(644,root,root,755)
-%doc battstat/ChangeLog
 %attr(755,root,root) %{_libdir}/battstat-applet-2
 %{_libdir}/bonobo/servers/GNOME_BattstatApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_BattstatApplet.xml
@@ -555,7 +553,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files charpicker -f char-palette.lang
 %defattr(644,root,root,755)
-%doc charpick/ChangeLog
 %attr(755,root,root) %{_libdir}/charpick_applet2
 %{_libdir}/bonobo/servers/GNOME_CharpickerApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_CharpickerApplet.xml
@@ -563,7 +560,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files cpufreq -f cpufreq-applet.lang
 %defattr(644,root,root,755)
-%doc cpufreq/ChangeLog
 %attr(755,root,root) %{_bindir}/cpufreq-selector
 %attr(755,root,root) %{_libdir}/cpufreq-applet
 %{_libdir}/bonobo/servers/GNOME_CPUFreqApplet.server
@@ -578,7 +574,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files drivemount -f drivemount.lang
 %defattr(644,root,root,755)
-%doc drivemount/ChangeLog
 %attr(755,root,root) %{_libdir}/drivemount_applet2
 %{_libdir}/bonobo/servers/GNOME_DriveMountApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_DriveMountApplet.xml
@@ -586,7 +581,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files geyes -f geyes.lang
 %defattr(644,root,root,755)
-%doc geyes/ChangeLog
 %attr(755,root,root) %{_libdir}/geyes_applet2
 %{_libdir}/bonobo/servers/GNOME_GeyesApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_GeyesApplet.xml
@@ -596,14 +590,12 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files gweather -f gweather.lang
 %defattr(644,root,root,755)
-%doc gweather/ChangeLog
 %attr(755,root,root) %{_libdir}/gweather-applet-2
 %{_libdir}/bonobo/servers/GNOME_GWeatherApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 
 %files invest -f invest-applet.lang
 %defattr(644,root,root,755)
-%doc invest-applet/ChangeLog
 %attr(755,root,root) %{_bindir}/invest-chart
 %attr(755,root,root) %{_libdir}/invest-applet
 %{_libdir}/bonobo/servers/GNOME_GtikApplet.server
@@ -618,7 +610,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files keyboard -f gswitchit.lang
 %defattr(644,root,root,755)
-%doc gswitchit/ChangeLog
 %attr(755,root,root) %{_libdir}/gnome-keyboard-applet
 %{_libdir}/bonobo/servers/GNOME_KeyboardApplet.server
 %dir %{_datadir}/xmodmap
@@ -672,7 +663,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
-%doc mini-commander/ChangeLog
 %attr(755,root,root) %{_libdir}/mini_commander_applet
 %attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
 %{_libdir}/bonobo/servers/GNOME_MiniCommanderApplet.server
@@ -684,7 +674,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files mixer -f mixer_applet2.lang
 %defattr(644,root,root,755)
-%doc mixer/ChangeLog
 %attr(755,root,root) %{_libdir}/mixer_applet2
 %{_libdir}/bonobo/servers/GNOME_MixerApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_MixerApplet.xml
@@ -692,7 +681,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
-%doc multiload/ChangeLog
 %attr(755,root,root) %{_libdir}/multiload-applet-2
 %{_libdir}/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
 %{_datadir}/gnome-2.0/ui/GNOME_MultiloadApplet.xml
@@ -700,7 +688,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files stickynotes -f stickynotes_applet.lang
 %defattr(644,root,root,755)
-%doc stickynotes/ChangeLog
 %attr(755,root,root) %{_libdir}/stickynotes_applet
 %{_libdir}/bonobo/servers/GNOME_StickyNotesApplet.server
 %{_datadir}/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
@@ -711,7 +698,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 
 %files trash -f trashapplet.lang
 %defattr(644,root,root,755)
-%doc trashapplet/ChangeLog
 %attr(755,root,root) %{_libdir}/trashapplet
 %{_libdir}/bonobo/servers/GNOME_Panel_TrashApplet.server
 %{_datadir}/%{name}/builder/trashapplet-empty-progress.ui
