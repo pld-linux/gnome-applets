@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.27.3
+Version:	2.27.4
 Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.27/%{name}-%{version}.tar.bz2
-# Source0-md5:	04ce905d42f1e1d3c472b28463443dda
+# Source0-md5:	ee2f2c158eda2605ba12ab0283060eb1
 # check paths in Makefile before removing it!
 Patch0:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
