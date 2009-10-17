@@ -567,7 +567,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_bindir}/cpufreq-selector
 %attr(755,root,root) %{_libdir}/cpufreq-applet
 %{_libdir}/bonobo/servers/GNOME_CPUFreqApplet.server
-%{_datadir}/PolicyKit/policy/org.gnome.cpufreqselector.policy
+#%{_datadir}/PolicyKit/policy/org.gnome.cpufreqselector.policy
 %{_datadir}/dbus-1/system-services/org.gnome.CPUFreqSelector.service
 %{_datadir}/gnome-2.0/ui/GNOME_CPUFreqApplet.xml
 %{_datadir}/%{name}/builder/cpufreq-preferences.ui
