@@ -176,7 +176,7 @@ Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	notification-daemon
+Requires:	dbus(org.freedesktop.Notifications)
 Conflicts:	gnome-applets <= 0:2.10.0-5
 
 %description gweather
