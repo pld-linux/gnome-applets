@@ -19,6 +19,8 @@ BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.74
+BuildRequires:	docbook-dtd412-xml
+BuildRequires:	docbook-dtd43-xml
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.20.0
 BuildRequires:	gnome-common >= 2.24.0
@@ -566,7 +568,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_datadir}/gnome-2.0/ui/GNOME_CPUFreqApplet.xml
 %{_datadir}/polkit-1/actions/org.gnome.cpufreqselector.policy
 %{_datadir}/%{name}/builder/cpufreq-preferences.ui
-%{_sysconfdir}/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
+/etc/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
 %{_sysconfdir}/gconf/schemas/cpufreq-applet.schemas
 %{_pixmapsdir}/cpufreq-applet
 %{_iconsdir}/hicolor/*/apps/gnome-cpu-frequency-applet.*
