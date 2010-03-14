@@ -4,7 +4,7 @@ Summary(ru.UTF-8):	Маленькие программы, встраивающи
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.28.0
-Release:	4
+Release:	5
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -12,6 +12,8 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.28/%{name}-%{ver
 # Source0-md5:	9eb00e9dc468d2c5c71b70c9fb2b751c
 # check paths in Makefile before removing it!
 Patch0:		%{name}-m4_fix.patch
+# bg#594797 lp#532911
+Patch1:		%{name}-crash.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
 BuildRequires:	NetworkManager-devel >= 0.7
@@ -362,6 +364,7 @@ Aplet śmietnika.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__gnome_doc_prepare}
