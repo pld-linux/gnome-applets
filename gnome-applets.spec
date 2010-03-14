@@ -81,6 +81,7 @@ z GNOME.
 Summary:	Keyboard Accessibility Status applet
 Summary(pl.UTF-8):	Aplet stanu dostepności klawiatury
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/accessx-status/stable/
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -88,7 +89,10 @@ Suggests:	gnome-control-center >= 2.26.0
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description accessx-status
-Keyboard Accessibility Status applet.
+The Keyboard Accessibility Monitor shows you the status of the
+keyboard accessibility features when these are in use. For example,
+you can see which modifier keys are currently active, and which mouse
+buttons are being pressed via the keyboard.
 
 %description accessx-status -l pl.UTF-8
 Aplet stanu dostepności klawiatury.
@@ -97,13 +101,17 @@ Aplet stanu dostepności klawiatury.
 Summary:	Battery Charge Monitor applet
 Summary(pl.UTF-8):	Aplet monitora stanu naładowania akumulatora
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/battstat/stable/
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description battstat
-Battery Charge Monitor applet.
+The Battery Charge Monitor shows the status of any batteries in your
+laptop computer. The monitor can tell you the capacity remaining both
+visually and as a percentage, as well as offer you an estimate of the
+time remaining based off the current usage rate.
 
 %description battstat -l pl.UTF-8
 Aplet monitora stanu naładowania akumulatora.
@@ -112,6 +120,7 @@ Aplet monitora stanu naładowania akumulatora.
 Summary:	Character Palette applet
 Summary(pl.UTF-8):	Aplet palety znaków
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/char-palette/stable/
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
@@ -119,7 +128,16 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description charpicker
-Character Palette applet.
+The Character Palette provides a convenient way to access characters
+that are not on your keyboard, such as accented characters,
+mathematical symbols, special symbols, and punctuation marks.
+
+You can insert characters from the applet into text strings, for
+example in text documents or at the command line. You can customize
+the contents of the applet to suit your requirements.
+
+Character Palette supports the UTF-8 character encoding so you can use
+the palette to display or copy any Unicode character.
 
 %description charpicker -l pl.UTF-8
 Aplet palety znaków.
@@ -128,6 +146,7 @@ Aplet palety znaków.
 Summary:	CPU Frequency Scaling Monitor applet
 Summary(pl.UTF-8):	Aplet monitora częstotliwości procesora
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/cpufreq-applet/stable/
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
@@ -137,7 +156,8 @@ Obsoletes:	gnome-applet-cpufreq
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description cpufreq
-CPU Frequency Scaling Monitor applet.
+The CPU Frequency Scaling Monitor provides a convenient way to monitor
+the CPU Frequency Scaling for each CPU.
 
 %description cpufreq -l pl.UTF-8
 Aplet monitora częstotliwości procesora.
@@ -146,13 +166,15 @@ Aplet monitora częstotliwości procesora.
 Summary:	Disk Mounter applet
 Summary(pl.UTF-8):	Aplet do montowania dysków
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/drivemount/stable/
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description drivemount
-Disk Mounter applet.
+The Disk Mounter enables you to quickly mount and unmount various
+types of drives and file systems.
 
 %description drivemount -l pl.UTF-8
 Aplet do monotwania dysków.
@@ -161,6 +183,7 @@ Aplet do monotwania dysków.
 Summary:	Geyes applet
 Summary(pl.UTF-8):	Aplet geyes
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/geyes/stable/
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
@@ -168,7 +191,9 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description geyes
-Geyes applet.
+The Geyes applet provides an entertaining way to track the movement of
+the mouse pointer around your screen. The applet is an image of one or
+more eyes that follow the mouse pointer around the screen.
 
 %description geyes -l pl.UTF-8
 Aplet geyes.
@@ -177,6 +202,7 @@ Aplet geyes.
 Summary:	Weather Report applet
 Summary(pl.UTF-8):	Aplet raportu pogodowego
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/gweather/stable/
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -184,7 +210,11 @@ Requires:	dbus(org.freedesktop.Notifications)
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description gweather
-Weather Report applet.
+The Weather Report downloads weather information from the U.S National
+Weather Service (NWS) servers, including the Interactive Weather
+Information Network (IWIN) and other weather services. You can use
+Weather Report to display current weather information and weather
+forecasts on your computer.
 
 %description gweather -l pl.UTF-8
 Aplet raportu pogodowego.
@@ -193,6 +223,7 @@ Aplet raportu pogodowego.
 Summary:	Stock Ticker applet
 Summary(pl.UTF-8):	Aplet wskaźnika giełdowego
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/invest-applet/stable/
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -201,7 +232,8 @@ Obsoletes:	gnome-applets-gtik
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description invest
-Stock Ticker applet.
+The Invest GNOME panel applet downloads current stock quotes from
+Yahoo! Finance and displays the quotes in a drop-down list.
 
 %description invest -l pl.UTF-8
 Aplet wskaźnika giełdowego.
@@ -210,13 +242,18 @@ Aplet wskaźnika giełdowego.
 Summary:	Keyboard Indicator applet
 Summary(pl.UTF-8):	Aplet wskaźnika klawiatury
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/gswitchit/stable/
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description keyboard
-Keyboard Indicator applet.
+Keyboard Indicator indicates the active keyboard group. The applet
+shows you which group you are currently using. Aside from the standard
+applet popup menu functions, the Keyboard Indicator applet popup menu
+allows you to launch the applet Preferences tool and to switch between
+language groups.
 
 %description keyboard -l pl.UTF-8
 Aplet wskaźnika klawiatury.
@@ -225,13 +262,15 @@ Aplet wskaźnika klawiatury.
 Summary:	Command Line applet
 Summary(pl.UTF-8):	Aplet wiersza poleceń
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/command-line/stable/
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description minicommander
-Command Line applet.
+The Command Line provides a command line that you can use within any
+panel on the desktop.
 
 %description minicommander -l pl.UTF-8
 Aplet wiersza poleceń.
@@ -240,6 +279,7 @@ Aplet wiersza poleceń.
 Summary:	Volume Control applet
 Summary(pl.UTF-8):	Aplet regulacji głośności
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/mixer_applet2/stable/
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
@@ -250,7 +290,12 @@ Suggests:	gnome-media-volume-control >= 2.22.0
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description mixer
-Volume Control applet.
+The Volume Control applet enables you to control the sound volume on
+your system. The applet icon changes depending on the volume level
+that you select. For example, if you select a low volume level, the
+icon displays one sound wave emanating from the speaker in the applet
+icon. As you increase the volume, the icon changes to display more
+sound waves.
 
 %description mixer -l pl.UTF-8
 Aplet regulacji głośności.
@@ -259,6 +304,7 @@ Aplet regulacji głośności.
 Summary:	System Monitor applet
 Summary(pl.UTF-8):	Aplet monitora systemu
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/multiload/stable/
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -266,7 +312,8 @@ Suggests:	gnome-system-monitor >= 2.24.0
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description multiload
-System Monitor applet.
+The System Monitor displays system load information in graphical
+format in a panel.
 
 %description multiload -l pl.UTF-8
 Aplet monitora systemu.
@@ -275,6 +322,7 @@ Aplet monitora systemu.
 Summary:	Sticky Notes applet
 Summary(pl.UTF-8):	Aplet notatek
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/stickynotes_applet/stable/
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
@@ -283,7 +331,12 @@ Obsoletes:	gnotes_applet
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description stickynotes
-Sticky Notes applet.
+The Sticky Notes panel application enables you to create, view, and
+manage sticky notes on your desktop. You can edit the title, contents,
+dimensions, and style of sticky notes. When the panel is restarted,
+for example when you log out and log in again, all sticky notes are
+saved and reopened in the same position with the same dimensions and
+style.
 
 %description stickynotes -l pl.UTF-8
 Aplet notatek.
@@ -292,12 +345,16 @@ Aplet notatek.
 Summary:	Trash applet
 Summary(pl.UTF-8):	Aplet śmietnika
 Group:		X11/Applications
+URL:		http://library.gnome.org/users/trashapplet/stable/
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description trash
-Trash applet.
+The Panel Trash applet lets you manage your Trash from the panel.
+
+The trash on your panel acts identically to the trash on your desktop,
+however it is useful because your panels are always visible.
 
 %description trash -l pl.UTF-8
 Aplet śmietnika.
