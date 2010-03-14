@@ -1,0 +1,4 @@
+- find localized gdb mini flags pngs in smart way
+- simplify %post
+- add missing keyprop and xmodmap files
+- release 2
