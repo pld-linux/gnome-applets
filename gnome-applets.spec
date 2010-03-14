@@ -85,7 +85,7 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Suggests:	gnome-control-center >= 2.26.0
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description accessx-status
 Keyboard Accessibility Status applet.
@@ -100,7 +100,7 @@ Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description battstat
 Battery Charge Monitor applet.
@@ -116,7 +116,7 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description charpicker
 Character Palette applet.
@@ -134,7 +134,7 @@ Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	polkit-gnome >= 0.92
 Obsoletes:	gnome-applet-cpufreq
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description cpufreq
 CPU Frequency Scaling Monitor applet.
@@ -149,7 +149,7 @@ Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description drivemount
 Disk Mounter applet.
@@ -165,7 +165,7 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description geyes
 Geyes applet.
@@ -181,7 +181,7 @@ Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	dbus(org.freedesktop.Notifications)
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description gweather
 Weather Report applet.
@@ -198,7 +198,7 @@ Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	python-gnome-extras-egg >= 2.14.2
 Obsoletes:	gnome-applets-gtik
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description invest
 Stock Ticker applet.
@@ -213,7 +213,7 @@ Group:		X11/Applications
 Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description keyboard
 Keyboard Indicator applet.
@@ -228,7 +228,7 @@ Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description minicommander
 Command Line applet.
@@ -247,7 +247,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gstreamer-audio-effects-base >= 0.10.10
 Requires:	gstreamer-audiosink
 Suggests:	gnome-media-volume-control >= 2.22.0
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description mixer
 Volume Control applet.
@@ -263,7 +263,7 @@ Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Suggests:	gnome-system-monitor >= 2.24.0
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description multiload
 System Monitor applet.
@@ -280,7 +280,7 @@ Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Obsoletes:	gnotes_applet
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description stickynotes
 Sticky Notes applet.
@@ -294,7 +294,7 @@ Summary(pl.UTF-8):	Aplet śmietnika
 Group:		X11/Applications
 Requires(post,postun):	scrollkeeper
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets <= 0:2.10.0-5
+Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description trash
 Trash applet.
