@@ -1,0 +1,4 @@
+- splited into subpackages
+- made few %banner's
+- use new faster rpm's GConf automation
+- rel. 6
