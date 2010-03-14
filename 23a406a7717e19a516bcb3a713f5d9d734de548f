@@ -1,0 +1,4 @@
+- fixed %preun and %postun
+- run scrollkeeper-update in quiet mode
+- added O: gnome-applet-cpufreq to cpufreq subpackage
+- rel 7
