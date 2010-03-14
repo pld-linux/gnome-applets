@@ -1,0 +1,4 @@
+- updated to 1.103.0
+- fixed source0 url
+- fixed gettextize and intltoolinze calls
+- new %doc
