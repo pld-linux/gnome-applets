@@ -1,0 +1,3 @@
+- merged from DEVEL and updated to 2.8.0
+- removed locale-names patch
+- remove no locale in %install
