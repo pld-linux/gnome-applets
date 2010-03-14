@@ -1,0 +1,1 @@
+- removed %{_datadir}/applets{,/*} dirs from package - they're in gnome-core; release 2
