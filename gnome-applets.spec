@@ -3,17 +3,15 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.28.0
-Release:	5
+Version:	2.30.0
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	9eb00e9dc468d2c5c71b70c9fb2b751c
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	2afcbedc10b1a0e8072ac4eefdc8d770
 # check paths in Makefile before removing it!
 Patch0:		%{name}-m4_fix.patch
-# bg#594797 lp#532911
-Patch1:		%{name}-crash.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
 BuildRequires:	NetworkManager-devel >= 0.7
@@ -58,6 +56,7 @@ BuildRequires:	scrollkeeper >= 0.3.11-4
 Requires:	gnome-icon-theme >= 2.26.0
 Requires:	gnome-panel >= 2.26.0
 Requires:	hicolor-icon-theme
+Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-modemlights
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
@@ -240,26 +239,6 @@ Yahoo! Finance and displays the quotes in a drop-down list.
 %description invest -l pl.UTF-8
 Aplet wskaźnika giełdowego.
 
-%package keyboard
-Summary:	Keyboard Indicator applet
-Summary(pl.UTF-8):	Aplet wskaźnika klawiatury
-Group:		X11/Applications
-URL:		http://library.gnome.org/users/gswitchit/stable/
-Requires(post,postun):	gtk+2
-Requires(post,postun):	scrollkeeper
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Conflicts:	gnome-applets < 0:2.10.0-6
-
-%description keyboard
-Keyboard Indicator indicates the active keyboard group. The applet
-shows you which group you are currently using. Aside from the standard
-applet popup menu functions, the Keyboard Indicator applet popup menu
-allows you to launch the applet Preferences tool and to switch between
-language groups.
-
-%description keyboard -l pl.UTF-8
-Aplet wskaźnika klawiatury.
-
 %package minicommander
 Summary:	Command Line applet
 Summary(pl.UTF-8):	Aplet wiersza poleceń
@@ -364,7 +343,9 @@ Aplet śmietnika.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+
+sed -i -e 's/^en@shaw//' po/LINGUAS
+rm -f po/en@shaw.po
 
 %build
 %{__gnome_doc_prepare}
@@ -397,6 +378,9 @@ rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/LC_MESSAGES/*.mo
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 
+# keyboard applet has been removed
+rm -rf $RPM_BUILD_ROOT%{_datadir}/xmodmap
+
 %find_lang %{name}-2.0
 %find_lang accessx-status --with-gnome --with-omf
 %find_lang battstat --with-gnome --with-omf
@@ -405,7 +389,6 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 %find_lang cpufreq-applet --with-gnome --with-omf
 %find_lang drivemount --with-gnome --with-omf
 %find_lang geyes --with-gnome --with-omf
-%find_lang gswitchit --with-gnome --with-omf
 %find_lang gweather --with-gnome --with-omf
 %find_lang invest-applet --with-gnome --with-omf
 %find_lang mixer_applet2 --with-gnome --with-omf
@@ -493,14 +476,6 @@ rm -rf $RPM_BUILD_ROOT
 %update_icon_cache hicolor
 
 %postun invest
-%scrollkeeper_update_postun
-%update_icon_cache hicolor
-
-%post keyboard
-%scrollkeeper_update_post
-%update_icon_cache hicolor
-
-%postun keyboard
 %scrollkeeper_update_postun
 %update_icon_cache hicolor
 
@@ -668,59 +643,6 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %{_iconsdir}/hicolor/*/apps/invest-applet.*
 %dir %{py_sitedir}/invest
 %{py_sitedir}/invest/*.py[co]
-
-%files keyboard -f gswitchit.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/gnome-keyboard-applet
-%{_libdir}/bonobo/servers/GNOME_KeyboardApplet.server
-%dir %{_datadir}/xmodmap
-%{_datadir}/xmodmap/base.xml
-%lang(hy) %{_datadir}/xmodmap/xmodmap.am*
-%lang(ar) %{_datadir}/xmodmap/xmodmap.ar*
-%lang(fr,nl,wa) %{_datadir}/xmodmap/xmodmap.be*
-%lang(bg) %{_datadir}/xmodmap/xmodmap.bg*
-%lang(pt_BR) %{_datadir}/xmodmap/xmodmap.br*
-%lang(de,fr) %{_datadir}/xmodmap/xmodmap.ch*
-%lang(cs) %{_datadir}/xmodmap/xmodmap.cz*
-%lang(de) %{_datadir}/xmodmap/xmodmap.de*
-%lang(da) %{_datadir}/xmodmap/xmodmap.dk*
-%{_datadir}/xmodmap/xmodmap.dvorak
-%lang(et) %{_datadir}/xmodmap/xmodmap.ee*
-%lang(es) %{_datadir}/xmodmap/xmodmap.es*
-%lang(fi) %{_datadir}/xmodmap/xmodmap.fi*
-%lang(fr) %{_datadir}/xmodmap/xmodmap.fr*
-%{_datadir}/xmodmap/xmodmap.gb*
-%lang(ka) %{_datadir}/xmodmap/xmodmap.ge*
-%lang(el) %{_datadir}/xmodmap/xmodmap.gr*
-%lang(hu) %{_datadir}/xmodmap/xmodmap.hu*
-%lang(he,yi) %{_datadir}/xmodmap/xmodmap.il*
-%lang(is) %{_datadir}/xmodmap/xmodmap.is*
-%lang(it) %{_datadir}/xmodmap/xmodmap.it*
-%lang(ja) %{_datadir}/xmodmap/xmodmap.jp*
-%lang(ko) %{_datadir}/xmodmap/xmodmap.kr*
-%lang(lo) %{_datadir}/xmodmap/xmodmap.la*
-%lang(lt) %{_datadir}/xmodmap/xmodmap.lt*
-%lang(mk) %{_datadir}/xmodmap/xmodmap.mk*
-%lang(mn) %{_datadir}/xmodmap/xmodmap.mn*
-%lang(nl) %{_datadir}/xmodmap/xmodmap.nl*
-%lang(nn,no) %{_datadir}/xmodmap/xmodmap.no*
-%lang(pl) %{_datadir}/xmodmap/xmodmap.pl*
-%lang(pt) %{_datadir}/xmodmap/xmodmap.pt*
-%lang(fr) %{_datadir}/xmodmap/xmodmap.qc*
-%lang(ro) %{_datadir}/xmodmap/xmodmap.ro*
-%lang(ru) %{_datadir}/xmodmap/xmodmap.ru*
-%lang(sv) %{_datadir}/xmodmap/xmodmap.se*
-%lang(fr) %{_datadir}/xmodmap/xmodmap.sf*
-%lang(de) %{_datadir}/xmodmap/xmodmap.sg*
-%lang(sl) %{_datadir}/xmodmap/xmodmap.si*
-%lang(sk) %{_datadir}/xmodmap/xmodmap.sk*
-%lang(th) %{_datadir}/xmodmap/xmodmap.th*
-%lang(tr) %{_datadir}/xmodmap/xmodmap.tr*
-%lang(uk) %{_datadir}/xmodmap/xmodmap.uk*
-%{_datadir}/xmodmap/xmodmap.us*
-%lang(hr,mk,sl,sr) %{_datadir}/xmodmap/xmodmap.yu*
-%{_datadir}/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
-%{_datadir}/%{name}/builder/gswitchit*.ui
 
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
