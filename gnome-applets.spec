@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	2.30.0
-Release:	2
+Version:	2.32.0
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.30/%{name}-%{version}.tar.bz2
-# Source0-md5:	2afcbedc10b1a0e8072ac4eefdc8d770
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.32/%{name}-%{version}.tar.bz2
+# Source0-md5:	d2fb61c5cfdba1f87302d972bc62dd81
 # check paths in Makefile before removing it!
 Patch0:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -22,7 +22,7 @@ BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	docbook-dtd43-xml
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.20.0
+BuildRequires:	glib2-devel >= 1:2.22.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-desktop-devel >= 2.26.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
@@ -30,7 +30,7 @@ BuildRequires:	gnome-icon-theme >= 2.26.0
 BuildRequires:	gnome-panel-devel >= 2.26.0
 BuildRequires:	gnome-settings-daemon-devel >= 2.26.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
-BuildRequires:	gtk+2-devel >= 2:2.16.0
+BuildRequires:	gtk+2-devel >= 2:2.20.0
 BuildRequires:	gucharmap-devel >= 2.26.0
 BuildRequires:	hal-devel >= 0.5.10
 BuildRequires:	intltool >= 0.40.0
@@ -537,6 +537,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/null_applet
 %{_libdir}/bonobo/servers/GNOME_CDPlayerApplet.server
+%{_libdir}/bonobo/servers/GNOME_KeyboardApplet.server
 %{_libdir}/bonobo/servers/GNOME_MailcheckApplet_Factory.server
 %{_libdir}/bonobo/servers/GNOME_NullApplet_Factory.server
 %{_libdir}/bonobo/servers/GNOME_Panel_WirelessApplet.server
@@ -573,16 +574,18 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %files accessx-status -f accessx-status.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/accessx-status-applet
-%{_libdir}/bonobo/servers/GNOME_AccessxStatusApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_AccessxApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.AccessxStatusAppletFactory.service
+%{_datadir}/gnome-2.0/ui/accessx-status-applet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.AccessxStatusApplet.panel-applet
 %{_pixmapsdir}/accessx-status-applet
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
 
 %files battstat -f battstat.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/battstat-applet-2
-%{_libdir}/bonobo/servers/GNOME_BattstatApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_BattstatApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.BattstatAppletFactory.service
+%{_datadir}/gnome-2.0/ui/battstat-applet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.BattstatApplet.panel-applet
 %{_datadir}/%{name}/builder/battstat_applet.ui
 %{_sysconfdir}/gconf/schemas/battstat.schemas
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
@@ -590,17 +593,19 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %files charpicker -f char-palette.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/charpick_applet2
-%{_libdir}/bonobo/servers/GNOME_CharpickerApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_CharpickerApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.CharpickerAppletFactory.service
+%{_datadir}/gnome-2.0/ui/charpick-applet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.CharpickerApplet.panel-applet
 %{_sysconfdir}/gconf/schemas/charpick.schemas
 
 %files cpufreq -f cpufreq-applet.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/cpufreq-selector
 %attr(755,root,root) %{_libdir}/cpufreq-applet
-%{_libdir}/bonobo/servers/GNOME_CPUFreqApplet.server
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.CPUFreqAppletFactory.service
 %{_datadir}/dbus-1/system-services/org.gnome.CPUFreqSelector.service
-%{_datadir}/gnome-2.0/ui/GNOME_CPUFreqApplet.xml
+%{_datadir}/gnome-2.0/ui/cpufreq-applet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.CPUFreqApplet.panel-applet
 %{_datadir}/polkit-1/actions/org.gnome.cpufreqselector.policy
 %{_datadir}/%{name}/builder/cpufreq-preferences.ui
 /etc/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
@@ -611,24 +616,27 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %files drivemount -f drivemount.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/drivemount_applet2
-%{_libdir}/bonobo/servers/GNOME_DriveMountApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_DriveMountApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.DriveMountAppletFactory.service
+%{_datadir}/gnome-2.0/ui/drivemount-applet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.DriveMountApplet.panel-applet
 %{_sysconfdir}/gconf/schemas/drivemount.schemas
 
 %files geyes -f geyes.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/geyes_applet2
-%{_libdir}/bonobo/servers/GNOME_GeyesApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_GeyesApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.GeyesAppletFactory.service
+%{_datadir}/gnome-2.0/ui/geyes-applet-menu.xml
 %{_datadir}/%{name}/geyes
+%{_datadir}/gnome-panel/applets/org.gnome.applets.GeyesApplet.panel-applet
 %{_iconsdir}/hicolor/*/apps/gnome-eyes-applet.*
 %{_sysconfdir}/gconf/schemas/geyes.schemas
 
 %files gweather -f gweather.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gweather-applet-2
-%{_libdir}/bonobo/servers/GNOME_GWeatherApplet_Factory.server
-%{_datadir}/gnome-2.0/ui/GNOME_GWeatherApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.GWeatherAppletFactory.service
+%{_datadir}/gnome-2.0/ui/gweather-applet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.GWeatherApplet.panel-applet
 
 %files invest -f invest-applet.lang
 %defattr(644,root,root,755)
@@ -648,9 +656,10 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/mini_commander_applet
 %attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
-%{_libdir}/bonobo/servers/GNOME_MiniCommanderApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_MiniCommanderApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.MiniCommanderAppletFactory.service
+%{_datadir}/gnome-2.0/ui/mini-commander-applet-menu.xml
 %{_datadir}/%{name}/builder/mini-commander.ui
+%{_datadir}/gnome-panel/applets/org.gnome.applets.MiniCommanderApplet.panel-applet
 %{_iconsdir}/hicolor/48x48/apps/gnome-mini-commander.png
 %{_sysconfdir}/gconf/schemas/mini-commander-global.schemas
 %{_sysconfdir}/gconf/schemas/mini-commander.schemas
@@ -658,23 +667,26 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %files mixer -f mixer_applet2.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/mixer_applet2
-%{_libdir}/bonobo/servers/GNOME_MixerApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_MixerApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.MixerAppletFactory.service
+%{_datadir}/gnome-2.0/ui/mixer-applet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.MixerApplet.panel-applet
 %{_sysconfdir}/gconf/schemas/mixer.schemas
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/multiload-applet-2
-%{_libdir}/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
-%{_datadir}/gnome-2.0/ui/GNOME_MultiloadApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.MultiLoadAppletFactory.service
+%{_datadir}/gnome-2.0/ui/multiload-applet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.MultiLoadApplet.panel-applet
 %{_sysconfdir}/gconf/schemas/multiload.schemas
 
 %files stickynotes -f stickynotes_applet.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/stickynotes_applet
-%{_libdir}/bonobo/servers/GNOME_StickyNotesApplet.server
-%{_datadir}/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.StickyNotesAppletFactory.service
+%{_datadir}/gnome-2.0/ui/stickynotes-applet-menu.xml
 %{_datadir}/%{name}/builder/stickynotes.ui
+%{_datadir}/gnome-panel/applets/org.gnome.applets.StickyNotesApplet.panel-applet
 %{_pixmapsdir}/stickynotes
 %{_iconsdir}/hicolor/*/apps/gnome-sticky-notes-applet.*
 %{_sysconfdir}/gconf/schemas/stickynotes.schemas
@@ -682,6 +694,7 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %files trash -f trashapplet.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/trashapplet
-%{_libdir}/bonobo/servers/GNOME_Panel_TrashApplet.server
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.TrashAppletFactory.service
 %{_datadir}/%{name}/builder/trashapplet-empty-progress.ui
-%{_datadir}/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
+%{_datadir}/gnome-2.0/ui/trashapplet-menu.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.TrashApplet.panel-applet
