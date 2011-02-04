@@ -4,7 +4,7 @@ Summary(ru.UTF-8):	Маленькие программы, встраивающи
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	2.32.1.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -53,9 +53,10 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
+Requires(post,postun):	gtk-update-icon-cache
+Requires(post,postun):	hicolor-icon-theme
 Requires:	gnome-icon-theme >= 2.26.0
 Requires:	gnome-panel >= 2.26.0
-Requires:	hicolor-icon-theme
 Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-modemlights
 # sr@Latn vs. sr@latin
