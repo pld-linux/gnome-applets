@@ -97,7 +97,10 @@ you can see which modifier keys are currently active, and which mouse
 buttons are being pressed via the keyboard.
 
 %description accessx-status -l pl.UTF-8
-Aplet stanu dostepności klawiatury.
+Aplet monitora dostępności klawiatury pokazuje stan funkcji
+zwiększających dostępność klawiatury, kiedy są włączone. Pozwala
+zobaczyć m.in. które klawisze modyfikatorów są aktywne albo które
+przyciski myszy są wciskane z poziomu klawiatury.
 
 %package battstat
 Summary:	Battery Charge Monitor applet
@@ -116,7 +119,10 @@ visually and as a percentage, as well as offer you an estimate of the
 time remaining based off the current usage rate.
 
 %description battstat -l pl.UTF-8
-Aplet monitora stanu naładowania akumulatora.
+Aplet monitora stanu naładowania akumulatora pokazuje stan wszelkich
+baterii w laptopie. Monitor informuje o pozostałej pojemności zarówno
+w postaci graficznej, jak i procentowej, a także podaje przybliżony
+pozostały czas pracy przy założeniu bieżącego użycia prądu.
 
 %package charpicker
 Summary:	Character Palette applet
@@ -142,7 +148,16 @@ Character Palette supports the UTF-8 character encoding so you can use
 the palette to display or copy any Unicode character.
 
 %description charpicker -l pl.UTF-8
-Aplet palety znaków.
+Aplet palety znaków udostępnia wygodną metodę wprowadzania znaków nie
+istniejących na klawiaturze, takich jak znaki akcentowane, symbole
+matematyczne, symbole specjalne i znaki przestankowe.
+
+Przy pomocy apletu można wprowadzać znaki do łańcuchów tekstowych, na
+przykład w dokumentach tekstowych lub w linii poleceń. Zawartość
+apletu można dostosowywać do własnych wymagań.
+
+Paleta znaków obsługuje kodowanie znaków UTF-8, więc można jej używać
+do wyświetlania lub kopiowania dowolnych znaków unikodowych.
 
 %package cpufreq
 Summary:	CPU Frequency Scaling Monitor applet
@@ -162,7 +177,8 @@ The CPU Frequency Scaling Monitor provides a convenient way to monitor
 the CPU Frequency Scaling for each CPU.
 
 %description cpufreq -l pl.UTF-8
-Aplet monitora częstotliwości procesora.
+Aplet monitora częstotliwości procesora umożliwia wygodne
+monitorowanie częstotliwości dla każdego procesora.
 
 %package drivemount
 Summary:	Disk Mounter applet
@@ -179,11 +195,12 @@ The Disk Mounter enables you to quickly mount and unmount various
 types of drives and file systems.
 
 %description drivemount -l pl.UTF-8
-Aplet do monotwania dysków.
+Aplet do montowania dysków, pozwalający szybko montować i odmontowywać
+różne rodzaje dysków i systemów plików.
 
 %package geyes
-Summary:	Geyes applet
-Summary(pl.UTF-8):	Aplet geyes
+Summary:	Geyes applet - tracking the mouse pointer
+Summary(pl.UTF-8):	Aplet geyes - śledzenie wskaźnika myszy
 Group:		X11/Applications
 URL:		http://library.gnome.org/users/geyes/stable/
 Requires(post,postun):	gtk+2
@@ -198,7 +215,9 @@ the mouse pointer around your screen. The applet is an image of one or
 more eyes that follow the mouse pointer around the screen.
 
 %description geyes -l pl.UTF-8
-Aplet geyes.
+Aplet geyes to zabawny sposób śledzenia ruchu wskaźnika myszy po
+ekranie. Aplet jest obrazem jednego lub większej liczby oczu
+podążających za wskaźnikiem myszy.
 
 %package gweather
 Summary:	Weather Report applet
@@ -212,14 +231,18 @@ Requires:	dbus(org.freedesktop.Notifications)
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description gweather
-The Weather Report downloads weather information from the U.S National
-Weather Service (NWS) servers, including the Interactive Weather
-Information Network (IWIN) and other weather services. You can use
-Weather Report to display current weather information and weather
+The Weather Report downloads weather information from the U.S.
+National Weather Service (NWS) servers, including the Interactive
+Weather Information Network (IWIN) and other weather services. You can
+use Weather Report to display current weather information and weather
 forecasts on your computer.
 
 %description gweather -l pl.UTF-8
-Aplet raportu pogodowego.
+Aplet raportu pogodowego ściąga informacje pogodowe z serwerów U.S.
+National Weather Service (NWS), wraz z siecią Interactive Weather
+Information Network (IWIN) oraz innych serwisów pogodowych. Apletu
+można używać do wyświetlania aktualnych informacji pogodowych oraz
+prognoz.
 
 %package invest
 Summary:	Stock Ticker applet
@@ -238,7 +261,8 @@ The Invest GNOME panel applet downloads current stock quotes from
 Yahoo! Finance and displays the quotes in a drop-down list.
 
 %description invest -l pl.UTF-8
-Aplet wskaźnika giełdowego.
+Aplet wskaźnika giełdowego, ściągający aktualne notowania z serwisu
+Yahoo! Finance i wyświetlające je na rozwijanej liście.
 
 %package minicommander
 Summary:	Command Line applet
@@ -255,7 +279,8 @@ The Command Line provides a command line that you can use within any
 panel on the desktop.
 
 %description minicommander -l pl.UTF-8
-Aplet wiersza poleceń.
+Aplet wiersza poleceń udostępnia linię poleceń z poziomu każdego
+panelu na pulpicie.
 
 %package mixer
 Summary:	Volume Control applet
@@ -280,7 +305,11 @@ icon. As you increase the volume, the icon changes to display more
 sound waves.
 
 %description mixer -l pl.UTF-8
-Aplet regulacji głośności.
+Aplet regulacji głośności pozwala sterować głośnością dźwięku. Ikona
+apletu zmienia się w zależności od wybranego poziomu głośności. Na
+przykład przy niskiej głośności pokazuje pojedynczą falę wydobywającą
+się z głośnika; w miarę zwiększania głośności ikona wyświetla coraz
+więcej fal.
 
 %package multiload
 Summary:	System Monitor applet
@@ -298,7 +327,8 @@ The System Monitor displays system load information in graphical
 format in a panel.
 
 %description multiload -l pl.UTF-8
-Aplet monitora systemu.
+Aplet monitora systemu wyświetla w panelu informacje o obciążeniu
+systemu w postaci graficznej.
 
 %package stickynotes
 Summary:	Sticky Notes applet
@@ -321,7 +351,12 @@ saved and reopened in the same position with the same dimensions and
 style.
 
 %description stickynotes -l pl.UTF-8
-Aplet notatek.
+Aplet notatek pozwala na tworzenie, oglądanie i zarządzanie
+przyczepianymi notatkami na pulpicie. Pozwala modyfikować tytuł,
+treść, wymiary i styl notatek. Przy restarcie panelu, na przykład
+przy wylogowaniu i ponownym zalogowaniu, wszystkie notatki są
+zapisywane, a następnie otwierane ponownie w tym samym miejscu, z tymi
+samymi wymiarami i stylem.
 
 %package trash
 Summary:	Trash applet
@@ -339,14 +374,14 @@ The trash on your panel acts identically to the trash on your desktop,
 however it is useful because your panels are always visible.
 
 %description trash -l pl.UTF-8
-Aplet śmietnika.
+Aplet śmietnika pozwala na zarządzanie śmietnikiem z poziomu panelu.
+
+Śmietnik w panelu zachowuje się tak samo, jak śmietnik na pulpicie,
+ale jest przydatny o tyle, że panele są zawsze widoczne.
 
 %prep
 %setup -q
 %patch0 -p1
-
-sed -i -e 's/^en@shaw//' po/LINGUAS
-rm -f po/en@shaw.po
 
 %build
 %{__gnome_doc_prepare}
@@ -373,14 +408,15 @@ rm -rf $RPM_BUILD_ROOT
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 \
 	pythondir=%{py_sitedir}
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/libgweather.la
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgweather.la
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
 
+# es_ES is more complete copy
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/LC_MESSAGES/*.mo
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
 
 # keyboard applet has been removed
-rm -rf $RPM_BUILD_ROOT%{_datadir}/xmodmap
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/xmodmap
 
 %find_lang %{name}-2.0
 %find_lang accessx-status --with-gnome --with-omf
