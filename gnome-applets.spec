@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/2.91/%{name}-%{ver
 # Source0-md5:	a02e75fe13f29a4863d122c26e3f58b6
 # check paths in Makefile before removing it!
 Patch0:		%{name}-m4_fix.patch
+Patch1:		%{name}-gnome-panel3.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
 BuildRequires:	NetworkManager-devel >= 0.7
@@ -382,6 +383,7 @@ ale jest przydatny o tyle, że panele są zawsze widoczne.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__gnome_doc_prepare}
