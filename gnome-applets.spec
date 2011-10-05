@@ -4,7 +4,7 @@ Summary(ru.UTF-8):	Маленькие программы, встраивающи
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	3.2.0
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -16,7 +16,7 @@ URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
 BuildRequires:	NetworkManager-devel >= 0.7
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.8
+BuildRequires:	automake >= 1:1.9
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	docbook-dtd412-xml
@@ -24,39 +24,35 @@ BuildRequires:	docbook-dtd43-xml
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.22.0
 BuildRequires:	gnome-common >= 2.24.0
-BuildRequires:	gnome-desktop-devel >= 2.26.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
-BuildRequires:	gnome-icon-theme >= 2.26.0
-BuildRequires:	gnome-panel-devel >= 2.32.0
-BuildRequires:	gnome-settings-daemon-devel >= 2.26.0
+BuildRequires:	gnome-icon-theme >= 3.0.0
+BuildRequires:	gnome-panel-devel >= 3.2.0
+BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
-BuildRequires:	gtk+2-devel >= 2:2.20.0
-BuildRequires:	gucharmap-devel >= 2.26.0
-BuildRequires:	hal-devel >= 0.5.10
+BuildRequires:	gtk+3-devel
+BuildRequires:	gucharmap-devel >= 3.0.0
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libgnomekbd-devel >= 2.24.0
 BuildRequires:	libgtop-devel >= 1:2.22.0
-BuildRequires:	libgweather-devel >= 2.26.0
-BuildRequires:	libnotify-devel >= 0.4.4
+BuildRequires:	libgweather-devel >= 3.0.0
+BuildRequires:	libnotify-devel >= 0.7
 BuildRequires:	libtool
-BuildRequires:	libwnck-devel >= 2.26.0
-BuildRequires:	libxklavier-devel >= 4.0
+BuildRequires:	libwnck-devel >= 3.0.0
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	polkit-devel >= 0.92
 BuildRequires:	python-devel >= 1:2.4
-BuildRequires:	python-gnome-desktop-devel
-BuildRequires:	python-gnome-devel >= 2.22.0
-BuildRequires:	python-pygtk-devel >= 2:2.14.0
+BuildRequires:	python-pygobject-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.11-4
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	hicolor-icon-theme
-Requires:	gnome-icon-theme >= 2.26.0
-Requires:	gnome-panel >= 2.26.0
+Requires:	gnome-icon-theme >= 3.0.0
+Requires:	gnome-panel >= 3.2.0
+Requires:	hicolor-icon-theme
 Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-modemlights
 # sr@Latn vs. sr@latin
@@ -252,7 +248,12 @@ URL:		http://library.gnome.org/users/invest-applet/stable/
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	python-gnome-extras-egg >= 2.14.2
+Requires:	GConf2-libs
+Requires:	gnome-panel-libs >= 3.2.0
+Requires:	gobject-introspection
+Requires:	python-dbus
+Requires:	python-pygobject
+Requires:	python-pygtk-gtk
 Obsoletes:	gnome-applets-gtik
 Conflicts:	gnome-applets < 0:2.10.0-6
 
@@ -291,9 +292,9 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	gnome-control-center >= 3.2.0
 Requires:	gstreamer-audio-effects-base >= 0.10.10
 Requires:	gstreamer-audiosink
-Suggests:	gnome-media-volume-control >= 2.22.0
 Conflicts:	gnome-applets < 0:2.10.0-6
 
 %description mixer
@@ -353,10 +354,10 @@ style.
 %description stickynotes -l pl.UTF-8
 Aplet notatek pozwala na tworzenie, oglądanie i zarządzanie
 przyczepianymi notatkami na pulpicie. Pozwala modyfikować tytuł,
-treść, wymiary i styl notatek. Przy restarcie panelu, na przykład
-przy wylogowaniu i ponownym zalogowaniu, wszystkie notatki są
-zapisywane, a następnie otwierane ponownie w tym samym miejscu, z tymi
-samymi wymiarami i stylem.
+treść, wymiary i styl notatek. Przy restarcie panelu, na przykład przy
+wylogowaniu i ponownym zalogowaniu, wszystkie notatki są zapisywane, a
+następnie otwierane ponownie w tym samym miejscu, z tymi samymi
+wymiarami i stylem.
 
 %package trash
 Summary:	Trash applet
@@ -385,15 +386,17 @@ ale jest przydatny o tyle, że panele są zawsze widoczne.
 
 %build
 %{__gnome_doc_prepare}
+%{__gnome_doc_common}
 %{__libtoolize}
 %{__glib_gettextize}
 %{__intltoolize}
 %{__aclocal} -I m4
-%{__autoheader}
-%{__gnome_doc_common}
-%{__automake}
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
+	--disable-silent-rules \
+	--without-hal \
 	--disable-static \
 	--disable-schemas-install \
 	--enable-mini-commander \
@@ -408,7 +411,6 @@ rm -rf $RPM_BUILD_ROOT
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 \
 	pythondir=%{py_sitedir}
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgweather.la
 %{__rm} $RPM_BUILD_ROOT%{py_sitedir}/invest/*.py
 
 # es_ES is more complete copy
@@ -418,7 +420,7 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/LC_MESSAGES/*.mo
 # keyboard applet has been removed
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/xmodmap
 
-%find_lang %{name}-2.0
+%find_lang %{name}-3.0
 %find_lang accessx-status --with-gnome --with-omf
 %find_lang battstat --with-gnome --with-omf
 %find_lang char-palette --with-gnome --with-omf
@@ -569,18 +571,16 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %postun trash
 %scrollkeeper_update_postun
 
-%files -f %{name}-2.0.lang
+%files -f %{name}-3.0.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/null_applet
-%{_libdir}/bonobo/servers/GNOME_CDPlayerApplet.server
-%{_libdir}/bonobo/servers/GNOME_KeyboardApplet.server
-%{_libdir}/bonobo/servers/GNOME_MailcheckApplet_Factory.server
-%{_libdir}/bonobo/servers/GNOME_NullApplet_Factory.server
-%{_libdir}/bonobo/servers/GNOME_Panel_WirelessApplet.server
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.NullAppletFactory.service
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.NullApplet.panel-applet
 %dir %{_libdir}/%{name}
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/builder
+%dir %{_datadir}/%{name}/ui
 %lang(es_CL) %dir %{_datadir}/locale/es_CL
 %lang(es_CL) %dir %{_datadir}/locale/es_CL/LC_MESSAGES
 %lang(es_CO) %dir %{_datadir}/locale/es_CO
@@ -612,8 +612,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/accessx-status-applet
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.AccessxStatusAppletFactory.service
-%{_datadir}/gnome-2.0/ui/accessx-status-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.AccessxStatusApplet.panel-applet
+%{_datadir}/gnome-applets/ui/accessx-status-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.AccessxStatusApplet.panel-applet
 %{_pixmapsdir}/accessx-status-applet
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
 
@@ -621,8 +621,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/battstat-applet-2
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.BattstatAppletFactory.service
-%{_datadir}/gnome-2.0/ui/battstat-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.BattstatApplet.panel-applet
+%{_datadir}/gnome-applets/ui/battstat-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.BattstatApplet.panel-applet
 %{_datadir}/%{name}/builder/battstat_applet.ui
 %{_sysconfdir}/gconf/schemas/battstat.schemas
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
@@ -631,8 +631,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/charpick_applet2
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.CharpickerAppletFactory.service
-%{_datadir}/gnome-2.0/ui/charpick-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.CharpickerApplet.panel-applet
+%{_datadir}/gnome-applets/ui/charpick-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.CharpickerApplet.panel-applet
 %{_sysconfdir}/gconf/schemas/charpick.schemas
 
 %files cpufreq -f cpufreq-applet.lang
@@ -641,8 +641,8 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/cpufreq-applet
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.CPUFreqAppletFactory.service
 %{_datadir}/dbus-1/system-services/org.gnome.CPUFreqSelector.service
-%{_datadir}/gnome-2.0/ui/cpufreq-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.CPUFreqApplet.panel-applet
+%{_datadir}/gnome-applets/ui/cpufreq-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.CPUFreqApplet.panel-applet
 %{_datadir}/polkit-1/actions/org.gnome.cpufreqselector.policy
 %{_datadir}/%{name}/builder/cpufreq-preferences.ui
 /etc/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
@@ -654,17 +654,17 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/drivemount_applet2
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.DriveMountAppletFactory.service
-%{_datadir}/gnome-2.0/ui/drivemount-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.DriveMountApplet.panel-applet
+%{_datadir}/gnome-applets/ui/drivemount-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.DriveMountApplet.panel-applet
 %{_sysconfdir}/gconf/schemas/drivemount.schemas
 
 %files geyes -f geyes.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/geyes_applet2
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.GeyesAppletFactory.service
-%{_datadir}/gnome-2.0/ui/geyes-applet-menu.xml
+%{_datadir}/gnome-applets/ui/geyes-applet-menu.xml
 %{_datadir}/%{name}/geyes
-%{_datadir}/gnome-panel/applets/org.gnome.applets.GeyesApplet.panel-applet
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.GeyesApplet.panel-applet
 %{_iconsdir}/hicolor/*/apps/gnome-eyes-applet.*
 %{_sysconfdir}/gconf/schemas/geyes.schemas
 
@@ -672,16 +672,16 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gweather-applet-2
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.GWeatherAppletFactory.service
-%{_datadir}/gnome-2.0/ui/gweather-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.GWeatherApplet.panel-applet
+%{_datadir}/gnome-applets/ui/gweather-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.GWeatherApplet.panel-applet
 
 %files invest -f invest-applet.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/invest-chart
 %attr(755,root,root) %{_libdir}/invest-applet
-%{_libdir}/bonobo/servers/GNOME_GtikApplet.server
-%{_libdir}/bonobo/servers/Invest_Applet.server
-%{_datadir}/gnome-2.0/ui/Invest_Applet.xml
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.InvestAppletFactory.service
+%{_datadir}/gnome-applets/ui/invest-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.InvestApplet.panel-applet
 %{_datadir}/%{name}/builder/financialchart.ui
 %{_datadir}/%{name}/builder/prefs-dialog.ui
 %{_datadir}/%{name}/invest-applet
@@ -694,9 +694,9 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/mini_commander_applet
 %attr(755,root,root) %{_libdir}/%{name}/mc-install-default-macros
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.MiniCommanderAppletFactory.service
-%{_datadir}/gnome-2.0/ui/mini-commander-applet-menu.xml
+%{_datadir}/gnome-applets/ui/mini-commander-applet-menu.xml
 %{_datadir}/%{name}/builder/mini-commander.ui
-%{_datadir}/gnome-panel/applets/org.gnome.applets.MiniCommanderApplet.panel-applet
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.MiniCommanderApplet.panel-applet
 %{_iconsdir}/hicolor/48x48/apps/gnome-mini-commander.png
 %{_sysconfdir}/gconf/schemas/mini-commander-global.schemas
 %{_sysconfdir}/gconf/schemas/mini-commander.schemas
@@ -705,25 +705,25 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/mixer_applet2
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.MixerAppletFactory.service
-%{_datadir}/gnome-2.0/ui/mixer-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.MixerApplet.panel-applet
+%{_datadir}/gnome-applets/ui/mixer-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.MixerApplet.panel-applet
 %{_sysconfdir}/gconf/schemas/mixer.schemas
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/multiload-applet-2
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.MultiLoadAppletFactory.service
-%{_datadir}/gnome-2.0/ui/multiload-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.MultiLoadApplet.panel-applet
+%{_datadir}/gnome-applets/ui/multiload-applet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.MultiLoadApplet.panel-applet
 %{_sysconfdir}/gconf/schemas/multiload.schemas
 
 %files stickynotes -f stickynotes_applet.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/stickynotes_applet
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.StickyNotesAppletFactory.service
-%{_datadir}/gnome-2.0/ui/stickynotes-applet-menu.xml
+%{_datadir}/gnome-applets/ui/stickynotes-applet-menu.xml
 %{_datadir}/%{name}/builder/stickynotes.ui
-%{_datadir}/gnome-panel/applets/org.gnome.applets.StickyNotesApplet.panel-applet
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.StickyNotesApplet.panel-applet
 %{_pixmapsdir}/stickynotes
 %{_iconsdir}/hicolor/*/apps/gnome-sticky-notes-applet.*
 %{_sysconfdir}/gconf/schemas/stickynotes.schemas
@@ -733,5 +733,5 @@ GCONF_CONFIG_SOURCE="`%{_bindir}/gconftool-2 --get-default-source`" %{_libdir}/%
 %attr(755,root,root) %{_libdir}/trashapplet
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.TrashAppletFactory.service
 %{_datadir}/%{name}/builder/trashapplet-empty-progress.ui
-%{_datadir}/gnome-2.0/ui/trashapplet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.TrashApplet.panel-applet
+%{_datadir}/gnome-applets/ui/trashapplet-menu.xml
+%{_datadir}/gnome-panel/4.0/applets/org.gnome.applets.TrashApplet.panel-applet
