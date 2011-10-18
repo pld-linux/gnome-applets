@@ -26,11 +26,11 @@ BuildRequires:	glib2-devel >= 1:2.22.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gnome-icon-theme >= 3.0.0
-BuildRequires:	gnome-panel-devel >= 3.2.0
+BuildRequires:	gnome-panel-devel >= 3.2.1
 BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
 BuildRequires:	gstreamer-plugins-base-devel >= 0.10.10
 BuildRequires:	gtk+3-devel
-BuildRequires:	gucharmap-devel >= 3.0.0
+BuildRequires:	gucharmap-devel >= 3.2.1
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libgtop-devel >= 1:2.22.0
 BuildRequires:	libgweather-devel >= 3.0.0
