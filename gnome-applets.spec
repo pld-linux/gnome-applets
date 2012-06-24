@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.2.1
-Release:	2
+Version:	3.4.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	bce6d49f3bb2caff8d91c78599ffcfd0
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.4/%{name}-%{version}.tar.xz
+# Source0-md5:	82a4946d10257239214cf18edeeb34c1
 # check paths in Makefile before removing it!
 Patch0:		%{name}-m4_fix.patch
 URL:		http://www.gnome.org/
@@ -416,9 +416,6 @@ rm -rf $RPM_BUILD_ROOT
 # es_ES is more complete copy
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/es{_ES,}/LC_MESSAGES/*.mo
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
-
-# keyboard applet has been removed
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/xmodmap
 
 %find_lang %{name}-3.0
 %find_lang accessx-status --with-gnome --with-omf
