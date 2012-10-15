@@ -1,0 +1,11 @@
+--- gnome-applets-3.5.92/mini-commander/src/preferences.c~	2012-09-19 23:46:37.000000000 +0200
++++ gnome-applets-3.5.92/mini-commander/src/preferences.c	2012-10-15 16:55:11.066420081 +0200
+@@ -415,7 +415,7 @@
+ 					           GTK_DIALOG_DESTROY_WITH_PARENT,
+ 					           GTK_MESSAGE_ERROR,
+ 					           GTK_BUTTONS_OK,
+-					           error_message);
++					           "%s", error_message);
+ 
+ 	    g_signal_connect (error_dialog, "response", G_CALLBACK (gtk_widget_destroy), NULL);
+ 	    gtk_window_set_resizable (GTK_WINDOW (error_dialog), FALSE);
