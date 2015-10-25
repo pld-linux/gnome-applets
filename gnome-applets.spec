@@ -5,22 +5,20 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.16.1
-Release:	2
+Version:	3.18.1
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	c4736735244bec56d838174f6d398eb6
-# check paths in Makefile before removing it!
-Patch0:		%{name}-m4_fix.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	dbabd755d154e70e0b6323713556b1b4
 URL:		http://www.gnome.org/
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} arm mips ppc sh
 BuildRequires:	apmd-devel
 %endif
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.11
+BuildRequires:	automake >= 1:1.13
 BuildRequires:	cpufrequtils-devel >= 0.3
 BuildRequires:	dbus-devel >= 1.1.2
 BuildRequires:	dbus-glib-devel >= 0.74
@@ -29,16 +27,16 @@ BuildRequires:	docbook-dtd43-xml
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= %{glib2_ver}
 BuildRequires:	gnome-common >= 2.24.0
-BuildRequires:	gnome-panel-devel >= 3.16.1
+BuildRequires:	gnome-panel-devel >= 3.18.0
 BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	gucharmap-devel >= 3.2.1
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libgtop-devel >= 1:2.22.0
-BuildRequires:	libgweather-devel >= 3.7.3
+BuildRequires:	libgweather-devel >= 3.17.1
 BuildRequires:	libiw-devel >= 28
 BuildRequires:	libnotify-devel >= 0.7
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	libwnck-devel >= 3.0.0
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
@@ -50,12 +48,13 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	tracker-devel >= 1.0
 BuildRequires:	upower-devel >= 0.9.4
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	adwaita-icon-theme >= 3.14.0
-Requires:	gnome-panel >= 3.16.1
+Requires:	gnome-panel >= 3.18.0
 Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-mixer
 # sr@Latn vs. sr@latin
@@ -125,6 +124,22 @@ Aplet monitora stanu naładowania akumulatora pokazuje stan wszelkich
 baterii w laptopie. Monitor informuje o pozostałej pojemności zarówno
 w postaci graficznej, jak i procentowej, a także podaje przybliżony
 pozostały czas pracy przy założeniu bieżącego użycia prądu.
+
+%package brightness
+Summary:	Brightness applet
+Summary(pl.UTF-8):	Aplet jasności
+Group:		X11/Applications
+Requires(post,postun):	gtk-update-icon-cache
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	glib2 >= %{glib2_ver}
+Requires:	gtk+3 >= %{gtk3_ver}
+Requires:	hicolor-icon-theme
+
+%description brightness
+Brightness applet adjusts laptop panel brightness.
+
+%description brightness -l pl.UTF-8
+Aplet jasności dopasowuje jasność wyświetlacza laptopa.
 
 %package charpicker
 Summary:	Character Palette applet
@@ -233,7 +248,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	dbus(org.freedesktop.Notifications)
 Requires:	glib2 >= %{glib2_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
-Requires:	libgweather >= 3.7.3
+Requires:	libgweather >= 3.17.1
 Requires:	libnotify >= 0.7
 
 %description gweather
@@ -249,6 +264,23 @@ National Weather Service (NWS), wraz z siecią Interactive Weather
 Information Network (IWIN) oraz innych serwisów pogodowych. Apletu
 można używać do wyświetlania aktualnych informacji pogodowych oraz
 prognoz.
+
+%package inhibit
+Summary:	Inhibit applet
+Summary(pl.UTF-8):	Aplet wyłączania
+Group:		X11/Applications
+Requires(post,postun):	gtk-update-icon-cache
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	glib2 >= %{glib2_ver}
+Requires:	gtk+3 >= %{gtk3_ver}
+Requires:	hicolor-icon-theme
+
+%description inhibit
+Inhibit applet allows user to inhibit automatic power saving.
+
+%description inhibit -l pl.UTF-8
+Aplet wyłączania pozwala użytkownikowi na wyłączenie automatycznego
+oszczędzania zasilania.
 
 %package invest
 Summary:	Stock Ticker applet
@@ -351,6 +383,22 @@ occurs on a specified network device.
 Netspeed to mały aplet pokazujący, jak duży ruch występuje na
 określonym urządzeniu sieciowym.
 
+%package search
+Summary:	Tracker Search Bar
+Summary(pl.UTF-8):	Pasek wyszukiwania Tracker
+Group:		X11/Applications
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	glib2 >= %{glib2_ver}
+Requires:	gtk+3 >= %{gtk3_ver}
+Requires:	tracker >= 1.0
+
+%description search
+Tracker Search Bar allows to find your data quickly using Tracker.
+
+%description search -l pl.UTF-8
+Pasek wyszukiwania pozwala na szybkie wyszukiwanie danych za pomocą
+usługi Tracker.
+
 %package stickynotes
 Summary:	Sticky Notes applet
 Summary(pl.UTF-8):	Aplet notatek
@@ -433,7 +481,6 @@ wyszarzanie nieaktywnych ikon.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -445,7 +492,6 @@ wyszarzanie nieaktywnych ikon.
 %{__automake}
 %configure \
 	--disable-silent-rules \
-	--disable-static \
 	--enable-mini-commander
 
 %{__make}
@@ -455,6 +501,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-applets/5.0/lib*.la
 
 # es is more recent
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
@@ -489,6 +537,12 @@ rm -rf $RPM_BUILD_ROOT
 %postun battstat
 %glib_compile_schemas
 
+%post brightness
+%update_icon_cache hicolor
+
+%postun brightness
+%update_icon_cache hicolor
+
 %post charpicker
 %glib_compile_schemas
 
@@ -516,6 +570,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun gweather
 %glib_compile_schemas
+
+%post inhibit
+%update_icon_cache hicolor
+
+%postun inhibit
+%update_icon_cache hicolor
 
 %post invest
 %update_icon_cache hicolor
@@ -577,9 +637,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc accessx-status/AUTHORS
 %attr(755,root,root) %{_libexecdir}/accessx-status-applet
 %{_datadir}/dbus-1/services/org.gnome.panel.applet.AccessxStatusAppletFactory.service
+%{_datadir}/gnome-applets/accessx-status-applet
 %{_datadir}/gnome-applets/ui/accessx-status-applet-menu.xml
 %{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.AccessxStatusApplet.panel-applet
-%{_pixmapsdir}/accessx-status-applet
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
 
 %files battstat -f battstat.lang
@@ -591,6 +651,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-applets/ui/battstat-applet-menu.xml
 %{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.BattstatApplet.panel-applet
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
+
+%files brightness
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gnome-brightness-applet
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.BrightnessAppletFactory.service
+%{_datadir}/gnome-applets/ui/brightness-applet-menu.xml
+%{_datadir}/gnome-panel/5.0/applets/org.gnome.BrightnessApplet.panel-applet
+%{_datadir}/icons/hicolor/*x*/apps/gnome-brightness-applet.png
+%{_datadir}/icons/hicolor/scalable/apps/gnome-brightness-applet.svg
 
 %files charpicker -f char-palette.lang
 %defattr(644,root,root,755)
@@ -610,11 +679,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.cpufreq.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.cpufreq.gschema.xml
 %{_datadir}/gnome-applets/builder/cpufreq-preferences.ui
+%{_datadir}/gnome-applets/cpufreq-applet
 %{_datadir}/gnome-applets/ui/cpufreq-applet-menu.xml
 %{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.CPUFreqApplet.panel-applet
 %{_datadir}/polkit-1/actions/org.gnome.cpufreqselector.policy
 /etc/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
-%{_pixmapsdir}/cpufreq-applet
 %{_iconsdir}/hicolor/*x*/apps/gnome-cpu-frequency-applet.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-cpu-frequency-applet.svg
 
@@ -646,6 +715,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.gweather.gschema.xml
 %{_datadir}/gnome-applets/ui/gweather-applet-menu.xml
 %{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.GWeatherApplet.panel-applet
+
+%files inhibit
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/gnome-inhibit-applet
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.InhibitAppletFactory.service
+%{_datadir}/gnome-applets/ui/inhibit-applet-menu.xml
+%{_datadir}/gnome-panel/5.0/applets/org.gnome.InhibitApplet.panel-applet
+%{_datadir}/icons/hicolor/*x*/apps/gnome-inhibit-applet.png
+%{_datadir}/icons/hicolor/scalable/apps/gnome-inhibit-applet.svg
 
 %files invest -f invest-applet.lang
 %defattr(644,root,root,755)
@@ -705,6 +783,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/16x16/devices/netspeed-*.png
 %{_iconsdir}/hicolor/24x24/status/netspeed-*.png
 
+%files search
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libexecdir}/tracker-search-bar
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.SearchBarFactory.service
+%{_datadir}/gnome-applets/ui/tracker-search-bar-menu.xml
+%{_datadir}/gnome-applets/ui/tracker-search-bar.ui
+%{_datadir}/gnome-panel/5.0/applets/org.gnome.panel.SearchBar.panel-applet
+
 %files stickynotes -f stickynotes_applet.lang
 %defattr(644,root,root,755)
 %doc stickynotes/{README,TODO}
@@ -730,9 +816,8 @@ rm -rf $RPM_BUILD_ROOT
 %files windowpicker
 %defattr(644,root,root,755)
 %doc windowpicker/{AUTHORS,TODO}
-%attr(755,root,root) %{_libexecdir}/window-picker-applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.WindowPickerFactory.service
+%dir %{_libdir}/gnome-applets
+%dir %{_libdir}/gnome-applets/5.0
+%attr(755,root,root) %{_libdir}/gnome-applets/5.0/libwindow-picker-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-picker-applet.gschema.xml
-%{_datadir}/gnome-applets/ui/menu.xml
-%{_datadir}/gnome-applets/ui/window-picker-about-logo.png
 %{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.WindowPicker.panel-applet
