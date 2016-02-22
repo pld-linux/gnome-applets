@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.18.1
-Release:	2
+Version:	3.18.2
+Release:	1
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	dbabd755d154e70e0b6323713556b1b4
+# Source0-md5:	5d4e85d820abefd4298a7470f1234682
 URL:		http://www.gnome.org/
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} arm mips ppc sh
@@ -19,7 +19,7 @@ BuildRequires:	apmd-devel
 %endif
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.13
-BuildRequires:	cpufrequtils-devel >= 0.3
+BuildRequires:	cpupowerutils-devel
 BuildRequires:	dbus-devel >= 1.1.2
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	docbook-dtd412-xml
@@ -492,7 +492,8 @@ wyszarzanie nieaktywnych ikon.
 %{__automake}
 %configure \
 	--disable-silent-rules \
-	--enable-mini-commander
+	--enable-mini-commander \
+	--with-cpufreq-lib=cpupower
 
 %{__make}
 
