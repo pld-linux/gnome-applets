@@ -6,7 +6,7 @@ Summary(ru.UTF-8):	Маленькие программы, встраивающи
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	3.18.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
@@ -493,7 +493,8 @@ wyszarzanie nieaktywnych ikon.
 %configure \
 	--disable-silent-rules \
 	--enable-mini-commander \
-	--with-cpufreq-lib=cpupower
+	--with-cpufreq-lib=cpupower \
+	--with-pythondir=%{py3_sitescriptdir}
 
 %{__make}
 
