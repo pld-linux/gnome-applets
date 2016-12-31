@@ -1,0 +1,19 @@
+--- gnome-applets-3.18.2/cpufreq/src/cpufreq-monitor-libcpufreq.c~	2016-02-05 18:35:32.000000000 +0100
++++ gnome-applets-3.18.2/cpufreq/src/cpufreq-monitor-libcpufreq.c	2016-12-31 19:22:46.174263177 +0100
+@@ -23,6 +23,7 @@
+ 
+ #include <stdlib.h>
+ #include <cpufreq.h>
++#include <cpuidle.h>
+ 
+ #include "cpufreq-monitor-libcpufreq.h"
+ #include "cpufreq-utils.h"
+@@ -110,7 +111,7 @@ cpufreq_monitor_libcpufreq_run (CPUFreqM
+ 		/* Check whether it failed because
+ 		 * cpu is not online.
+ 		 */
+-		if (!cpufreq_cpu_exists (cpu)) {
++		if (cpupower_is_cpu_online (cpu)) {
+ 			g_object_set (G_OBJECT (monitor), "online", FALSE, NULL);
+ 			return TRUE;
+ 		}

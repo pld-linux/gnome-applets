@@ -6,12 +6,13 @@ Summary(ru.UTF-8):	Маленькие программы, встраивающи
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
 Version:	3.18.2
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL v2, FDL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.18/%{name}-%{version}.tar.xz
 # Source0-md5:	5d4e85d820abefd4298a7470f1234682
+Patch0:		%{name}-build.patch
 URL:		http://www.gnome.org/
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} arm mips ppc sh
@@ -481,6 +482,7 @@ wyszarzanie nieaktywnych ikon.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
