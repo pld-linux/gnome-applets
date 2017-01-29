@@ -13,7 +13,7 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.22/%{name}-%{version}.tar.xz
 # Source0-md5:	c7f744747195b27d38524f8350ed7ac7
 Patch0:		%{name}-build.patch
-URL:		http://www.gnome.org/
+URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} arm mips ppc sh
 BuildRequires:	apmd-devel
