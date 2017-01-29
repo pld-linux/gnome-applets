@@ -1,17 +1,17 @@
 %define	glib2_ver	1:2.44.0
-%define	gtk3_ver	3.15.2
+%define	gtk3_ver	3.20.0
 Summary:	Small applications which embed themselves in the GNOME panel
 Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.18.2
-Release:	4
+Version:	3.22.0
+Release:	1
 Epoch:		1
-License:	GPL v2, FDL
+License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	5d4e85d820abefd4298a7470f1234682
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	c7f744747195b27d38524f8350ed7ac7
 Patch0:		%{name}-build.patch
 URL:		http://www.gnome.org/
 BuildRequires:	adwaita-icon-theme >= 3.14.0
@@ -25,10 +25,12 @@ BuildRequires:	dbus-devel >= 1.1.2
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	docbook-dtd43-xml
+BuildRequires:	docbook-utils
+BuildRequires:	gdk-pixbuf2-devel >= 2
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= %{glib2_ver}
 BuildRequires:	gnome-common >= 2.24.0
-BuildRequires:	gnome-panel-devel >= 3.18.0
+BuildRequires:	gnome-panel-devel >= 3.22.0
 BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	gucharmap-devel >= 3.2.1
@@ -38,14 +40,11 @@ BuildRequires:	libgweather-devel >= 3.17.1
 BuildRequires:	libiw-devel >= 28
 BuildRequires:	libnotify-devel >= 0.7
 BuildRequires:	libtool >= 2:2
-BuildRequires:	libwnck-devel >= 3.0.0
+BuildRequires:	libwnck-devel >= 3.14.1
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	polkit-devel >= 0.92
-BuildRequires:	python3-devel >= 1:3.2
-BuildRequires:	python3-pygobject3-devel >= 3.0
-BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
@@ -55,7 +54,7 @@ BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	adwaita-icon-theme >= 3.14.0
-Requires:	gnome-panel >= 3.18.0
+Requires:	gnome-panel >= 3.22.0
 Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-mixer
 # sr@Latn vs. sr@latin
@@ -177,6 +176,21 @@ apletu można dostosowywać do własnych wymagań.
 Paleta znaków obsługuje kodowanie znaków UTF-8, więc można jej używać
 do wyświetlania lub kopiowania dowolnych znaków unikodowych.
 
+%package command
+Summary:	Command applet - show the output of a command
+Summary(pl.UTF-8):	Aplet polecenia, pokazujący wyjście z polecenia
+Group:		X11/Applications
+Requires(post,postun):	glib2 >= %{glib2_ver}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	glib2 >= %{glib2_ver}
+Requires:	gtk+3 >= %{gtk3_ver}
+
+%description command
+Command applet shows the output of a command.
+
+%description command -l pl.UTF-8
+Aplet polecenia pokazuje wyjście z podanego polecenia.
+
 %package cpufreq
 Summary:	CPU Frequency Scaling Monitor applet
 Summary(pl.UTF-8):	Aplet monitora częstotliwości procesora
@@ -294,8 +308,6 @@ Requires:	glib2 >= %{glib2_ver}
 Requires:	gobject-introspection
 Requires:	gtk+3 >= %{gtk3_ver}
 Requires:	hicolor-icon-theme
-Requires:	python3-dbus
-Requires:	python3-pygobject3 >= 3.0
 Obsoletes:	gnome-applets-gtik
 
 %description invest
@@ -411,7 +423,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2 >= %{glib2_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
 Requires:	hicolor-icon-theme
-Requires:	libwnck >= 3.0.0
+Requires:	libwnck >= 3.14.1
 Requires:	libxml2 >= 1:2.6.30
 Obsoletes:	gnotes_applet
 
@@ -430,6 +442,24 @@ treść, wymiary i styl notatek. Przy restarcie panelu, na przykład przy
 wylogowaniu i ponownym zalogowaniu, wszystkie notatki są zapisywane, a
 następnie otwierane ponownie w tym samym miejscu, z tymi samymi
 wymiarami i stylem.
+
+%package timer
+Summary:	Timer applet
+Summary(pl.UTF-8):	Aplet minutnika
+Group:		X11/Applications
+Requires(post,postun):	glib2 >= %{glib2_ver}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	glib2 >= %{glib2_ver}
+Requires:	gtk+3 >= %{gtk3_ver}
+Requires:	libnotify >= 0.7
+
+%description timer
+Timer applet starts a timer and shows notification when it is
+finished.
+
+%description timer -l pl.UTF-8
+Aplet minutnika - pozwala uruchomić odliczanie czasu i powiadomić o
+jego ukończeniu.
 
 %package trash
 Summary:	Trash applet
@@ -460,7 +490,7 @@ Requires(post,postun):	glib2 >= %{glib2_ver}
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2 >= %{glib2_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
-Requires:	libwnck >= 3.0.0
+Requires:	libwnck >= 3.14.1
 
 %description windowpicker
 Window Picker is a port of the initial window-picker-applet made by
@@ -495,8 +525,7 @@ wyszarzanie nieaktywnych ikon.
 %configure \
 	--disable-silent-rules \
 	--enable-mini-commander \
-	--with-cpufreq-lib=cpupower \
-	--with-pythondir=%{py3_sitescriptdir}
+	--with-cpufreq-lib=cpupower
 
 %{__make}
 
@@ -506,7 +535,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-applets/5.0/lib*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-applets/lib*.la
 
 # es is more recent
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
@@ -553,6 +582,12 @@ rm -rf $RPM_BUILD_ROOT
 %postun charpicker
 %glib_compile_schemas
 
+%post command
+%glib_compile_schemas
+
+%postun command
+%glib_compile_schemas
+
 %post cpufreq
 %glib_compile_schemas
 %update_icon_cache hicolor
@@ -582,9 +617,11 @@ rm -rf $RPM_BUILD_ROOT
 %update_icon_cache hicolor
 
 %post invest
+%glib_compile_schemas
 %update_icon_cache hicolor
 
 %postun invest
+%glib_compile_schemas
 %update_icon_cache hicolor
 
 %post minicommander
@@ -623,6 +660,12 @@ rm -rf $RPM_BUILD_ROOT
 %glib_compile_schemas
 %update_icon_cache hicolor
 
+%post timer
+%glib_compile_schemas
+
+%postun timer
+%glib_compile_schemas
+
 %post windowpicker
 %glib_compile_schemas
 
@@ -632,60 +675,82 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}-3.0.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
+%dir %{_libdir}/gnome-applets
 %dir %{_datadir}/gnome-applets
 %dir %{_datadir}/gnome-applets/builder
+%dir %{_datadir}/gnome-applets/icons
+%dir %{_datadir}/gnome-applets/icons/hicolor
+%dir %{_datadir}/gnome-applets/icons/hicolor/16x16
+%dir %{_datadir}/gnome-applets/icons/hicolor/16x16/status
+%dir %{_datadir}/gnome-applets/icons/hicolor/22x22
+%dir %{_datadir}/gnome-applets/icons/hicolor/22x22/status
+%dir %{_datadir}/gnome-applets/icons/hicolor/24x24
+%dir %{_datadir}/gnome-applets/icons/hicolor/24x24/status
+%dir %{_datadir}/gnome-applets/icons/hicolor/32x32
+%dir %{_datadir}/gnome-applets/icons/hicolor/32x32/status
+%dir %{_datadir}/gnome-applets/icons/hicolor/48x48
+%dir %{_datadir}/gnome-applets/icons/hicolor/48x48/status
+%dir %{_datadir}/gnome-applets/icons/hicolor/scalable
+%dir %{_datadir}/gnome-applets/icons/hicolor/scalable/status
 %dir %{_datadir}/gnome-applets/ui
 
 %files accessx-status -f accessx-status.lang
 %defattr(644,root,root,755)
 %doc accessx-status/AUTHORS
-%attr(755,root,root) %{_libexecdir}/accessx-status-applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.AccessxStatusAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libaccessx-status-applet.so
 %{_datadir}/gnome-applets/accessx-status-applet
 %{_datadir}/gnome-applets/ui/accessx-status-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.AccessxStatusApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.AccessxStatusApplet.panel-applet
 %{_iconsdir}/hicolor/48x48/apps/ax-applet.png
 
 %files battstat -f battstat.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/battstat-applet-2
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.BattstatAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libbattery-status-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.battstat.gschema.xml
 %{_datadir}/gnome-applets/builder/battstat_applet.ui
 %{_datadir}/gnome-applets/ui/battstat-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.BattstatApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.BattstatApplet.panel-applet
 %{_sysconfdir}/sound/events/battstat_applet.soundlist
 
 %files brightness
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/gnome-brightness-applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.BrightnessAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libbrightness-applet.so
+%{_datadir}/gnome-applets/icons/hicolor/16x16/status/gpm-brightness-lcd*.png
+%{_datadir}/gnome-applets/icons/hicolor/22x22/status/gpm-brightness-lcd*.png
+%{_datadir}/gnome-applets/icons/hicolor/24x24/status/gpm-brightness-lcd*.png
+%{_datadir}/gnome-applets/icons/hicolor/32x32/status/gpm-brightness-lcd*.png
+%{_datadir}/gnome-applets/icons/hicolor/48x48/status/gpm-brightness-lcd*.png
+%{_datadir}/gnome-applets/icons/hicolor/scalable/status/gpm-brightness-lcd*.svg
 %{_datadir}/gnome-applets/ui/brightness-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.BrightnessApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.BrightnessApplet.panel-applet
 %{_datadir}/icons/hicolor/*x*/apps/gnome-brightness-applet.png
 %{_datadir}/icons/hicolor/scalable/apps/gnome-brightness-applet.svg
 
 %files charpicker -f char-palette.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/charpick_applet2
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.CharpickerAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libcharacter-picker-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.charpick.gschema.xml
 %{_datadir}/gnome-applets/ui/charpick-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.CharpickerApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.CharpickerApplet.panel-applet
+
+%files command
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/gnome-applets/libcommand-applet.so
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.command.gschema.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.CommandApplet.panel-applet
 
 %files cpufreq -f cpufreq-applet.lang
 %defattr(644,root,root,755)
 %doc cpufreq/{AUTHORS,README}
 %attr(755,root,root) %{_bindir}/cpufreq-selector
-%attr(755,root,root) %{_libexecdir}/cpufreq-applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.CPUFreqAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libcpu-frequency-applet.so
 %{_datadir}/dbus-1/system-services/org.gnome.CPUFreqSelector.service
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.cpufreq.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.cpufreq.gschema.xml
 %{_datadir}/gnome-applets/builder/cpufreq-preferences.ui
 %{_datadir}/gnome-applets/cpufreq-applet
 %{_datadir}/gnome-applets/ui/cpufreq-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.CPUFreqApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.CPUFreqApplet.panel-applet
 %{_datadir}/polkit-1/actions/org.gnome.cpufreqselector.policy
 /etc/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
 %{_iconsdir}/hicolor/*x*/apps/gnome-cpu-frequency-applet.png
@@ -694,94 +759,96 @@ rm -rf $RPM_BUILD_ROOT
 %files drivemount -f drivemount.lang
 %defattr(644,root,root,755)
 %doc drivemount/AUTHORS
-%attr(755,root,root) %{_libexecdir}/drivemount_applet2
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.DriveMountAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libdrive-mount-applet.so
 %{_datadir}/gnome-applets/ui/drivemount-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.DriveMountApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.DriveMountApplet.panel-applet
 
 %files geyes -f geyes.lang
 %defattr(644,root,root,755)
 %doc geyes/{AUTHORS,README.themes}
-%attr(755,root,root) %{_libexecdir}/geyes_applet2
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.GeyesAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libgeyes-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.geyes.gschema.xml
 %{_datadir}/gnome-applets/geyes
 %{_datadir}/gnome-applets/ui/geyes-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.GeyesApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.GeyesApplet.panel-applet
 %{_iconsdir}/hicolor/*x*/apps/gnome-eyes-applet.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-eyes-applet.svg
 
 %files gweather -f gweather.lang
 %defattr(644,root,root,755)
 %doc gweather/AUTHORS
-%attr(755,root,root) %{_libexecdir}/gweather-applet-2
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.GWeatherAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libgweather-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.gweather.gschema.xml
 %{_datadir}/gnome-applets/ui/gweather-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.GWeatherApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.GWeatherApplet.panel-applet
 
 %files inhibit
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/gnome-inhibit-applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.InhibitAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libinhibit-applet.so
+%{_datadir}/gnome-applets/icons/hicolor/16x16/status/gpm-inhibit*.png
+%{_datadir}/gnome-applets/icons/hicolor/16x16/status/gpm-uninhibit.png
+%{_datadir}/gnome-applets/icons/hicolor/22x22/status/gpm-inhibit*.png
+%{_datadir}/gnome-applets/icons/hicolor/22x22/status/gpm-uninhibit.png
+%{_datadir}/gnome-applets/icons/hicolor/24x24/status/gpm-inhibit*.png
+%{_datadir}/gnome-applets/icons/hicolor/24x24/status/gpm-uninhibit.png
+%{_datadir}/gnome-applets/icons/hicolor/32x32/status/gpm-inhibit*.png
+%{_datadir}/gnome-applets/icons/hicolor/32x32/status/gpm-uninhibit.png
+%{_datadir}/gnome-applets/icons/hicolor/48x48/status/gpm-inhibit*.png
+%{_datadir}/gnome-applets/icons/hicolor/48x48/status/gpm-uninhibit.png
+%{_datadir}/gnome-applets/icons/hicolor/scalable/status/gpm-inhibit*.svg
+%{_datadir}/gnome-applets/icons/hicolor/scalable/status/gpm-uninhibit.svg
 %{_datadir}/gnome-applets/ui/inhibit-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.InhibitApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.InhibitApplet.panel-applet
 %{_datadir}/icons/hicolor/*x*/apps/gnome-inhibit-applet.png
 %{_datadir}/icons/hicolor/scalable/apps/gnome-inhibit-applet.svg
 
 %files invest -f invest-applet.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/invest-chart
-%attr(755,root,root) %{_libexecdir}/invest-applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.InvestAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libinvest-applet.so
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.invest.gschema.xml
 %{_datadir}/gnome-applets/builder/financialchart.ui
 %{_datadir}/gnome-applets/builder/prefs-dialog.ui
 %{_datadir}/gnome-applets/invest-applet
 %{_datadir}/gnome-applets/ui/invest-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.InvestApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.InvestApplet.panel-applet
 %{_iconsdir}/hicolor/*x*/apps/invest-applet.png
 %{_iconsdir}/hicolor/scalable/apps/invest-applet.svg
-%{py3_sitescriptdir}/invest
 
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
 %doc mini-commander/{AUTHORS,README,TODO}
-%attr(755,root,root) %{_libdir}/mini_commander_applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.MiniCommanderAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libmini-commander-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.mini-commander.gschema.xml
 %{_datadir}/gnome-applets/builder/mini-commander.ui
 %{_datadir}/gnome-applets/ui/mini-commander-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.MiniCommanderApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.MiniCommanderApplet.panel-applet
 %{_iconsdir}/hicolor/48x48/apps/gnome-mini-commander.png
 
 %files modemlights
 %defattr(644,root,root,755)
-%doc modemlights/AUTHORS
-%attr(755,root,root) %{_libexecdir}/modem_applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.ModemAppletFactory.service
+%doc modem-lights/AUTHORS
+%attr(755,root,root) %{_libdir}/gnome-applets/libmodem-lights-applet.so
 %{_datadir}/gnome-applets/builder/modemlights.ui
 %{_datadir}/gnome-applets/ui/modem-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.ModemApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.ModemApplet.panel-applet
 %{_iconsdir}/hicolor/*x*/apps/gnome-modem-monitor-applet.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-modem-monitor-applet.svg
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
 %doc multiload/AUTHORS
-%attr(755,root,root) %{_libexecdir}/multiload-applet-2
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.MultiLoadAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libmultiload-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.multiload.gschema.xml
 %{_datadir}/gnome-applets/ui/multiload-applet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.MultiLoadApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.MultiLoadApplet.panel-applet
 
 %files netspeed -f netspeed_applet.lang
 %defattr(644,root,root,755)
 %doc netspeed/{AUTHORS,TODO}
-%attr(755,root,root) %{_libexecdir}/netspeed_applet2
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.NetspeedAppletFactory.service
+%attr(755,root,root) %{_libdir}/gnome-applets/libnet-speed-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.netspeed.gschema.xml
 %{_datadir}/gnome-applets/ui/netspeed-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.panel.Netspeed.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.panel.Netspeed.panel-applet
 %{_iconsdir}/hicolor/*x*/apps/netspeed-applet.png
 %{_iconsdir}/hicolor/scalable/apps/netspeed-applet.svg
 %{_iconsdir}/hicolor/16x16/devices/netspeed-*.png
@@ -789,39 +856,35 @@ rm -rf $RPM_BUILD_ROOT
 
 %files search
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/tracker-search-bar
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.SearchBarFactory.service
-%{_datadir}/gnome-applets/ui/tracker-search-bar-menu.xml
-%{_datadir}/gnome-applets/ui/tracker-search-bar.ui
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.panel.SearchBar.panel-applet
+%attr(755,root,root) %{_libdir}/gnome-applets/libtracker-search-bar-applet.so
+%{_datadir}/gnome-panel/applets/org.gnome.panel.SearchBar.panel-applet
 
 %files stickynotes -f stickynotes_applet.lang
 %defattr(644,root,root,755)
-%doc stickynotes/{README,TODO}
-%attr(755,root,root) %{_libexecdir}/stickynotes_applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.StickyNotesAppletFactory.service
+%doc sticky-notes/{README,TODO}
+%attr(755,root,root) %{_libdir}/gnome-applets/libsticky-notes-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.stickynotes.gschema.xml
-%{_datadir}/gnome-applets/builder/stickynotes-*.ui
-%{_datadir}/gnome-applets/icons
-%{_datadir}/gnome-applets/ui/stickynotes-*-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.StickyNotesApplet.panel-applet
+%dir %{_datadir}/gnome-applets/icons/hicolor/48x48/apps
+%{_datadir}/gnome-applets/icons/hicolor/48x48/apps/stickynotes-stock-*.png
+%{_datadir}/gnome-panel/applets/org.gnome.applets.StickyNotesApplet.panel-applet
 %{_iconsdir}/hicolor/*x*/apps/gnome-sticky-notes-applet.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-sticky-notes-applet.svg
 
+%files timer
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/gnome-applets/libtimer-applet.so
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.timer.gschema.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.TimerApplet.panel-applet
+
 %files trash -f trashapplet.lang
 %defattr(644,root,root,755)
-%doc trashapplet/README
-%attr(755,root,root) %{_libexecdir}/trashapplet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.TrashAppletFactory.service
-%{_datadir}/gnome-applets/builder/trashapplet-empty-progress.ui
-%{_datadir}/gnome-applets/ui/trashapplet-menu.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.TrashApplet.panel-applet
+%doc trash/README
+%attr(755,root,root) %{_libdir}/gnome-applets/libtrash-applet.so
+%{_datadir}/gnome-panel/applets/org.gnome.applets.TrashApplet.panel-applet
 
 %files windowpicker
 %defattr(644,root,root,755)
 %doc windowpicker/{AUTHORS,TODO}
-%dir %{_libdir}/gnome-applets
-%dir %{_libdir}/gnome-applets/5.0
-%attr(755,root,root) %{_libdir}/gnome-applets/5.0/libwindow-picker-applet.so
+%attr(755,root,root) %{_libdir}/gnome-applets/libwindow-picker-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-picker-applet.gschema.xml
-%{_datadir}/gnome-panel/5.0/applets/org.gnome.applets.WindowPicker.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.WindowPicker.panel-applet
