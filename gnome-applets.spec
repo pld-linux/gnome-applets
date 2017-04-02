@@ -726,6 +726,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/gnome-applets/icons/hicolor/scalable
 %dir %{_datadir}/gnome-applets/icons/hicolor/scalable/status
 %dir %{_datadir}/gnome-applets/ui
+%dir %{_datadir}/gnome-panel/applets
 
 %files accessx-status -f accessx-status.lang
 %defattr(644,root,root,755)
