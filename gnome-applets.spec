@@ -19,7 +19,6 @@ BuildRequires:	apmd-devel
 %endif
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.13
-BuildRequires:	cpupowerutils-devel
 BuildRequires:	dbus-devel >= 1.1.2
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	docbook-dtd412-xml
@@ -34,6 +33,7 @@ BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	gucharmap-devel >= 3.2.1
 BuildRequires:	intltool >= 0.40.0
+BuildRequires:	kernel-tools-cpupower-libs-devel
 BuildRequires:	libgtop-devel >= 1:2.22.0
 BuildRequires:	libgweather-devel >= 3.17.1
 BuildRequires:	libiw-devel >= 28
@@ -509,6 +509,36 @@ zmieniać kolejność ikon myszką przez przeciąganie i upuszczanie.
 Dostępne są także ustawienia dla dodatkowych opcji, takich jak
 wyszarzanie nieaktywnych ikon.
 
+%package window-buttons
+Summary:	Window buttons for your GNOME Panel
+Group:		X11/Applications
+Requires(post,postun):	glib2 >= %{glib2_ver}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description window-buttons
+GNOME violates Fitts's Law by putting a panel between the maxed window
+buttons and the corner of the screen. These applets were designed to
+solve the problem. Window Title and Window Buttons are essentially
+controls for windows that are placed on the Panel instead of a window.
+They also provide a clever way to increase vertical screen space. By
+default they only control maximized windows, but can be configured to
+control any focused window.
+
+%package window-title
+Summary:	Window title for your GNOME Panel
+Group:		X11/Applications
+Requires(post,postun):	glib2 >= %{glib2_ver}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description window-title
+GNOME violates Fitts's Law by putting a panel between the maxed window
+buttons and the corner of the screen. These applets were designed to
+solve the problem. Window Title and Window Buttons are essentially
+controls for windows that are placed on the Panel instead of a window.
+They also provide a clever way to increase vertical screen space. By
+default they only control maximized windows, but can be configured to
+control any focused window.
+
 %prep
 %setup -q
 
@@ -529,7 +559,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-applets/lib*.la
 
 # es is more recent
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/es_ES
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/es_ES
 
 %find_lang %{name}-3.0
 %find_lang accessx-status --with-gnome
@@ -663,6 +693,18 @@ rm -rf $RPM_BUILD_ROOT
 %postun windowpicker
 %glib_compile_schemas
 
+%post window-buttons
+%glib_compile_schemas
+
+%postun window-buttons
+%glib_compile_schemas
+
+%post window-title
+%glib_compile_schemas
+
+%postun window-title
+%glib_compile_schemas
+
 %files -f %{name}-3.0.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog MAINTAINERS NEWS README
@@ -714,8 +756,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-applets/icons/hicolor/scalable/status/gpm-brightness-lcd*.svg
 %{_datadir}/gnome-applets/ui/brightness-applet-menu.xml
 %{_datadir}/gnome-panel/applets/org.gnome.BrightnessApplet.panel-applet
-%{_datadir}/icons/hicolor/*x*/apps/gnome-brightness-applet.png
-%{_datadir}/icons/hicolor/scalable/apps/gnome-brightness-applet.svg
+%{_iconsdir}/hicolor/*x*/apps/gnome-brightness-applet.png
+%{_iconsdir}/hicolor/scalable/apps/gnome-brightness-applet.svg
 
 %files charpicker -f char-palette.lang
 %defattr(644,root,root,755)
@@ -732,7 +774,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files cpufreq -f cpufreq-applet.lang
 %defattr(644,root,root,755)
-%doc cpufreq/{AUTHORS,README}
+%doc cpufreq/AUTHORS
 %attr(755,root,root) %{_bindir}/cpufreq-selector
 %attr(755,root,root) %{_libdir}/gnome-applets/libcpu-frequency-applet.so
 %{_datadir}/dbus-1/system-services/org.gnome.CPUFreqSelector.service
@@ -790,8 +832,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-applets/icons/hicolor/scalable/status/gpm-uninhibit.svg
 %{_datadir}/gnome-applets/ui/inhibit-applet-menu.xml
 %{_datadir}/gnome-panel/applets/org.gnome.InhibitApplet.panel-applet
-%{_datadir}/icons/hicolor/*x*/apps/gnome-inhibit-applet.png
-%{_datadir}/icons/hicolor/scalable/apps/gnome-inhibit-applet.svg
+%{_iconsdir}/hicolor/*x*/apps/gnome-inhibit-applet.png
+%{_iconsdir}/hicolor/scalable/apps/gnome-inhibit-applet.svg
 
 %files invest -f invest-applet.lang
 %defattr(644,root,root,755)
@@ -879,3 +921,20 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnome-applets/libwindow-picker-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-picker-applet.gschema.xml
 %{_datadir}/gnome-panel/applets/org.gnome.applets.WindowPicker.panel-applet
+
+%files window-buttons
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/gnome-applets/libwindow-buttons-applet.so
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-buttons.gschema.xml
+%{_datadir}/gnome-applets/builder/windowbuttons.ui
+%{_datadir}/gnome-panel/applets/org.gnome.panel.WindowButtonsApplet.panel-applet
+%{_pixmapsdir}/windowbuttons-applet.png
+%{_datadir}/gnome-applets/window-buttons-applet
+
+%files window-title
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/gnome-applets/libwindow-title-applet.so
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-title.gschema.xml
+%{_datadir}/gnome-applets/builder/windowtitle.ui
+%{_datadir}/gnome-panel/applets/org.gnome.panel.WindowTitleApplet.panel-applet
+%{_pixmapsdir}/windowtitle-applet.png
