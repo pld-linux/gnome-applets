@@ -5,14 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.22.0
-Release:	2
+Version:	3.24.0
+Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	c7f744747195b27d38524f8350ed7ac7
-Patch0:		%{name}-build.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.24/%{name}-%{version}.tar.xz
+# Source0-md5:	3878d02ee31d73b3f579ce2ef36b8b00
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} arm mips ppc sh
@@ -512,16 +511,8 @@ wyszarzanie nieaktywnych ikon.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__libtoolize}
-%{__glib_gettextize}
-%{__intltoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
 %configure \
 	--disable-silent-rules \
 	--enable-mini-commander \
