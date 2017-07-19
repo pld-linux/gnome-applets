@@ -14,7 +14,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.24/%{name}-%{ver
 # Source0-md5:	1315a92044feddd4067b9f0e562c8da9
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
-%ifarch %{ix86} arm mips ppc sh
+%ifarch %{ix86} %{arm} mips ppc sh
 BuildRequires:	apmd-devel
 %endif
 BuildRequires:	autoconf >= 2.59
@@ -28,7 +28,7 @@ BuildRequires:	gdk-pixbuf2-devel >= 2
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= %{glib2_ver}
 BuildRequires:	gnome-common >= 2.24.0
-BuildRequires:	gnome-panel-devel >= 3.22.0
+BuildRequires:	gnome-panel-devel >= 3.24.1
 BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	gucharmap-devel >= 3.2.1
@@ -53,7 +53,7 @@ BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	adwaita-icon-theme >= 3.14.0
-Requires:	gnome-panel >= 3.22.0
+Requires:	gnome-panel >= 3.24.1
 Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-mixer
 # sr@Latn vs. sr@latin
@@ -202,7 +202,7 @@ Requires:	dbus-glib >= 0.74
 Requires:	glib2 >= %{glib2_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
 Requires:	hicolor-icon-theme
-Requires:	polkit >= 0.92
+Requires:	polkit >= 0.97
 Obsoletes:	gnome-applet-cpufreq
 
 %description cpufreq
