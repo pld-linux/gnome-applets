@@ -511,6 +511,7 @@ wyszarzanie nieaktywnych ikon.
 
 %package window-buttons
 Summary:	Window buttons for your GNOME Panel
+Summary(pl.UTF-8):	Przyciski okien dla Panelu GNOME
 Group:		X11/Applications
 Requires(post,postun):	glib2 >= %{glib2_ver}
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -524,8 +525,18 @@ They also provide a clever way to increase vertical screen space. By
 default they only control maximized windows, but can be configured to
 control any focused window.
 
+%description window-buttons -l pl.UTF-8
+GNOME narusza Prawo Fittsa umieszczając panel między przyciskami
+maksymalnie powiększonego okna a rogiem ekranu. Aplety Window Title i
+Window Buttons powstały, aby rozwiązać ten problem; są to zasadniczo
+kontroli dla okien umieszone na panelu zamiast w oknie. Pozwalają
+powiększyć pionową przestrzeń ekranu w mądrzejszy sposób. Domyślnie
+kontrolują maksymalnie powiększone okna, ale można je tak
+skonfigurować tak, aby sterowały dowolne okno mające focus.
+
 %package window-title
 Summary:	Window title for your GNOME Panel
+Summary(pl.UTF-8):	Tytuł okien dla Panelu GNOME
 Group:		X11/Applications
 Requires(post,postun):	glib2 >= %{glib2_ver}
 Requires:	%{name} = %{epoch}:%{version}-%{release}
@@ -538,6 +549,15 @@ controls for windows that are placed on the Panel instead of a window.
 They also provide a clever way to increase vertical screen space. By
 default they only control maximized windows, but can be configured to
 control any focused window.
+
+%description window-title -l pl.UTF-8
+GNOME narusza Prawo Fittsa umieszczając panel między przyciskami
+maksymalnie powiększonego okna a rogiem ekranu. Aplety Window Title i
+Window Buttons powstały, aby rozwiązać ten problem; są to zasadniczo
+kontroli dla okien umieszone na panelu zamiast w oknie. Pozwalają
+powiększyć pionową przestrzeń ekranu w mądrzejszy sposób. Domyślnie
+kontrolują maksymalnie powiększone okna, ale można je tak
+skonfigurować tak, aby sterowały dowolne okno mające focus.
 
 %prep
 %setup -q
