@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.24.1
-Release:	2
+Version:	3.26.0
+Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.24/%{name}-%{version}.tar.xz
-# Source0-md5:	1315a92044feddd4067b9f0e562c8da9
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.26/%{name}-%{version}.tar.xz
+# Source0-md5:	c0710151af341840c2433c8dd563848f
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} %{arm} mips ppc sh
@@ -940,7 +940,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc windowpicker/{AUTHORS,TODO}
 %attr(755,root,root) %{_libdir}/gnome-applets/libwindow-picker-applet.so
-%{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-picker-applet.gschema.xml
 %{_datadir}/gnome-panel/applets/org.gnome.applets.WindowPicker.panel-applet
 
 %files window-buttons
