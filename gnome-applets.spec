@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.26.0
+Version:	3.28.0
 Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.26/%{name}-%{version}.tar.xz
-# Source0-md5:	c0710151af341840c2433c8dd563848f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.28/%{name}-%{version}.tar.xz
+# Source0-md5:	af13380d24c0cad10e8688bb8df51072
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} %{arm} mips ppc sh
@@ -54,6 +54,7 @@ BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires:	adwaita-icon-theme >= 3.14.0
 Requires:	gnome-panel >= 3.24.1
+Obsoletes:	gnome-applets-invest
 Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-mixer
 # sr@Latn vs. sr@latin
@@ -295,27 +296,6 @@ Inhibit applet allows user to inhibit automatic power saving.
 %description inhibit -l pl.UTF-8
 Aplet wyłączania pozwala użytkownikowi na wyłączenie automatycznego
 oszczędzania zasilania.
-
-%package invest
-Summary:	Stock Ticker applet
-Summary(pl.UTF-8):	Aplet wskaźnika giełdowego
-Group:		X11/Applications
-URL:		https://help.gnome.org/users/invest-applet/stable/
-Requires(post,postun):	gtk-update-icon-cache
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	glib2 >= %{glib2_ver}
-Requires:	gobject-introspection
-Requires:	gtk+3 >= %{gtk3_ver}
-Requires:	hicolor-icon-theme
-Obsoletes:	gnome-applets-gtik
-
-%description invest
-The Invest GNOME panel applet downloads current stock quotes from
-Yahoo! Finance and displays the quotes in a drop-down list.
-
-%description invest -l pl.UTF-8
-Aplet wskaźnika giełdowego, ściągający aktualne notowania z serwisu
-Yahoo! Finance i wyświetlające je na rozwijanej liście.
 
 %package minicommander
 Summary:	Command Line applet
@@ -578,9 +558,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-applets/lib*.la
 
-# es is more recent
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/es_ES
-
 %find_lang %{name}-3.0
 %find_lang accessx-status --with-gnome
 %find_lang battstat --with-gnome
@@ -590,7 +567,6 @@ rm -rf $RPM_BUILD_ROOT
 %find_lang drivemount --with-gnome
 %find_lang geyes --with-gnome
 %find_lang gweather --with-gnome
-%find_lang invest-applet --with-gnome
 %find_lang multiload --with-gnome
 %find_lang netspeed_applet --with-gnome
 %find_lang stickynotes_applet --with-gnome
@@ -655,14 +631,6 @@ rm -rf $RPM_BUILD_ROOT
 %update_icon_cache hicolor
 
 %postun inhibit
-%update_icon_cache hicolor
-
-%post invest
-%glib_compile_schemas
-%update_icon_cache hicolor
-
-%postun invest
-%glib_compile_schemas
 %update_icon_cache hicolor
 
 %post minicommander
@@ -856,18 +824,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*x*/apps/gnome-inhibit-applet.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-inhibit-applet.svg
 
-%files invest -f invest-applet.lang
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/gnome-applets/libinvest-applet.so
-%{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.invest.gschema.xml
-%{_datadir}/gnome-applets/builder/financialchart.ui
-%{_datadir}/gnome-applets/builder/prefs-dialog.ui
-%{_datadir}/gnome-applets/invest-applet
-%{_datadir}/gnome-applets/ui/invest-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.InvestApplet.panel-applet
-%{_iconsdir}/hicolor/*x*/apps/invest-applet.png
-%{_iconsdir}/hicolor/scalable/apps/invest-applet.svg
-
 %files minicommander -f command-line.lang
 %defattr(644,root,root,755)
 %doc mini-commander/{AUTHORS,README,TODO}
@@ -941,6 +897,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc windowpicker/{AUTHORS,TODO}
 %attr(755,root,root) %{_libdir}/gnome-applets/libwindow-picker-applet.so
 %{_datadir}/gnome-panel/applets/org.gnome.applets.WindowPicker.panel-applet
+%{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-picker-applet.gschema.xml
 
 %files window-buttons
 %defattr(644,root,root,755)
