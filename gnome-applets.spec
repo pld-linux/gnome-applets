@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.28.0
+Version:	3.34.0
 Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.28/%{name}-%{version}.tar.xz
-# Source0-md5:	af13380d24c0cad10e8688bb8df51072
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	d9720f6a272243f42a84b06495f2a223
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} %{arm} mips ppc sh
@@ -57,6 +57,7 @@ Requires:	gnome-panel >= 3.24.1
 Obsoletes:	gnome-applets-invest
 Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-mixer
+Obsoletes:	gnome-applets-modemlights
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -316,23 +317,6 @@ panel on the desktop.
 %description minicommander -l pl.UTF-8
 Aplet wiersza poleceń udostępnia linię poleceń z poziomu każdego
 panelu na pulpicie.
-
-%package modemlights
-Summary:	Modem Lights applet
-Summary(pl.UTF-8):	Aplet kontrolek modemu
-Group:		X11/Applications
-Requires(post,postun):	gtk-update-icon-cache
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	glib2 >= %{glib2_ver}
-Requires:	gtk+3 >= %{gtk3_ver}
-Requires:	hicolor-icon-theme
-Requires:	libxml2 >= 1:2.6.30
-
-%description modemlights
-Modem Lights applet.
-
-%description modemlights -l pl.UTF-8
-Aplet kontrolek modemu.
 
 %package multiload
 Summary:	System Monitor applet
@@ -641,12 +625,6 @@ rm -rf $RPM_BUILD_ROOT
 %glib_compile_schemas
 %update_icon_cache hicolor
 
-%post modemlights
-%update_icon_cache hicolor
-
-%postun modemlights
-%update_icon_cache hicolor
-
 %post multiload
 %glib_compile_schemas
 
@@ -833,16 +811,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-applets/ui/mini-commander-applet-menu.xml
 %{_datadir}/gnome-panel/applets/org.gnome.applets.MiniCommanderApplet.panel-applet
 %{_iconsdir}/hicolor/48x48/apps/gnome-mini-commander.png
-
-%files modemlights
-%defattr(644,root,root,755)
-%doc modem-lights/AUTHORS
-%attr(755,root,root) %{_libdir}/gnome-applets/libmodem-lights-applet.so
-%{_datadir}/gnome-applets/builder/modemlights.ui
-%{_datadir}/gnome-applets/ui/modem-applet-menu.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.ModemApplet.panel-applet
-%{_iconsdir}/hicolor/*x*/apps/gnome-modem-monitor-applet.png
-%{_iconsdir}/hicolor/scalable/apps/gnome-modem-monitor-applet.svg
 
 %files multiload -f multiload.lang
 %defattr(644,root,root,755)
