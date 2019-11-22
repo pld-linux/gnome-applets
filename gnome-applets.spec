@@ -27,7 +27,6 @@ BuildRequires:	docbook-utils
 BuildRequires:	gdk-pixbuf2-devel >= 2
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= %{glib2_ver}
-BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-panel-devel >= 3.24.1
 BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
@@ -35,7 +34,7 @@ BuildRequires:	gucharmap-devel >= 3.2.1
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	kernel-tools-cpupower-libs-devel
 BuildRequires:	libgtop-devel >= 1:2.22.0
-BuildRequires:	libgweather-devel >= 3.17.1
+BuildRequires:	libgweather-devel >= 3.28.0
 BuildRequires:	libiw-devel >= 28
 BuildRequires:	libnotify-devel >= 0.7
 BuildRequires:	libtool >= 2:2
@@ -47,7 +46,7 @@ BuildRequires:	polkit-devel >= 0.97
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	tracker-devel >= 1.0
+BuildRequires:	tracker-devel >= 2.0
 BuildRequires:	upower-devel >= 0.9.4
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
@@ -264,7 +263,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	dbus(org.freedesktop.Notifications)
 Requires:	glib2 >= %{glib2_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
-Requires:	libgweather >= 3.17.1
+Requires:	libgweather >= 3.28.0
 Requires:	libnotify >= 0.7
 
 %description gweather
@@ -366,7 +365,7 @@ Group:		X11/Applications
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2 >= %{glib2_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
-Requires:	tracker >= 1.0
+Requires:	tracker >= 2.0
 
 %description search
 Tracker Search Bar allows to find your data quickly using Tracker.
