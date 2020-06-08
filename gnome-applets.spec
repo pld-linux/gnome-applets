@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.34.0
+Version:	3.36.4
 Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	d9720f6a272243f42a84b06495f2a223
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	716bc5f9d60a3e38fe6aec30e542ecd8
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 %ifarch %{ix86} %{arm} mips ppc sh
@@ -32,6 +32,7 @@ BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	gucharmap-devel >= 3.2.1
 BuildRequires:	intltool >= 0.40.0
+BuildRequires:	itstool
 BuildRequires:	kernel-tools-cpupower-libs-devel
 BuildRequires:	libgtop-devel >= 1:2.22.0
 BuildRequires:	libgweather-devel >= 3.28.0
@@ -47,7 +48,7 @@ BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	tracker-devel >= 2.0
-BuildRequires:	upower-devel >= 0.9.4
+BuildRequires:	upower-devel >= 0.99.8
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
 BuildRequires:	yelp-tools
@@ -57,8 +58,6 @@ Obsoletes:	gnome-applets-invest
 Obsoletes:	gnome-applets-keyboard
 Obsoletes:	gnome-applets-mixer
 Obsoletes:	gnome-applets-modemlights
-# sr@Latn vs. sr@latin
-Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -111,7 +110,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2 >= %{glib2_ver}
 Requires:	gtk+3 >= %{gtk3_ver}
 Requires:	libnotify >= 0.7
-Requires:	upower >= 0.9.4
+Requires:	upower >= 0.99.8
 
 %description battstat
 The Battery Charge Monitor shows the status of any batteries in your
@@ -672,7 +671,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}-3.0.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog MAINTAINERS NEWS README
+%doc AUTHORS NEWS README
 %dir %{_libdir}/gnome-applets
 %dir %{_datadir}/gnome-applets
 %dir %{_datadir}/gnome-applets/builder
@@ -829,7 +828,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*x*/apps/netspeed-applet.png
 %{_iconsdir}/hicolor/scalable/apps/netspeed-applet.svg
 %{_iconsdir}/hicolor/16x16/devices/netspeed-*.png
-%{_iconsdir}/hicolor/24x24/status/netspeed-*.png
+%{_iconsdir}/hicolor/16x16/status/netspeed-*.png
 
 %files search
 %defattr(644,root,root,755)
@@ -871,9 +870,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnome-applets/libwindow-buttons-applet.so
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-buttons.gschema.xml
 %{_datadir}/gnome-applets/builder/windowbuttons.ui
-%{_datadir}/gnome-panel/applets/org.gnome.panel.WindowButtonsApplet.panel-applet
-%{_pixmapsdir}/windowbuttons-applet.png
 %{_datadir}/gnome-applets/window-buttons-applet
+%{_datadir}/gnome-panel/applets/org.gnome.panel.WindowButtonsApplet.panel-applet
+%{_iconsdir}/hicolor/96x96/apps/windowbuttons-applet.png
 
 %files window-title
 %defattr(644,root,root,755)
@@ -881,4 +880,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.window-title.gschema.xml
 %{_datadir}/gnome-applets/builder/windowtitle.ui
 %{_datadir}/gnome-panel/applets/org.gnome.panel.WindowTitleApplet.panel-applet
-%{_pixmapsdir}/windowtitle-applet.png
+%{_iconsdir}/hicolor/72x72/apps/windowtitle-applet.png
