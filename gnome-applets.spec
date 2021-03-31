@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.38.0
+Version:	3.40.0
 Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-applets/3.38/%{name}-%{version}.tar.xz
-# Source0-md5:	e76525751d10e65969c4e0243743e827
+Source0:	https://download.gnome.org/sources/gnome-applets/3.40/%{name}-%{version}.tar.xz
+# Source0-md5:	2d749a807c7a2884621acd39ad913233
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 BuildRequires:	autoconf >= 2.59
@@ -39,7 +39,7 @@ BuildRequires:	polkit-devel >= 0.97
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	tracker-devel >= 2.0
+BuildRequires:	tracker3-devel >= 3.0
 BuildRequires:	upower-devel >= 0.99.8
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
@@ -59,7 +59,7 @@ Requires:	libnotify >= 0.7
 Requires:	libwnck >= 3.14.1
 Requires:	libxml2 >= 1:2.6.30
 Requires:	polkit >= 0.97
-Requires:	tracker >= 2.0
+Requires:	tracker3 >= 3.0
 Requires:	upower >= 0.99.8
 Suggests:	gnome-control-center >= 2.26.0
 Suggests:	gnome-system-monitor >= 2.24.0
@@ -105,9 +105,9 @@ Obsoletes:	gnome-applets-windowpicker < 1:3.37.0
 Obsoletes:	gnome-applets-window-buttons < 1:3.37.0
 Obsoletes:	gnome-applets-window-title < 1:3.37.0
 # old names
-Obsoletes:	gnome-applet-cpufreq
-Obsoletes:	gnome-applet-netspeed
-Obsoletes:	gnotes_applet
+Obsoletes:	gnome-applet-cpufreq < 0.3.2
+Obsoletes:	gnome-applet-netspeed < 0.15
+Obsoletes:	gnotes_applet < 1.65
 # withdrawn applets
 Obsoletes:	gnome-applets-invest < 1:3.28.0
 Obsoletes:	gnome-applets-keyboard < 1:2.30.0
