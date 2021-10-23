@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.40.0
+Version:	3.42.0
 Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-applets/3.40/%{name}-%{version}.tar.xz
-# Source0-md5:	2d749a807c7a2884621acd39ad913233
+Source0:	https://download.gnome.org/sources/gnome-applets/3.42/%{name}-%{version}.tar.xz
+# Source0-md5:	13c44b636b63c339882600a7854094b5
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 BuildRequires:	autoconf >= 2.59
@@ -21,13 +21,13 @@ BuildRequires:	docbook-dtd43-xml
 BuildRequires:	docbook-utils
 BuildRequires:	gettext-tools >= 0.19.6
 BuildRequires:	glib2-devel >= %{glib2_ver}
-BuildRequires:	gnome-panel-devel >= 3.37.0
+BuildRequires:	gnome-panel-devel >= 3.41.1
 BuildRequires:	gtk+3-devel >= %{gtk3_ver}
 BuildRequires:	gucharmap-devel >= 3.2.1
 BuildRequires:	itstool
 BuildRequires:	kernel-tools-cpupower-libs-devel
 BuildRequires:	libgtop-devel >= 1:2.22.0
-BuildRequires:	libgweather-devel >= 3.28.0
+BuildRequires:	libgweather-devel >= 40.0
 BuildRequires:	libiw-devel >= 28
 BuildRequires:	libnotify-devel >= 0.7
 BuildRequires:	libtool >= 2:2
@@ -49,11 +49,12 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	adwaita-icon-theme >= 3.14.0
 Requires:	dbus(org.freedesktop.Notifications)
 Requires:	glib2 >= %{glib2_ver}
-Requires:	gnome-panel >= 3.37.0
+Requires:	gnome-panel >= 3.41.1
 Requires:	gtk+3 >= %{gtk3_ver}
 Requires:	gucharmap >= 3.2.1
 Requires:	hicolor-icon-theme
 Requires:	libgtop >= 1:2.22.0
+Requires:	libgweather >= 40.0
 Requires:	libiw >= 28
 Requires:	libnotify >= 0.7
 Requires:	libwnck >= 3.14.1
