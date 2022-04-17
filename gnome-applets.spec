@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.42.0
+Version:	3.44.0
 Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-applets/3.42/%{name}-%{version}.tar.xz
-# Source0-md5:	13c44b636b63c339882600a7854094b5
+Source0:	https://download.gnome.org/sources/gnome-applets/3.44/%{name}-%{version}.tar.xz
+# Source0-md5:	946818b2b4e76907896cfc99e558a929
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 BuildRequires:	autoconf >= 2.59
@@ -27,13 +27,14 @@ BuildRequires:	gucharmap-devel >= 3.2.1
 BuildRequires:	itstool
 BuildRequires:	kernel-tools-cpupower-libs-devel
 BuildRequires:	libgtop-devel >= 1:2.22.0
-BuildRequires:	libgweather-devel >= 40.0
+BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libiw-devel >= 28
 BuildRequires:	libnotify-devel >= 0.7
 BuildRequires:	libtool >= 2:2
 BuildRequires:	libwnck-devel >= 3.14.1
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
+BuildRequires:	pango-devel >= 1:1.50.0
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	polkit-devel >= 0.97
 BuildRequires:	rpmbuild(find_lang) >= 1.23
@@ -54,11 +55,12 @@ Requires:	gtk+3 >= %{gtk3_ver}
 Requires:	gucharmap >= 3.2.1
 Requires:	hicolor-icon-theme
 Requires:	libgtop >= 1:2.22.0
-Requires:	libgweather >= 40.0
+Requires:	libgweather4 >= 4.0
 Requires:	libiw >= 28
 Requires:	libnotify >= 0.7
 Requires:	libwnck >= 3.14.1
 Requires:	libxml2 >= 1:2.6.30
+Requires:	pango >= 1:1.50.0
 Requires:	polkit >= 0.97
 Requires:	tracker3 >= 3.0
 Requires:	upower >= 0.99.8
