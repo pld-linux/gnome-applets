@@ -5,13 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.44.0
+Version:	3.46.0
 Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-applets/3.44/%{name}-%{version}.tar.xz
-# Source0-md5:	946818b2b4e76907896cfc99e558a929
+Source0:	https://download.gnome.org/sources/gnome-applets/3.46/%{name}-%{version}.tar.xz
+# Source0-md5:	6cd8cdf600f1c63db78f9a7a75110d9e
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 BuildRequires:	autoconf >= 2.59
@@ -31,7 +31,7 @@ BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libiw-devel >= 28
 BuildRequires:	libnotify-devel >= 0.7
 BuildRequires:	libtool >= 2:2
-BuildRequires:	libwnck-devel >= 3.14.1
+BuildRequires:	libwnck-devel >= 43.0
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
 BuildRequires:	pango-devel >= 1:1.50.0
@@ -58,7 +58,7 @@ Requires:	libgtop >= 1:2.22.0
 Requires:	libgweather4 >= 4.0
 Requires:	libiw >= 28
 Requires:	libnotify >= 0.7
-Requires:	libwnck >= 3.14.1
+Requires:	libwnck >= 43.0
 Requires:	libxml2 >= 1:2.6.30
 Requires:	pango >= 1:1.50.0
 Requires:	polkit >= 0.97
