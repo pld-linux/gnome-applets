@@ -5,17 +5,17 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.46.0
-Release:	2
+Version:	3.50.0
+Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-applets/3.46/%{name}-%{version}.tar.xz
-# Source0-md5:	6cd8cdf600f1c63db78f9a7a75110d9e
+Source0:	https://download.gnome.org/sources/gnome-applets/3.50/%{name}-%{version}.tar.xz
+# Source0-md5:	c77157074be54f277b93a2d12b867836
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.13
+BuildRequires:	automake >= 1:1.16.4
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	docbook-dtd43-xml
 BuildRequires:	docbook-utils
@@ -214,10 +214,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS
-/etc/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
 %attr(755,root,root) %{_bindir}/cpufreq-selector
 %attr(755,root,root) %{_libdir}/gnome-panel/modules/org.gnome.gnome-applets.so
 %{_datadir}/dbus-1/system-services/org.gnome.CPUFreqSelector.service
+%{_datadir}/dbus-1/system.d/org.gnome.CPUFreqSelector.conf
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.battstat.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-applets.charpick.gschema.xml
