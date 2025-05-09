@@ -5,14 +5,13 @@ Summary(pl.UTF-8):	Aplety GNOME - małe aplikacje osadzające się w panelu
 Summary(ru.UTF-8):	Маленькие программы, встраивающиеся в панель GNOME
 Summary(uk.UTF-8):	Маленькі програми, що вбудовуються в панель GNOME
 Name:		gnome-applets
-Version:	3.54.0
-Release:	2
+Version:	3.56.0
+Release:	1
 Epoch:		1
 License:	GPL v2+, FDL
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-applets/3.54/%{name}-%{version}.tar.xz
-# Source0-md5:	480f6a723b5eea78d0cbd03a2daa278b
-Patch0:		%{name}-types.patch
+Source0:	https://download.gnome.org/sources/gnome-applets/3.56/%{name}-%{version}.tar.xz
+# Source0-md5:	87abab54d6049aca770268c4bd894983
 URL:		https://wiki.gnome.org/Projects/GnomeApplets
 BuildRequires:	adwaita-icon-theme >= 3.14.0
 BuildRequires:	autoconf >= 2.59
@@ -178,7 +177,6 @@ z GNOME:
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
